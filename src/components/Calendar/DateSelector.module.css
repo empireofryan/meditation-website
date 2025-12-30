@@ -13,8 +13,8 @@
 }
 
 .navArrow {
-  background: transparent;
-  border: 2px solid rgba(255, 200, 69, 0.3);
+  background: #FFC845;
+  border: 2px solid #FFC845;
   border-radius: 4px;
   width: 40px;
   height: 40px;
@@ -24,12 +24,12 @@
   cursor: pointer;
   transition: all 0.2s;
   flex-shrink: 0;
-  color: #FFC845;
+  color: #1a1a1a;
 }
 
 .navArrow:hover:not(:disabled) {
-  background: #FFC845;
-  border-color: #FFC845;
+  background: #FFD666;
+  border-color: #FFD666;
   color: #1a1a1a;
 }
 
@@ -39,10 +39,11 @@
 
 .navArrow.disabled,
 .navArrow:disabled {
+  background: #f5f5f5;
   color: #cccccc;
-  border-color: rgba(204, 204, 204, 0.3);
+  border-color: #e0e0e0;
   cursor: not-allowed;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 .dateScrollContainer {
