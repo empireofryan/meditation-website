@@ -10,9 +10,8 @@ function App() {
           <div className="logo">KMC Williamsburg</div>
           <div className="nav-links">
             <a href="#about" className="nav-link">About</a>
-            <a href="#classes" className="nav-link">Classes</a>
             <a href="#contact" className="nav-link">Contact</a>
-            <button className="cta-button">Class Schedule</button>
+            <a href="#classes" className="cta-button">Class Schedule</a>
           </div>
         </nav>
         <div className="hero-content">
@@ -24,7 +23,7 @@ function App() {
       </section>
 
       {/* First Yellow Section - About Modern Buddhism */}
-      <section className="diagonal-section">
+      <section id="about" className="diagonal-section">
         <div className="section-container">
           <img
             src="https://images.unsplash.com/photo-1545389336-cf090694435e?w=800"
@@ -72,7 +71,7 @@ function App() {
       </section>
 
       {/* Free Session Section with Calendar */}
-      <section className="free-session-section">
+      <section id="classes" className="free-session-section">
         <h2 className="free-session-title">
           Try a session for <span className="free-word">free</span> and see if it's right for you.
         </h2>
@@ -116,7 +115,7 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="footer">
+      <footer id="contact" className="footer">
         <div className="footer-content">
           <div className="footer-left">
             <h3>Welcome to our center</h3>
