@@ -438,8 +438,21 @@ body {
     padding: 20px 30px;
   }
 
+  .logo {
+    font-size: 20px;
+  }
+
   .nav-links {
     gap: 20px;
+  }
+
+  .nav-link {
+    font-size: 13px;
+  }
+
+  .cta-button {
+    padding: 12px 24px;
+    font-size: 13px;
   }
 
   .hero-content {
@@ -484,5 +497,69 @@ body {
 
   .footer-nav {
     align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    padding: 15px 20px;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-link {
+    font-size: 11px;
+  }
+
+  .cta-button {
+    padding: 10px 16px;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+  .hero-content {
+    padding: 0 20px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .hero-cta {
+    font-size: 14px;
+  }
+
+  .diagonal-section {
+    padding: 60px 20px;
+  }
+
+  .section-content h2 {
+    font-size: 28px;
+  }
+
+  .section-content p {
+    font-size: 16px;
+  }
+
+  .testimonial-quote {
+    font-size: 22px;
+  }
+
+  .free-session-section {
+    padding: 50px 20px;
+  }
+
+  .free-session-title {
+    font-size: 32px;
+  }
+
+  .newsletter-content h2 {
+    font-size: 32px;
   }
 }
