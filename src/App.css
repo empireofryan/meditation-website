@@ -446,6 +446,8 @@ body {
 
   .diagonal-section {
     padding: 80px 30px;
+    clip-path: none;
+    margin-top: 0 !important;
   }
 
   .section-content h2 {
@@ -462,6 +464,11 @@ body {
 
   .free-session-title {
     font-size: 40px;
+  }
+
+  .newsletter-section {
+    clip-path: none;
+    margin-top: 0;
   }
 
   .footer-content {

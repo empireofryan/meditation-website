@@ -12,7 +12,7 @@ function App() {
             <a href="#about" className="nav-link">About</a>
             <a href="#classes" className="nav-link">Classes</a>
             <a href="#contact" className="nav-link">Contact</a>
-            <button className="cta-button">Get Started</button>
+            <button className="cta-button">Class Schedule</button>
           </div>
         </nav>
         <div className="hero-content">
