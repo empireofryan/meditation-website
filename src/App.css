@@ -153,7 +153,7 @@ body {
 .underline::after {
   content: '';
   position: absolute;
-  bottom: 8px;
+  bottom: 0px;
   left: 0;
   right: 0;
   height: 3px;
