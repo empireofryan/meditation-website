@@ -160,7 +160,7 @@ export const generateRealClasses = (startDate: Date, days: number): Class[] => {
   }
 
   // Add special New Year's Eve event if the date range includes Dec 31
-  const dec31 = new Date(2024, 11, 31); // December 31, 2024
+  const dec31 = new Date(2025, 11, 31); // December 31, 2025
   if (startDate <= dec31 && new Date(startDate.getTime() + days * 24 * 60 * 60 * 1000) >= dec31) {
     classes.push({
       id: id.toString(),
@@ -177,8 +177,8 @@ export const generateRealClasses = (startDate: Date, days: number): Class[] => {
   return classes;
 };
 
-// Generate classes from December 30, 2024 to January 30, 2025
-const startDate = new Date(2024, 11, 30); // December 30, 2024
+// Generate classes from December 30, 2025 to January 30, 2026
+const startDate = new Date(2025, 11, 30); // December 30, 2025
 startDate.setHours(0, 0, 0, 0);
 
 export const mockClasses = generateRealClasses(startDate, 32); // 32 days from Dec 30 to Jan 30

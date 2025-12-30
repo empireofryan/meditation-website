@@ -7,9 +7,9 @@ import ClassCard from './ClassCard';
 import styles from './ClassSchedule.module.css';
 
 const ClassSchedule: React.FC = () => {
-  // Start from December 30, 2024 to match the calendar data
+  // Start from December 30, 2025 to match the calendar data
   const startDate = useMemo(() => {
-    const start = new Date(2024, 11, 30); // December 30, 2024
+    const start = new Date(2025, 11, 30); // December 30, 2025
     start.setHours(0, 0, 0, 0);
     return start;
   }, []);
