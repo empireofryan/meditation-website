@@ -1,0 +1,152 @@
+.dateSelector {
+  margin-bottom: 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 12px;
+}
+
+.navArrow {
+  background: transparent;
+  border: 2px solid #FFC845;
+  border-radius: 4px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  color: #FFC845;
+}
+
+.navArrow:hover {
+  background: #FFC845;
+  border-color: #FFC845;
+  color: #1a1a1a;
+}
+
+.navArrow:active {
+  transform: scale(0.95);
+}
+
+.dateScrollContainer {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+  -webkit-overflow-scrolling: touch;
+  padding: 16px 0;
+  flex: 1;
+}
+
+.dateScrollContainer::-webkit-scrollbar {
+  height: 6px;
+}
+
+.dateScrollContainer::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dateScrollContainer::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.dateScrollContainer::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.dateList {
+  display: flex;
+  gap: 12px;
+  padding: 4px 20px;
+  min-width: min-content;
+}
+
+.dateItem {
+  flex-shrink: 0;
+  background-color: #f9f9f9;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 12px 16px;
+  min-width: 70px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.dateItem:hover {
+  background-color: #ffffff;
+  border-color: #FFC845;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dateItem.selected {
+  background-color: #FFC845;
+  border-color: #FFC845;
+  box-shadow: 0 2px 8px rgba(255, 200, 69, 0.3);
+}
+
+.dateItem.selected:hover {
+  background-color: #FFD666;
+  border-color: #FFD666;
+}
+
+.dayName {
+  display: block;
+  color: #666666;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.dateItem.selected .dayName {
+  color: rgba(26, 26, 26, 0.9);
+}
+
+.dayNumber {
+  display: block;
+  color: #1a1a1a;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.dateItem.selected .dayNumber {
+  color: #1a1a1a;
+}
+
+.monthIndicator {
+  display: block;
+  color: #999999;
+  font-size: 9px;
+  font-weight: 500;
+  margin-top: 2px;
+  text-transform: uppercase;
+}
+
+.dateItem.selected .monthIndicator {
+  color: rgba(26, 26, 26, 0.8);
+}
+
+@media (max-width: 768px) {
+  .dateItem {
+    min-width: 70px;
+    padding: 12px 16px;
+  }
+
+  .dayNumber {
+    font-size: 20px;
+  }
+}
