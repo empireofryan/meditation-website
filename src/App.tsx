@@ -1,6 +1,7 @@
 import './App.css'
 import ClassSchedule from './components/Calendar/ClassSchedule'
 
+// Auto-deploy test - this change should trigger automatic deployment
 function App() {
   return (
     <div className="app">

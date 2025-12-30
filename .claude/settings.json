@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash /Users/ryan/Development/MeditationSite/meditation-website/.claude/auto-deploy.sh",
+            "timeout": 120
+          }
+        ]
+      }
+    ]
+  }
+}
