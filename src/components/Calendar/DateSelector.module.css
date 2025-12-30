@@ -25,10 +25,11 @@
   transition: all 0.2s;
   flex-shrink: 0;
   color: #000000;
-  font-size: 32px;
+  font-size: 28px;
   font-weight: bold;
-  line-height: 1;
+  line-height: 40px;
   padding: 0;
+  margin-top: -2px;
 }
 
 .navArrow:hover:not(:disabled) {
