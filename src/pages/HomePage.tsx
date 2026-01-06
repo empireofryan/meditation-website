@@ -78,7 +78,7 @@ function HomePage() {
             <p>
               We offer 10+ weekly meditation classes suitable for beginners to experienced meditators. Join our after-work sessions or General Program classes. Sunday's 11am class includes Coffee, Tea and Chat for social connection.
             </p>
-            <button className="learn-more-button">View Schedule</button>
+            <button className="learn-more-button">Class Info</button>
           </div>
           <img
             src="https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=800"
