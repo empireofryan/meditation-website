@@ -58,7 +58,7 @@ function HomePage() {
             <p className="dark-section-text">
               At KMC Williamsburg, we practice Modern Buddhism - a modern presentation of Buddha's ancient teachings that emphasizes integrating meditation learning with daily life, making every moment of our lives meaningful and fulfilling.
             </p>
-            <a href="#about" className="cta-button">About Us</a>
+            <a href="/about" className="cta-button">About Us</a>
           </div>
           <img
             src="https://images.unsplash.com/photo-1545389336-cf090694435e?w=800"
