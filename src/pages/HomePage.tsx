@@ -31,7 +31,7 @@ function HomePage() {
           <h1 className="hero-title">
             Change your mind, change your world.
           </h1>
-          <a href="#about" className="hero-cta">Learn more about us</a>
+          <a href="/about" className="hero-cta">Learn more about us</a>
         </div>
       </section>
 
