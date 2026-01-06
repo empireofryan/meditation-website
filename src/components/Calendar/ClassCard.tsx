@@ -1,7 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import type { Class } from '../../types';
 import BookButton from './BookButton';
 import styles from './ClassCard.module.css';
+
+function createSlug(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+function saveScrollPosition() {
+  sessionStorage.setItem('scheduleScrollPosition', window.scrollY.toString());
+}
 
 interface ClassCardProps {
   classData: Class;
@@ -9,73 +21,67 @@ interface ClassCardProps {
 }
 
 const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
-  const { id, name, instructor, time, spotsAvailable, totalSpots } = classData;
-  const isLowSpots = spotsAvailable <= 5;
+  const { id, name, instructor, time, endTime, cost, isCancelled, cancellationReason, isSpecialEvent } = classData;
 
   const handleBook = () => {
     onBook(id);
   };
 
-  // Split time into time and period (AM/PM)
-  const timeParts = time.split(' ');
-  const timeValue = timeParts[0];
-  const timePeriod = timeParts[1];
+  // Format time range (e.g., "6:00 PM - 6:30 PM")
+  const timeRange = endTime ? `${time} - ${endTime}` : time;
 
-  return (
-    <div className={styles.classCard}>
-      <div className={styles.classInfo}>
-        <div className={styles.timeRow}>
-          <div className={styles.timeColumn}>
-            <span className={styles.time}>{timeValue}</span>
-            <span className={styles.timePeriod}>{timePeriod}</span>
+  // Format cost - special case for monthly membership
+  const displayCost = cost === '$85/month'
+    ? 'Monthly Membership Required'
+    : cost;
+
+  // Format instructor - just first names (handles comma-separated multiple teachers)
+  const displayInstructor = instructor
+    ? instructor.split(',').map(name => name.trim().split(' ')[0]).join(', ')
+    : instructor;
+
+  if (isCancelled) {
+    return (
+      <div className={`${styles.classCard} ${styles.cancelled}`}>
+        <div className={styles.classInfo}>
+          <div className={styles.headerRow}>
+            <span className={styles.time}>{fullTime}</span>
+            <span className={styles.className}>{name}</span>
+            <span className={styles.instructorName}>{instructor}</span>
           </div>
-          <span className={styles.className}>{name}</span>
-        </div>
-        <div className={styles.detailsRow}>
-          <div className={styles.instructor}>
-            <svg
-              className={styles.instructorIcon}
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-              />
-            </svg>
-            <span>{instructor}</span>
-          </div>
-          <div className={styles.spots}>
-            <svg
-              className={styles.spotsIcon}
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-              />
-            </svg>
-            <span className={`${styles.spotsText} ${isLowSpots ? styles.lowSpots : ''}`}>
-              {spotsAvailable}/{totalSpots} spots
-            </span>
+          <div className={styles.cancelledBadge}>
+            CANCELLED{cancellationReason ? `: ${cancellationReason}` : ''}
           </div>
         </div>
       </div>
+    );
+  }
+
+  return (
+    <div className={`${styles.classCard} ${isSpecialEvent ? styles.specialEvent : ''}`}>
+      <div className={styles.timeColumn}>
+        <span className={styles.time}>{timeRange}</span>
+      </div>
+      <div className={styles.classInfo}>
+        <div className={styles.headerRow}>
+          <span className={styles.className}>
+            {isSpecialEvent && <span className={styles.eventBadge}>Event</span>}
+            {name}
+          </span>
+          <span className={styles.instructorName}>{displayInstructor}</span>
+          {displayCost && <span className={styles.cost}>{displayCost}</span>}
+        </div>
+      </div>
       <div className={styles.bookSection}>
-        <BookButton
-          onClick={() => alert(`More info about: ${name}`)}
-          variant="secondary"
-        >
-          More Info
-        </BookButton>
-        <BookButton onClick={handleBook} disabled={spotsAvailable === 0}>
+        <Link to={`/classes/${createSlug(name)}`} style={{ textDecoration: 'none' }} onClick={saveScrollPosition}>
+          <BookButton
+            onClick={() => {}}
+            variant="secondary"
+          >
+            More Info
+          </BookButton>
+        </Link>
+        <BookButton onClick={handleBook}>
           Book
         </BookButton>
       </div>

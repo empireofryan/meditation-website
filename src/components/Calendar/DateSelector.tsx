@@ -7,6 +7,7 @@ interface DateSelectorProps {
   selectedDate: Date;
   onSelectDate: (date: Date) => void;
   onLoadMore?: () => void;
+  classCountByDate?: Map<string, number>;
 }
 
 const DateSelector: React.FC<DateSelectorProps> = ({
@@ -14,6 +15,7 @@ const DateSelector: React.FC<DateSelectorProps> = ({
   selectedDate,
   onSelectDate,
   onLoadMore,
+  classCountByDate,
 }) => {
   const selectedRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -27,7 +29,14 @@ const DateSelector: React.FC<DateSelectorProps> = ({
       const selected = selectedRef.current;
       const scrollLeft =
         selected.offsetLeft - container.offsetWidth / 2 + selected.offsetWidth / 2;
-      container.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+      container.scrollTo({ left: Math.max(0, scrollLeft), behavior: 'smooth' });
+      // Update scroll buttons after scroll completes
+      setTimeout(() => {
+        if (containerRef.current) {
+          const scrollPos = containerRef.current.scrollLeft;
+          setCanScrollLeft(scrollPos > 0);
+        }
+      }, 150);
     }
   }, [selectedDate]);
 
@@ -117,20 +126,22 @@ const DateSelector: React.FC<DateSelectorProps> = ({
       </button>
       <div className={styles.dateScrollContainer} ref={containerRef}>
         <div className={styles.dateList}>
-          {dates.map((date, index) => {
+          {dates.map((date) => {
             const isSelected = isSameDay(date, selectedDate);
+            const classCount = classCountByDate?.get(date.toDateString()) || 0;
+            const hasClasses = classCount > 0;
             return (
               <div
                 key={date.toISOString()}
                 ref={isSelected ? selectedRef : null}
-                className={`${styles.dateItem} ${isSelected ? styles.selected : ''}`}
-                onClick={() => onSelectDate(date)}
+                className={`${styles.dateItem} ${isSelected ? styles.selected : ''} ${!hasClasses ? styles.noClasses : ''}`}
+                onClick={() => hasClasses && onSelectDate(date)}
               >
                 <span className={styles.dayName}>{getDayName(date)}</span>
                 <span className={styles.dayNumber}>{getDayNumber(date)}</span>
-                {shouldShowMonth(date, index) && (
-                  <span className={styles.monthIndicator}>{getMonthName(date)}</span>
-                )}
+                <span className={styles.classCount}>
+                  {hasClasses ? `${classCount} class${classCount !== 1 ? 'es' : ''}` : 'No classes'}
+                </span>
               </div>
             );
           })}

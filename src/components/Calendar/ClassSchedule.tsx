@@ -1,22 +1,67 @@
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import type { Class } from '../../types';
 import { generateDateRange } from '../../utils/dateUtils';
-import { mockClasses } from '../../data/mockData';
+import { fetchAllClasses } from '../../utils/sheetsApi';
 import DateSelector from './DateSelector';
 import ClassCard from './ClassCard';
 import styles from './ClassSchedule.module.css';
 
+type ViewMode = 'schedule' | 'calendar';
+
 const ClassSchedule: React.FC = () => {
-  // Start from December 30, 2025 to match the calendar data
   const startDate = useMemo(() => {
-    const start = new Date(2025, 11, 30); // December 30, 2025
+    const start = new Date();
     start.setHours(0, 0, 0, 0);
     return start;
   }, []);
 
   const [selectedDate, setSelectedDate] = useState<Date>(startDate);
-  const [classes, setClasses] = useState<Class[]>(mockClasses);
-  const [dateCount, setDateCount] = useState(32); // 32 days from Dec 30 to Jan 30
+  const [classes, setClasses] = useState<Class[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [dateCount, setDateCount] = useState(60);
+  const [viewMode, setViewMode] = useState<ViewMode>('schedule');
+  const [calendarMonth, setCalendarMonth] = useState<Date>(new Date());
+
+  // Fetch classes from Google Sheets
+  useEffect(() => {
+    async function loadClasses() {
+      try {
+        setLoading(true);
+        setError(null);
+        const data = await fetchAllClasses(dateCount);
+
+        // Convert ScheduledClass to Class type
+        const convertedClasses: Class[] = data.map(sc => ({
+          id: sc.id,
+          name: sc.name,
+          instructor: sc.instructor,
+          time: sc.time,
+          date: sc.date,
+          endTime: sc.endTime,
+          duration: sc.duration,
+          cost: sc.cost,
+          description: sc.description,
+          registrationLink: sc.registrationLink,
+          format: sc.format,
+          featuredImage: sc.featuredImage,
+          teacherImage: sc.teacherImage,
+          isSpecialEvent: sc.isSpecialEvent,
+          isCancelled: sc.isCancelled,
+          cancellationReason: sc.cancellationReason
+        }));
+
+        setClasses(convertedClasses);
+      } catch (err) {
+        console.error('Failed to load classes:', err);
+        setError('Failed to load schedule. Please try again later.');
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadClasses();
+  }, [dateCount]);
 
   // Generate date range dynamically based on dateCount
   const dates = useMemo(() => {
@@ -59,6 +104,15 @@ const ClassSchedule: React.FC = () => {
       .sort((a, b) => a.getTime() - b.getTime());
   }, [groupedClasses]);
 
+  // Create a map of class counts by date for the DateSelector
+  const classCountByDate = useMemo(() => {
+    const countMap = new Map<string, number>();
+    groupedClasses.forEach((classList, dateKey) => {
+      countMap.set(dateKey, classList.length);
+    });
+    return countMap;
+  }, [groupedClasses]);
+
   const handleDateSelect = (date: Date) => {
     setSelectedDate(date);
 
@@ -80,28 +134,14 @@ const ClassSchedule: React.FC = () => {
 
   const handleBookClass = (classId: string) => {
     const classToBook = classes.find((c) => c.id === classId);
-    if (classToBook) {
-      // Update the class to reduce available spots
-      setClasses((prevClasses) =>
-        prevClasses.map((c) =>
-          c.id === classId
-            ? { ...c, spotsAvailable: Math.max(0, c.spotsAvailable - 1) }
-            : c
-        )
-      );
-
-      // Show confirmation (you could use a toast notification here)
-      alert(
-        `Successfully booked ${classToBook.name} at ${classToBook.time} with ${classToBook.instructor}!`
-      );
+    if (classToBook && classToBook.registrationLink) {
+      window.open(classToBook.registrationLink, '_blank');
     }
   };
 
   const formatSelectedDate = (date: Date): string => {
     return date.toLocaleDateString('en-US', {
-      weekday: 'long',
       month: 'long',
-      day: 'numeric',
       year: 'numeric',
     });
   };
@@ -113,65 +153,197 @@ const ClassSchedule: React.FC = () => {
     return `${weekday} ${day} ${month}`;
   };
 
+  if (loading) {
+    return (
+      <div className={styles.scheduleContainer}>
+        <div className={styles.header}>
+          <h1 className={styles.title}>Class Schedule</h1>
+        </div>
+        <div className={styles.loadingState}>
+          <div className={styles.spinner}></div>
+          <p>Loading schedule...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className={styles.scheduleContainer}>
+        <div className={styles.header}>
+          <h1 className={styles.title}>Class Schedule</h1>
+        </div>
+        <div className={styles.errorState}>
+          <p>{error}</p>
+          <button onClick={() => window.location.reload()}>Retry</button>
+        </div>
+      </div>
+    );
+  }
+
+  // Calendar view helpers
+  const getCalendarDays = () => {
+    const year = calendarMonth.getFullYear();
+    const month = calendarMonth.getMonth();
+    const firstDay = new Date(year, month, 1);
+    const lastDay = new Date(year, month + 1, 0);
+    const startPadding = firstDay.getDay();
+    const days: (Date | null)[] = [];
+
+    // Add padding for days before the 1st
+    for (let i = 0; i < startPadding; i++) {
+      days.push(null);
+    }
+
+    // Add all days of the month
+    for (let d = 1; d <= lastDay.getDate(); d++) {
+      days.push(new Date(year, month, d));
+    }
+
+    return days;
+  };
+
+  const getClassesForDate = (date: Date) => {
+    return groupedClasses.get(date.toDateString()) || [];
+  };
+
+  const navigateMonth = (direction: number) => {
+    setCalendarMonth(prev => {
+      const newMonth = new Date(prev);
+      newMonth.setMonth(prev.getMonth() + direction);
+      return newMonth;
+    });
+  };
+
   return (
     <div className={styles.scheduleContainer}>
       <div className={styles.header}>
-        <h1 className={styles.title}>Class Schedule</h1>
-        <p className={styles.subtitle}>{formatSelectedDate(selectedDate)}</p>
+        {/* View Mode Toggle */}
+        <div className={styles.viewToggle}>
+          <div
+            className={`${styles.toggleSlider} ${viewMode === 'calendar' ? styles.sliderRight : ''}`}
+          />
+          <button
+            className={`${styles.toggleOption} ${viewMode === 'schedule' ? styles.toggleActive : ''}`}
+            onClick={() => setViewMode('schedule')}
+          >
+            Schedule
+          </button>
+          <button
+            className={`${styles.toggleOption} ${viewMode === 'calendar' ? styles.toggleActive : ''}`}
+            onClick={() => setViewMode('calendar')}
+          >
+            Calendar
+          </button>
+        </div>
+        <p className={styles.subtitle}>
+          {viewMode === 'schedule'
+            ? formatSelectedDate(selectedDate)
+            : calendarMonth.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
+          }
+        </p>
       </div>
 
-      <DateSelector
-        dates={dates}
-        selectedDate={selectedDate}
-        onSelectDate={handleDateSelect}
-        onLoadMore={loadMoreDates}
-      />
+      {viewMode === 'schedule' ? (
+        <>
+          <DateSelector
+            dates={dates}
+            selectedDate={selectedDate}
+            onSelectDate={handleDateSelect}
+            onLoadMore={loadMoreDates}
+            classCountByDate={classCountByDate}
+          />
 
-      <div className={styles.classList}>
-        {datesWithClasses.length > 0 ? (
-          datesWithClasses.map((date) => {
-            const dateKey = date.toDateString();
-            const dateClasses = groupedClasses.get(dateKey) || [];
+          <div className={styles.classList}>
+            {datesWithClasses.length > 0 ? (
+              datesWithClasses.map((date) => {
+                const dateKey = date.toDateString();
+                const dateClasses = groupedClasses.get(dateKey) || [];
 
-            return (
-              <div key={dateKey} id={`date-section-${dateKey}`} className={styles.dateSection}>
-                <div className={styles.dateSectionHeader}>
-                  {formatDateSectionHeader(date)}
-                </div>
-                <div className={styles.dateClassList}>
-                  {dateClasses.map((classItem) => (
-                    <ClassCard
-                      key={classItem.id}
-                      classData={classItem}
-                      onBook={handleBookClass}
-                    />
-                  ))}
-                </div>
+                return (
+                  <div key={dateKey} id={`date-section-${dateKey}`} className={styles.dateSection}>
+                    <div className={styles.dateSectionHeader}>
+                      {formatDateSectionHeader(date)}
+                    </div>
+                    <div className={styles.dateClassList}>
+                      {dateClasses.map((classItem) => (
+                        <ClassCard
+                          key={classItem.id}
+                          classData={classItem}
+                          onBook={handleBookClass}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                );
+              })
+            ) : (
+              <div className={styles.emptyState}>
+                <svg
+                  className={styles.emptyIcon}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
+                </svg>
+                <h3 className={styles.emptyTitle}>No Classes Available</h3>
+                <p className={styles.emptyMessage}>
+                  There are no classes scheduled.
+                </p>
               </div>
-            );
-          })
-        ) : (
-          <div className={styles.emptyState}>
-            <svg
-              className={styles.emptyIcon}
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-              />
-            </svg>
-            <h3 className={styles.emptyTitle}>No Classes Available</h3>
-            <p className={styles.emptyMessage}>
-              There are no classes scheduled.
-            </p>
+            )}
           </div>
-        )}
-      </div>
+        </>
+      ) : (
+        <div className={styles.calendarView}>
+          <div className={styles.calendarNav}>
+            <button onClick={() => navigateMonth(-1)} className={styles.navButton}>
+              ←
+            </button>
+            <span className={styles.monthLabel}>
+              {calendarMonth.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+            </span>
+            <button onClick={() => navigateMonth(1)} className={styles.navButton}>
+              →
+            </button>
+          </div>
+          <div className={styles.calendarGrid}>
+            <div className={styles.weekdayHeader}>Sun</div>
+            <div className={styles.weekdayHeader}>Mon</div>
+            <div className={styles.weekdayHeader}>Tue</div>
+            <div className={styles.weekdayHeader}>Wed</div>
+            <div className={styles.weekdayHeader}>Thu</div>
+            <div className={styles.weekdayHeader}>Fri</div>
+            <div className={styles.weekdayHeader}>Sat</div>
+            {getCalendarDays().map((day, index) => {
+              const dayClasses = day ? getClassesForDate(day) : [];
+              const isToday = day && day.toDateString() === new Date().toDateString();
+              return (
+                <div
+                  key={index}
+                  className={`${styles.calendarDay} ${!day ? styles.emptyDay : ''} ${isToday ? styles.today : ''} ${dayClasses.length > 0 ? styles.hasClasses : ''}`}
+                  onClick={() => day && dayClasses.length > 0 && handleDateSelect(day) && setViewMode('schedule')}
+                >
+                  {day && (
+                    <>
+                      <span className={styles.dayNumber}>{day.getDate()}</span>
+                      {dayClasses.length > 0 && (
+                        <span className={styles.classCount}>{dayClasses.length} class{dayClasses.length !== 1 ? 'es' : ''}</span>
+                      )}
+                    </>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

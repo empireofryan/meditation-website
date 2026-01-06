@@ -4,8 +4,19 @@ export interface Class {
   instructor: string;
   time: string;
   date: Date;
-  spotsAvailable: number;
-  totalSpots: number;
+  endTime?: string;
+  duration?: number;
+  cost?: string;
+  description?: string;
+  registrationLink?: string;
+  format?: string;
+  featuredImage?: string;
+  teacherImage?: string;
+  isSpecialEvent?: boolean;
+  isCancelled?: boolean;
+  cancellationReason?: string;
+  spotsAvailable?: number;
+  totalSpots?: number;
 }
 
 export interface DateOption {

@@ -1,0 +1,782 @@
+/* Sunset Theme - Matching Meriden Squarespace Template */
+/* Original uses: meno-banner (heading), Oswald (body), #FA5537 (accent), #F7E8D8 (bg) */
+
+.sunset {
+  min-height: 100vh;
+  background: #F7E8D8;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  color: #1a1a1a;
+  --schedule-header-bg: #FA5537;
+  --schedule-header-text: #FFFFFF;
+}
+
+/* Header & Navigation */
+.sunset-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: #F7E8D8;
+  padding: 24px 20px;
+}
+
+.sunset-nav {
+  max-width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sunset-logo {
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: #FA5537;
+  font-family: 'Playfair Display', serif;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.sunset-nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.sunset-nav-link {
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  transition: opacity 0.3s;
+  font-family: 'Oswald', sans-serif;
+}
+
+.sunset-nav-link:hover {
+  opacity: 0.6;
+}
+
+.sunset-cta-btn {
+  background: transparent;
+  color: #FA5537;
+  padding: 18px 30px;
+  border: 1px solid #FA5537;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 30px;
+  font-family: 'Oswald', sans-serif;
+}
+
+.sunset-cta-btn:hover {
+  background: #FA5537;
+  color: white;
+}
+
+/* Hero Section - Split Layout */
+.sunset-hero {
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  min-height: calc(100vh - 70px);
+}
+
+.sunset-hero-image-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.sunset-hero-image-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 80px;
+  background: linear-gradient(to right, transparent, rgba(247, 232, 216, 0.4));
+  pointer-events: none;
+}
+
+.sunset-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.sunset-hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 60px;
+}
+
+.sunset-hero-title {
+  font-size: 90px;
+  font-weight: 300;
+  line-height: 0.95em;
+  margin-bottom: 40px;
+  color: #FA5537;
+  letter-spacing: -0.02em;
+  font-family: 'Playfair Display', serif;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.sunset-hero-list {
+  list-style: none;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.sunset-hero-list li {
+  font-size: 18px;
+  letter-spacing: 0.15em;
+  color: #FA5537;
+  margin-bottom: 4px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 300;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.sunset-hero-btn {
+  background: transparent;
+  color: #FA5537;
+  padding: 22px 45px;
+  border: 1px solid #FA5537;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 50px;
+  font-family: 'Oswald', sans-serif;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.sunset-hero-btn:hover {
+  background: #FA5537;
+  color: white;
+}
+
+/* Quote Section */
+.sunset-quote {
+  padding: 100px 40px;
+  text-align: center;
+  background: #FFFFFF;
+}
+
+.sunset-quote-icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 40px;
+}
+
+.sunset-quote-text {
+  font-size: 32px;
+  line-height: 1.5;
+  color: #FA5537;
+  max-width: 900px;
+  margin: 0 auto;
+  font-style: normal;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+}
+
+/* Schedule Section */
+.sunset-schedule {
+  background: #F7E8D8;
+  padding: 100px 40px;
+}
+
+.sunset-schedule-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sunset-schedule-title {
+  font-size: 48px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 60px;
+  color: #1a1a1a;
+}
+
+.sunset-schedule-calendar {
+  background: white;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+/* Calendar Component Overrides for Sunset Theme */
+.sunset-schedule-calendar [class*="dateItem"][class*="selected"] {
+  background-color: #FA5537 !important;
+  border-color: #FA5537 !important;
+  box-shadow: 0 2px 8px rgba(250, 85, 55, 0.3) !important;
+}
+
+.sunset-schedule-calendar [class*="dateItem"][class*="selected"]:hover {
+  background-color: #e84d31 !important;
+  border-color: #e84d31 !important;
+}
+
+.sunset-schedule-calendar [class*="dateItem"][class*="selected"] [class*="dayName"],
+.sunset-schedule-calendar [class*="dateItem"][class*="selected"] [class*="dayNumber"],
+.sunset-schedule-calendar [class*="dateItem"][class*="selected"] [class*="monthIndicator"] {
+  color: #FFFFFF !important;
+}
+
+.sunset-schedule-calendar [class*="dateItem"]:hover {
+  border-color: #FA5537 !important;
+}
+
+.sunset-schedule-calendar [class*="navArrow"] {
+  background: #FA5537 !important;
+  border-color: #FA5537 !important;
+  color: #FFFFFF !important;
+}
+
+.sunset-schedule-calendar [class*="navArrow"]:hover:not(:disabled) {
+  background: #e84d31 !important;
+  border-color: #e84d31 !important;
+  color: #FFFFFF !important;
+}
+
+.sunset-schedule-calendar [class*="bookButton"] {
+  background-color: #FA5537 !important;
+  color: #FFFFFF !important;
+}
+
+.sunset-schedule-calendar [class*="bookButton"]:hover {
+  background-color: #e84d31 !important;
+  box-shadow: 0 2px 8px rgba(250, 85, 55, 0.3) !important;
+}
+
+.sunset-schedule-calendar [class*="secondaryButton"]:hover {
+  background-color: #1a1a1a !important;
+  color: #FA5537 !important;
+}
+
+/* Method Section */
+.sunset-method {
+  padding: 120px 40px 140px;
+  background: #F7E8D8;
+}
+
+.sunset-method-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sunset-method-title {
+  font-size: 48px;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 100px;
+  color: #FA5537;
+  letter-spacing: 2px;
+  font-family: 'Playfair Display', serif;
+}
+
+.sunset-method-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+}
+
+.sunset-method-item {
+  text-align: center;
+}
+
+.sunset-method-icon {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sunset-method-item-title {
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  color: #FA5537;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-family: 'Playfair Display', serif;
+}
+
+.sunset-method-item-text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #C9A090;
+  font-family: 'Playfair Display', serif;
+  font-weight: 300;
+}
+
+/* Upcoming Course Section */
+.sunset-course {
+  background: #F7E8D8;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 45% 55%;
+  align-items: stretch;
+  max-height: 800px;
+  overflow: hidden;
+}
+
+.sunset-course-content {
+  padding: 80px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.sunset-course-title {
+  font-size: 100px;
+  font-weight: 300;
+  color: #FA5537;
+  margin-bottom: 50px;
+  line-height: 0.95;
+  letter-spacing: 2px;
+  font-family: 'Playfair Display', serif;
+}
+
+.sunset-course-info {
+  margin-bottom: 80px;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+}
+
+.sunset-course-name {
+  font-size: 24px;
+  font-weight: 300;
+  color: #FA5537;
+  margin-bottom: 8px;
+  letter-spacing: 0.15em;
+  font-family: 'Playfair Display', serif;
+}
+
+.sunset-course-date {
+  font-size: 24px;
+  font-weight: 300;
+  color: #FA5537;
+  margin-bottom: 8px;
+  letter-spacing: 0.15em;
+  font-family: 'Playfair Display', serif;
+}
+
+.sunset-course-format {
+  font-size: 24px;
+  font-weight: 300;
+  color: #FA5537;
+  letter-spacing: 0.15em;
+  font-family: 'Playfair Display', serif;
+}
+
+.sunset-course-btn {
+  background: transparent;
+  color: #FA5537;
+  padding: 18px 60px;
+  border: 1.5px solid #FA5537;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 30px;
+  font-family: 'Playfair Display', serif;
+}
+
+.sunset-course-btn:hover {
+  background: #FA5537;
+  color: white;
+}
+
+.sunset-course-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.sunset-course-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.sunset-course-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  color: white;
+  text-align: right;
+  padding: 40px 60px;
+}
+
+.sunset-course-overlay-title {
+  font-size: 90px;
+  font-weight: 300;
+  margin-bottom: 40px;
+  line-height: 0.95;
+  font-family: 'Playfair Display', serif;
+}
+
+.sunset-course-overlay-subtitle {
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 1.8;
+}
+
+/* Gallery Section */
+.sunset-gallery {
+  background: #F7E8D8;
+  padding: 0;
+}
+
+.sunset-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  height: 300px;
+}
+
+.sunset-gallery-item {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sunset-gallery-icon {
+  background: #E8B563;
+}
+
+.sunset-gallery-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Newsletter Section */
+.sunset-newsletter {
+  background: #F7E8D8;
+  padding: 80px 40px 60px;
+}
+
+.sunset-newsletter-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.sunset-newsletter-header {
+  flex-shrink: 0;
+}
+
+.sunset-newsletter-title {
+  font-size: 36px;
+  font-weight: 400;
+  color: #FA5537;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: normal;
+}
+
+.sunset-newsletter-subtitle {
+  font-size: 16px;
+  color: #FA5537;
+  font-weight: 400;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.sunset-newsletter-form {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.sunset-newsletter-input {
+  padding: 16px 20px;
+  border: none;
+  background: white;
+  font-size: 14px;
+  color: #666;
+  font-family: 'Oswald', sans-serif;
+  width: 180px;
+}
+
+.sunset-newsletter-input::placeholder {
+  color: #AAA;
+}
+
+.sunset-newsletter-button {
+  background: transparent;
+  color: #FA5537;
+  padding: 16px 35px;
+  border: 1.5px solid #FA5537;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 25px;
+  font-family: 'Bodoni Moda', serif;
+  white-space: nowrap;
+}
+
+.sunset-newsletter-button:hover {
+  background: #FA5537;
+  color: white;
+}
+
+.sunset-divider {
+  max-width: 1400px;
+  margin: 60px auto 0;
+  height: 1px;
+  background: #FA5537;
+}
+
+/* Footer */
+.sunset-footer {
+  background: #F7E8D8;
+  padding: 80px 40px 100px;
+}
+
+.sunset-footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  flex-wrap: wrap;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.sunset-footer-link {
+  color: #FA5537;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: opacity 0.3s;
+  font-family: 'Playfair Display', serif;
+}
+
+.sunset-footer-link:hover {
+  opacity: 0.6;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .sunset-hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .sunset-hero-content {
+    padding: 40px 20px;
+  }
+
+  .sunset-method-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sunset-header {
+    padding: 15px 20px;
+  }
+
+  .sunset-nav-links {
+    gap: 20px;
+  }
+
+  .sunset-nav-link {
+    font-size: 9px;
+  }
+
+  .sunset-cta-btn {
+    padding: 8px 18px;
+    font-size: 9px;
+  }
+
+  .sunset-hero {
+    margin-top: 60px;
+    gap: 20px;
+  }
+
+  .sunset-hero-content {
+    padding: 30px 20px;
+  }
+
+  .sunset-hero-title {
+    font-size: 40px;
+  }
+
+  .sunset-hero-list li {
+    font-size: 14px;
+  }
+
+  .sunset-quote {
+    padding: 60px 20px;
+  }
+
+  .sunset-quote-text {
+    font-size: 16px;
+  }
+
+  .sunset-schedule,
+  .sunset-method {
+    padding: 60px 20px;
+  }
+
+  .sunset-schedule-title,
+  .sunset-method-title {
+    font-size: 32px;
+  }
+
+  /* Course section mobile */
+  .sunset-course {
+    grid-template-columns: 1fr;
+    max-height: none;
+  }
+
+  .sunset-course-content {
+    padding: 40px 20px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .sunset-course-title {
+    font-size: 48px;
+  }
+
+  .sunset-course-info {
+    margin: 0 auto 40px;
+  }
+
+  .sunset-course-image {
+    min-height: 400px;
+  }
+
+  .sunset-course-overlay {
+    padding: 20px;
+  }
+
+  .sunset-course-overlay-title {
+    font-size: 48px;
+  }
+
+  /* Gallery mobile */
+  .sunset-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    height: auto;
+  }
+
+  .sunset-gallery-item {
+    min-height: 150px;
+  }
+
+  .sunset-gallery-item:nth-child(5) {
+    display: none;
+  }
+
+  /* Newsletter mobile */
+  .sunset-newsletter {
+    padding: 40px 20px;
+  }
+
+  .sunset-newsletter-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sunset-newsletter-form {
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .sunset-newsletter-input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .sunset-newsletter-button {
+    width: 100%;
+  }
+
+  .sunset-divider {
+    margin: 40px 20px 0;
+  }
+
+  /* Footer mobile */
+  .sunset-footer {
+    padding: 60px 20px 30px;
+  }
+
+  .sunset-footer-links {
+    gap: 30px;
+  }
+
+  .sunset-footer-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sunset-logo {
+    font-size: 9px;
+  }
+
+  .sunset-hero-title {
+    font-size: 32px;
+  }
+
+  .sunset-hero-list li {
+    font-size: 12px;
+  }
+
+  .sunset-schedule-title,
+  .sunset-method-title {
+    font-size: 28px;
+  }
+}

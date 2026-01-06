@@ -8,6 +8,7 @@
   flex-shrink: 0;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   padding: 0 12px;
 }
@@ -80,6 +81,7 @@
 
 .dateList {
   display: flex;
+  justify-content: flex-start;
   gap: 12px;
   padding: 4px 20px;
   min-width: min-content;
@@ -152,6 +154,34 @@
 
 .dateItem.selected .monthIndicator {
   color: rgba(26, 26, 26, 0.8);
+}
+
+.classCount {
+  display: block;
+  color: #666666;
+  font-size: 9px;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.dateItem.selected .classCount {
+  color: rgba(26, 26, 26, 0.8);
+}
+
+.dateItem.noClasses {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.dateItem.noClasses:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: #e0e0e0;
+  background-color: #f9f9f9;
+}
+
+.dateItem.noClasses .classCount {
+  color: #999999;
 }
 
 @media (max-width: 768px) {

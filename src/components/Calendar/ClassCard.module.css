@@ -1,143 +1,161 @@
 .classCard {
   background-color: #ffffff;
-  border-radius: 0;
-  padding: 20px 24px;
-  margin-bottom: 0;
+  padding: 16px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all 0.2s ease;
-  border: none;
-  border-left: 4px solid transparent;
   border-bottom: 1px solid #e0e0e0;
+  border-left: 4px solid transparent;
+  transition: all 0.2s ease;
 }
 
 .classCard:hover {
   background-color: #f9f9f9;
   border-left-color: #FFC845;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-.classInfo {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.timeRow {
-  display: flex;
-  align-items: center;
-  gap: 32px;
 }
 
 .timeColumn {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  min-width: 80px;
+  min-width: 160px;
+  margin-right: 24px;
 }
 
 .time {
-  color: #1a1a1a;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 700;
-  letter-spacing: -0.3px;
-  line-height: 1;
+  color: #1a1a1a;
+  white-space: nowrap;
 }
 
-.timePeriod {
-  color: #999999;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  margin-top: 2px;
+.classInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .className {
-  color: #1a1a1a;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
-  letter-spacing: 0.2px;
-  text-transform: none;
+  color: #1a1a1a;
+  width: 320px;
+  min-width: 320px;
+  max-width: 320px;
 }
 
-.detailsRow {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  color: #666666;
-  font-size: 13px;
+.instructorName {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  width: 120px;
+  min-width: 120px;
 }
 
-.instructor {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.instructorIcon {
-  width: 16px;
-  height: 16px;
-  color: #999999;
-}
-
-.spots {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.spotsIcon {
-  width: 16px;
-  height: 16px;
-  color: #999999;
-}
-
-.spotsText {
-  font-weight: 400;
-}
-
-.lowSpots {
-  color: #e32636;
-  font-weight: 600;
+.cost {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  width: 150px;
+  min-width: 150px;
 }
 
 .bookSection {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-left: 24px;
 }
 
+/* Cancelled state */
+.cancelled {
+  opacity: 0.6;
+  background-color: #f5f5f5;
+}
+
+.cancelled:hover {
+  background-color: #f0f0f0;
+  border-left-color: #999;
+}
+
+.cancelledBadge {
+  background-color: #dc2626;
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+/* Special event state */
+.specialEvent {
+  border-left-color: #8b5cf6;
+}
+
+.specialEvent:hover {
+  border-left-color: #7c3aed;
+}
+
+.eventBadge {
+  background-color: #8b5cf6;
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 3px;
+  margin-right: 8px;
+  text-transform: uppercase;
+}
+
+/* Mobile styles */
 @media (max-width: 768px) {
   .classCard {
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
-    padding: 24px 16px;
+    gap: 12px;
+    padding: 16px;
   }
 
-  .bookSection {
-    width: 100%;
-    margin-left: 0;
+  .timeColumn {
+    margin-right: 0;
+    margin-bottom: 4px;
+    min-width: auto;
+  }
+
+  .headerRow {
     flex-direction: column;
-    gap: 8px;
-  }
-
-  .bookSection button {
-    width: 100%;
+    align-items: flex-start;
+    gap: 4px;
   }
 
   .time {
-    font-size: 18px;
+    font-size: 14px;
   }
 
   .className {
     font-size: 14px;
   }
 
-  .timeRow {
-    gap: 20px;
+  .cost {
+    margin-left: 0;
+    margin-top: 4px;
+  }
+
+  .bookSection {
+    width: 100%;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .bookSection button,
+  .bookSection a {
+    width: 100%;
   }
 }

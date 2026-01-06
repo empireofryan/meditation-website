@@ -1,0 +1,191 @@
+import { useEffect } from 'react'
+import '../App.css'
+import ClassSchedule from '../components/Calendar/ClassSchedule'
+
+function HomePage() {
+  useEffect(() => {
+    const shouldRestore = sessionStorage.getItem('restoreScroll');
+    const savedPosition = sessionStorage.getItem('scheduleScrollPosition');
+
+    if (shouldRestore && savedPosition) {
+      // Restore scroll position instantly
+      window.scrollTo(0, parseInt(savedPosition, 10));
+      sessionStorage.removeItem('restoreScroll');
+      sessionStorage.removeItem('scheduleScrollPosition');
+    }
+  }, []);
+
+  return (
+    <div className="app">
+      {/* Hero Section */}
+      <section className="hero">
+        <nav className="nav">
+          <div className="logo">KMC Williamsburg</div>
+          <div className="nav-links">
+            <a href="#about" className="nav-link">About</a>
+            <a href="#contact" className="nav-link">Contact</a>
+            <a href="#classes" className="cta-button">Class Schedule</a>
+          </div>
+        </nav>
+        <div className="hero-content">
+          <h1 className="hero-title">
+            Change your mind, change your world.
+          </h1>
+          <a href="#about" className="hero-cta">Learn more about us</a>
+        </div>
+      </section>
+
+      {/* Class Schedule Section */}
+      <section id="classes" className="schedule-section">
+        <div className="schedule-header">
+          <h2>
+            Upcoming <span className="underline">Classes</span>
+          </h2>
+          <p>Join us for meditation sessions throughout the week</p>
+        </div>
+        <div className="schedule-calendar-container">
+          <ClassSchedule />
+        </div>
+      </section>
+
+      {/* Dark Section - About Modern Buddhism */}
+      <section id="about" className="dark-section">
+        <div className="dark-section-content">
+          <div className="dark-section-text-container">
+            <h2 className="dark-section-title">
+              Discover <span className="underline-light">inner peace</span> through meditation
+            </h2>
+            <p className="dark-section-text">
+              At KMC Williamsburg, we practice Modern Buddhism - a modern presentation of Buddha's ancient teachings that emphasizes integrating meditation learning with daily life, making every moment of our lives meaningful and fulfilling.
+            </p>
+            <a href="#classes" className="cta-button">View Class Schedule</a>
+          </div>
+          <img
+            src="https://images.unsplash.com/photo-1545389336-cf090694435e?w=800"
+            alt="Meditation practice"
+            className="dark-section-image"
+          />
+        </div>
+      </section>
+
+      {/* Second Yellow Section - Classes */}
+      <section className="diagonal-section">
+        <div className="section-container reverse">
+          <div className="section-content">
+            <h2>
+              Weekly drop-in <span className="underline">meditation classes</span>
+            </h2>
+            <p>
+              We offer 10+ weekly meditation classes suitable for beginners to experienced meditators. Join our after-work sessions or General Program classes. Sunday's 11am class includes Coffee, Tea and Chat for social connection.
+            </p>
+            <button className="learn-more-button">View Schedule</button>
+          </div>
+          <img
+            src="https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=800"
+            alt="Group meditation"
+            className="section-image"
+          />
+        </div>
+      </section>
+
+      {/* Instagram Feed Section */}
+      <section className="instagram-section">
+        <h2 className="instagram-title">Follow Us on Instagram</h2>
+        <a href="https://instagram.com/kadampawilliamsburg" target="_blank" rel="noopener noreferrer" className="instagram-handle">@kadampawilliamsburg</a>
+        <div className="instagram-grid">
+          <a href="https://instagram.com/kadampawilliamsburg" target="_blank" rel="noopener noreferrer" className="instagram-item">
+            <img src="https://images.unsplash.com/photo-1545389336-cf090694435e?w=400&h=400&fit=crop" alt="Meditation" />
+          </a>
+          <a href="https://instagram.com/kadampawilliamsburg" target="_blank" rel="noopener noreferrer" className="instagram-item">
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&h=400&fit=crop" alt="Peaceful practice" />
+          </a>
+          <a href="https://instagram.com/kadampawilliamsburg" target="_blank" rel="noopener noreferrer" className="instagram-item">
+            <img src="https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=400&h=400&fit=crop" alt="Group meditation" />
+          </a>
+          <a href="https://instagram.com/kadampawilliamsburg" target="_blank" rel="noopener noreferrer" className="instagram-item">
+            <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=400&h=400&fit=crop" alt="Mindfulness" />
+          </a>
+        </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <section className="newsletter-section">
+        <div className="newsletter-content">
+          <h2>Newsletter Sign-up</h2>
+          <p>Sign up with your email address to receive news and updates.</p>
+          <form className="newsletter-form">
+            <input
+              type="text"
+              placeholder="First Name"
+              className="newsletter-input"
+            />
+            <input
+              type="text"
+              placeholder="Last Name"
+              className="newsletter-input"
+            />
+            <input
+              type="email"
+              placeholder="Email Address"
+              className="newsletter-input"
+            />
+            <button type="submit" className="sign-up-button">
+              Sign Up
+            </button>
+          </form>
+          <p className="privacy-text">We respect your privacy.</p>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer id="contact" className="footer">
+        <div className="footer-content">
+          <div className="footer-map-column">
+            <a href="https://maps.google.com/?q=Kadampa+Meditation+Center,+Williamsburg,+119+N+11th+St,+Brooklyn,+NY+11249" target="_blank" rel="noopener noreferrer" className="footer-map">
+              <iframe
+                src="https://maps.google.com/maps?q=119+N+11th+St,+Brooklyn,+NY+11249&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="220"
+                style={{ border: 0, pointerEvents: 'none' }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="KMC Williamsburg Location"
+              ></iframe>
+            </a>
+          </div>
+          <div className="footer-info-column">
+            <h4 className="footer-location-name">Kadampa Meditation Center, Williamsburg</h4>
+            <p className="footer-address">
+              119 North 11th Street<br />
+              Williamsburg, NY 11249<br />
+              info@meditationinwilliamsburg.org
+            </p>
+          </div>
+          <div className="footer-right">
+            <nav className="footer-nav">
+              <a href="#about" className="footer-link">About</a>
+              <a href="#classes" className="footer-link">Classes</a>
+              <a href="#events" className="footer-link">Events</a>
+              <a href="#contact" className="footer-link">Contact</a>
+            </nav>
+            <div className="social-links">
+              <a href="https://instagram.com/kadampawilliamsburg" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </a>
+              <a href="#" className="social-link" aria-label="Facebook">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  )
+}
+
+export default HomePage
