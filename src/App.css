@@ -945,3 +945,199 @@ body {
     max-width: 100%;
   }
 }
+
+/* ==================== About Page Styles ==================== */
+
+.about-nav {
+  background: #1a1a1a;
+  position: relative;
+}
+
+.about-nav .logo {
+  color: white;
+  text-decoration: none;
+}
+
+.about-hero {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  padding: 120px 60px 80px;
+  text-align: center;
+}
+
+.about-hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: white;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.about-tagline {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 300;
+}
+
+.about-section {
+  padding: 80px 60px;
+}
+
+.about-section-alt {
+  background: #f8f8f8;
+}
+
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-heading {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.about-quote {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #666;
+  border-left: 4px solid #f0c14b;
+  padding-left: 1.5rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  text-align: left;
+}
+
+.about-schedule {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.schedule-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.schedule-day {
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.schedule-time {
+  color: #666;
+}
+
+.about-cta {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 14px 32px;
+  background: #f0c14b;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.about-cta:hover {
+  background: #e0b13b;
+}
+
+.about-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.about-address {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #1a1a1a;
+}
+
+.about-contact-info a {
+  color: #444;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.about-contact-info a:hover {
+  color: #f0c14b;
+}
+
+.about-instagram {
+  display: inline-block;
+  padding: 10px 24px;
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: 500;
+  transition: transform 0.3s ease;
+}
+
+.about-instagram:hover {
+  transform: scale(1.05);
+}
+
+.about-footer {
+  background: #1a1a1a;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 30px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* About Page Mobile Responsive */
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 100px 30px 60px;
+  }
+
+  .about-hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-tagline {
+    font-size: 1rem;
+  }
+
+  .about-section {
+    padding: 60px 30px;
+  }
+
+  .about-heading {
+    font-size: 1.75rem;
+  }
+
+  .about-text {
+    font-size: 1rem;
+  }
+
+  .about-quote {
+    font-size: 1.1rem;
+  }
+
+  .schedule-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+}
