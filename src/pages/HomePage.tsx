@@ -22,7 +22,7 @@ function HomePage() {
         <nav className="nav">
           <div className="logo">KMC Williamsburg</div>
           <div className="nav-links">
-            <a href="#about" className="nav-link">About</a>
+            <a href="/about" className="nav-link">About</a>
             <a href="#contact" className="nav-link">Contact</a>
             <a href="#classes" className="cta-button">Class Schedule</a>
           </div>
