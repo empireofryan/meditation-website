@@ -40,4 +40,28 @@ Do NOT wait for user to ask - deploy immediately after changes are made.
 ## Routes
 
 - `/` - HomePage
+- `/about` - AboutPage
 - `/sunset` - SunsetPage (Meridian-style theme)
+
+## Google Sheets Updates (CRITICAL)
+
+**NEVER replace or clear entire sheets.** The spreadsheet has carefully designed formatting.
+
+When updating the KMC Schedule spreadsheet (`1LJj6skGlhjfrQpUh3OZeIi-nBTGBbAhzsNniuF9gsDs`):
+
+1. **ONLY update individual cells** using `values().update()` method
+2. **NEVER use** `values().clear()` or batch operations that replace ranges
+3. **NEVER run** `format_sheet.py` - it overwrites formatting
+4. **USE** `update_cells.py` pattern - updates values only, preserves formatting
+
+Example of correct approach:
+```python
+service.spreadsheets().values().update(
+    spreadsheetId=SPREADSHEET_ID,
+    range="'Weekly Classes'!G11",  # Single cell
+    valueInputOption='RAW',
+    body={'values': [["New description text"]]}
+).execute()
+```
+
+**Before any sheet update:** Confirm with user that only cell values will change, not formatting.
