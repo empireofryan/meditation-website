@@ -219,6 +219,7 @@ export async function fetchSchedule(): Promise<{
     const row = specialRows[i];
     if (!row[0] || row[0].toLowerCase().startsWith('example')) continue;
 
+    const eventTeacher = row[5] || '';
     specialEvents.push({
       id: `event-${i}`,
       title: row[0] || '',
@@ -226,13 +227,13 @@ export async function fetchSchedule(): Promise<{
       startTime: row[2] || '',
       endTime: row[3] || '',
       break: row[4] || '',
-      teacher: row[5] || '',
+      teacher: eventTeacher,
       cost: row[6] || '',
       description: row[7] || '',
       registrationLink: row[8] || '',
       format: row[9] || 'In-Person',
       featuredImage: row[10] || '',
-      teacherImage: row[11] || ''
+      teacherImage: getTeacherImageUrl(eventTeacher)
     });
   }
 
