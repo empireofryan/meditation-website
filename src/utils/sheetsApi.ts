@@ -65,6 +65,23 @@ function createSlug(title: string): string {
     .replace(/^-+|-+$/g, '');
 }
 
+// Generate teacher image URL from teacher name (first name only)
+function getTeacherImageUrl(teacherName: string): string {
+  if (!teacherName) return '';
+
+  // Extract first name (before space or comma)
+  const firstName = teacherName.split(/[\s,]/)[0].toLowerCase();
+
+  // Known teachers with photos
+  const knownTeachers = ['ben', 'cristina', 'deanna', 'debbie', 'joseph', 'teri', 'tom'];
+
+  if (knownTeachers.includes(firstName)) {
+    return `/photos/teachers/${firstName}.jpg`;
+  }
+
+  return '';
+}
+
 function parseCSV(csv: string): string[][] {
   const rows: string[][] = [];
   let currentRow: string[] = [];
