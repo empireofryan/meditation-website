@@ -196,19 +196,20 @@ export async function fetchSchedule(): Promise<{
     const row = weeklyRows[i];
     if (!row[0] || row[0].toLowerCase().startsWith('example')) continue;
 
+    const teacher = row[4] || '';
     weeklyClasses.push({
       id: `weekly-${i}`,
       title: row[0] || '',
       day: row[1] || '',
       time: row[2] || '',
       duration: parseInt(row[3]) || 60,
-      teacher: row[4] || '',
+      teacher,
       cost: row[5] || '',
       description: row[6] || '',
       registrationLink: row[7] || '',
       format: row[8] || 'In-Person',
       featuredImage: row[9] || '',
-      teacherImage: row[10] || ''
+      teacherImage: getTeacherImageUrl(teacher)
     });
   }
 
