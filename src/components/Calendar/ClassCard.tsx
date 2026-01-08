@@ -91,12 +91,18 @@ const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
             {name}
           </span>
           <span className={styles.instructorName}>
-            {teacherPhoto && (
-              <img
-                src={teacherPhoto}
-                alt={displayInstructor}
-                className={styles.teacherPhoto}
-              />
+            {teacherPhotos.length > 0 && (
+              <span className={styles.photoStack}>
+                {teacherPhotos.map((photo, index) => (
+                  <img
+                    key={index}
+                    src={photo}
+                    alt=""
+                    className={styles.teacherPhoto}
+                    style={{ zIndex: teacherPhotos.length - index }}
+                  />
+                ))}
+              </span>
             )}
             {displayInstructor}
           </span>
