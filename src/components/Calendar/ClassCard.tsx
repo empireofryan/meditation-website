@@ -84,7 +84,16 @@ const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
             {isSpecialEvent && <span className={styles.eventBadge}>Event</span>}
             {name}
           </span>
-          <span className={styles.instructorName}>{displayInstructor}</span>
+          <span className={styles.instructorName}>
+            {teacherPhoto && (
+              <img
+                src={teacherPhoto}
+                alt={displayInstructor}
+                className={styles.teacherPhoto}
+              />
+            )}
+            {displayInstructor}
+          </span>
           {displayCost && <span className={styles.cost}>{displayCost}</span>}
         </div>
       </div>
