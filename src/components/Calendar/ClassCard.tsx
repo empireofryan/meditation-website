@@ -53,6 +53,9 @@ const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
     ? instructor.split(',').map(name => name.trim().split(' ')[0]).join(', ')
     : instructor;
 
+  // Get teacher photo
+  const teacherPhoto = getTeacherPhoto(instructor);
+
   if (isCancelled) {
     return (
       <div className={`${styles.classCard} ${styles.cancelled}`}>
