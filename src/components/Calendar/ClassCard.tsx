@@ -11,17 +11,23 @@ function createSlug(name: string): string {
     .replace(/^-+|-+$/g, '');
 }
 
-// Get teacher photo URL from first name
-function getTeacherPhoto(instructorName: string): string | null {
-  if (!instructorName) return null;
+// Get teacher photo URLs for all teachers (handles multiple comma-separated names)
+function getTeacherPhotos(instructorName: string): string[] {
+  if (!instructorName) return [];
 
-  const firstName = instructorName.split(/[\s,]/)[0].toLowerCase();
   const knownTeachers = ['ben', 'cristina', 'deanna', 'debbie', 'joseph', 'teri', 'tom'];
+  const photos: string[] = [];
 
-  if (knownTeachers.includes(firstName)) {
-    return `/photos/teachers/${firstName}.jpg`;
+  // Split by comma and get first name of each teacher
+  const teachers = instructorName.split(',').map(name => name.trim().split(' ')[0].toLowerCase());
+
+  for (const firstName of teachers) {
+    if (knownTeachers.includes(firstName)) {
+      photos.push(`/photos/teachers/${firstName}.jpg`);
+    }
   }
-  return null;
+
+  return photos;
 }
 
 function saveScrollPosition() {
