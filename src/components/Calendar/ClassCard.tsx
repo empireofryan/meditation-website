@@ -59,8 +59,8 @@ const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
     ? instructor.split(',').map(name => name.trim().split(' ')[0]).join(', ')
     : instructor;
 
-  // Get teacher photo
-  const teacherPhoto = getTeacherPhoto(instructor);
+  // Get teacher photos (supports multiple teachers)
+  const teacherPhotos = getTeacherPhotos(instructor);
 
   if (isCancelled) {
     return (
