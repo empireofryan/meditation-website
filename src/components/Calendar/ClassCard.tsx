@@ -11,6 +11,19 @@ function createSlug(name: string): string {
     .replace(/^-+|-+$/g, '');
 }
 
+// Get teacher photo URL from first name
+function getTeacherPhoto(instructorName: string): string | null {
+  if (!instructorName) return null;
+
+  const firstName = instructorName.split(/[\s,]/)[0].toLowerCase();
+  const knownTeachers = ['ben', 'cristina', 'deanna', 'debbie', 'joseph', 'teri', 'tom'];
+
+  if (knownTeachers.includes(firstName)) {
+    return `/photos/teachers/${firstName}.jpg`;
+  }
+  return null;
+}
+
 function saveScrollPosition() {
   sessionStorage.setItem('scheduleScrollPosition', window.scrollY.toString());
 }
