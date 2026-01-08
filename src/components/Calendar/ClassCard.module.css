@@ -55,8 +55,19 @@
   font-size: 16px;
   font-weight: 700;
   color: #1a1a1a;
-  width: 120px;
-  min-width: 120px;
+  width: 150px;
+  min-width: 150px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.teacherPhoto {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
 .cost {
