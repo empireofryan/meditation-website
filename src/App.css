@@ -1091,6 +1091,11 @@ body {
 
   .footer-map {
     height: 160px;
+    max-width: 300px;
+  }
+
+  .footer-right {
+    align-items: flex-end;
   }
 
   .newsletter-content h2 {
