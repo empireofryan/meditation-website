@@ -917,33 +917,44 @@ body {
   }
 
   .footer-map-column {
-    display: flex;
-    justify-content: center;
+    width: 100%;
   }
 
   .footer-map {
     height: 180px;
-    max-width: 350px;
+    width: 100%;
+    max-width: none;
   }
 
   .footer-nav {
-    align-items: flex-start;
-  }
-
-  .social-links {
-    justify-content: flex-end;
-    width: 100%;
-  }
-
-  .footer-nonprofit {
-    text-align: right;
-    width: 100%;
+    align-items: flex-end;
   }
 
   .footer-right {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .footer-right .footer-nav {
+    order: 1;
+  }
+
+  .footer-right .social-links {
+    order: 2;
+    justify-content: flex-start;
+    margin-top: 30px;
+    width: auto;
+  }
+
+  .footer-right .footer-nonprofit {
+    order: 3;
+    text-align: left;
+    width: 100%;
+    margin-top: 15px;
   }
 }
 
