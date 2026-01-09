@@ -4,8 +4,9 @@ import type { Class } from '../../types';
 import BookButton from './BookButton';
 import styles from './ClassCard.module.css';
 
-function createSlug(name: string): string {
-  return name
+function createSlug(name: string, date: Date): string {
+  const dayName = date.toLocaleDateString('en-US', { weekday: 'long' }).toLowerCase();
+  return `${name}-${dayName}`
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '');
