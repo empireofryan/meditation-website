@@ -36,6 +36,10 @@ function MembershipPage() {
               <span className="benefit-icon">✓</span>
               <span>Unlimited access to all classes, series, after-work meditations, retreats, and events at Kadampa Williamsburg</span>
             </li>
+            <li>
+              <span className="benefit-icon">✓</span>
+              <span>Unlimited access to all classes, series, after-work meditations, retreats, and events at Kadampa Chelsea</span>
+            </li>
           </ul>
           <a
             href="https://checkout.meditationinnewyork.org/1-x-kmc-nyc-membership/"
