@@ -153,6 +153,104 @@ function HomePage() {
         </div>
       </section>
 
+      {/* Map Options Preview - TEMPORARY */}
+      <section className="map-options-section">
+        <h2 style={{ textAlign: 'center', marginBottom: '40px', color: '#1a1a1a' }}>Map Style Options - Pick Your Favorite</h2>
+        <div className="map-options-grid">
+          <div className="map-option">
+            <p className="map-option-label">Option 1: Grayscale</p>
+            <div className="map-style-1">
+              <iframe
+                src="https://maps.google.com/maps?q=119+N+11th+St,+Brooklyn,+NY+11249&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="180"
+                style={{ border: 0 }}
+                loading="lazy"
+                title="Map Option 1"
+              ></iframe>
+            </div>
+          </div>
+          <div className="map-option">
+            <p className="map-option-label">Option 2: Dark/Inverted</p>
+            <div className="map-style-2">
+              <iframe
+                src="https://maps.google.com/maps?q=119+N+11th+St,+Brooklyn,+NY+11249&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="180"
+                style={{ border: 0 }}
+                loading="lazy"
+                title="Map Option 2"
+              ></iframe>
+            </div>
+          </div>
+          <div className="map-option">
+            <p className="map-option-label">Option 3: Grayscale + Opacity</p>
+            <div className="map-style-3">
+              <iframe
+                src="https://maps.google.com/maps?q=119+N+11th+St,+Brooklyn,+NY+11249&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="180"
+                style={{ border: 0 }}
+                loading="lazy"
+                title="Map Option 3"
+              ></iframe>
+            </div>
+          </div>
+          <div className="map-option">
+            <p className="map-option-label">Option 4: Rounded Corners</p>
+            <div className="map-style-4">
+              <iframe
+                src="https://maps.google.com/maps?q=119+N+11th+St,+Brooklyn,+NY+11249&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="180"
+                style={{ border: 0 }}
+                loading="lazy"
+                title="Map Option 4"
+              ></iframe>
+            </div>
+          </div>
+          <div className="map-option">
+            <p className="map-option-label">Option 5: Sepia/Warm</p>
+            <div className="map-style-5">
+              <iframe
+                src="https://maps.google.com/maps?q=119+N+11th+St,+Brooklyn,+NY+11249&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="180"
+                style={{ border: 0 }}
+                loading="lazy"
+                title="Map Option 5"
+              ></iframe>
+            </div>
+          </div>
+          <div className="map-option">
+            <p className="map-option-label">Option 6: No Info Popup</p>
+            <div className="map-style-6">
+              <iframe
+                src="https://maps.google.com/maps?q=119+N+11th+St,+Brooklyn,+NY+11249&t=&z=15&ie=UTF8&iwloc=B&output=embed"
+                width="100%"
+                height="180"
+                style={{ border: 0 }}
+                loading="lazy"
+                title="Map Option 6"
+              ></iframe>
+            </div>
+          </div>
+          <div className="map-option">
+            <p className="map-option-label">Option 7: Border + Shadow</p>
+            <div className="map-style-7">
+              <iframe
+                src="https://maps.google.com/maps?q=119+N+11th+St,+Brooklyn,+NY+11249&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="180"
+                style={{ border: 0 }}
+                loading="lazy"
+                title="Map Option 7"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer id="contact" className="footer">
         <div className="footer-content">
