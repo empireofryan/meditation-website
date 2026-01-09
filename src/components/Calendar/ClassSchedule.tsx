@@ -80,10 +80,6 @@ const ClassSchedule: React.FC = () => {
     return generateDateRange(startDate, dateCount);
   }, [startDate, dateCount]);
 
-  // Load more dates when user scrolls near the end
-  const loadMoreDates = useCallback(() => {
-    setDateCount(prev => prev + 14);
-  }, []);
 
   // Group classes by date
   const groupedClasses = useMemo(() => {
