@@ -1760,7 +1760,7 @@ body {
 /* Membership Page Mobile Responsive */
 @media (max-width: 768px) {
   .membership-hero {
-    padding: 120px 30px 60px;
+    padding: 120px 30px 100px;
   }
 
   .membership-hero-content h1 {
@@ -1776,7 +1776,15 @@ body {
   }
 
   .membership-section {
-    padding: 60px 30px;
+    padding: 80px 30px;
+    clip-path: polygon(0 50px, 100% 0, 100% 100%, 0 100%);
+    margin-top: -50px;
+  }
+
+  .membership-section-alt {
+    clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 100%);
+    margin-top: -50px;
+    padding: 80px 30px;
   }
 
   .membership-heading {
@@ -1785,6 +1793,24 @@ body {
 
   .benefits-list li {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .membership-hero {
+    padding: 100px 20px 80px;
+  }
+
+  .membership-section {
+    padding: 60px 20px;
+    clip-path: polygon(0 30px, 100% 0, 100% 100%, 0 100%);
+    margin-top: -30px;
+  }
+
+  .membership-section-alt {
+    clip-path: polygon(0 0, 100% 30px, 100% 100%, 0 100%);
+    margin-top: -30px;
+    padding: 60px 20px;
   }
 }
 
