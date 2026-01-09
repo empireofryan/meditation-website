@@ -70,7 +70,7 @@ function MembershipPage() {
             </li>
           </ul>
           <a
-            href="https://meditationinwilliamsburg.org/membership/"
+            href="https://checkout.meditationinnewyork.org/1-x-kmc-nyc-membership/"
             target="_blank"
             rel="noopener noreferrer"
             className="membership-cta"
