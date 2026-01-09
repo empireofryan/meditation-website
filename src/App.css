@@ -639,6 +639,13 @@ body {
   line-height: 2;
 }
 
+.footer-nonprofit {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 16px;
+  font-style: italic;
+}
+
 .footer-nav {
   display: flex;
   flex-direction: column;
