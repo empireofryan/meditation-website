@@ -79,7 +79,7 @@
 
 /* Calendar View */
 .calendarView {
-  background: white;
+  background: #f5f3f0;
   flex: 1;
   overflow-y: auto;
   padding: 20px;
