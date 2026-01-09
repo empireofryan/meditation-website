@@ -93,6 +93,79 @@ function AboutPage() {
         </div>
       </section>
 
+      {/* Donate Section */}
+      <section className="about-section donate-section">
+        <div className="donate-container">
+          <div className="donate-graphic">
+            <div className="donate-card">
+              <p className="donate-card-title">Support a Space for Inner Peace in Williamsburg</p>
+              <p className="donate-card-text">
+                Your generosity helps us offer meditation, spiritual teachings, and
+                community for all who seek refuge in the city.
+              </p>
+              <p className="donate-card-brand">KADAMPA MEDITATION CENTER<br /><span>Williamsburg</span></p>
+            </div>
+          </div>
+          <div className="donate-content">
+            <h2 className="donate-heading">KMC Williamsburg runs on love, wisdom, class fees, membership and donations.</h2>
+            <p className="donate-text">
+              Thanks to the generosity of our members, volunteers, and benefactors, KMC Williamsburg continues to
+              flourish after 20 years in existence. Today we serve many people every month who come through our doors
+              in search of real inner peace and happiness.
+            </p>
+            <p className="donate-text">
+              If you'd like to contribute to the continued flourishing of Kadam Dharma teachings, click the button
+              below to make a donation.
+            </p>
+            <p className="donate-text donate-thanks">
+              A donation of any amount is received with gratitude. Thank you.
+            </p>
+            <a
+              href="https://checkout.meditationinnewyork.org/make-a-donation-kmcw/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="donate-button"
+            >
+              Donate
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Volunteer Section */}
+      <section className="about-section about-section-alt volunteer-section">
+        <div className="about-container">
+          <h2 className="volunteer-heading">KMC NYC Williamsburg Runs on Volunteers...</h2>
+          <p className="volunteer-subheading">Join us!</p>
+          <img
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&h=500&fit=crop"
+            alt="KMC Williamsburg meditation space"
+            className="volunteer-image"
+          />
+          <div className="volunteer-content">
+            <p className="volunteer-text">
+              As a charity organization, we rely on the kindness and enthusiasm of current students to
+              help our Center flourish.
+            </p>
+            <p className="volunteer-text">
+              From assisting with the running of our classes to giving our beautiful meditation space a
+              dusting, KMC NYC Williamsburg offers volunteer opportunities to suit all types of people
+              and their varying schedules and interests.
+            </p>
+            <p className="volunteer-text">
+              Drop us a line and let us know a bit about you and how you would like to help out. If you're
+              not sure, that's fine too. We can always find something that needs doing!
+            </p>
+            <form className="volunteer-form">
+              <input type="text" placeholder="Your name" className="volunteer-input" />
+              <input type="email" placeholder="Your email" className="volunteer-input" />
+              <textarea placeholder="Your message" className="volunteer-textarea" rows={5}></textarea>
+              <button type="submit" className="volunteer-button">Send</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section className="about-section">
         <div className="about-container">
