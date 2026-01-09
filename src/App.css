@@ -896,11 +896,17 @@ body {
 
 @media (max-width: 480px) {
   .nav {
-    padding: 15px 20px;
+    padding: 12px 16px;
+    gap: 10px;
   }
 
-  .logo {
-    font-size: 16px;
+  .logo-main {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+  }
+
+  .logo-sub {
+    font-size: 11px;
   }
 
   .nav-links {
@@ -911,8 +917,9 @@ body {
     font-size: 11px;
   }
 
-  .cta-button {
-    padding: 10px 16px;
+  .cta-button,
+  .cta-button-white {
+    padding: 8px 16px;
     font-size: 11px;
     white-space: nowrap;
   }
@@ -922,7 +929,7 @@ body {
   }
 
   .hero-title {
-    font-size: 28px;
+    font-size: 26px;
   }
 
   .hero-cta {
