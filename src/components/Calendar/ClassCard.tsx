@@ -111,7 +111,7 @@ const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
         </div>
       </div>
       <div className={styles.bookSection}>
-        <Link to={`/classes/${createSlug(name)}`} style={{ textDecoration: 'none' }} onClick={saveScrollPosition}>
+        <Link to={`/classes/${createSlug(name, date)}`} style={{ textDecoration: 'none' }} onClick={saveScrollPosition}>
           <BookButton
             onClick={() => {}}
             variant="secondary"
