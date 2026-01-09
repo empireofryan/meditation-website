@@ -13,7 +13,8 @@ function AboutPage() {
         <div className="nav-links">
           <Link to="/" className="nav-link">Home</Link>
           <Link to="/membership" className="nav-link">Membership</Link>
-          <a href="/#classes" className="cta-button-white">Classes</a>
+          <a href="/#classes" className="nav-link">Classes</a>
+          <a href="/#classes" className="cta-button-white">Schedule</a>
         </div>
       </nav>
 
