@@ -42,7 +42,7 @@ function MembershipPage() {
             </li>
             <li>
               <span className="benefit-icon">✓</span>
-              <span>Exclusive access to Foundation Program</span>
+              <span>Exclusive access to Foundation Program, including past recordings.</span>
             </li>
             <li>
               <span className="benefit-icon">✓</span>
