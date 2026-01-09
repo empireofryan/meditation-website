@@ -128,7 +128,7 @@ function HomePage() {
       <section className="newsletter-section">
         <div className="newsletter-content">
           <h2>Newsletter Sign-up</h2>
-          <p>Sign up to receive news and updates.</p>
+          <p>Stay updated on upcoming classes and special events.</p>
           <form className="newsletter-form">
             <input
               type="text"
