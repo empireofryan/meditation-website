@@ -272,7 +272,6 @@ const ClassSchedule: React.FC = () => {
             dates={dates}
             selectedDate={selectedDate}
             onSelectDate={handleDateSelect}
-            onLoadMore={loadMoreDates}
             classCountByDate={classCountByDate}
           />
 
