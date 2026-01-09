@@ -171,7 +171,10 @@ function HomePage() {
             </a>
           </div>
           <div className="footer-info-column">
-            <h4 className="footer-location-name">Kadampa Meditation Center, Williamsburg</h4>
+            <h4 className="footer-location-name">
+              <span className="footer-logo-main">KADAMPA MEDITATION CENTER</span>
+              <span className="footer-logo-sub">Williamsburg</span>
+            </h4>
             <p className="footer-address">
               119 North 11th Street<br />
               Williamsburg, NY 11249<br />
