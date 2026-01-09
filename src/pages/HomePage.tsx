@@ -200,6 +200,7 @@ function HomePage() {
                 </svg>
               </a>
             </div>
+            <p className="footer-nonprofit">We are a 100% volunteer run, non-profit.</p>
           </div>
         </div>
       </footer>
