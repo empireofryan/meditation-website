@@ -88,7 +88,7 @@ const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
   }
 
   return (
-    <div className={`${styles.classCard} ${isSpecialEvent ? styles.specialEvent : ''}`}>
+    <div className={`${styles.classCard} ${isSpecialEvent ? styles.specialEvent : ''} ${isSeriesClass ? styles.seriesClass : ''}`}>
       <div className={styles.timeColumn}>
         <span className={styles.time}>{timeRange}</span>
       </div>
