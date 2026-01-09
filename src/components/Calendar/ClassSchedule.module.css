@@ -8,7 +8,7 @@
 }
 
 .header {
-  background-color: var(--schedule-header-bg, #FFC845);
+  background-color: var(--schedule-header-bg, #E8B339);
   padding: 20px 24px;
   margin-bottom: 0;
   flex-shrink: 0;
