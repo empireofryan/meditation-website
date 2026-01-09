@@ -1529,11 +1529,18 @@ body {
 }
 
 .membership-section {
-  padding: 80px 60px;
+  padding: 120px 60px;
+  position: relative;
+  clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 100%);
+  margin-top: -80px;
+  background: white;
 }
 
 .membership-section-alt {
   background: #f8f8f8;
+  clip-path: polygon(0 0, 100% 8%, 100% 100%, 0 100%);
+  margin-top: -80px;
+  padding: 120px 60px;
 }
 
 /* Supporting Member Card */
