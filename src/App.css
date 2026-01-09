@@ -1507,7 +1507,7 @@ body {
   }
 
   .about-hero {
-    padding: 100px 30px 60px;
+    padding: 100px 30px 80px;
   }
 
   .about-hero-content h1 {
@@ -1519,7 +1519,13 @@ body {
   }
 
   .about-section {
-    padding: 60px 30px;
+    padding: 70px 30px;
+    clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%);
+    margin-top: -40px;
+  }
+
+  .about-section-alt {
+    clip-path: polygon(0 0, 100% 40px, 100% 100%, 0 100%);
   }
 
   .about-heading {
