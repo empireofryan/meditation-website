@@ -897,31 +897,32 @@ body {
 
 @media (max-width: 480px) {
   .nav {
-    padding: 16px 20px;
-    gap: 12px;
+    padding: 24px 20px 18px;
+    gap: 18px;
   }
 
   .logo-main {
-    font-size: 14px;
-    letter-spacing: 2px;
+    font-size: 15px;
+    letter-spacing: 2.5px;
   }
 
   .logo-sub {
-    font-size: 13px;
+    font-size: 14px;
+    margin-top: 2px;
   }
 
   .nav-links {
-    gap: 16px;
+    gap: 18px;
   }
 
   .nav-link {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .cta-button,
   .cta-button-white {
     padding: 10px 20px;
-    font-size: 13px;
+    font-size: 14px;
     white-space: nowrap;
   }
 
