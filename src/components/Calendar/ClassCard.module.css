@@ -1,16 +1,16 @@
 .classCard {
-  background-color: #f9f7f3;
+  background-color: #e8e8e8;
   padding: 16px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #e8e4dc;
+  border-bottom: 1px solid #d8d8d8;
   border-left: 4px solid transparent;
   transition: all 0.2s ease;
 }
 
 .classCard:hover {
-  background-color: #f5f2ec;
+  background-color: #dedede;
   border-left-color: #FFC845;
 }
 
