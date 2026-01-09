@@ -1536,6 +1536,128 @@ body {
   background: #f8f8f8;
 }
 
+/* Supporting Member Card */
+.supporting-member-section {
+  padding: 80px 40px;
+  background: linear-gradient(135deg, #e8e4dc 0%, #d4e4e8 50%, #e0dcd4 100%);
+}
+
+.supporting-member-card {
+  max-width: 600px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.2) 100%);
+  backdrop-filter: blur(10px);
+  border-radius: 0;
+  padding: 60px 50px;
+  position: relative;
+}
+
+.supporting-member-card::before {
+  content: '';
+  position: absolute;
+  left: 40px;
+  top: 30px;
+  bottom: 30px;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent 0%, #666 20%, #666 80%, transparent 100%);
+}
+
+.supporting-member-card::after {
+  content: '';
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  width: 22px;
+  height: 2px;
+  background: #666;
+}
+
+.supporting-member-content {
+  padding-left: 30px;
+}
+
+.supporting-member-brand {
+  font-family: 'Quattrocento', serif;
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+
+.supporting-member-title {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 2px;
+  line-height: 1.1;
+  margin-bottom: 30px;
+}
+
+.supporting-member-divider {
+  width: 200px;
+  height: 1px;
+  background: #999;
+  margin-bottom: 30px;
+}
+
+.supporting-member-description {
+  font-family: 'Quattrocento', serif;
+  font-size: 18px;
+  font-style: italic;
+  color: #333;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.supporting-member-price {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.supporting-member-access {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .supporting-member-section {
+    padding: 60px 20px;
+  }
+
+  .supporting-member-card {
+    padding: 40px 30px;
+  }
+
+  .supporting-member-card::before {
+    left: 20px;
+  }
+
+  .supporting-member-card::after {
+    left: 10px;
+  }
+
+  .supporting-member-content {
+    padding-left: 20px;
+  }
+
+  .supporting-member-title {
+    font-size: 32px;
+  }
+
+  .supporting-member-description {
+    font-size: 16px;
+  }
+}
+
 .membership-container {
   max-width: 800px;
   margin: 0 auto;
