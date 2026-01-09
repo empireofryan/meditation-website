@@ -1102,11 +1102,8 @@ body {
 
   .footer-map {
     height: 160px;
-    max-width: 300px;
-  }
-
-  .footer-right {
-    align-items: flex-end;
+    width: 100%;
+    max-width: none;
   }
 
   .newsletter-content h2 {
