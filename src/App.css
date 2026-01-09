@@ -927,13 +927,12 @@ body {
   }
 
   .footer-nav {
-    align-items: flex-end;
+    align-items: flex-start;
   }
 
   .footer-right {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
@@ -945,16 +944,22 @@ body {
 
   .footer-right .social-links {
     order: 2;
-    justify-content: flex-start;
-    margin-top: 30px;
+    justify-content: flex-end;
+    margin-top: 0;
     width: auto;
   }
 
   .footer-right .footer-nonprofit {
     order: 3;
-    text-align: left;
-    width: 100%;
+    text-align: right;
+    width: auto;
     margin-top: 15px;
+    position: absolute;
+    right: 20px;
+  }
+
+  .footer-right {
+    position: relative;
   }
 }
 
