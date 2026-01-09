@@ -193,7 +193,8 @@
   .headerRow {
     flex-direction: column;
     align-items: flex-start;
-    gap: 4px;
+    gap: 6px;
+    width: 100%;
   }
 
   .time {
@@ -201,22 +202,59 @@
   }
 
   .className {
-    font-size: 14px;
+    font-size: 15px;
+    width: 100%;
+    min-width: auto;
+    max-width: none;
+  }
+
+  .instructorName {
+    width: auto;
+    min-width: auto;
   }
 
   .cost {
     margin-left: 0;
     margin-top: 4px;
+    width: auto;
+    min-width: auto;
   }
 
   .bookSection {
     width: 100%;
-    flex-direction: column;
+    flex-direction: row;
     gap: 8px;
   }
 
   .bookSection button,
   .bookSection a {
-    width: 100%;
+    flex: 1;
+    min-height: 44px;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .classCard {
+    padding: 14px;
+    gap: 10px;
+  }
+
+  .className {
+    font-size: 14px;
+  }
+
+  .instructorName {
+    font-size: 14px;
+  }
+
+  .cost {
+    font-size: 14px;
+  }
+
+  .teacherPhoto,
+  .photoStack .teacherPhoto {
+    width: 36px;
+    height: 36px;
   }
 }
