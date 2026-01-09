@@ -343,7 +343,20 @@ export async function fetchClasses(): Promise<ScheduledClass[]> {
   return fetchAllClasses();
 }
 
+function createSlugWithDay(name: string, date: Date): string {
+  const dayName = date.toLocaleDateString('en-US', { weekday: 'long' }).toLowerCase();
+  return `${name}-${dayName}`
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
 export async function fetchClassBySlug(slug: string): Promise<ScheduledClass | null> {
   const classes = await fetchAllClasses();
+  // First try to match with day included in slug (new format)
+  const matchWithDay = classes.find(c => createSlugWithDay(c.name, c.date) === slug);
+  if (matchWithDay) return matchWithDay;
+
+  // Fall back to matching just by name (legacy format)
   return classes.find(c => createSlug(c.name) === slug) || null;
 }
