@@ -46,7 +46,7 @@ function MembershipPage() {
             </li>
             <li>
               <span className="benefit-icon">✓</span>
-              <span>Stream teachings included (when available)</span>
+              <span>Exclusive access to stream teachings (when available)</span>
             </li>
           </ul>
           <a
