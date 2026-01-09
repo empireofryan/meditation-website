@@ -96,6 +96,7 @@ const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
         <div className={styles.headerRow}>
           <span className={styles.className}>
             {isSpecialEvent && <span className={styles.eventBadge}>Event</span>}
+            {isSeriesClass && <span className={styles.seriesBadge}>Series</span>}
             {name}
           </span>
           <span className={styles.instructorName}>
