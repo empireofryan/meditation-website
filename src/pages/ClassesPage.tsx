@@ -11,9 +11,9 @@ function ClassesPage() {
           <span className="logo-sub">Williamsburg</span>
         </Link>
         <div className="nav-links">
-          <Link to="/about" className="nav-link">About</Link>
-          <Link to="/membership" className="nav-link">Membership</Link>
-          <Link to="/classes" className="nav-link">Classes</Link>
+          <a href="/about" className="nav-link">About</a>
+          <a href="/membership" className="nav-link">Membership</a>
+          <a href="/classes" className="nav-link">Classes</a>
           <a href="/#classes" className="cta-button-white">Schedule</a>
         </div>
       </nav>
