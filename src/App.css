@@ -1496,7 +1496,7 @@ body {
 
 .membership-hero {
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-  padding: 140px 60px 80px;
+  padding: 140px 60px 140px;
   text-align: center;
 }
 
