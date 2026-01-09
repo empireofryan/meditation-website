@@ -219,6 +219,20 @@ const ClassSchedule: React.FC = () => {
     setCalendarMonth(prev => {
       const newMonth = new Date(prev);
       newMonth.setMonth(prev.getMonth() + direction);
+
+      // Don't go before current month
+      const today = new Date();
+      const currentMonthStart = new Date(today.getFullYear(), today.getMonth(), 1);
+      if (newMonth < currentMonthStart) {
+        return prev;
+      }
+
+      // Don't go beyond 2 months from now
+      const maxMonthStart = new Date(today.getFullYear(), today.getMonth() + 2, 1);
+      if (newMonth >= maxMonthStart) {
+        return prev;
+      }
+
       return newMonth;
     });
   };
