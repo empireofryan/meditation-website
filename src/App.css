@@ -642,6 +642,8 @@ body {
 }
 
 .footer-nonprofit {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
   font-size: 14px;
   color: rgba(255, 255, 255, 0.5);
   margin-top: 16px;
