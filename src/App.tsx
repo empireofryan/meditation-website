@@ -3,6 +3,7 @@ import HomePage from './pages/HomePage'
 import SunsetPage from './pages/SunsetPage'
 import AboutPage from './pages/AboutPage'
 import MembershipPage from './pages/MembershipPage'
+import ClassesPage from './pages/ClassesPage'
 import ClassSchedule from './components/Calendar/ClassSchedule'
 import ClassDetail from './pages/ClassDetail'
 
