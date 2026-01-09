@@ -26,7 +26,7 @@ function HomePage() {
           </a>
           <div className="nav-links">
             <a href="/about" className="nav-link">About</a>
-            <a href="https://meditationinwilliamsburg.org/membership/" target="_blank" rel="noopener noreferrer" className="nav-link">Membership</a>
+            <a href="/membership" className="nav-link">Membership</a>
             <a href="#classes" className="cta-button-white">Classes</a>
           </div>
         </nav>
