@@ -83,8 +83,7 @@ function MembershipPage() {
         <div className="membership-container">
           <h2 className="membership-heading">Questions?</h2>
           <p className="membership-text">
-            Contact us at <a href="mailto:info@meditationinwilliamsburg.org">info@meditationinwilliamsburg.org</a> or
-            call <a href="tel:212-924-6706">212.924.6706</a> for more information about membership.
+            Contact us at <a href="mailto:info@meditationinwilliamsburg.org">info@meditationinwilliamsburg.org</a> for more information about membership.
           </p>
         </div>
       </section>
