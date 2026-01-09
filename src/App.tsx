@@ -14,6 +14,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/membership" element={<MembershipPage />} />
+        <Route path="/classes" element={<ClassesPage />} />
         <Route path="/sunset" element={<SunsetPage />} />
         <Route path="/kmc-schedule" element={<ClassSchedule />} />
         <Route path="/classes/:className" element={<ClassDetail />} />
