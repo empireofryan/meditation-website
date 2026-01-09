@@ -23,7 +23,7 @@ function MembershipPage() {
         <div className="membership-hero-content">
           <h1>All Access Membership</h1>
           <p className="membership-price">$85<span>/month</span></p>
-          <p className="membership-tagline">Unlimited classes. Unlimited growth.</p>
+          <p className="membership-tagline">Unlimited classes. Infinite growth.</p>
         </div>
       </section>
 
