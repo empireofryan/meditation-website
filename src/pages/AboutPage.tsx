@@ -133,7 +133,7 @@ function AboutPage() {
       </section>
 
       {/* Volunteer Section */}
-      <section className="about-section about-section-alt volunteer-section">
+      <section id="volunteer" className="about-section about-section-alt volunteer-section">
         <div className="about-container">
           <h2 className="volunteer-heading">KMC NYC Williamsburg Runs on Volunteers...</h2>
           <p className="volunteer-subheading">Join us!</p>
