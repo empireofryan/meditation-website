@@ -27,7 +27,8 @@ function HomePage() {
           <div className="nav-links">
             <a href="/about" className="nav-link">About</a>
             <a href="/membership" className="nav-link">Membership</a>
-            <a href="#classes" className="cta-button-white">Classes</a>
+            <a href="#classes" className="nav-link">Classes</a>
+            <a href="#classes" className="cta-button-white">Schedule</a>
           </div>
         </nav>
         <div className="hero-content">
