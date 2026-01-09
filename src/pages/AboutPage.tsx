@@ -138,7 +138,7 @@ function AboutPage() {
           <h2 className="volunteer-heading">KMC NYC Williamsburg Runs on Volunteers...</h2>
           <p className="volunteer-subheading">Join us!</p>
           <img
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&h=500&fit=crop"
+            src="/photos/volunteer-space.jpg"
             alt="KMC Williamsburg meditation space"
             className="volunteer-image"
           />
