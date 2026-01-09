@@ -896,31 +896,31 @@ body {
 
 @media (max-width: 480px) {
   .nav {
-    padding: 12px 16px;
-    gap: 10px;
-  }
-
-  .logo-main {
-    font-size: 12px;
-    letter-spacing: 1.5px;
-  }
-
-  .logo-sub {
-    font-size: 11px;
-  }
-
-  .nav-links {
+    padding: 16px 20px;
     gap: 12px;
   }
 
+  .logo-main {
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+
+  .logo-sub {
+    font-size: 13px;
+  }
+
+  .nav-links {
+    gap: 16px;
+  }
+
   .nav-link {
-    font-size: 11px;
+    font-size: 13px;
   }
 
   .cta-button,
   .cta-button-white {
-    padding: 8px 16px;
-    font-size: 11px;
+    padding: 10px 20px;
+    font-size: 13px;
     white-space: nowrap;
   }
 
@@ -929,7 +929,7 @@ body {
   }
 
   .hero-title {
-    font-size: 26px;
+    font-size: 32px;
   }
 
   .hero-cta {
