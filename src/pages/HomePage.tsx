@@ -177,6 +177,7 @@ function HomePage() {
               Williamsburg, NY 11249<br />
               info@meditationinwilliamsburg.org
             </p>
+            <p className="footer-nonprofit">We are a 100% volunteer run, non-profit.</p>
           </div>
           <div className="footer-right">
             <nav className="footer-nav">
