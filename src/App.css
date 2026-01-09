@@ -631,11 +631,12 @@ body {
 
 .footer-logo-main {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 400;
   color: white;
   letter-spacing: 3px;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .footer-logo-sub {
