@@ -52,7 +52,8 @@ const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
   const isSeriesClass =
     name.toLowerCase().includes('foundation program') ||
     (name.toLowerCase().includes('general program') && dayOfWeek === 'Monday') ||
-    (name.toLowerCase().includes('patient acceptance') && dayOfWeek === 'Thursday');
+    (name.toLowerCase().includes('patient acceptance') && dayOfWeek === 'Thursday') ||
+    dayOfWeek === 'Sunday';
 
   // Format time range (e.g., "6:00 PM - 6:30 PM")
   const timeRange = endTime ? `${time} - ${endTime}` : time;
