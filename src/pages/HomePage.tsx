@@ -180,10 +180,10 @@ function HomePage() {
           </div>
           <div className="footer-right">
             <nav className="footer-nav">
-              <a href="#about" className="footer-link">About</a>
+              <a href="/about" className="footer-link">About</a>
               <a href="#classes" className="footer-link">Classes</a>
-              <a href="#events" className="footer-link">Events</a>
-              <a href="#contact" className="footer-link">Contact</a>
+              <a href="https://checkout.meditationinnewyork.org/make-a-donation-kmcw/" target="_blank" rel="noopener noreferrer" className="footer-link">Donate</a>
+              <a href="/about#volunteer" className="footer-link">Volunteer</a>
             </nav>
             <div className="social-links">
               <a href="https://instagram.com/kadampawilliamsburg" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram">
