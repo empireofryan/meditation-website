@@ -2108,7 +2108,7 @@ body {
 /* Classes Page Mobile Responsive */
 @media (max-width: 768px) {
   .classes-hero {
-    padding: 120px 30px 60px;
+    padding: 120px 30px 80px;
   }
 
   .classes-hero-content h1 {
@@ -2116,7 +2116,13 @@ body {
   }
 
   .classes-section {
-    padding: 60px 30px;
+    padding: 70px 30px;
+    clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%);
+    margin-top: -40px;
+  }
+
+  .classes-section-alt {
+    clip-path: polygon(0 0, 100% 40px, 100% 100%, 0 100%);
   }
 
   .class-type-header {
@@ -2141,7 +2147,9 @@ body {
   }
 
   .classes-cta-section {
-    padding: 60px 30px;
+    padding: 70px 30px;
+    clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%);
+    margin-top: -40px;
   }
 
   .classes-cta-section h2 {
