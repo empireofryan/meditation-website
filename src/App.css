@@ -730,9 +730,9 @@ body {
 
 @media (max-width: 768px) {
   .nav {
-    padding: 15px 20px;
+    padding: 20px 24px;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
   }
 
   .logo {
@@ -740,28 +740,28 @@ body {
   }
 
   .logo-main {
-    font-size: 14px;
-    letter-spacing: 2px;
+    font-size: 16px;
+    letter-spacing: 2.5px;
   }
 
   .logo-sub {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .nav-links {
-    gap: 16px;
+    gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
   }
 
   .nav-link {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .cta-button,
   .cta-button-white {
-    padding: 10px 20px;
-    font-size: 12px;
+    padding: 12px 24px;
+    font-size: 14px;
   }
 
   .hero-content {
@@ -769,7 +769,7 @@ body {
   }
 
   .hero-title {
-    font-size: 32px;
+    font-size: 36px;
   }
 
   .schedule-section {
