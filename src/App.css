@@ -677,7 +677,7 @@ body {
 /* Responsive */
 @media (max-width: 1024px) {
   .hero-title {
-    font-size: 60px;
+    font-size: 48px;
   }
 
   .dark-section-content {
