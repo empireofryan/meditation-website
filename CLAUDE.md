@@ -41,6 +41,7 @@ Do NOT wait for user to ask - deploy immediately after changes are made.
 
 - `/` - HomePage
 - `/about` - AboutPage
+- `/membership` - MembershipPage
 - `/sunset` - SunsetPage (Meridian-style theme)
 
 ## Google Sheets Updates (CRITICAL)
