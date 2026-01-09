@@ -59,7 +59,7 @@ function HomePage() {
               Discover <span className="underline-light">inner peace</span> through meditation
             </h2>
             <p className="dark-section-text">
-              We practice Modern Buddhism - a contemporary presentation of Buddha's ancient teachings that emphasizes integrating meditation learning with daily life, making every moment of our lives meaningful and fulfilling.
+              We practice Modern Buddhism - a contemporary presentation of Buddha's ancient teachings that emphasizes integrating meditation learning with daily life, making every moment of our lives meaningful and joyous.
             </p>
             <a href="/about" className="cta-button">About Us</a>
           </div>
