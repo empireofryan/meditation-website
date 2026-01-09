@@ -6,11 +6,14 @@ function AboutPage() {
     <div className="app">
       {/* Navigation */}
       <nav className="nav about-nav">
-        <Link to="/" className="logo">KMC Williamsburg</Link>
+        <Link to="/" className="logo">
+          <span className="logo-main">KADAMPA MEDITATION CENTER</span>
+          <span className="logo-sub">Williamsburg</span>
+        </Link>
         <div className="nav-links">
           <Link to="/" className="nav-link">Home</Link>
-          <a href="/#contact" className="nav-link">Contact</a>
-          <a href="/#classes" className="cta-button">Class Schedule</a>
+          <a href="https://meditationinwilliamsburg.org/membership/" target="_blank" rel="noopener noreferrer" className="nav-link">Membership</a>
+          <a href="/#classes" className="cta-button-white">Classes</a>
         </div>
       </nav>
 
