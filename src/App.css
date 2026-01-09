@@ -730,9 +730,9 @@ body {
 
 @media (max-width: 768px) {
   .nav {
-    padding: 20px 24px;
+    padding: 28px 24px 20px;
     flex-direction: column;
-    gap: 14px;
+    gap: 20px;
   }
 
   .logo {
@@ -740,28 +740,29 @@ body {
   }
 
   .logo-main {
-    font-size: 16px;
-    letter-spacing: 2.5px;
+    font-size: 18px;
+    letter-spacing: 3px;
   }
 
   .logo-sub {
-    font-size: 14px;
+    font-size: 16px;
+    margin-top: 2px;
   }
 
   .nav-links {
-    gap: 20px;
+    gap: 24px;
     flex-wrap: wrap;
     justify-content: center;
   }
 
   .nav-link {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .cta-button,
   .cta-button-white {
     padding: 12px 24px;
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .hero-content {
