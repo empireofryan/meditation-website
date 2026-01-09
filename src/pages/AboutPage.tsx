@@ -11,8 +11,8 @@ function AboutPage() {
           <span className="logo-sub">Williamsburg</span>
         </Link>
         <div className="nav-links">
-          <Link to="/" className="nav-link">Home</Link>
-          <Link to="/membership" className="nav-link">Membership</Link>
+          <a href="/about" className="nav-link">About</a>
+          <a href="/membership" className="nav-link">Membership</a>
           <a href="/classes" className="nav-link">Classes</a>
           <a href="/#classes" className="cta-button-white">Schedule</a>
         </div>
