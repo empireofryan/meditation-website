@@ -19,9 +19,21 @@ const ClassSchedule: React.FC = () => {
   const [classes, setClasses] = useState<Class[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [dateCount, setDateCount] = useState(60);
   const [viewMode, setViewMode] = useState<ViewMode>('schedule');
   const [calendarMonth, setCalendarMonth] = useState<Date>(new Date());
+
+  // Calculate days for 2 months ahead
+  const dateCount = useMemo(() => {
+    const today = new Date();
+    const twoMonthsAhead = new Date(today.getFullYear(), today.getMonth() + 2, today.getDate());
+    return Math.ceil((twoMonthsAhead.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
+  }, []);
+
+  // Calculate the max date (2 months from today)
+  const maxDate = useMemo(() => {
+    const today = new Date();
+    return new Date(today.getFullYear(), today.getMonth() + 2, today.getDate());
+  }, []);
 
   // Fetch classes from Google Sheets
   useEffect(() => {
