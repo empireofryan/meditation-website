@@ -191,10 +191,10 @@
 .dateSectionHeader {
   background-color: var(--schedule-header-bg, #FFC845);
   color: var(--schedule-header-text, #1a1a1a);
-  font-size: 13px;
+  font-size: 18px;
   font-weight: 700;
-  letter-spacing: 0.8px;
-  padding: 12px 24px;
+  letter-spacing: 1px;
+  padding: 14px 24px;
   text-transform: uppercase;
 }
 
