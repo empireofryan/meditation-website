@@ -80,6 +80,25 @@ function MembershipPage() {
         </div>
       </section>
 
+      {/* Supporting Member Section */}
+      <section className="supporting-member-section">
+        <div className="supporting-member-card">
+          <div className="supporting-member-content">
+            <p className="supporting-member-brand">Kadampa Williamsburg</p>
+            <h2 className="supporting-member-title">SUPPORTING MEMBER</h2>
+            <div className="supporting-member-divider"></div>
+            <p className="supporting-member-description">
+              For those who are passionate about meditation and want to make it a
+              more prominent feature in their lives, membership is a wonderful option.
+            </p>
+            <p className="supporting-member-price">$85 / month</p>
+            <p className="supporting-member-access">
+              Access to all courses and retreats at the Williamsburg and Chelsea locations
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Members Login Section */}
       <section className="membership-section membership-section-alt">
         <div className="membership-container">
