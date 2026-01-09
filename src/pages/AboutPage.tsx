@@ -12,7 +12,7 @@ function AboutPage() {
         </Link>
         <div className="nav-links">
           <Link to="/" className="nav-link">Home</Link>
-          <a href="https://meditationinwilliamsburg.org/membership/" target="_blank" rel="noopener noreferrer" className="nav-link">Membership</a>
+          <Link to="/membership" className="nav-link">Membership</Link>
           <a href="/#classes" className="cta-button-white">Classes</a>
         </div>
       </nav>
