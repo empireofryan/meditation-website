@@ -44,6 +44,10 @@ function MembershipPage() {
               <span className="benefit-icon">✓</span>
               <span>Exclusive access to Foundation Program</span>
             </li>
+            <li>
+              <span className="benefit-icon">✓</span>
+              <span>Stream teachings included (when available)</span>
+            </li>
           </ul>
           <a
             href="https://checkout.meditationinnewyork.org/1-x-kmc-nyc-membership/"
