@@ -1138,7 +1138,7 @@ body {
 
 .about-hero {
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-  padding: 120px 60px 80px;
+  padding: 120px 60px 120px;
   text-align: center;
 }
 
@@ -1157,11 +1157,21 @@ body {
 }
 
 .about-section {
-  padding: 80px 60px;
+  padding: 100px 60px;
+  position: relative;
+  clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 100%);
+  margin-top: -60px;
+  background: white;
 }
 
 .about-section-alt {
   background: #f8f8f8;
+  clip-path: polygon(0 0, 100% 6%, 100% 100%, 0 100%);
+}
+
+/* Reset clip-path for sections that follow alt sections */
+.about-section-alt + .about-section {
+  clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 100%);
 }
 
 .about-container {
