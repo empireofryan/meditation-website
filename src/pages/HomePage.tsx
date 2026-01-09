@@ -20,7 +20,10 @@ function HomePage() {
       {/* Hero Section */}
       <section className="hero">
         <nav className="nav">
-          <div className="logo">KMC Williamsburg</div>
+          <a href="/" className="logo">
+            <span className="logo-main">KADAMPA MEDITATION CENTER</span>
+            <span className="logo-sub">Williamsburg</span>
+          </a>
           <div className="nav-links">
             <a href="/about" className="nav-link">About</a>
             <a href="https://meditationinwilliamsburg.org/membership/" target="_blank" rel="noopener noreferrer" className="nav-link">Membership</a>
