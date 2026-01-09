@@ -34,39 +34,7 @@ function MembershipPage() {
           <ul className="benefits-list">
             <li>
               <span className="benefit-icon">✓</span>
-              <span>Free access to all General Program classes</span>
-            </li>
-            <li>
-              <span className="benefit-icon">✓</span>
-              <span>Free access to all 30-Minute Meditations</span>
-            </li>
-            <li>
-              <span className="benefit-icon">✓</span>
-              <span>Free access to Saturday courses/retreats</span>
-            </li>
-            <li>
-              <span className="benefit-icon">✓</span>
-              <span>Free access to all branch classes — Williamsburg, Queens, NoHo, UWS, Harlem, Riverdale and Jersey City</span>
-            </li>
-            <li>
-              <span className="benefit-icon">✓</span>
-              <span>50% discount on all classes and events at Vajradhara Meditation Center in Brooklyn</span>
-            </li>
-            <li>
-              <span className="benefit-icon">✓</span>
-              <span>Discounted class audio recordings</span>
-            </li>
-            <li>
-              <span className="benefit-icon">✓</span>
-              <span>Up to 50% discount on special events</span>
-            </li>
-            <li>
-              <span className="benefit-icon">✓</span>
-              <span>Ability to stream classes online</span>
-            </li>
-            <li>
-              <span className="benefit-icon">✓</span>
-              <span>Access to Foundation Program</span>
+              <span>Unlimited access to all classes, series, after-work meditations, retreats, and events at Kadampa Williamsburg</span>
             </li>
           </ul>
           <a
