@@ -8,6 +8,21 @@ import styles from './ClassSchedule.module.css';
 
 type ViewMode = 'schedule' | 'calendar';
 
+// Helper to get short class name
+const getShortClassName = (name: string): string => {
+  // Abbreviate common class names
+  if (name.toLowerCase().includes('30-minute')) return '30min Med';
+  if (name.toLowerCase().includes('introduction to buddhism')) return 'Intro Buddhism';
+  if (name.toLowerCase().includes('foundation program')) return 'Foundation';
+  if (name.toLowerCase().includes('general program')) return 'General Prog';
+  if (name.toLowerCase().includes('patient acceptance')) return 'Patience';
+  if (name.toLowerCase().includes('sunday morning')) return 'Sunday AM';
+  if (name.toLowerCase().includes('after-work')) return 'After-Work';
+  // Truncate long names
+  if (name.length > 15) return name.substring(0, 12) + '...';
+  return name;
+};
+
 const ClassSchedule: React.FC = () => {
   const startDate = useMemo(() => {
     const start = new Date();
