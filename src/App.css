@@ -2154,7 +2154,7 @@ body {
 
   .classes-cta-section {
     padding: 70px 30px;
-    clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 40px, 100% 100%, 0 100%);
     margin-top: -40px;
   }
 
