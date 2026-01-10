@@ -36,6 +36,8 @@ const ClassSchedule: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<ViewMode>('schedule');
   const [calendarMonth, setCalendarMonth] = useState<Date>(new Date());
+  const [selectedClass, setSelectedClass] = useState<Class | null>(null);
+  const [hoveredClass, setHoveredClass] = useState<string | null>(null);
 
   // Calculate days for 2 months ahead
   const dateCount = useMemo(() => {
