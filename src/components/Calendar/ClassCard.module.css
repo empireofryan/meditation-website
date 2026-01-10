@@ -83,13 +83,6 @@
   margin-left: 0;
 }
 
-.photoStack:hover .teacherPhoto {
-  margin-left: 4px;
-}
-
-.photoStack:hover .teacherPhoto:first-child {
-  margin-left: 0;
-}
 
 .teacherPhoto {
   width: 44px;
