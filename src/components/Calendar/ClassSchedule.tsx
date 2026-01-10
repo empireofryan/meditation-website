@@ -413,6 +413,36 @@ const ClassSchedule: React.FC = () => {
           </div>
         </div>
       )}
+
+      {/* Mobile Modal */}
+      {selectedClass && (
+        <div className={styles.modalOverlay} onClick={() => setSelectedClass(null)}>
+          <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+            <button className={styles.modalClose} onClick={() => setSelectedClass(null)}>×</button>
+            <div className={styles.modalContent}>
+              <h3 className={styles.modalTitle}>{selectedClass.name}</h3>
+              <div className={styles.modalDetails}>
+                <p><strong>Time:</strong> {selectedClass.time}</p>
+                <p><strong>Instructor:</strong> {selectedClass.instructor}</p>
+                <p><strong>Cost:</strong> {selectedClass.cost}</p>
+                {selectedClass.description && (
+                  <p className={styles.modalDescription}>{selectedClass.description}</p>
+                )}
+              </div>
+              {selectedClass.registrationLink && (
+                <a
+                  href={selectedClass.registrationLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.modalButton}
+                >
+                  Register
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
