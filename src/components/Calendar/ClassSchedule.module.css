@@ -402,6 +402,97 @@
   }
 }
 
+/* Mobile Modal */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal {
+  background: white;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.modalClose {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #666;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px 8px;
+}
+
+.modalClose:hover {
+  color: #1a1a1a;
+}
+
+.modalContent {
+  padding: 24px;
+}
+
+.modalTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 16px 0;
+  padding-right: 30px;
+}
+
+.modalDetails {
+  margin-bottom: 20px;
+}
+
+.modalDetails p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.modalDescription {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #e5e5e5;
+  color: #666;
+  line-height: 1.5;
+}
+
+.modalButton {
+  display: block;
+  width: 100%;
+  padding: 14px 24px;
+  background: #FFC845;
+  color: #1a1a1a;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.modalButton:hover {
+  background: #e5b23d;
+}
+
 @media (max-width: 768px) {
   .scheduleContainer {
     max-height: 600px;
@@ -413,5 +504,28 @@
 
   .subtitle {
     font-size: 14px;
+  }
+
+  /* Hide tooltip on mobile, show modal instead */
+  .tooltip {
+    display: none;
+  }
+
+  .calendarDay {
+    min-height: 70px;
+    padding: 4px;
+  }
+
+  .dayNumber {
+    font-size: 11px;
+  }
+
+  .classTitle {
+    font-size: 8px;
+    padding: 1px 3px;
+  }
+
+  .moreClasses {
+    font-size: 7px;
   }
 }
