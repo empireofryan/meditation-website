@@ -366,13 +366,44 @@ const ClassSchedule: React.FC = () => {
                 <div
                   key={index}
                   className={`${styles.calendarDay} ${!day ? styles.emptyDay : ''} ${isToday ? styles.today : ''} ${dayClasses.length > 0 ? styles.hasClasses : ''}`}
-                  onClick={() => day && dayClasses.length > 0 && handleDateSelect(day) && setViewMode('schedule')}
                 >
                   {day && (
                     <>
                       <span className={styles.dayNumber}>{day.getDate()}</span>
                       {dayClasses.length > 0 && (
-                        <span className={styles.classCount}>{dayClasses.length} class{dayClasses.length !== 1 ? 'es' : ''}</span>
+                        <div className={styles.classTitles}>
+                          {dayClasses.slice(0, 3).map((classItem) => (
+                            <div
+                              key={classItem.id}
+                              className={styles.classTitleWrapper}
+                              onMouseEnter={() => setHoveredClass(classItem.id)}
+                              onMouseLeave={() => setHoveredClass(null)}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                if (window.innerWidth <= 768) {
+                                  setSelectedClass(classItem);
+                                } else if (classItem.registrationLink) {
+                                  window.open(classItem.registrationLink, '_blank');
+                                }
+                              }}
+                            >
+                              <span className={styles.classTitle}>
+                                {getShortClassName(classItem.name)}
+                              </span>
+                              {hoveredClass === classItem.id && (
+                                <div className={styles.tooltip}>
+                                  <div className={styles.tooltipTime}>{classItem.time}</div>
+                                  <div className={styles.tooltipName}>{classItem.name}</div>
+                                  <div className={styles.tooltipTeacher}>{classItem.instructor}</div>
+                                  <div className={styles.tooltipCost}>{classItem.cost}</div>
+                                </div>
+                              )}
+                            </div>
+                          ))}
+                          {dayClasses.length > 3 && (
+                            <span className={styles.moreClasses}>+{dayClasses.length - 3} more</span>
+                          )}
+                        </div>
                       )}
                     </>
                   )}
