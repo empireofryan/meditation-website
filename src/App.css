@@ -1554,12 +1554,13 @@ body {
 .membership-hero {
   background:
     linear-gradient(to bottom, #0a0a0a 0%, transparent 15%, transparent 85%, #0a0a0a 100%),
+    linear-gradient(to right, #0a0a0a 0%, transparent 30%, transparent 100%),
     url('/DiamondRainbow2.png');
-  background-size: 100%, 100% auto;
-  background-position: center, calc(50% + 180px) 55%;
-  background-repeat: no-repeat, no-repeat;
+  background-size: 100%, 100%, 100% auto;
+  background-position: center, center, calc(50% + 180px) 55%;
+  background-repeat: no-repeat, no-repeat, no-repeat;
   background-color: #0a0a0a;
-  padding: 90px 60px 90px;
+  padding: 90px 60px 100px;
   text-align: center;
 }
 
