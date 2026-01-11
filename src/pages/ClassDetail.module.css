@@ -139,6 +139,13 @@
   color: #999999;
 }
 
+.teacherPhoto {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 /* Content Section */
 .content {
   padding: 40px;
