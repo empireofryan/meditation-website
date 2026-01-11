@@ -117,10 +117,18 @@ const ClassDetail = () => {
             <h1 className={styles.title}>{classData.name}</h1>
             <div className={styles.meta}>
               <div className={styles.metaItem}>
-                <svg className={styles.icon} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                </svg>
-                <span>{classData.instructor}</span>
+                {classData.teacherImage ? (
+                  <img
+                    src={classData.teacherImage}
+                    alt={classData.instructor}
+                    className={styles.teacherPhoto}
+                  />
+                ) : (
+                  <svg className={styles.icon} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                )}
+                <span>{classData.instructor.split(' ')[0]}</span>
               </div>
               <div className={styles.metaItem}>
                 <svg className={styles.icon} fill="none" viewBox="0 0 24 24" stroke="currentColor">
