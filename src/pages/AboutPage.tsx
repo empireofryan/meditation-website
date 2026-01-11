@@ -31,7 +31,7 @@ function AboutPage() {
         <div className="about-container">
           <h2 className="about-heading">Our Mission</h2>
           <p className="about-text">
-            KMC NYC Williamsburg exists to provide everyone in the surrounding areas with the opportunity
+            Kadampa Meditation Center Williamsburg exists to provide everyone in the surrounding areas with the opportunity
             to learn about and practice Buddha's teachings. We present these teachings in an accessible
             manner that can be easily integrated into busy modern life.
           </p>
