@@ -1137,7 +1137,9 @@ body {
 }
 
 .about-hero {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/kadampaaboutusheader.png');
+  background-size: cover;
+  background-position: center;
   padding: 120px 60px 120px;
   text-align: center;
 }
