@@ -44,7 +44,7 @@ function ClassesPage() {
             <div className="class-type-header">
               <span className="class-type-badge">Drop-in</span>
               <h2 className="class-type-title">30-Minute After-Work Meditation</h2>
-              <p className="class-type-meta">Thursday & Friday at 6:00 PM | $5</p>
+              <p className="class-type-meta">Monday-Friday at 6:00 PM | $5</p>
             </div>
             <div className="class-type-content">
               <p>
