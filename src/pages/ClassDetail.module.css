@@ -357,6 +357,11 @@
     gap: 12px;
   }
 
+  .teacherPhoto {
+    width: 48px;
+    height: 48px;
+  }
+
   .content {
     padding: 30px 24px;
   }
