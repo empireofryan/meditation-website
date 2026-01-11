@@ -1874,7 +1874,9 @@ body {
 /* ==================== Classes Page Styles ==================== */
 
 .classes-hero {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/BusyStreetTimelapse.png');
+  background-size: cover;
+  background-position: center;
   padding: 140px 60px 120px;
   text-align: center;
 }
