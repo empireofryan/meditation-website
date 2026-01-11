@@ -160,7 +160,7 @@ function ClassesPage() {
           <div className="expect-grid">
             <div className="expect-item">
               <h4>No Experience Needed</h4>
-              <p>All classes welcome complete beginners. We'll guide you through everything.</p>
+              <p>All classes welcome complete beginners, as well as seasoned meditators.</p>
             </div>
             <div className="expect-item">
               <h4>Comfortable Setting</h4>
