@@ -120,7 +120,7 @@ function ClassesPage() {
               </p>
               <p>
                 Foundation Program provides a structured path for spiritual development, with
-                opportunities for discussion and community practice. Requires KMC NYC membership.
+                opportunities for discussion and community practice. Requires Kadampa Meditation Center Williamsburg membership.
               </p>
               <Link to="/membership" className="class-type-cta">Learn About Membership</Link>
             </div>
