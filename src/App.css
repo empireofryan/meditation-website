@@ -1840,7 +1840,7 @@ body {
 
   .membership-section {
     padding: 80px 30px;
-    clip-path: polygon(0 50px, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 100%);
     margin-top: -50px;
   }
 
