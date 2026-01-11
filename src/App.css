@@ -1555,6 +1555,8 @@ body {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/DiamondRainbow2.png');
   background-size: 70%;
   background-position: center;
+  background-repeat: no-repeat;
+  background-color: #0a0a0a;
   padding: 140px 60px 140px;
   text-align: center;
 }
