@@ -81,7 +81,7 @@ function AboutPage() {
             </div>
           </div>
           <div className="donate-content">
-            <h2 className="donate-heading">KMC Williamsburg runs on love, wisdom, class fees, membership and donations.</h2>
+            <h2 className="donate-heading">KMC Williamsburg runs on love, memberships, and donations.</h2>
             <p className="donate-text">
               Thanks to the generosity of our members, volunteers, and benefactors, KMC Williamsburg continues to
               flourish after 20 years in existence. Today we serve many people every month who come through our doors
