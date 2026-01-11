@@ -376,8 +376,6 @@ const ClassSchedule: React.FC = () => {
                             <div
                               key={classItem.id}
                               className={styles.classTitleWrapper}
-                              onMouseEnter={() => setHoveredClass(classItem.id)}
-                              onMouseLeave={() => setHoveredClass(null)}
                               onClick={(e) => {
                                 e.stopPropagation();
                                 if (window.innerWidth <= 768) {
@@ -388,16 +386,14 @@ const ClassSchedule: React.FC = () => {
                               }}
                             >
                               <span className={styles.classTitle}>
-                                {getShortClassName(classItem.name)}
+                                {classItem.time} - {classItem.name}
                               </span>
-                              {hoveredClass === classItem.id && (
-                                <div className={styles.tooltip}>
-                                  <div className={styles.tooltipTime}>{classItem.time}</div>
-                                  <div className={styles.tooltipName}>{classItem.name}</div>
-                                  <div className={styles.tooltipTeacher}>{classItem.instructor}</div>
-                                  <div className={styles.tooltipCost}>{classItem.cost}</div>
-                                </div>
-                              )}
+                              <div className={styles.tooltip}>
+                                <div className={styles.tooltipTime}>{classItem.time}</div>
+                                <div className={styles.tooltipName}>{classItem.name}</div>
+                                <div className={styles.tooltipTeacher}>{classItem.instructor}</div>
+                                <div className={styles.tooltipCost}>{classItem.cost}</div>
+                              </div>
                             </div>
                           ))}
                           {dayClasses.length > 3 && (
