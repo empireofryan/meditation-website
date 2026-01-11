@@ -67,31 +67,6 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* Class Schedule */}
-      <section className="about-section about-section-alt">
-        <div className="about-container">
-          <h2 className="about-heading">Weekly Schedule</h2>
-          <div className="about-schedule">
-            <div className="schedule-item">
-              <span className="schedule-day">Sunday</span>
-              <span className="schedule-time">11:00 AM</span>
-            </div>
-            <div className="schedule-item">
-              <span className="schedule-day">Monday - Thursday</span>
-              <span className="schedule-time">7:00 PM (Wed 6:45 PM)</span>
-            </div>
-            <div className="schedule-item">
-              <span className="schedule-day">Saturday</span>
-              <span className="schedule-time">Courses, retreats & special events</span>
-            </div>
-          </div>
-          <p className="about-text" style={{ marginTop: '1.5rem' }}>
-            30-minute after-work meditations also available throughout the week.
-          </p>
-          <Link to="/#classes" className="about-cta">View Full Schedule</Link>
-        </div>
-      </section>
-
       {/* Donate Section */}
       <section className="about-section donate-section">
         <div className="donate-container">
