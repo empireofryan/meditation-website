@@ -251,8 +251,7 @@
   border-top-color: #1a1a1a;
 }
 
-.classTitle:hover + .tooltip,
-.tooltip:hover {
+.classTitleWrapper:hover .tooltip {
   opacity: 1;
   visibility: visible;
 }
