@@ -1552,7 +1552,9 @@ body {
 /* ==================== Membership Page Styles ==================== */
 
 .membership-hero {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/DiamondRainbow.png');
+  background-size: cover;
+  background-position: center;
   padding: 140px 60px 140px;
   text-align: center;
 }
