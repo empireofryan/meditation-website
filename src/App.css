@@ -1297,7 +1297,10 @@ body {
 
 /* Donate Section */
 .donate-section {
-  padding: 80px 60px;
+  padding: 120px 60px 80px;
+  clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 100%);
+  margin-top: -60px;
+  background: white;
 }
 
 .donate-container {
