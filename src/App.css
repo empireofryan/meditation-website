@@ -1487,7 +1487,9 @@ body {
 /* About Page Mobile Responsive */
 @media (max-width: 768px) {
   .donate-section {
-    padding: 60px 30px;
+    padding: 80px 30px 60px;
+    clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%);
+    margin-top: -40px;
   }
 
   .donate-container {
