@@ -56,7 +56,7 @@ function AboutPage() {
       </section>
 
       {/* Teaching Tradition */}
-      <section className="about-section">
+      <section className="about-section about-section-alt">
         <div className="about-container">
           <h2 className="about-heading">Our Teaching Tradition</h2>
           <p className="about-text">
