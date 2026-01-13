@@ -33,7 +33,24 @@ Do NOT forget to start this server. Run it in the background.
 npm run deploy
 ```
 
-This builds and publishes to https://empireofryan.github.io/meditation-website/
+### How Deployment Works
+
+- **Live site:** https://empireofryan.github.io/
+- **Source repo:** `empireofryan/meditation-website` (this repo)
+- **Deploy target:** `empireofryan/empireofryan.github.io` repo, `master` branch
+
+The deploy script:
+1. Builds the app with Vite (`vite build`)
+2. Uses `gh-pages` to push the `dist/` folder to the `master` branch of `empireofryan.github.io`
+3. GitHub Pages serves that repo at the root URL
+
+### Troubleshooting
+
+If deploys aren't showing up:
+1. Verify the deploy pushes to `master` branch (not `main`) - check package.json
+2. Wait 1-2 minutes for GitHub Pages CDN to update
+3. Hard refresh the browser (Cmd+Shift+R)
+4. Check https://github.com/empireofryan/empireofryan.github.io to verify the commit landed
 
 Do NOT wait for user to ask - deploy immediately after changes are made.
 
