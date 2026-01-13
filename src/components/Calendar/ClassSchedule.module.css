@@ -84,7 +84,7 @@
 .calendarView {
   background: #f5f3f0;
   flex: 1;
-  overflow-y: auto;
+  overflow: visible;
   padding: 15px;
 }
 
