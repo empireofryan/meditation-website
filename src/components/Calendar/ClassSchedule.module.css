@@ -234,16 +234,13 @@
   color: white;
   padding: 12px 16px;
   border-radius: 8px;
-  font-size: 12px;
+  font-size: 13px;
   white-space: nowrap;
   z-index: 9999;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
   pointer-events: none;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.2s, visibility 0.2s;
   transform: translateX(-50%) translateY(-100%);
-  margin-top: -10px;
+  margin-top: -12px;
 }
 
 .tooltip::after {
@@ -252,13 +249,8 @@
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  border: 6px solid transparent;
+  border: 8px solid transparent;
   border-top-color: #1a1a1a;
-}
-
-.classTitleWrapper:hover .tooltip {
-  opacity: 1;
-  visibility: visible;
 }
 
 .tooltipTime {
