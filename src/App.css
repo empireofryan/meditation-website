@@ -829,6 +829,19 @@ body {
     margin-bottom: 24px;
   }
 
+  /* Right-align the "Weekly drop-in" section on mobile */
+  .diagonal-section .section-content {
+    text-align: right;
+  }
+
+  .diagonal-section .section-content h2 {
+    text-align: right;
+  }
+
+  .diagonal-section .section-content .learn-more-button {
+    margin-left: auto;
+  }
+
   .section-image {
     height: 300px;
   }
