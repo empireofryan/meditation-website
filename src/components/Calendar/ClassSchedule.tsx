@@ -399,16 +399,12 @@ const ClassSchedule: React.FC = () => {
                                   window.open(classItem.registrationLink, '_blank');
                                 }
                               }}
+                              onMouseEnter={(e) => handleClassMouseEnter(classItem, e)}
+                              onMouseLeave={handleClassMouseLeave}
                             >
                               <span className={styles.classTitle}>
                                 {classItem.time} - {classItem.name}
                               </span>
-                              <div className={styles.tooltip}>
-                                <div className={styles.tooltipTime}>{classItem.time}</div>
-                                <div className={styles.tooltipName}>{classItem.name}</div>
-                                <div className={styles.tooltipTeacher}>{classItem.instructor}</div>
-                                <div className={styles.tooltipCost}>{classItem.cost}</div>
-                              </div>
                             </div>
                           ))}
                           {dayClasses.length > 3 && (
