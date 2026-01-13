@@ -421,6 +421,24 @@ const ClassSchedule: React.FC = () => {
         </div>
       )}
 
+      {/* Desktop Tooltip */}
+      {hoveredClass && tooltipPosition && (
+        <div
+          className={styles.tooltip}
+          style={{
+            left: tooltipPosition.x,
+            top: tooltipPosition.y,
+            opacity: 1,
+            visibility: 'visible'
+          }}
+        >
+          <div className={styles.tooltipTime}>{hoveredClass.time}</div>
+          <div className={styles.tooltipName}>{hoveredClass.name}</div>
+          <div className={styles.tooltipTeacher}>{hoveredClass.instructor}</div>
+          <div className={styles.tooltipCost}>{hoveredClass.cost}</div>
+        </div>
+      )}
+
       {/* Mobile Modal */}
       {selectedClass && (
         <div className={styles.modalOverlay} onClick={() => setSelectedClass(null)}>
