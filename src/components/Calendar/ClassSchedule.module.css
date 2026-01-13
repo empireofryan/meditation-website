@@ -208,6 +208,7 @@
   text-overflow: ellipsis;
   cursor: pointer;
   transition: all 0.2s;
+  display: block;
 }
 
 .classTitle:hover {
@@ -217,6 +218,7 @@
 .classTitleWrapper {
   position: relative;
   display: block;
+  min-width: 0;
 }
 
 .moreClasses {
