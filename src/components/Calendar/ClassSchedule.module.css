@@ -142,8 +142,10 @@
   cursor: default;
   transition: all 0.2s;
   padding: 6px;
-  min-height: 80px;
+  min-height: 100px;
   position: relative;
+  overflow: visible;
+  min-width: 0;
 }
 
 .emptyDay {
