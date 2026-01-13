@@ -255,6 +255,20 @@ const ClassSchedule: React.FC = () => {
     });
   };
 
+  const handleClassMouseEnter = (classItem: Class, e: React.MouseEvent) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setTooltipPosition({
+      x: rect.left + rect.width / 2,
+      y: rect.top
+    });
+    setHoveredClass(classItem);
+  };
+
+  const handleClassMouseLeave = () => {
+    setHoveredClass(null);
+    setTooltipPosition(null);
+  };
+
   return (
     <div className={styles.scheduleContainer}>
       <div className={styles.header}>
