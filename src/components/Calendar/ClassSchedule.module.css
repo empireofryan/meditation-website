@@ -7,7 +7,7 @@
   flex-direction: column;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .header {
