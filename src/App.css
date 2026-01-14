@@ -1577,7 +1577,8 @@ body {
 /* ==================== Membership Page Styles ==================== */
 
 .membership-hero {
-  background:
+  background-color: #0a0a0a;
+  background-image:
     linear-gradient(to bottom, #0a0a0a 0%, transparent 15%, transparent 85%, #0a0a0a 100%),
     linear-gradient(to right, #0a0a0a 0%, #0a0a0a 25%, rgba(10,10,10,0.7) 55%, rgba(10,10,10,0.4) 70%, transparent 85%, transparent 100%),
     url('/DiamondRainbow2.png');
