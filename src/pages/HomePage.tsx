@@ -10,6 +10,14 @@ const PRELOAD_IMAGES = [
   'https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=800',
 ];
 
+// Images from other pages to preload in background after homepage loads
+const BACKGROUND_IMAGES = [
+  '/kadampaaboutusheader.png',
+  '/photos/volunteer-space.jpg',
+  '/DiamondRainbow2.png',
+  '/BusyStreetTimelapse.png',
+];
+
 function HomePage() {
   useEffect(() => {
     const shouldRestore = sessionStorage.getItem('restoreScroll');
