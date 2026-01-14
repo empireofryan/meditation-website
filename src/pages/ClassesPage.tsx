@@ -245,6 +245,7 @@ function ClassesPage() {
         </div>
       </footer>
     </div>
+    </PageLoader>
   )
 }
 
