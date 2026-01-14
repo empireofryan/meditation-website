@@ -358,7 +358,7 @@ body {
   background: #1a1a1a;
   padding: 120px 60px 140px;
   text-align: center;
-  clip-path: polygon(0 0, 100% 8%, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 80px, 100% 100%, 0 100%);
   margin-top: -140px;
 }
 
