@@ -168,6 +168,81 @@
   text-transform: uppercase;
 }
 
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .classCard {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .timeColumn {
+    min-width: 120px;
+    margin-right: 16px;
+  }
+
+  .className {
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
+  }
+
+  .instructorName {
+    width: 120px;
+    min-width: 120px;
+  }
+
+  .cost {
+    width: 100px;
+    min-width: 100px;
+  }
+
+  .bookSection {
+    margin-left: auto;
+  }
+}
+
+/* Small tablet / large mobile */
+@media (max-width: 900px) {
+  .classCard {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .timeColumn {
+    min-width: auto;
+    margin-right: 0;
+  }
+
+  .headerRow {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .className {
+    width: auto;
+    min-width: auto;
+    max-width: none;
+    flex: 1;
+  }
+
+  .instructorName {
+    width: auto;
+    min-width: auto;
+  }
+
+  .cost {
+    width: auto;
+    min-width: auto;
+    margin-left: 0;
+  }
+
+  .bookSection {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
 /* Mobile styles */
 @media (max-width: 768px) {
   .classCard {
