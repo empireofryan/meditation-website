@@ -1,8 +1,14 @@
 import { Link } from 'react-router-dom'
 import '../App.css'
+import PageLoader from '../components/PageLoader'
+
+const PRELOAD_IMAGES = [
+  '/DiamondRainbow2.png',
+];
 
 function MembershipPage() {
   return (
+    <PageLoader images={PRELOAD_IMAGES}>
     <div className="app">
       {/* Navigation */}
       <nav className="nav about-nav">
