@@ -32,7 +32,7 @@ function HomePage() {
   }, []);
 
   return (
-    <PageLoader images={PRELOAD_IMAGES}>
+    <PageLoader images={PRELOAD_IMAGES} backgroundImages={BACKGROUND_IMAGES}>
     <div className="app">
       {/* Hero Section */}
       <section className="hero">
