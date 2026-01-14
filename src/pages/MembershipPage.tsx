@@ -146,6 +146,7 @@ function MembershipPage() {
         </div>
       </footer>
     </div>
+    </PageLoader>
   )
 }
 
