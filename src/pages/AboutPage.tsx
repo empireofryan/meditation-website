@@ -1,8 +1,15 @@
 import { Link } from 'react-router-dom'
 import '../App.css'
+import PageLoader from '../components/PageLoader'
+
+const PRELOAD_IMAGES = [
+  '/kadampaaboutusheader.png',
+  '/photos/volunteer-space.jpg',
+];
 
 function AboutPage() {
   return (
+    <PageLoader images={PRELOAD_IMAGES}>
     <div className="app">
       {/* Navigation */}
       <nav className="nav about-nav">
