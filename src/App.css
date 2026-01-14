@@ -1906,7 +1906,8 @@ body {
 /* ==================== Classes Page Styles ==================== */
 
 .classes-hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/BusyStreetTimelapse.png');
+  background-color: #1a2d3a;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/BusyStreetTimelapse.png');
   background-size: cover;
   background-position: center;
   padding: 140px 60px 120px;
