@@ -23,6 +23,7 @@ const PAGES = ['/', '/about', '/membership', '/classes'];
 
 async function takeScreenshots(outputDir = 'current') {
   console.log('🚀 Starting screenshot capture...\n');
+  console.log(`Base URL: ${SITE_URL}\n`);
 
   const browser = await puppeteer.launch({
     headless: 'new',
@@ -36,38 +37,70 @@ async function takeScreenshots(outputDir = 'current') {
     fs.mkdirSync(outputPath, { recursive: true });
   }
 
-  for (const [type, viewport] of Object.entries(viewports)) {
-    console.log(`📸 Capturing ${type} (${viewport.width}x${viewport.height})...`);
+  const issues = [];
 
-    const page = await browser.newPage();
-    await page.setViewport(viewport);
+  for (const pagePath of PAGES) {
+    const pageName = pagePath === '/' ? 'home' : pagePath.slice(1);
+    console.log(`\n📄 PAGE: ${pageName.toUpperCase()}`);
 
-    try {
-      await page.goto(SITE_URL, {
-        waitUntil: 'networkidle2',
-        timeout: 30000
-      });
+    for (const [type, viewport] of Object.entries(viewports)) {
+      console.log(`  📸 ${type} (${viewport.width}x${viewport.height})...`);
 
-      // Wait for images to load
-      await page.waitForSelector('img', { timeout: 5000 }).catch(() => {});
+      const page = await browser.newPage();
+      await page.setViewport(viewport);
 
-      // Take full page screenshot
-      const screenshotPath = path.join(outputPath, `${viewport.name}.png`);
-      await page.screenshot({
-        path: screenshotPath,
-        fullPage: true
-      });
+      try {
+        await page.goto(`${SITE_URL}${pagePath}`, {
+          waitUntil: 'networkidle2',
+          timeout: 30000
+        });
 
-      console.log(`   ✓ Saved: ${screenshotPath}`);
-    } catch (error) {
-      console.error(`   ✗ Error capturing ${type}:`, error.message);
-    } finally {
-      await page.close();
+        // Wait for images to load
+        await page.waitForSelector('img', { timeout: 5000 }).catch(() => {});
+        await new Promise(r => setTimeout(r, 1000));
+
+        // Check for horizontal overflow
+        const hasOverflow = await page.evaluate(() => {
+          return document.documentElement.scrollWidth > window.innerWidth;
+        });
+
+        if (hasOverflow) {
+          const overflowAmount = await page.evaluate(() => {
+            return document.documentElement.scrollWidth - window.innerWidth;
+          });
+          issues.push(`${pageName} @ ${type}: Horizontal overflow by ${overflowAmount}px`);
+          console.log(`     ⚠️  Horizontal overflow: ${overflowAmount}px`);
+        }
+
+        // Take full page screenshot
+        const screenshotPath = path.join(outputPath, `${pageName}-${viewport.name}.png`);
+        await page.screenshot({
+          path: screenshotPath,
+          fullPage: true
+        });
+
+        console.log(`     ✅ Saved`);
+      } catch (error) {
+        console.error(`     ❌ Error: ${error.message}`);
+        issues.push(`${pageName} @ ${type}: ${error.message}`);
+      } finally {
+        await page.close();
+      }
     }
   }
 
   await browser.close();
-  console.log('\n✅ Screenshot capture complete!');
+
+  console.log('\n' + '='.repeat(50));
+  if (issues.length > 0) {
+    console.log('⚠️  ISSUES FOUND:');
+    issues.forEach(i => console.log(`  - ${i}`));
+  } else {
+    console.log('✅ All screenshots captured with no overflow issues!');
+  }
+  console.log('='.repeat(50));
+
+  return issues;
 }
 
 // Run if called directly
