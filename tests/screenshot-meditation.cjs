@@ -9,13 +9,17 @@ const puppeteer = require('puppeteer');
 const fs = require('fs');
 const path = require('path');
 
-const SITE_URL = 'https://empireofryan.github.io/meditation-website/';
+const SITE_URL = process.env.SITE_URL || 'http://localhost:5174';
 
 const viewports = {
-  mobile: { width: 375, height: 812, name: 'iphone-13' },
-  tablet: { width: 768, height: 1024, name: 'ipad' },
-  desktop: { width: 1920, height: 1080, name: 'desktop' }
+  mobile: { width: 375, height: 812, name: 'mobile' },
+  'tablet-portrait': { width: 820, height: 1180, name: 'tablet-portrait' },
+  'tablet-landscape': { width: 1180, height: 820, name: 'tablet-landscape' },
+  desktop: { width: 1440, height: 900, name: 'desktop' },
+  'desktop-large': { width: 1920, height: 1080, name: 'desktop-large' }
 };
+
+const PAGES = ['/', '/about', '/membership', '/classes'];
 
 async function takeScreenshots(outputDir = 'current') {
   console.log('🚀 Starting screenshot capture...\n');
