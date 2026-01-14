@@ -1585,7 +1585,6 @@ body {
   background-size: 100%, 100%, 100% auto;
   background-position: center, center, calc(50% + 180px) 55%;
   background-repeat: no-repeat, no-repeat, no-repeat;
-  background-color: #0a0a0a;
   padding: 90px 60px 100px;
   text-align: center;
 }
