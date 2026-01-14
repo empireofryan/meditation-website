@@ -41,14 +41,7 @@ export default function PageLoader({ children, images }: PageLoaderProps) {
   }, [images]);
 
   if (!loaded) {
-    return (
-      <div className="page-loader">
-        <div className="loader-content">
-          <div className="loader-spinner"></div>
-          <div className="loader-progress">{progress}%</div>
-        </div>
-      </div>
-    );
+    return <div className="page-loader" />;
   }
 
   return <>{children}</>;
