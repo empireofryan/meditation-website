@@ -1,6 +1,14 @@
 import { useEffect } from 'react'
 import '../App.css'
 import ClassSchedule from '../components/Calendar/ClassSchedule'
+import PageLoader from '../components/PageLoader'
+import heroBg from '../assets/hero-bg.png'
+
+const PRELOAD_IMAGES = [
+  heroBg,
+  'https://images.unsplash.com/photo-1545389336-cf090694435e?w=800',
+  'https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=800',
+];
 
 function HomePage() {
   useEffect(() => {
@@ -16,6 +24,7 @@ function HomePage() {
   }, []);
 
   return (
+    <PageLoader images={PRELOAD_IMAGES}>
     <div className="app">
       {/* Hero Section */}
       <section className="hero">
