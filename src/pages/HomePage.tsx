@@ -214,6 +214,7 @@ function HomePage() {
         </div>
       </footer>
     </div>
+    </PageLoader>
   )
 }
 
