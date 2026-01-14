@@ -29,8 +29,11 @@ body {
 .hero {
   position: relative;
   height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url('./assets/hero-bg.png') center/cover;
+  background-color: #2d1f14;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('./assets/hero-bg.png');
+  background-size: cover;
+  background-position: center;
   display: flex;
   flex-direction: column;
 }
