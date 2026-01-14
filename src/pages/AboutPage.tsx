@@ -224,6 +224,7 @@ function AboutPage() {
         </div>
       </footer>
     </div>
+    </PageLoader>
   )
 }
 
