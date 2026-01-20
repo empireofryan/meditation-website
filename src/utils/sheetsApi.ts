@@ -33,7 +33,6 @@ export interface SpecialEvent {
 
 export interface Cancellation {
   date: string;
-  day: string;
   className: string;
   reason: string;
 }
