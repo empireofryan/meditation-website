@@ -24,27 +24,6 @@
   background-color: #f5f2ec;
 }
 
-.expandButton {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 2px solid #1a1a1a;
-  background: transparent;
-  color: #1a1a1a;
-  font-size: 20px;
-  font-weight: 600;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease;
-}
-
-.expandButton:hover {
-  background: #1a1a1a;
-  color: white;
-}
-
 .accordionContent {
   padding: 16px 0 8px 0;
   margin-top: 16px;
