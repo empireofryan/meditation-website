@@ -236,19 +236,29 @@ export async function fetchSchedule(): Promise<{
     });
   }
 
-  // Parse Cancellations (skip rows 0-2)
+  // Parse Cancellations (skip rows 0-2: instruction, example, header)
   // Sheet structure: Date (A), Title (B), Reason (C)
   const cancellations: Cancellation[] = [];
   for (let i = 3; i < cancelRows.length; i++) {
     const row = cancelRows[i];
-    if (!row[0] || row[0].toLowerCase().startsWith('example')) continue;
+    // Skip empty rows, example rows, or header-like rows
+    if (!row[0] || !row[1]) continue;
+    if (row[0].toLowerCase().includes('example')) continue;
+    if (row[0].toLowerCase().includes('cancellation')) continue;
+    if (row[1].toLowerCase() === 'title') continue;
+
+    // Validate date is parseable
+    const testDate = new Date(row[0]);
+    if (isNaN(testDate.getTime())) continue;
 
     cancellations.push({
-      date: row[0] || '',
-      className: row[1] || '',
+      date: row[0],
+      className: row[1],
       reason: row[2] || ''
     });
   }
+
+  console.log('Parsed cancellations:', cancellations);
 
   return { weeklyClasses, specialEvents, cancellations };
 }
