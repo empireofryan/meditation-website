@@ -64,6 +64,9 @@ const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
   // Get teacher photos (supports multiple teachers)
   const teacherPhotos = getTeacherPhotos(instructor);
 
+  // Format display name (remove "30-Minute" prefix)
+  const displayName = formatClassName(name);
+
   if (isCancelled) {
     return (
       <div className={`${styles.classCard} ${styles.cancelled}`}>
@@ -73,7 +76,7 @@ const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
         <div className={styles.classInfo}>
           <div className={styles.headerRow}>
             <span className={`${styles.className} ${styles.strikethrough}`}>
-              {name}
+              {displayName}
             </span>
             <span className={styles.noClassBadge}>
               NO CLASS{cancellationReason ? ` - ${cancellationReason}` : ''}
@@ -85,49 +88,57 @@ const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
   }
 
   return (
-    <div className={`${styles.classCard} ${isSpecialEvent ? styles.specialEvent : ''} ${isSeriesClass ? styles.seriesClass : ''}`}>
-      <div className={styles.timeColumn}>
-        <span className={styles.time}>{timeRange}</span>
-      </div>
-      <div className={styles.classInfo}>
-        <div className={styles.headerRow}>
-          <span className={styles.className}>
-            {isSpecialEvent && <span className={styles.eventBadge}>Event</span>}
-            {isSeriesClass && <span className={styles.seriesBadge}>Series</span>}
-            {name}
-          </span>
-          <span className={styles.instructorName}>
-            {teacherPhotos.length > 0 && (
-              <span className={styles.photoStack}>
-                {teacherPhotos.map((photo, index) => (
-                  <img
-                    key={index}
-                    src={photo}
-                    alt=""
-                    className={styles.teacherPhoto}
-                    style={{ zIndex: teacherPhotos.length - index }}
-                  />
-                ))}
-              </span>
-            )}
-            {displayInstructor}
-          </span>
-          {displayCost && <span className={styles.cost}>{displayCost}</span>}
+    <div className={`${styles.classCard} ${isSpecialEvent ? styles.specialEvent : ''} ${isSeriesClass ? styles.seriesClass : ''} ${isExpanded ? styles.expanded : ''}`}>
+      <div className={styles.mainRow}>
+        <div className={styles.timeColumn}>
+          <span className={styles.time}>{timeRange}</span>
+        </div>
+        <div className={styles.classInfo}>
+          <div className={styles.headerRow}>
+            <span className={styles.className}>
+              {isSpecialEvent && <span className={styles.eventBadge}>Event</span>}
+              {isSeriesClass && <span className={styles.seriesBadge}>Series</span>}
+              {displayName}
+            </span>
+            <span className={styles.instructorName}>
+              {teacherPhotos.length > 0 && (
+                <span className={styles.photoStack}>
+                  {teacherPhotos.map((photo, index) => (
+                    <img
+                      key={index}
+                      src={photo}
+                      alt=""
+                      className={styles.teacherPhoto}
+                      style={{ zIndex: teacherPhotos.length - index }}
+                    />
+                  ))}
+                </span>
+              )}
+              {displayInstructor}
+            </span>
+            {displayCost && <span className={styles.cost}>{displayCost}</span>}
+          </div>
+        </div>
+        <div className={styles.bookSection}>
+          {description && (
+            <button
+              className={styles.expandButton}
+              onClick={() => setIsExpanded(!isExpanded)}
+              aria-expanded={isExpanded}
+            >
+              {isExpanded ? '−' : '+'}
+            </button>
+          )}
+          <BookButton onClick={handleBook}>
+            Book
+          </BookButton>
         </div>
       </div>
-      <div className={styles.bookSection}>
-        <Link to={`/classes/${createSlug(name, date)}`} style={{ textDecoration: 'none' }} onClick={saveScrollPosition}>
-          <BookButton
-            onClick={() => {}}
-            variant="secondary"
-          >
-            More Info
-          </BookButton>
-        </Link>
-        <BookButton onClick={handleBook}>
-          Book
-        </BookButton>
-      </div>
+      {isExpanded && description && (
+        <div className={styles.accordionContent}>
+          <p className={styles.description}>{description}</p>
+        </div>
+      )}
     </div>
   );
 };
