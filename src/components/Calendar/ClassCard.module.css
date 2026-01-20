@@ -168,16 +168,10 @@
   color: #888;
 }
 
-.noClassBadge {
-  background-color: #dc2626;
-  color: white;
-  font-size: 12px;
+.noClassText {
+  color: #dc2626;
+  font-size: 14px;
   font-weight: 600;
-  padding: 4px 12px;
-  border-radius: 4px;
-  display: inline-block;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
 /* Special event state */
