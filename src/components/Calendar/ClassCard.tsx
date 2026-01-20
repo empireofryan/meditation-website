@@ -121,13 +121,12 @@ const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
         </div>
         <div className={styles.bookSection}>
           {description && (
-            <button
-              className={styles.expandButton}
+            <BookButton
               onClick={() => setIsExpanded(!isExpanded)}
-              aria-expanded={isExpanded}
+              variant="secondary"
             >
-              {isExpanded ? '−' : '+'}
-            </button>
+              {isExpanded ? 'Less Info' : 'More Info'}
+            </BookButton>
           )}
           <BookButton onClick={handleBook}>
             Book
