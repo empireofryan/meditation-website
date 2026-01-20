@@ -237,6 +237,7 @@ export async function fetchSchedule(): Promise<{
   }
 
   // Parse Cancellations (skip rows 0-2)
+  // Sheet structure: Date (A), Title (B), Reason (C)
   const cancellations: Cancellation[] = [];
   for (let i = 3; i < cancelRows.length; i++) {
     const row = cancelRows[i];
@@ -244,9 +245,8 @@ export async function fetchSchedule(): Promise<{
 
     cancellations.push({
       date: row[0] || '',
-      day: row[1] || '',
-      className: row[2] || '',
-      reason: row[3] || ''
+      className: row[1] || '',
+      reason: row[2] || ''
     });
   }
 
