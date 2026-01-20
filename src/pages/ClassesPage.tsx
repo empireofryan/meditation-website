@@ -1,12 +1,32 @@
 import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import '../App.css'
 import PageLoader from '../components/PageLoader'
+import { fetchUpcomingEvents, type ScheduledClass } from '../utils/sheetsApi'
 
 const PRELOAD_IMAGES = [
   '/BusyStreetTimelapse.png',
 ];
 
 function ClassesPage() {
+  const [events, setEvents] = useState<ScheduledClass[]>([]);
+  const [eventsLoading, setEventsLoading] = useState(true);
+
+  useEffect(() => {
+    fetchUpcomingEvents()
+      .then(setEvents)
+      .catch(console.error)
+      .finally(() => setEventsLoading(false));
+  }, []);
+
+  const formatEventDate = (date: Date) => {
+    return date.toLocaleDateString('en-US', {
+      weekday: 'short',
+      month: 'short',
+      day: 'numeric'
+    });
+  };
+
   return (
     <PageLoader images={PRELOAD_IMAGES}>
     <div className="app">
