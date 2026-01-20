@@ -78,8 +78,8 @@ const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
             <span className={`${styles.className} ${styles.strikethrough}`}>
               {displayName}
             </span>
-            <span className={styles.noClassBadge}>
-              NO CLASS{cancellationReason ? ` - ${cancellationReason}` : ''}
+            <span className={styles.noClassText}>
+              NO CLASS TODAY{cancellationReason ? ` - ${cancellationReason}` : ''}
             </span>
           </div>
         </div>
