@@ -33,7 +33,7 @@ interface ClassCardProps {
 }
 
 const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
-  const { id, name, instructor, time, endTime, cost, isCancelled, cancellationReason, isSpecialEvent, date, description } = classData;
+  const { id, name, instructor, time, cost, isCancelled, cancellationReason, isSpecialEvent, date, description, duration } = classData;
   const [isExpanded, setIsExpanded] = useState(false);
 
   const handleBook = () => {
@@ -48,8 +48,13 @@ const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
     (name.toLowerCase().includes('patient acceptance') && dayOfWeek === 'Thursday') ||
     dayOfWeek === 'Sunday';
 
-  // Format time range (e.g., "6:00 PM - 6:30 PM")
-  const timeRange = endTime ? `${time} - ${endTime}` : time;
+  // Format time - extract hour:minute and period separately
+  const timeMatch = time.match(/(\d{1,2}:\d{2})\s*(AM|PM)/i);
+  const timeNumber = timeMatch ? timeMatch[1] : time;
+  const timePeriod = timeMatch ? timeMatch[2].toLowerCase() : '';
+
+  // Format duration
+  const durationText = duration ? `${duration} mins` : '';
 
   // Format cost - special case for monthly membership
   const displayCost = cost === '$85/month'
