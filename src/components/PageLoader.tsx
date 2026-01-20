@@ -16,9 +16,22 @@ const preloadImage = (src: string): Promise<void> => {
 };
 
 export default function PageLoader({ children, images, backgroundImages = [] }: PageLoaderProps) {
-  const [loaded, setLoaded] = useState(false);
+  // Skip loading screen if we're restoring scroll position (coming back from class detail)
+  const isRestoringScroll = sessionStorage.getItem('restoreScroll') === 'true';
+  const [loaded, setLoaded] = useState(isRestoringScroll);
 
   useEffect(() => {
+    // If already loaded (restoring scroll), just preload in background
+    if (loaded) {
+      if (backgroundImages.length > 0) {
+        backgroundImages.forEach(src => {
+          const img = new Image();
+          img.src = src;
+        });
+      }
+      return;
+    }
+
     if (images.length === 0) {
       setLoaded(true);
       return;
@@ -35,7 +48,7 @@ export default function PageLoader({ children, images, backgroundImages = [] }: 
         });
       }
     });
-  }, [images, backgroundImages]);
+  }, [images, backgroundImages, loaded]);
 
   if (!loaded) {
     return <div className="page-loader" />;
