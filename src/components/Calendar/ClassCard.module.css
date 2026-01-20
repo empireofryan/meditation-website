@@ -328,12 +328,6 @@
     min-height: 38px;
   }
 
-  .expandButton {
-    width: 32px;
-    height: 32px;
-    font-size: 18px;
-  }
-
   .accordionContent {
     padding: 12px 0 4px 0;
     margin-top: 12px;
