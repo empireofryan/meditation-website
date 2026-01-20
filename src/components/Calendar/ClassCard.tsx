@@ -76,7 +76,8 @@ const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
     return (
       <div className={`${styles.classCard} ${styles.cancelled}`}>
         <div className={styles.timeColumn}>
-          <span className={styles.time}>{timeRange}</span>
+          <span className={styles.time}>{timeNumber}<span className={styles.period}>{timePeriod}</span></span>
+          {durationText && <span className={styles.duration}>{durationText}</span>}
         </div>
         <div className={styles.classInfo}>
           <div className={styles.headerRow}>
