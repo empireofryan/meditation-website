@@ -2,8 +2,7 @@
   background-color: #f9f7f3;
   padding: 16px 24px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   border-bottom: 1px solid #e8e4dc;
   border-left: 4px solid transparent;
   transition: all 0.2s ease;
@@ -12,6 +11,51 @@
 .classCard:hover {
   background-color: #f5f2ec;
   border-left-color: #FFC845;
+}
+
+.mainRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.expanded {
+  background-color: #f5f2ec;
+}
+
+.expandButton {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid #1a1a1a;
+  background: transparent;
+  color: #1a1a1a;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.expandButton:hover {
+  background: #1a1a1a;
+  color: white;
+}
+
+.accordionContent {
+  padding: 16px 0 8px 0;
+  margin-top: 16px;
+  border-top: 1px solid #e8e4dc;
+}
+
+.description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #444;
+  margin: 0;
 }
 
 .timeColumn {
