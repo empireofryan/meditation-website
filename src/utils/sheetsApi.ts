@@ -259,11 +259,16 @@ export async function fetchAllClasses(daysAhead: number = 60): Promise<Scheduled
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
-  // Create a map of cancellations for quick lookup
+  // Create a map of cancellations for quick lookup by date + class title
   const cancellationMap = new Map<string, Cancellation>();
   cancellations.forEach(c => {
-    const key = `${c.date}-${c.day}`.toLowerCase();
-    cancellationMap.set(key, c);
+    // Normalize the date for comparison
+    const cancelDate = parseDate(c.date);
+    if (cancelDate) {
+      const normalizedDate = cancelDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+      const key = `${normalizedDate}-${c.className}`.toLowerCase();
+      cancellationMap.set(key, c);
+    }
   });
 
   // Generate weekly class instances for the next N days
@@ -275,7 +280,8 @@ export async function fetchAllClasses(daysAhead: number = 60): Promise<Scheduled
     weeklyClasses.forEach((wc) => {
       if (wc.day.toLowerCase() === dayName.toLowerCase()) {
         const dateStr = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-        const cancelKey = `${dateStr}-${dayName}`.toLowerCase();
+        // Match by date AND class title
+        const cancelKey = `${dateStr}-${wc.title}`.toLowerCase();
         const cancellation = cancellationMap.get(cancelKey);
 
         classes.push({
