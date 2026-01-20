@@ -236,18 +236,20 @@ export async function fetchSchedule(): Promise<{
     });
   }
 
-  // Parse Cancellations (skip rows 0-2: instruction, example, header)
+  // Parse Cancellations - start from row 1 and filter intelligently
   // Sheet structure: Date (A), Title (B), Reason (C)
   const cancellations: Cancellation[] = [];
-  for (let i = 3; i < cancelRows.length; i++) {
+  for (let i = 0; i < cancelRows.length; i++) {
     const row = cancelRows[i];
-    // Skip empty rows, example rows, or header-like rows
+    // Skip empty rows or rows without both date and class name
     if (!row[0] || !row[1]) continue;
-    if (row[0].toLowerCase().includes('example')) continue;
+
+    // Skip instruction/header rows
     if (row[0].toLowerCase().includes('cancellation')) continue;
+    if (row[0].toLowerCase() === 'date') continue;
     if (row[1].toLowerCase() === 'title') continue;
 
-    // Validate date is parseable
+    // Validate date is parseable (this filters out headers/examples with non-date text)
     const testDate = new Date(row[0]);
     if (isNaN(testDate.getTime())) continue;
 
