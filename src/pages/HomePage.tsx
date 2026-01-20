@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useLayoutEffect } from 'react'
 import '../App.css'
 import ClassSchedule from '../components/Calendar/ClassSchedule'
 import PageLoader from '../components/PageLoader'
@@ -19,15 +19,18 @@ const BACKGROUND_IMAGES = [
 ];
 
 function HomePage() {
-  useEffect(() => {
+  // Use useLayoutEffect to restore scroll position synchronously before paint
+  useLayoutEffect(() => {
     const shouldRestore = sessionStorage.getItem('restoreScroll');
     const savedPosition = sessionStorage.getItem('scheduleScrollPosition');
 
     if (shouldRestore && savedPosition) {
-      // Restore scroll position instantly
-      window.scrollTo(0, parseInt(savedPosition, 10));
+      // Clear flags first
       sessionStorage.removeItem('restoreScroll');
       sessionStorage.removeItem('scheduleScrollPosition');
+
+      // Restore scroll position instantly without smooth behavior
+      window.scrollTo({ top: parseInt(savedPosition, 10), behavior: 'instant' });
     }
   }, []);
 
