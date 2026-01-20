@@ -93,7 +93,7 @@ const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
   }
 
   return (
-    <div className={`${styles.classCard} ${isSpecialEvent ? styles.specialEvent : ''} ${isSeriesClass ? styles.seriesClass : ''} ${isExpanded ? styles.expanded : ''}`}>
+    <div className={`${styles.classCard} ${isSpecialEvent ? styles.specialEvent : ''} ${isMembersOnly ? styles.membersClass : ''} ${isExpanded ? styles.expanded : ''}`}>
       <div className={styles.mainRow}>
         <div className={styles.timeColumn}>
           <span className={styles.time}>{timeNumber}<span className={styles.period}>{timePeriod}</span></span>
@@ -103,7 +103,7 @@ const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
           <div className={styles.headerRow}>
             <span className={styles.className}>
               {isSpecialEvent && <span className={styles.eventBadge}>Event</span>}
-              {isSeriesClass && <span className={styles.seriesBadge}>Series</span>}
+              {isMembersOnly && <span className={styles.membersBadge}>Members</span>}
               {displayName}
             </span>
             <span className={styles.instructorName}>
@@ -122,7 +122,11 @@ const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
               )}
               {displayInstructor}
             </span>
-            {displayCost && <span className={styles.cost}>{displayCost}</span>}
+            {isMembersOnly ? (
+              <Link to="/membership" className={styles.membershipLink}>Membership Required</Link>
+            ) : (
+              displayCost && <span className={styles.cost}>{displayCost}</span>
+            )}
           </div>
         </div>
         <div className={styles.bookSection}>
