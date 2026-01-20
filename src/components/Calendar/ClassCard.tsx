@@ -74,14 +74,17 @@ const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
   if (isCancelled) {
     return (
       <div className={`${styles.classCard} ${styles.cancelled}`}>
+        <div className={styles.timeColumn}>
+          <span className={styles.time}>{timeRange}</span>
+        </div>
         <div className={styles.classInfo}>
           <div className={styles.headerRow}>
-            <span className={styles.time}>{fullTime}</span>
-            <span className={styles.className}>{name}</span>
-            <span className={styles.instructorName}>{instructor}</span>
-          </div>
-          <div className={styles.cancelledBadge}>
-            CANCELLED{cancellationReason ? `: ${cancellationReason}` : ''}
+            <span className={`${styles.className} ${styles.strikethrough}`}>
+              {name}
+            </span>
+            <span className={styles.noClassBadge}>
+              NO CLASS{cancellationReason ? ` - ${cancellationReason}` : ''}
+            </span>
           </div>
         </div>
       </div>
