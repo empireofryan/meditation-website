@@ -169,11 +169,33 @@ function ClassesPage() {
                 provide deeper exploration of specific topics. These events are perfect for
                 those wanting to deepen their practice or explore particular themes.
               </p>
-              <p>
-                Topics include: stress reduction, relationships, overcoming anxiety, developing
-                compassion, and more. Check our schedule for upcoming events.
-              </p>
-              <a href="/#classes" className="class-type-cta">View Upcoming Events</a>
+
+              {/* Upcoming Events List */}
+              <div className="upcoming-events-list">
+                <h3 className="upcoming-events-title">Upcoming Events</h3>
+                {eventsLoading ? (
+                  <p className="events-loading">Loading events...</p>
+                ) : events.length > 0 ? (
+                  <div className="events-grid">
+                    {events.slice(0, 6).map((event) => (
+                      <a
+                        key={event.id}
+                        href={event.registrationLink || '/#classes'}
+                        target={event.registrationLink ? '_blank' : undefined}
+                        rel={event.registrationLink ? 'noopener noreferrer' : undefined}
+                        className="event-item"
+                      >
+                        <span className="event-date">{formatEventDate(event.date)}</span>
+                        <span className="event-name">{event.name}</span>
+                        <span className="event-time">{event.time}{event.endTime ? ` - ${event.endTime}` : ''}</span>
+                        {event.cost && <span className="event-cost">{event.cost}</span>}
+                      </a>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="no-events">No upcoming events scheduled. Check back soon!</p>
+                )}
+              </div>
             </div>
           </div>
         </div>
