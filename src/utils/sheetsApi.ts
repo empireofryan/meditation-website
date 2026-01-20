@@ -262,11 +262,11 @@ export async function fetchAllClasses(daysAhead: number = 60): Promise<Scheduled
   // Create a map of cancellations for quick lookup by date + class title
   const cancellationMap = new Map<string, Cancellation>();
   cancellations.forEach(c => {
-    // Normalize the date for comparison
+    // Normalize the date - use ISO format for consistent matching
     const cancelDate = parseDate(c.date);
     if (cancelDate) {
-      const normalizedDate = cancelDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-      const key = `${normalizedDate}-${c.className}`.toLowerCase();
+      const isoDate = cancelDate.toISOString().split('T')[0]; // YYYY-MM-DD
+      const key = `${isoDate}-${c.className}`.toLowerCase();
       cancellationMap.set(key, c);
     }
   });
@@ -279,9 +279,10 @@ export async function fetchAllClasses(daysAhead: number = 60): Promise<Scheduled
 
     weeklyClasses.forEach((wc) => {
       if (wc.day.toLowerCase() === dayName.toLowerCase()) {
-        const dateStr = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+        // Use ISO date for matching (YYYY-MM-DD)
+        const isoDate = currentDate.toISOString().split('T')[0];
         // Match by date AND class title
-        const cancelKey = `${dateStr}-${wc.title}`.toLowerCase();
+        const cancelKey = `${isoDate}-${wc.title}`.toLowerCase();
         const cancellation = cancellationMap.get(cancelKey);
 
         classes.push({
