@@ -360,3 +360,39 @@ export async function fetchClassBySlug(slug: string): Promise<ScheduledClass | n
   // Fall back to matching just by name (legacy format)
   return classes.find(c => createSlug(c.name) === slug) || null;
 }
+
+// Fetch only upcoming special events (not regular weekly classes)
+export async function fetchUpcomingEvents(): Promise<ScheduledClass[]> {
+  const { specialEvents } = await fetchSchedule();
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const upcomingEvents: ScheduledClass[] = [];
+
+  specialEvents.forEach(event => {
+    const eventDate = parseDate(event.date);
+    if (eventDate && eventDate >= today) {
+      upcomingEvents.push({
+        id: event.id,
+        name: event.title,
+        instructor: event.teacher,
+        time: event.startTime,
+        date: eventDate,
+        endTime: event.endTime,
+        cost: event.cost,
+        description: event.description,
+        registrationLink: event.registrationLink,
+        format: event.format,
+        featuredImage: event.featuredImage,
+        teacherImage: event.teacherImage,
+        isSpecialEvent: true,
+        isCancelled: false
+      });
+    }
+  });
+
+  // Sort by date
+  upcomingEvents.sort((a, b) => a.date.getTime() - b.date.getTime());
+
+  return upcomingEvents;
+}
