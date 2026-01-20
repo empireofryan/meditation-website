@@ -278,8 +278,10 @@ export async function fetchAllClasses(daysAhead: number = 60): Promise<Scheduled
       const isoDate = cancelDate.toISOString().split('T')[0]; // YYYY-MM-DD
       const key = `${isoDate}-${c.className}`.toLowerCase();
       cancellationMap.set(key, c);
+      console.log('Cancellation key:', key);
     }
   });
+  console.log('Cancellation map keys:', Array.from(cancellationMap.keys()));
 
   // Generate weekly class instances for the next N days
   for (let dayOffset = 0; dayOffset < daysAhead; dayOffset++) {
