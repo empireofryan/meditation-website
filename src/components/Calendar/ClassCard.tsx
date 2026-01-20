@@ -1,15 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import type { Class } from '../../types';
 import BookButton from './BookButton';
 import styles from './ClassCard.module.css';
 
-function createSlug(name: string, date: Date): string {
-  const dayName = date.toLocaleDateString('en-US', { weekday: 'long' }).toLowerCase();
-  return `${name}-${dayName}`
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '');
+// Clean up class name for display (remove duration prefix like "30-Minute")
+function formatClassName(name: string): string {
+  return name.replace(/^\d+-minute\s+/i, '');
 }
 
 // Get teacher photo URLs for all teachers (handles multiple comma-separated names)
