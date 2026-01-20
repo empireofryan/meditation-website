@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import type { Class } from '../../types';
 import BookButton from './BookButton';
 import styles from './ClassCard.module.css';
