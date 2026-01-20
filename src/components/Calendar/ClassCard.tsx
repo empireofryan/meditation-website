@@ -41,13 +41,11 @@ const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
     onBook(id);
   };
 
-  // Check if this is a series class
+  // Check if this is a members-only class
   const dayOfWeek = date.toLocaleDateString('en-US', { weekday: 'long' });
-  const isSeriesClass =
+  const isMembersOnly =
     name.toLowerCase().includes('foundation program') ||
-    (name.toLowerCase().includes('general program') && dayOfWeek === 'Monday') ||
-    (name.toLowerCase().includes('patient acceptance') && dayOfWeek === 'Thursday') ||
-    dayOfWeek === 'Sunday';
+    cost === '$85/month';
 
   // Format time - extract hour:minute and period separately
   const timeMatch = time.match(/(\d{1,2}:\d{2})\s*(AM|PM)/i);
