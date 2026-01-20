@@ -27,17 +27,14 @@ function getTeacherPhotos(instructorName: string): string[] {
   return photos;
 }
 
-function saveScrollPosition() {
-  sessionStorage.setItem('scheduleScrollPosition', window.scrollY.toString());
-}
-
 interface ClassCardProps {
   classData: Class;
   onBook: (classId: string) => void;
 }
 
 const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
-  const { id, name, instructor, time, endTime, cost, isCancelled, cancellationReason, isSpecialEvent, date } = classData;
+  const { id, name, instructor, time, endTime, cost, isCancelled, cancellationReason, isSpecialEvent, date, description } = classData;
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const handleBook = () => {
     onBook(id);
