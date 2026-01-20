@@ -97,7 +97,8 @@ const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
     <div className={`${styles.classCard} ${isSpecialEvent ? styles.specialEvent : ''} ${isSeriesClass ? styles.seriesClass : ''} ${isExpanded ? styles.expanded : ''}`}>
       <div className={styles.mainRow}>
         <div className={styles.timeColumn}>
-          <span className={styles.time}>{timeRange}</span>
+          <span className={styles.time}>{timeNumber}<span className={styles.period}>{timePeriod}</span></span>
+          {durationText && <span className={styles.duration}>{durationText}</span>}
         </div>
         <div className={styles.classInfo}>
           <div className={styles.headerRow}>
