@@ -30,7 +30,15 @@ result = service.spreadsheets().values().get(
 ).execute()
 
 values = result.get('values', [])
-class_titles = [row[0] for row in values if row and row[0] and not row[0].lower().startswith('example')]
+# Get unique titles while preserving order
+seen = set()
+class_titles = []
+for row in values:
+    if row and row[0] and not row[0].lower().startswith('example'):
+        title = row[0]
+        if title not in seen:
+            seen.add(title)
+            class_titles.append(title)
 
 print(f"Class titles for dropdown: {class_titles}")
 
