@@ -306,25 +306,35 @@
 /* Small mobile styles */
 @media (max-width: 480px) {
   .classCard {
-    padding: 14px;
-    gap: 10px;
+    padding: 10px;
+    gap: 6px;
+  }
+
+  .time {
+    font-size: 12px;
   }
 
   .className {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .instructorName {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .cost {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .teacherPhoto,
   .photoStack .teacherPhoto {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .bookSection button,
+  .bookSection a {
+    min-height: 36px;
+    font-size: 12px;
   }
 }
