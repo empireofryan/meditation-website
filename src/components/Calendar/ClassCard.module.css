@@ -186,16 +186,16 @@
   text-transform: uppercase;
 }
 
-/* Series class state */
-.seriesClass {
+/* Members-only class state */
+.membersClass {
   border-left-color: #0891b2;
 }
 
-.seriesClass:hover {
+.membersClass:hover {
   border-left-color: #0e7490;
 }
 
-.seriesBadge {
+.membersBadge {
   background-color: #0891b2;
   color: white;
   font-size: 10px;
@@ -204,6 +204,19 @@
   border-radius: 3px;
   margin-right: 8px;
   text-transform: uppercase;
+}
+
+.membershipLink {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0891b2;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.membershipLink:hover {
+  color: #0e7490;
+  text-decoration: underline;
 }
 
 /* Tablet styles */
