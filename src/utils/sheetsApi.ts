@@ -260,8 +260,6 @@ export async function fetchSchedule(): Promise<{
     });
   }
 
-  console.log('Parsed cancellations:', cancellations);
-
   return { weeklyClasses, specialEvents, cancellations };
 }
 
