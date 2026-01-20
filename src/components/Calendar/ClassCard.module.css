@@ -109,23 +109,31 @@
 
 /* Cancelled state */
 .cancelled {
-  opacity: 0.6;
+  opacity: 0.7;
   background-color: #f5f5f5;
+  border-left-color: #dc2626;
 }
 
 .cancelled:hover {
   background-color: #f0f0f0;
-  border-left-color: #999;
+  border-left-color: #dc2626;
 }
 
-.cancelledBadge {
+.strikethrough {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.noClassBadge {
   background-color: #dc2626;
   color: white;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
-  padding: 4px 8px;
+  padding: 4px 12px;
   border-radius: 4px;
   display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 /* Special event state */
