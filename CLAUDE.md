@@ -33,6 +33,13 @@ Do NOT forget to start this server. Run it in the background.
 npm run deploy
 ```
 
+### Auto-Deploy Hook
+
+A Claude hook (`.claude/auto-deploy.sh`) automatically deploys after file edits:
+- Prevents concurrent deploys with a lock file
+- Verifies GitHub Pages deployment status after push
+- Reports success/failure
+
 ### How Deployment Works
 
 - **Live site:** https://empireofryan.github.io/
@@ -43,6 +50,18 @@ The deploy script:
 1. Builds the app with Vite (`vite build`)
 2. Uses `gh-pages` to push the `dist/` folder to the `master` branch of `empireofryan.github.io`
 3. GitHub Pages serves that repo at the root URL
+
+### Verifying Deployment
+
+After deploying, **ALWAYS verify** the GitHub Pages workflow succeeded:
+
+```bash
+gh api repos/empireofryan/empireofryan.github.io/actions/runs --jq '.workflow_runs[0] | {status: .status, conclusion: .conclusion}'
+```
+
+Expected output: `{"status":"completed","conclusion":"success"}`
+
+If `conclusion` is "cancelled" or "failure", redeploy and check again.
 
 ### Troubleshooting
 
