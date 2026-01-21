@@ -24,6 +24,10 @@ function HomePage() {
 
   // Use useLayoutEffect to restore scroll position synchronously before paint
   useLayoutEffect(() => {
+    // Skip scroll restoration if we have a hash (hash takes priority)
+    const hash = window.location.hash;
+    if (hash) return;
+
     const shouldRestore = sessionStorage.getItem('restoreScroll');
     const savedPosition = sessionStorage.getItem('scheduleScrollPosition');
 
@@ -39,8 +43,7 @@ function HomePage() {
 
   // Handle hash scrolling (e.g., /#classes) - wait for element to exist
   useEffect(() => {
-    // Check both React Router location and window.location for hash
-    const hash = location.hash || window.location.hash;
+    const hash = window.location.hash;
 
     if (hash) {
       const scrollToHash = () => {
@@ -52,13 +55,13 @@ function HomePage() {
         return false;
       };
 
-      // Try with increasing delays to wait for PageLoader
-      const retryDelays = [0, 100, 300, 600, 1000, 1500];
+      // Try with increasing delays to wait for PageLoader to render content
+      const retryDelays = [0, 200, 500, 1000, 2000];
       retryDelays.forEach(delay => {
         setTimeout(scrollToHash, delay);
       });
     }
-  }, [location.hash]);
+  }, []); // Run on mount only
 
   return (
     <PageLoader images={PRELOAD_IMAGES} backgroundImages={BACKGROUND_IMAGES}>
