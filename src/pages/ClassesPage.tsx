@@ -156,7 +156,6 @@ function ClassesPage() {
         <div className="classes-container">
           <div className="class-type-card special-events-card">
             <div className="class-type-header">
-              <span className="class-type-badge event-badge">Special Events</span>
               <h2 className="class-type-title">Workshops, Courses & Retreats</h2>
               <p className="class-type-meta">Saturdays & select dates</p>
             </div>
