@@ -16,10 +16,14 @@ const preloadImage = (src: string): Promise<void> => {
 };
 
 export default function PageLoader({ children, images, backgroundImages = [] }: PageLoaderProps) {
-  // Skip loading screen if we're restoring scroll position (coming back from class detail)
+  // Skip loading screen if:
+  // 1. We're restoring scroll position (coming back from class detail)
+  // 2. There's a hash in the URL (navigating to specific section like /#classes)
   const [loaded, setLoaded] = useState(() => {
     try {
-      return sessionStorage.getItem('restoreScroll') === 'true';
+      const hasHash = window.location.hash.length > 0;
+      const restoreScroll = sessionStorage.getItem('restoreScroll') === 'true';
+      return hasHash || restoreScroll;
     } catch {
       return false;
     }
