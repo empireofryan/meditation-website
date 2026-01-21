@@ -132,7 +132,6 @@ function ClassesPage() {
         <div className="classes-container">
           <div className="class-type-card">
             <div className="class-type-header">
-              <span className="class-type-badge membership-badge">Membership Required</span>
               <h2 className="class-type-title">Foundation Program</h2>
               <p className="class-type-meta">Wednesday at 6:45 PM | Included with Membership</p>
             </div>
