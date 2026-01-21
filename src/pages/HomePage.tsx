@@ -37,14 +37,24 @@ function HomePage() {
     }
   }, []);
 
-  // Handle hash scrolling (e.g., /#classes)
+  // Handle hash scrolling (e.g., /#classes) - wait for element to exist
   useEffect(() => {
     if (location.hash) {
-      const element = document.querySelector(location.hash);
-      if (element) {
-        setTimeout(() => {
+      const scrollToHash = () => {
+        const element = document.querySelector(location.hash);
+        if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
+          return true;
+        }
+        return false;
+      };
+
+      // Try immediately, then retry with delays for PageLoader
+      if (!scrollToHash()) {
+        const retryDelays = [100, 300, 500, 1000];
+        retryDelays.forEach(delay => {
+          setTimeout(scrollToHash, delay);
+        });
       }
     }
   }, [location]);
