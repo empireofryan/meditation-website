@@ -39,9 +39,12 @@ function HomePage() {
 
   // Handle hash scrolling (e.g., /#classes) - wait for element to exist
   useEffect(() => {
-    if (location.hash) {
+    // Check both React Router location and window.location for hash
+    const hash = location.hash || window.location.hash;
+
+    if (hash) {
       const scrollToHash = () => {
-        const element = document.querySelector(location.hash);
+        const element = document.querySelector(hash);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
           return true;
@@ -49,15 +52,13 @@ function HomePage() {
         return false;
       };
 
-      // Try immediately, then retry with delays for PageLoader
-      if (!scrollToHash()) {
-        const retryDelays = [100, 300, 500, 1000];
-        retryDelays.forEach(delay => {
-          setTimeout(scrollToHash, delay);
-        });
-      }
+      // Try with increasing delays to wait for PageLoader
+      const retryDelays = [0, 100, 300, 600, 1000, 1500];
+      retryDelays.forEach(delay => {
+        setTimeout(scrollToHash, delay);
+      });
     }
-  }, [location]);
+  }, [location.hash]);
 
   return (
     <PageLoader images={PRELOAD_IMAGES} backgroundImages={BACKGROUND_IMAGES}>
