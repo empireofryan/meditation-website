@@ -91,7 +91,6 @@ function ClassesPage() {
         <div className="classes-container">
           <div className="class-type-card">
             <div className="class-type-header">
-              <span className="class-type-badge">Drop-in</span>
               <h2 className="class-type-title">General Program Classes</h2>
               <p className="class-type-meta">Multiple times weekly | $10-15</p>
             </div>
