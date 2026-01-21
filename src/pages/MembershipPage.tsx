@@ -52,7 +52,7 @@ function MembershipPage() {
             </li>
             <li>
               <span className="benefit-icon">✓</span>
-              <span>Unlimited access to all classes, series, after-work meditations, retreats, and events at <a href="https://meditationinnewyork.org/" target="_blank" rel="noopener noreferrer">Kadampa Chelsea</a></span>
+              <span>Unlimited access to all classes, series, after-work meditations, retreats, and events at <a href="https://meditationinnewyork.org/" target="_blank" rel="noopener noreferrer">Kadampa Chelsea</a> & associated NYC area branches</span>
             </li>
           </ul>
           <a
