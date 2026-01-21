@@ -1,4 +1,5 @@
-import { useLayoutEffect } from 'react'
+import { useLayoutEffect, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import '../App.css'
 import ClassSchedule from '../components/Calendar/ClassSchedule'
 import PageLoader from '../components/PageLoader'
@@ -19,6 +20,8 @@ const BACKGROUND_IMAGES = [
 ];
 
 function HomePage() {
+  const location = useLocation();
+
   // Use useLayoutEffect to restore scroll position synchronously before paint
   useLayoutEffect(() => {
     const shouldRestore = sessionStorage.getItem('restoreScroll');
@@ -33,6 +36,18 @@ function HomePage() {
       window.scrollTo({ top: parseInt(savedPosition, 10), behavior: 'instant' });
     }
   }, []);
+
+  // Handle hash scrolling (e.g., /#classes)
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [location]);
 
   return (
     <PageLoader images={PRELOAD_IMAGES} backgroundImages={BACKGROUND_IMAGES}>
