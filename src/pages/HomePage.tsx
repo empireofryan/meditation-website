@@ -26,7 +26,12 @@ function HomePage() {
   useLayoutEffect(() => {
     // Skip scroll restoration if we have a hash (hash takes priority)
     const hash = window.location.hash;
-    if (hash) return;
+    if (hash) {
+      // Clear any saved scroll position since we're navigating to a hash
+      sessionStorage.removeItem('restoreScroll');
+      sessionStorage.removeItem('scheduleScrollPosition');
+      return;
+    }
 
     const shouldRestore = sessionStorage.getItem('restoreScroll');
     const savedPosition = sessionStorage.getItem('scheduleScrollPosition');
