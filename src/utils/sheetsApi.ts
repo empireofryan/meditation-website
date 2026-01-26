@@ -37,6 +37,13 @@ export interface Cancellation {
   reason: string;
 }
 
+export interface Announcement {
+  id: string;
+  text: string;
+  startDate: Date;
+  endDate: Date;
+}
+
 // Combined class type for the calendar display
 export interface ScheduledClass {
   id: string;
