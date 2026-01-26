@@ -419,3 +419,40 @@ export async function fetchUpcomingEvents(): Promise<ScheduledClass[]> {
 
   return upcomingEvents;
 }
+
+// Fetch active announcements from the Announcements sheet
+export async function fetchAnnouncements(): Promise<Announcement[]> {
+  const rows = await fetchSheetAsCSV('Announcements');
+  const announcements: Announcement[] = [];
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  // Skip header row (row 0), start from row 1
+  for (let i = 1; i < rows.length; i++) {
+    const row = rows[i];
+    // Skip empty rows or rows without announcement text
+    if (!row[0] || !row[0].trim()) continue;
+
+    const text = row[0].trim();
+    const startDate = parseDate(row[1]);
+    const endDate = parseDate(row[2]);
+
+    // Skip if dates are invalid
+    if (!startDate || !endDate) continue;
+
+    // Set end date to end of day for inclusive comparison
+    endDate.setHours(23, 59, 59, 999);
+
+    // Only include announcements that are currently active
+    if (today >= startDate && today <= endDate) {
+      announcements.push({
+        id: `announcement-${i}`,
+        text,
+        startDate,
+        endDate
+      });
+    }
+  }
+
+  return announcements;
+}
