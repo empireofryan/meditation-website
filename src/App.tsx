@@ -6,10 +6,12 @@ import MembershipPage from './pages/MembershipPage'
 import ClassesPage from './pages/ClassesPage'
 import ClassSchedule from './components/Calendar/ClassSchedule'
 import ClassDetail from './pages/ClassDetail'
+import AnnouncementBanner from './components/AnnouncementBanner'
 
 function App() {
   return (
     <BrowserRouter basename="/">
+      <AnnouncementBanner />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
