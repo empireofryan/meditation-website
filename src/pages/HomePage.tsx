@@ -87,8 +87,11 @@ function HomePage() {
         </nav>
         <div className="hero-content">
           <h1 className="hero-title">
-            Change your mind, change your world.
+            Get 50% off your <a href="/membership" style={{ color: '#FFC845', textDecoration: 'underline', textUnderlineOffset: '6px' }}>first month of membership</a>
           </h1>
+          <p className="hero-cta" style={{ textDecoration: 'none', opacity: 0.85, marginTop: '8px' }}>
+            Ask a front desk volunteer for more details
+          </p>
         </div>
       </section>
 
