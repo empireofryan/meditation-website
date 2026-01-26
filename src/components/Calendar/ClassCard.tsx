@@ -74,18 +74,36 @@ const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
   if (isCancelled) {
     return (
       <div className={`${styles.classCard} ${styles.cancelled}`}>
-        <div className={styles.timeColumn}>
-          <span className={styles.time}>{timeNumber}<span className={styles.period}>{timePeriod}</span></span>
-          {durationText && <span className={styles.duration}>{durationText}</span>}
-        </div>
-        <div className={styles.classInfo}>
-          <div className={styles.headerRow}>
-            <span className={`${styles.className} ${styles.strikethrough}`}>
-              {displayName}
-            </span>
-            <span className={styles.noClassText}>
-              NO CLASS TODAY{cancellationReason ? ` - ${cancellationReason}` : ''}
-            </span>
+        <div className={styles.mainRow}>
+          <div className={styles.timeColumn}>
+            <span className={`${styles.time} ${styles.cancelledText}`}>{timeNumber}<span className={styles.period}>{timePeriod}</span></span>
+            {durationText && <span className={`${styles.duration} ${styles.cancelledText}`}>{durationText}</span>}
+          </div>
+          <div className={styles.classInfo}>
+            <div className={styles.headerRow}>
+              <span className={`${styles.className} ${styles.strikethrough}`}>
+                {displayName}
+              </span>
+              <span className={`${styles.instructorName} ${styles.cancelledText}`}>
+                {teacherPhotos.length > 0 && (
+                  <span className={styles.photoStack}>
+                    {teacherPhotos.map((photo, index) => (
+                      <img
+                        key={index}
+                        src={photo}
+                        alt=""
+                        className={`${styles.teacherPhoto} ${styles.cancelledPhoto}`}
+                        style={{ zIndex: teacherPhotos.length - index }}
+                      />
+                    ))}
+                  </span>
+                )}
+                {displayInstructor}
+              </span>
+            </div>
+          </div>
+          <div className={styles.bookSection}>
+            <span className={styles.cancelledBadge}>CLASS CANCELLED</span>
           </div>
         </div>
       </div>
