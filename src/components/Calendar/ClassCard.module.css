@@ -25,26 +25,21 @@
 }
 
 .accordionContent {
-  padding: 16px 0 8px 0;
-  margin-top: 16px;
-  border-top: 1px solid #e8e4dc;
-  animation: slideDown 0.5s ease;
   overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  padding: 0;
+  margin-top: 0;
+  border-top: 1px solid transparent;
+  transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease, margin-top 0.3s ease, border-color 0.3s ease;
 }
 
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    max-height: 0;
-    padding-top: 0;
-    margin-top: 0;
-  }
-  to {
-    opacity: 1;
-    max-height: 200px;
-    padding-top: 16px;
-    margin-top: 16px;
-  }
+.accordionContentExpanded {
+  max-height: 200px;
+  opacity: 1;
+  padding: 16px 0 8px 0;
+  margin-top: 16px;
+  border-top-color: #e8e4dc;
 }
 
 .description {
