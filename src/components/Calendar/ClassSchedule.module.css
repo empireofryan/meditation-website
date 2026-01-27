@@ -140,9 +140,9 @@
   cursor: default;
   transition: all 0.2s;
   padding: 6px;
-  min-height: 100px;
+  min-height: 80px;
   position: relative;
-  overflow: visible;
+  overflow: hidden;
   min-width: 0;
 }
 
