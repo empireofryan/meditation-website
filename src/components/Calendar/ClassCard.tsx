@@ -76,15 +76,15 @@ const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
       <div className={`${styles.classCard} ${styles.cancelled}`}>
         <div className={styles.mainRow}>
           <div className={styles.timeColumn}>
-            <span className={`${styles.time} ${styles.cancelledText}`}>{timeNumber}<span className={styles.period}>{timePeriod}</span></span>
-            {durationText && <span className={`${styles.duration} ${styles.cancelledText}`}>{durationText}</span>}
+            <span className={`${styles.time} ${styles.cancelledTime}`}>{timeNumber}<span className={styles.period}>{timePeriod}</span></span>
+            {durationText && <span className={`${styles.duration} ${styles.cancelledTime}`}>{durationText}</span>}
           </div>
           <div className={styles.classInfo}>
             <div className={styles.headerRow}>
               <span className={`${styles.className} ${styles.strikethrough}`}>
                 {displayName}
               </span>
-              <span className={`${styles.instructorName} ${styles.cancelledText}`}>
+              <span className={`${styles.instructorName} ${styles.cancelledInstructor}`}>
                 {teacherPhotos.length > 0 && (
                   <span className={styles.photoStack}>
                     {teacherPhotos.map((photo, index) => (
