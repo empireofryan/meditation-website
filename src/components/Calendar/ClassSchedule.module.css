@@ -320,28 +320,28 @@
 .emptyTitle {
   font-size: 20px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: white;
   margin: 0 0 8px 0;
 }
 
 .emptyMessage {
   font-size: 14px;
   margin: 0;
-  color: #666666;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .loadingContainer,
 .loadingState {
   text-align: center;
   padding: 60px 20px;
-  background-color: #f9f7f3;
+  background-color: rgba(255, 255, 255, 0.05);
   margin: 24px;
   border-radius: 8px;
 }
 
 .loadingState p {
   margin-top: 16px;
-  color: #666;
+  color: rgba(255, 255, 255, 0.6);
   font-size: 14px;
 }
 
