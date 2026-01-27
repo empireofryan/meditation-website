@@ -157,28 +157,27 @@
 
 /* Cancelled state */
 .cancelled {
-  opacity: 0.7;
   background-color: #f5f5f5;
-  border-left-color: #dc2626;
+  border-left-color: #e32636;
 }
 
 .cancelled:hover {
   background-color: #f0f0f0;
-  border-left-color: #dc2626;
+  border-left-color: #e32636;
 }
 
 .strikethrough {
   text-decoration: line-through;
-  color: #999;
+  color: #666;
 }
 
 .cancelledText {
-  color: #999;
+  color: #888;
 }
 
 .cancelledPhoto {
   filter: grayscale(100%);
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .cancelledBadge {
