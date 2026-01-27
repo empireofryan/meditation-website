@@ -168,6 +168,7 @@
 
 .strikethrough {
   text-decoration: line-through;
+  text-decoration-color: #b91c1c;
   color: #1a1a1a;
 }
 
@@ -177,6 +178,7 @@
 
 .cancelledInstructor {
   text-decoration: line-through;
+  text-decoration-color: #b91c1c;
   color: #1a1a1a;
 }
 
