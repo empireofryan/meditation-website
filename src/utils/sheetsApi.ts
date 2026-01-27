@@ -79,7 +79,7 @@ function getTeacherImageUrl(teacherName: string): string {
   const firstName = teacherName.split(/[\s,]/)[0].toLowerCase();
 
   // Known teachers with photos
-  const knownTeachers = ['ben', 'cristina', 'deanna', 'debbie', 'joseph', 'teri', 'tom'];
+  const knownTeachers = ['ben', 'cristina', 'deanna', 'debbie', 'eli', 'giselle', 'joseph', 'teri', 'tom'];
 
   if (knownTeachers.includes(firstName)) {
     return `/photos/teachers/${firstName}.jpg`;
