@@ -13,7 +13,7 @@ function formatClassName(name: string): string {
 function getTeacherPhotos(instructorName: string): string[] {
   if (!instructorName) return [];
 
-  const knownTeachers = ['ben', 'cristina', 'deanna', 'debbie', 'joseph', 'teri', 'tom'];
+  const knownTeachers = ['ben', 'cristina', 'deanna', 'debbie', 'eli', 'giselle', 'joseph', 'teri', 'tom'];
   const photos: string[] = [];
 
   // Split by comma and get first name of each teacher
