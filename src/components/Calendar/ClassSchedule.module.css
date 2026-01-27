@@ -303,8 +303,8 @@
 .emptyState {
   text-align: center;
   padding: 60px 20px;
-  color: #666666;
-  background-color: #f9f7f3;
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.05);
   margin: 24px;
   border-radius: 8px;
 }
