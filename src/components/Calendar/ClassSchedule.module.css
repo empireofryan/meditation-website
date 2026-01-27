@@ -19,7 +19,7 @@
 }
 
 .title {
-  color: var(--schedule-header-text, #1a1a1a);
+  color: white;
   font-size: 28px;
   font-weight: 700;
   margin: 0;
@@ -27,8 +27,7 @@
 }
 
 .subtitle {
-  color: var(--schedule-header-text, rgba(26, 26, 26, 0.7));
-  opacity: 0.9;
+  color: rgba(255, 255, 255, 0.7);
   font-size: 14px;
   margin: 12px 0 0 0;
   font-weight: 400;
