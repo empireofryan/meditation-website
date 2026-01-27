@@ -27,10 +27,10 @@
 }
 
 .subtitle {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 14px;
-  margin: 12px 0 0 0;
-  font-weight: 400;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 28px;
+  margin: 16px 0 0 0;
+  font-weight: 500;
 }
 
 /* View Toggle */
