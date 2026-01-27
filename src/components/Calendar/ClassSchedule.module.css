@@ -2,12 +2,11 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0;
-  max-height: 700px;
   display: flex;
   flex-direction: column;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .header {
