@@ -165,7 +165,7 @@
 }
 
 .dateItem.selected .classCount {
-  color: rgba(26, 26, 26, 0.8);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .dateItem.noClasses {
