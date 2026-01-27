@@ -102,20 +102,20 @@
 
 .dateItem:hover {
   background-color: #ffffff;
-  border-color: #FFC845;
+  border-color: #1a1a1a;
   transform: translateY(-2px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .dateItem.selected {
-  background-color: #FFC845;
-  border-color: #FFC845;
-  box-shadow: 0 2px 8px rgba(255, 200, 69, 0.3);
+  background-color: #1a1a1a;
+  border-color: #1a1a1a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .dateItem.selected:hover {
-  background-color: #FFD666;
-  border-color: #FFD666;
+  background-color: #333333;
+  border-color: #333333;
 }
 
 .dayName {
