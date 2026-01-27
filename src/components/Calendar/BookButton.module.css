@@ -1,6 +1,6 @@
 .bookButton {
-  background-color: #FFC845;
-  color: #1a1a1a;
+  background-color: #1a1a1a;
+  color: #ffffff;
   border: none;
   padding: 12px 32px;
   font-size: 13px;
@@ -14,13 +14,13 @@
 }
 
 .bookButton:hover {
-  background-color: #FFD666;
-  box-shadow: 0 2px 8px rgba(255, 200, 69, 0.3);
+  background-color: #333333;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .bookButton:active {
   transform: scale(0.98);
-  box-shadow: 0 1px 4px rgba(255, 200, 69, 0.3);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 .bookButton:disabled {
