@@ -129,7 +129,7 @@
 }
 
 .dateItem.selected .dayName {
-  color: rgba(26, 26, 26, 0.9);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .dayNumber {
