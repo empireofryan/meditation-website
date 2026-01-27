@@ -359,9 +359,6 @@ const ClassSchedule: React.FC = () => {
             <button onClick={() => navigateMonth(-1)} className={styles.navButton}>
               ←
             </button>
-            <span className={styles.monthLabel}>
-              {calendarMonth.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
-            </span>
             <button onClick={() => navigateMonth(1)} className={styles.navButton}>
               →
             </button>
