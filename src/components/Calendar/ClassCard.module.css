@@ -249,7 +249,7 @@
 /* Tablet styles */
 @media (max-width: 1024px) {
   .mainRow {
-    grid-template-columns: 80px 1fr auto auto auto;
+    grid-template-columns: 80px 1fr 160px 120px auto;
     gap: 12px;
   }
 
