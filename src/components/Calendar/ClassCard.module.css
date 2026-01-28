@@ -10,13 +10,14 @@
 
 .classCard:hover {
   background-color: #f5f2ec;
-  border-left-color: #FFC845;
+  border-left-color: #1a1a1a;
 }
 
 .mainRow {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 100px 1fr auto auto auto;
   align-items: center;
+  gap: 16px;
   width: 100%;
 }
 
@@ -53,8 +54,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  min-width: 160px;
-  margin-right: 24px;
 }
 
 .time {
@@ -74,40 +73,36 @@
 .duration {
   font-size: 13px;
   font-weight: 500;
-  color: #1a1a1a;
+  color: #666;
 }
 
 .classInfo {
-  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 4px;
+  min-width: 0;
 }
 
 .headerRow {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
 }
 
 .className {
   font-size: 16px;
   font-weight: 700;
   color: #1a1a1a;
-  width: 260px;
-  min-width: 260px;
-  max-width: 260px;
 }
 
 .instructorName {
   font-size: 16px;
   font-weight: 700;
   color: #1a1a1a;
-  width: 180px;
-  min-width: 180px;
   display: flex;
   align-items: center;
   gap: 8px;
+  white-space: nowrap;
 }
 
 .photoStack {
@@ -117,13 +112,12 @@
 }
 
 .photoStack .teacherPhoto {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid white;
-  margin-left: -12px;
-  transition: margin-left 0.2s ease, transform 0.2s ease;
+  margin-left: -10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
@@ -131,10 +125,9 @@
   margin-left: 0;
 }
 
-
 .teacherPhoto {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
@@ -144,15 +137,14 @@
   font-size: 16px;
   font-weight: 700;
   color: #1a1a1a;
-  width: 120px;
-  min-width: 120px;
-  margin-left: 16px;
+  white-space: nowrap;
 }
 
 .bookSection {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
+  flex-shrink: 0;
 }
 
 /* Cancelled state */
@@ -192,7 +184,7 @@
   color: white;
   font-size: 12px;
   font-weight: 700;
-  padding: 10px 20px;
+  padding: 10px 16px;
   border-radius: 4px;
   letter-spacing: 1px;
   white-space: nowrap;
@@ -216,6 +208,7 @@
   border-radius: 3px;
   margin-right: 8px;
   text-transform: uppercase;
+  flex-shrink: 0;
 }
 
 /* Members-only class state */
@@ -236,6 +229,7 @@
   border-radius: 3px;
   margin-right: 8px;
   text-transform: uppercase;
+  flex-shrink: 0;
 }
 
 .membershipLink {
@@ -244,7 +238,7 @@
   color: #0891b2;
   text-decoration: none;
   transition: color 0.2s ease;
-  line-height: 1.3;
+  white-space: nowrap;
 }
 
 .membershipLink:hover {
@@ -254,170 +248,106 @@
 
 /* Tablet styles */
 @media (max-width: 1024px) {
-  .classCard {
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  .timeColumn {
-    min-width: 120px;
-    margin-right: 16px;
-  }
-
-  .className {
-    width: 200px;
-    min-width: 200px;
-    max-width: 200px;
-  }
-
-  .instructorName {
-    width: 120px;
-    min-width: 120px;
-  }
-
-  .cost {
-    width: 100px;
-    min-width: 100px;
-  }
-
-  .bookSection {
-    margin-left: auto;
-  }
-}
-
-/* Small tablet / large mobile */
-@media (max-width: 900px) {
-  .classCard {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  .timeColumn {
-    min-width: auto;
-    margin-right: 0;
-  }
-
-  .headerRow {
-    flex-wrap: wrap;
+  .mainRow {
+    grid-template-columns: 80px 1fr auto auto auto;
     gap: 12px;
   }
 
   .className {
-    width: auto;
-    min-width: auto;
-    max-width: none;
-    flex: 1;
+    font-size: 15px;
   }
 
   .instructorName {
-    width: auto;
-    min-width: auto;
-  }
-
-  .cost {
-    width: auto;
-    min-width: auto;
-    margin-left: 0;
-  }
-
-  .bookSection {
-    width: 100%;
-    margin-left: 0;
+    font-size: 15px;
   }
 }
 
 /* Mobile styles */
 @media (max-width: 768px) {
   .classCard {
-    padding: 12px;
+    padding: 14px 16px;
   }
 
   .mainRow {
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
+    gap: 12px;
   }
 
   .timeColumn {
-    margin-right: 0;
-    margin-bottom: 2px;
-    min-width: auto;
-  }
-
-  .headerRow {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-    width: 100%;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 8px;
   }
 
   .time {
-    font-size: 13px;
+    font-size: 15px;
+  }
+
+  .duration {
+    font-size: 12px;
+  }
+
+  .classInfo {
+    width: 100%;
+  }
+
+  .headerRow {
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
   .className {
-    font-size: 14px;
+    font-size: 15px;
     width: 100%;
-    min-width: auto;
-    max-width: none;
   }
 
   .instructorName {
-    width: auto;
-    min-width: auto;
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .cost {
-    margin-left: 0;
-    margin-top: 2px;
-    width: auto;
-    min-width: auto;
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .bookSection {
     width: 100%;
-    flex-direction: row;
-    gap: 8px;
+    justify-content: flex-start;
   }
 
-  .bookSection button {
-    min-height: 38px;
+  .teacherPhoto,
+  .photoStack .teacherPhoto {
+    width: 36px;
+    height: 36px;
   }
 
-  .accordionContent {
-    padding: 12px 0 4px 0;
-    margin-top: 12px;
-  }
-
-  .description {
-    font-size: 13px;
+  .cancelledBadge {
+    font-size: 11px;
+    padding: 8px 12px;
   }
 }
 
 /* Small mobile styles */
 @media (max-width: 480px) {
   .classCard {
-    padding: 10px;
-    gap: 6px;
+    padding: 12px;
   }
 
   .time {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .className {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .instructorName {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .cost {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .teacherPhoto,
@@ -428,7 +358,7 @@
 
   .bookSection button,
   .bookSection a {
-    min-height: 36px;
-    font-size: 12px;
+    font-size: 11px;
+    padding: 8px 16px;
   }
 }
