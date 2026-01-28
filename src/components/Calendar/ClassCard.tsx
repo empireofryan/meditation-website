@@ -80,28 +80,27 @@ const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
             {durationText && <span className={`${styles.duration} ${styles.cancelledTime}`}>{durationText}</span>}
           </div>
           <div className={styles.classInfo}>
-            <div className={styles.headerRow}>
-              <span className={`${styles.className} ${styles.strikethrough}`}>
-                {displayName}
-              </span>
-              <span className={`${styles.instructorName} ${styles.cancelledInstructor}`}>
-                {teacherPhotos.length > 0 && (
-                  <span className={styles.photoStack}>
-                    {teacherPhotos.map((photo, index) => (
-                      <img
-                        key={index}
-                        src={photo}
-                        alt=""
-                        className={`${styles.teacherPhoto} ${styles.cancelledPhoto}`}
-                        style={{ zIndex: teacherPhotos.length - index }}
-                      />
-                    ))}
-                  </span>
-                )}
-                {displayInstructor}
-              </span>
-            </div>
+            <span className={`${styles.className} ${styles.strikethrough}`}>
+              {displayName}
+            </span>
           </div>
+          <span className={`${styles.instructorName} ${styles.cancelledInstructor}`}>
+            {teacherPhotos.length > 0 && (
+              <span className={styles.photoStack}>
+                {teacherPhotos.map((photo, index) => (
+                  <img
+                    key={index}
+                    src={photo}
+                    alt=""
+                    className={`${styles.teacherPhoto} ${styles.cancelledPhoto}`}
+                    style={{ zIndex: teacherPhotos.length - index }}
+                  />
+                ))}
+              </span>
+            )}
+            {displayInstructor}
+          </span>
+          <span></span>
           <div className={styles.bookSection}>
             <span className={styles.cancelledBadge}>CLASS CANCELLED</span>
           </div>
