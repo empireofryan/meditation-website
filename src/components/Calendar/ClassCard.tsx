@@ -118,35 +118,33 @@ const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
           {durationText && <span className={styles.duration}>{durationText}</span>}
         </div>
         <div className={styles.classInfo}>
-          <div className={styles.headerRow}>
-            <span className={styles.className}>
-              {isSpecialEvent && <span className={styles.eventBadge}>Event</span>}
-              {isMembersOnly && <span className={styles.membersBadge}>Members</span>}
-              {displayName}
-            </span>
-            <span className={styles.instructorName}>
-              {teacherPhotos.length > 0 && (
-                <span className={styles.photoStack}>
-                  {teacherPhotos.map((photo, index) => (
-                    <img
-                      key={index}
-                      src={photo}
-                      alt=""
-                      className={styles.teacherPhoto}
-                      style={{ zIndex: teacherPhotos.length - index }}
-                    />
-                  ))}
-                </span>
-              )}
-              {displayInstructor}
-            </span>
-            {isMembersOnly ? (
-              <Link to="/membership" className={styles.membershipLink}>Membership Required</Link>
-            ) : (
-              displayCost && <span className={styles.cost}>{displayCost}</span>
-            )}
-          </div>
+          <span className={styles.className}>
+            {isSpecialEvent && <span className={styles.eventBadge}>Event</span>}
+            {isMembersOnly && <span className={styles.membersBadge}>Members</span>}
+            {displayName}
+          </span>
         </div>
+        <span className={styles.instructorName}>
+          {teacherPhotos.length > 0 && (
+            <span className={styles.photoStack}>
+              {teacherPhotos.map((photo, index) => (
+                <img
+                  key={index}
+                  src={photo}
+                  alt=""
+                  className={styles.teacherPhoto}
+                  style={{ zIndex: teacherPhotos.length - index }}
+                />
+              ))}
+            </span>
+          )}
+          {displayInstructor}
+        </span>
+        {isMembersOnly ? (
+          <Link to="/membership" className={styles.membershipLink}>Membership Required</Link>
+        ) : (
+          <span className={styles.cost}>{displayCost || ''}</span>
+        )}
         <div className={styles.bookSection}>
           {description && (
             <BookButton
