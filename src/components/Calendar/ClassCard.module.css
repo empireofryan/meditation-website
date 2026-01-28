@@ -243,6 +243,8 @@
   text-decoration: none;
   transition: color 0.2s ease;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .membershipLink:hover {
