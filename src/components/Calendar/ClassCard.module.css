@@ -15,7 +15,7 @@
 
 .mainRow {
   display: grid;
-  grid-template-columns: 100px 1fr auto auto auto;
+  grid-template-columns: 100px 1fr 180px 140px auto;
   align-items: center;
   gap: 16px;
   width: 100%;
