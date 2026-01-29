@@ -14,44 +14,64 @@ async function findOverflow() {
   await page.goto('http://localhost:5174/', { waitUntil: 'networkidle0', timeout: 60000 });
   await new Promise(r => setTimeout(r, 5000));
 
-  // Find elements causing horizontal overflow
-  const overflowElements = await page.evaluate(() => {
-    const viewportWidth = window.innerWidth;
-    const results = [];
+  // Find elements around the overflow boundary
+  const overflowDetails = await page.evaluate(() => {
+    const viewportWidth = window.innerWidth; // 1280
+    const bodyScrollWidth = document.body.scrollWidth; // 1300
+    const overflow = bodyScrollWidth - viewportWidth; // 20
 
-    const checkElement = (el, depth = 0) => {
+    // Find first-level children that are wider than viewport
+    const wideElements = [];
+    document.body.querySelectorAll('*').forEach(el => {
       const rect = el.getBoundingClientRect();
-      if (rect.right > viewportWidth && rect.width > 0) {
-        const tag = el.tagName.toLowerCase();
-        const classes = el.className ? (typeof el.className === 'string' ? el.className : '') : '';
-        const classPreview = classes.substring(0, 50);
-        results.push({
-          tag,
-          class: classPreview,
+      const computedStyle = window.getComputedStyle(el);
+
+      // Look for elements whose right edge is around 1280-1320
+      if (rect.right > 1280 && rect.right <= 1320 && rect.width > 100) {
+        wideElements.push({
+          tag: el.tagName,
+          class: el.className.substring(0, 60),
           right: Math.round(rect.right),
           width: Math.round(rect.width),
-          overflow: Math.round(rect.right - viewportWidth),
-          depth
+          marginRight: computedStyle.marginRight,
+          paddingRight: computedStyle.paddingRight,
+          overflow: computedStyle.overflow,
+          overflowX: computedStyle.overflowX
         });
       }
-    };
+    });
 
-    // Check all elements
-    document.querySelectorAll('*').forEach(el => checkElement(el));
+    // Check main containers
+    const mainContainers = [];
+    ['body', 'html', '#root'].forEach(sel => {
+      const el = document.querySelector(sel);
+      if (el) {
+        mainContainers.push({
+          selector: sel,
+          scrollWidth: el.scrollWidth,
+          clientWidth: el.clientWidth,
+          overflow: window.getComputedStyle(el).overflow
+        });
+      }
+    });
 
-    // Sort by overflow amount (largest first)
-    results.sort((a, b) => b.overflow - a.overflow);
-
-    return results.slice(0, 20);
+    return { viewportWidth, bodyScrollWidth, overflow, wideElements, mainContainers };
   });
 
-  console.log(`\nViewport width: 1280px`);
-  console.log(`Body scroll width: ${await page.evaluate(() => document.body.scrollWidth)}px`);
-  console.log(`\nElements causing overflow:`);
+  console.log('\n=== Overflow Analysis ===');
+  console.log(`Viewport: ${overflowDetails.viewportWidth}px`);
+  console.log(`Body scroll width: ${overflowDetails.bodyScrollWidth}px`);
+  console.log(`Overflow: ${overflowDetails.overflow}px`);
 
-  overflowElements.forEach((el, i) => {
-    console.log(`${i + 1}. <${el.tag}> class="${el.class}"`);
-    console.log(`   right: ${el.right}px, overflow: ${el.overflow}px`);
+  console.log('\n=== Main Containers ===');
+  overflowDetails.mainContainers.forEach(c => {
+    console.log(`${c.selector}: scrollWidth=${c.scrollWidth}, clientWidth=${c.clientWidth}, overflow=${c.overflow}`);
+  });
+
+  console.log('\n=== Elements near overflow boundary (1280-1320px) ===');
+  overflowDetails.wideElements.forEach(el => {
+    console.log(`<${el.tag}> right=${el.right}px, class="${el.class}"`);
+    console.log(`   marginRight: ${el.marginRight}, overflowX: ${el.overflowX}`);
   });
 
   await browser.close();
