@@ -19,7 +19,10 @@ async function runTests() {
     fs.mkdirSync(screenshotsDir, { recursive: true });
   }
 
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({
+    headless: true,
+    executablePath: '/Users/ryan/.cache/puppeteer/chrome/mac_arm-143.0.7499.169/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing'
+  });
 
   console.log('Starting viewport regression tests...\n');
 
