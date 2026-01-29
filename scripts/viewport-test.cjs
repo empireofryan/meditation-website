@@ -36,26 +36,25 @@ async function runTests() {
       // Navigate to local dev server
       await page.goto('http://localhost:5174/', { waitUntil: 'networkidle0', timeout: 30000 });
 
-      // Wait for schedule to load
-      await page.waitForSelector('[class*="classCard"]', { timeout: 10000 }).catch(() => {
-        console.log(`  - No class cards found on homepage`);
-      });
-
-      // Take full page screenshot
-      await page.screenshot({
-        path: path.join(screenshotsDir, `${viewport.name}-homepage.png`),
-        fullPage: true
-      });
-      console.log(`  - Homepage screenshot saved`);
-
-      // Scroll to schedule section if on homepage
+      // Scroll to schedule section
       await page.evaluate(() => {
         const schedule = document.querySelector('[class*="scheduleContainer"]');
-        if (schedule) schedule.scrollIntoView();
+        if (schedule) {
+          schedule.scrollIntoView({ block: 'start' });
+        }
       });
 
-      // Wait a moment for any animations
-      await new Promise(r => setTimeout(r, 500));
+      // Wait for schedule data to load (wait for loading spinner to disappear and class cards to appear)
+      await page.waitForFunction(() => {
+        const spinner = document.querySelector('[class*="spinner"]');
+        const cards = document.querySelectorAll('[class*="classCard"]');
+        return !spinner && cards.length > 0;
+      }, { timeout: 15000 }).catch(() => {
+        console.log(`  - Warning: Schedule may not have loaded completely`);
+      });
+
+      // Extra wait for rendering
+      await new Promise(r => setTimeout(r, 1000));
 
       // Take schedule section screenshot
       const scheduleElement = await page.$('[class*="scheduleContainer"]');
@@ -64,42 +63,80 @@ async function runTests() {
           path: path.join(screenshotsDir, `${viewport.name}-schedule.png`)
         });
         console.log(`  - Schedule screenshot saved`);
+      } else {
+        console.log(`  - Schedule container not found`);
       }
 
       // Check for layout issues
       const issues = await page.evaluate(() => {
         const problems = [];
 
-        // Check for horizontal overflow
-        if (document.body.scrollWidth > window.innerWidth) {
-          problems.push(`Horizontal overflow detected: body ${document.body.scrollWidth}px > viewport ${window.innerWidth}px`);
+        // Check for horizontal overflow on body
+        if (document.body.scrollWidth > window.innerWidth + 5) {
+          problems.push(`Page has horizontal scroll: ${document.body.scrollWidth}px > ${window.innerWidth}px`);
         }
 
-        // Check class cards for overflow
+        // Check schedule container for overflow
+        const schedule = document.querySelector('[class*="scheduleContainer"]');
+        if (schedule && schedule.scrollWidth > schedule.clientWidth + 5) {
+          problems.push(`Schedule container has horizontal overflow`);
+        }
+
+        // Check class cards
         const cards = document.querySelectorAll('[class*="classCard"]');
+        let cardIssues = 0;
         cards.forEach((card, i) => {
-          if (card.scrollWidth > card.clientWidth) {
-            problems.push(`Class card ${i + 1} has horizontal overflow`);
+          // Check if card content overflows
+          const mainRow = card.querySelector('[class*="mainRow"]');
+          if (mainRow && mainRow.scrollWidth > mainRow.clientWidth + 5) {
+            cardIssues++;
           }
 
-          // Check for cut-off text
-          const elements = card.querySelectorAll('[class*="className"], [class*="instructorName"], [class*="cost"], [class*="membershipLink"]');
-          elements.forEach(el => {
-            const style = window.getComputedStyle(el);
-            if (style.overflow === 'hidden' && el.scrollWidth > el.clientWidth) {
-              problems.push(`Text possibly cut off in ${el.className}: "${el.textContent?.substring(0, 30)}..."`);
+          // Check buttons visibility
+          const buttons = card.querySelectorAll('button');
+          buttons.forEach(btn => {
+            const rect = btn.getBoundingClientRect();
+            const cardRect = card.getBoundingClientRect();
+            if (rect.right > cardRect.right + 5) {
+              problems.push(`Button in card ${i + 1} extends beyond card boundary`);
             }
           });
         });
 
-        // Check book buttons
-        const buttons = document.querySelectorAll('[class*="bookSection"] button');
-        buttons.forEach((btn, i) => {
-          const rect = btn.getBoundingClientRect();
-          if (rect.right > window.innerWidth) {
-            problems.push(`Book button ${i + 1} extends beyond viewport`);
+        if (cardIssues > 0) {
+          problems.push(`${cardIssues} class card(s) have content overflow`);
+        }
+
+        // Check for text truncation in important elements
+        const checkTruncation = (selector, label) => {
+          const elements = document.querySelectorAll(selector);
+          let truncated = 0;
+          elements.forEach(el => {
+            if (el.scrollWidth > el.clientWidth + 2) {
+              truncated++;
+            }
+          });
+          if (truncated > 0) {
+            problems.push(`${truncated} ${label} element(s) may have truncated text`);
           }
-        });
+        };
+
+        checkTruncation('[class*="className"]', 'className');
+        checkTruncation('[class*="instructorName"]', 'instructorName');
+        checkTruncation('[class*="membershipLink"]', 'membershipLink');
+
+        // Check if instructor photos are aligned (compare positions)
+        const instructorElements = document.querySelectorAll('[class*="instructorName"]');
+        if (instructorElements.length >= 2) {
+          const positions = [];
+          instructorElements.forEach(el => {
+            positions.push(el.getBoundingClientRect().left);
+          });
+          const uniquePositions = [...new Set(positions.map(p => Math.round(p)))];
+          if (uniquePositions.length > 2) {
+            problems.push(`Instructor columns not aligned: ${uniquePositions.length} different x-positions found`);
+          }
+        }
 
         return problems;
       });
@@ -120,6 +157,7 @@ async function runTests() {
 
   await browser.close();
   console.log(`\nScreenshots saved to: ${screenshotsDir}`);
+  console.log('Review screenshots to verify layout at each viewport.');
 }
 
 runTests().catch(console.error);
