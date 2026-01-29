@@ -282,11 +282,13 @@ body {
 
 .section-container {
   max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 45% 55%;
   gap: 80px;
   align-items: center;
+  overflow: hidden;
 }
 
 .section-image {
