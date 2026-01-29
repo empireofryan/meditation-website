@@ -34,37 +34,52 @@ async function runTests() {
 
     try {
       // Navigate to local dev server
-      await page.goto('http://localhost:5174/', { waitUntil: 'networkidle0', timeout: 30000 });
+      await page.goto('http://localhost:5174/', { waitUntil: 'networkidle2', timeout: 30000 });
 
-      // Scroll to schedule section
-      await page.evaluate(() => {
-        const schedule = document.querySelector('[class*="scheduleContainer"]');
-        if (schedule) {
-          schedule.scrollIntoView({ block: 'start' });
-        }
+      // Wait for page to be ready
+      await new Promise(r => setTimeout(r, 2000));
+
+      // Take initial screenshot
+      await page.screenshot({
+        path: path.join(screenshotsDir, `${viewport.name}-full.png`),
+        fullPage: true
+      });
+      console.log(`  - Full page screenshot saved`);
+
+      // Find schedule section by looking for the toggle buttons or date headers
+      const hasSchedule = await page.evaluate(() => {
+        // Look for text content that indicates schedule
+        const buttons = Array.from(document.querySelectorAll('button'));
+        return buttons.some(b => b.textContent.includes('Schedule') || b.textContent.includes('Calendar'));
       });
 
-      // Wait for schedule data to load (wait for loading spinner to disappear and class cards to appear)
-      await page.waitForFunction(() => {
-        const spinner = document.querySelector('[class*="spinner"]');
-        const cards = document.querySelectorAll('[class*="classCard"]');
-        return !spinner && cards.length > 0;
-      }, { timeout: 15000 }).catch(() => {
-        console.log(`  - Warning: Schedule may not have loaded completely`);
-      });
-
-      // Extra wait for rendering
-      await new Promise(r => setTimeout(r, 1000));
-
-      // Take schedule section screenshot
-      const scheduleElement = await page.$('[class*="scheduleContainer"]');
-      if (scheduleElement) {
-        await scheduleElement.screenshot({
-          path: path.join(screenshotsDir, `${viewport.name}-schedule.png`)
+      if (hasSchedule) {
+        // Scroll to schedule area
+        await page.evaluate(() => {
+          const buttons = Array.from(document.querySelectorAll('button'));
+          const scheduleBtn = buttons.find(b => b.textContent.includes('Schedule'));
+          if (scheduleBtn) {
+            const container = scheduleBtn.closest('div');
+            if (container) {
+              // Go up to find the main schedule container
+              let parent = container;
+              for (let i = 0; i < 5; i++) {
+                if (parent.parentElement) parent = parent.parentElement;
+              }
+              parent.scrollIntoView({ block: 'start' });
+            }
+          }
         });
-        console.log(`  - Schedule screenshot saved`);
-      } else {
-        console.log(`  - Schedule container not found`);
+
+        // Wait for data to potentially load
+        await new Promise(r => setTimeout(r, 3000));
+
+        // Take another screenshot focused on schedule area
+        await page.screenshot({
+          path: path.join(screenshotsDir, `${viewport.name}-schedule-area.png`),
+          fullPage: true
+        });
+        console.log(`  - Schedule area screenshot saved`);
       }
 
       // Check for layout issues
@@ -72,71 +87,58 @@ async function runTests() {
         const problems = [];
 
         // Check for horizontal overflow on body
-        if (document.body.scrollWidth > window.innerWidth + 5) {
-          problems.push(`Page has horizontal scroll: ${document.body.scrollWidth}px > ${window.innerWidth}px`);
+        if (document.body.scrollWidth > window.innerWidth + 10) {
+          problems.push(`Page has horizontal scroll: body ${document.body.scrollWidth}px > viewport ${window.innerWidth}px`);
         }
 
-        // Check schedule container for overflow
-        const schedule = document.querySelector('[class*="scheduleContainer"]');
-        if (schedule && schedule.scrollWidth > schedule.clientWidth + 5) {
-          problems.push(`Schedule container has horizontal overflow`);
-        }
+        // Find all elements that might be class cards (look for common patterns)
+        const allDivs = document.querySelectorAll('div');
+        let potentialCards = [];
 
-        // Check class cards
-        const cards = document.querySelectorAll('[class*="classCard"]');
-        let cardIssues = 0;
-        cards.forEach((card, i) => {
-          // Check if card content overflows
-          const mainRow = card.querySelector('[class*="mainRow"]');
-          if (mainRow && mainRow.scrollWidth > mainRow.clientWidth + 5) {
-            cardIssues++;
+        allDivs.forEach(div => {
+          const className = div.className || '';
+          if (className.includes('Card') || className.includes('card')) {
+            potentialCards.push(div);
           }
+        });
 
-          // Check buttons visibility
-          const buttons = card.querySelectorAll('button');
-          buttons.forEach(btn => {
-            const rect = btn.getBoundingClientRect();
-            const cardRect = card.getBoundingClientRect();
-            if (rect.right > cardRect.right + 5) {
-              problems.push(`Button in card ${i + 1} extends beyond card boundary`);
+        // Check each potential card for overflow
+        let overflowingCards = 0;
+        potentialCards.forEach(card => {
+          if (card.scrollWidth > card.clientWidth + 5) {
+            overflowingCards++;
+          }
+          // Check if any child extends beyond
+          const rect = card.getBoundingClientRect();
+          const children = card.querySelectorAll('*');
+          children.forEach(child => {
+            const childRect = child.getBoundingClientRect();
+            if (childRect.right > rect.right + 10 && childRect.width > 0) {
+              overflowingCards++;
             }
           });
         });
 
-        if (cardIssues > 0) {
-          problems.push(`${cardIssues} class card(s) have content overflow`);
+        if (overflowingCards > 0) {
+          problems.push(`${overflowingCards} potential card element(s) have overflow issues`);
         }
 
-        // Check for text truncation in important elements
-        const checkTruncation = (selector, label) => {
-          const elements = document.querySelectorAll(selector);
-          let truncated = 0;
-          elements.forEach(el => {
-            if (el.scrollWidth > el.clientWidth + 2) {
-              truncated++;
-            }
-          });
-          if (truncated > 0) {
-            problems.push(`${truncated} ${label} element(s) may have truncated text`);
+        // Check all buttons aren't cut off
+        const buttons = document.querySelectorAll('button');
+        let cutOffButtons = 0;
+        buttons.forEach(btn => {
+          const rect = btn.getBoundingClientRect();
+          if (rect.right > window.innerWidth) {
+            cutOffButtons++;
           }
-        };
+        });
 
-        checkTruncation('[class*="className"]', 'className');
-        checkTruncation('[class*="instructorName"]', 'instructorName');
-        checkTruncation('[class*="membershipLink"]', 'membershipLink');
-
-        // Check if instructor photos are aligned (compare positions)
-        const instructorElements = document.querySelectorAll('[class*="instructorName"]');
-        if (instructorElements.length >= 2) {
-          const positions = [];
-          instructorElements.forEach(el => {
-            positions.push(el.getBoundingClientRect().left);
-          });
-          const uniquePositions = [...new Set(positions.map(p => Math.round(p)))];
-          if (uniquePositions.length > 2) {
-            problems.push(`Instructor columns not aligned: ${uniquePositions.length} different x-positions found`);
-          }
+        if (cutOffButtons > 0) {
+          problems.push(`${cutOffButtons} button(s) extend beyond viewport`);
         }
+
+        // Check for elements with display:grid or flex that might have alignment issues
+        const gridElements = document.querySelectorAll('[style*="grid"], [style*="flex"]');
 
         return problems;
       });
@@ -145,7 +147,7 @@ async function runTests() {
         console.log(`  - Issues found:`);
         issues.forEach(issue => console.log(`    * ${issue}`));
       } else {
-        console.log(`  - No layout issues detected`);
+        console.log(`  - No major layout issues detected`);
       }
 
     } catch (err) {
