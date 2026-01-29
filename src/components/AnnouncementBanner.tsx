@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { fetchAnnouncements, Announcement } from '../utils/sheetsApi';
+import { fetchAnnouncements } from '../utils/sheetsApi';
+import type { Announcement } from '../utils/sheetsApi';
 
 const bannerStyles: React.CSSProperties = {
   background: '#1a1a1a',
