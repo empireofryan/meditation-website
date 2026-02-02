@@ -141,8 +141,8 @@ function HomePage() {
             <a href="/classes" className="learn-more-button">Class Info</a>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=800"
-            alt="Group meditation"
+            src="/photos/KMCJosephTeaching.jpg"
+            alt="Joseph teaching at KMC Williamsburg"
             className="section-image"
           />
         </div>
