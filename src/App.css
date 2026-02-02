@@ -1676,6 +1676,36 @@ body {
     text-align: center;
   }
 
+  .about-tradition-split {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-tradition-text .about-heading {
+    text-align: center;
+  }
+
+  .about-tradition-images {
+    width: 100%;
+    min-height: 300px;
+  }
+
+  .tradition-img-back {
+    width: 70%;
+    height: 140px;
+  }
+
+  .tradition-img-mid {
+    width: 65%;
+    height: 160px;
+    top: 80px;
+  }
+
+  .tradition-img-front {
+    width: 48%;
+    height: 170px;
+  }
+
   .about-quote {
     font-size: 1.1rem;
   }
