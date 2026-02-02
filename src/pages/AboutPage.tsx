@@ -4,6 +4,7 @@ import PageLoader from '../components/PageLoader'
 
 const PRELOAD_IMAGES = [
   '/kadampaaboutusheader.png',
+  '/photos/KMCWBStatues.jpeg',
   '/photos/volunteer-space.jpg',
 ];
 
