@@ -5,6 +5,9 @@ import PageLoader from '../components/PageLoader'
 const PRELOAD_IMAGES = [
   '/kadampaaboutusheader.png',
   '/photos/KMCWBStatues.jpeg',
+  '/photos/KMCGeshla.jpeg',
+  '/photos/KMCBooks.jpeg',
+  '/photos/KMCKadamMorten.jpg',
   '/photos/volunteer-space.jpg',
 ];
 
