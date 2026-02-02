@@ -121,8 +121,8 @@ function HomePage() {
             <a href="/about" className="cta-button">About Us</a>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1545389336-cf090694435e?w=800"
-            alt="Meditation practice"
+            src="/photos/KMCWBStudents.jpg"
+            alt="KMC Williamsburg students"
             className="dark-section-image"
           />
         </div>
