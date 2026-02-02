@@ -1257,6 +1257,64 @@ body {
   text-align: left;
 }
 
+/* Teaching Tradition 50/50 split */
+.about-tradition-split {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1100px;
+  text-align: left;
+}
+
+.about-tradition-text {
+  flex: 1;
+}
+
+.about-tradition-text .about-heading {
+  text-align: left;
+}
+
+.about-tradition-images {
+  flex: 1;
+  position: relative;
+  min-height: 380px;
+}
+
+.tradition-img {
+  position: absolute;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+  border: 3px solid white;
+}
+
+.tradition-img-back {
+  width: 75%;
+  height: 180px;
+  top: 0;
+  left: 0;
+  transform: rotate(-3deg);
+  z-index: 1;
+}
+
+.tradition-img-mid {
+  width: 70%;
+  height: 200px;
+  top: 100px;
+  right: 0;
+  transform: rotate(2deg);
+  z-index: 2;
+}
+
+.tradition-img-front {
+  width: 50%;
+  height: 210px;
+  bottom: 0;
+  left: 10%;
+  transform: rotate(-1.5deg);
+  z-index: 3;
+}
+
 .about-quote {
   font-size: 1.3rem;
   font-style: italic;
