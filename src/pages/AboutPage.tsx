@@ -49,16 +49,23 @@ function AboutPage() {
 
       {/* About the Center */}
       <section className="about-section about-section-alt">
-        <div className="about-container">
-          <h2 className="about-heading">The Center</h2>
-          <p className="about-text">
-            Founded in 2005, our Williamsburg branch offers drop-in classes most evenings of the week,
-            combining guided meditation with Dharma teachings. All general program classes welcome beginners—everyone is welcome.
-          </p>
-          <p className="about-text">
-            Through practicing Buddha's teachings, we discover wisdom to solve daily problems and reach
-            our highest potential—a state of permanent happiness, free from all suffering.
-          </p>
+        <div className="about-container about-center-split">
+          <img
+            src="/photos/KMCWBStatues.jpeg"
+            alt="KMC Williamsburg shrine and statues"
+            className="about-center-image"
+          />
+          <div className="about-center-text">
+            <h2 className="about-heading">The Center</h2>
+            <p className="about-text">
+              Founded in 2005, our Williamsburg branch offers drop-in classes most evenings of the week,
+              combining guided meditation with Dharma teachings. All general program classes welcome beginners—everyone is welcome.
+            </p>
+            <p className="about-text">
+              Through practicing Buddha's teachings, we discover wisdom to solve daily problems and reach
+              our highest potential—a state of permanent happiness, free from all suffering.
+            </p>
+          </div>
         </div>
       </section>
 
