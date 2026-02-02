@@ -8,7 +8,7 @@ import heroBg from '../assets/hero-bg.png'
 const PRELOAD_IMAGES = [
   heroBg,
   '/photos/KMCWBStudents.jpg',
-  'https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=800',
+  '/photos/KMCJosephTeaching.jpg',
 ];
 
 // Images from other pages to preload in background after homepage loads
