@@ -72,13 +72,32 @@ function AboutPage() {
 
       {/* Teaching Tradition */}
       <section className="about-section about-section-alt">
-        <div className="about-container">
-          <h2 className="about-heading">Our Teaching Tradition</h2>
-          <p className="about-text">
-            Our teachings are based on the books of modern Buddhist teacher Venerable Geshe Kelsang Gyatso,
-            who founded the New Kadampa Tradition. This tradition presents Buddha's ancient wisdom in a way
-            that is practical and applicable to contemporary life.
-          </p>
+        <div className="about-container about-tradition-split">
+          <div className="about-tradition-text">
+            <h2 className="about-heading">Our Teaching Tradition</h2>
+            <p className="about-text">
+              Our teachings are based on the books of modern Buddhist teacher Venerable Geshe Kelsang Gyatso,
+              who founded the New Kadampa Tradition. This tradition presents Buddha's ancient wisdom in a way
+              that is practical and applicable to contemporary life.
+            </p>
+          </div>
+          <div className="about-tradition-images">
+            <img
+              src="/photos/KMCBooks.jpeg"
+              alt="Books by Geshe Kelsang Gyatso"
+              className="tradition-img tradition-img-back"
+            />
+            <img
+              src="/photos/KMCGeshla.jpeg"
+              alt="Venerable Geshe Kelsang Gyatso"
+              className="tradition-img tradition-img-mid"
+            />
+            <img
+              src="/photos/KMCKadamMorten.jpg"
+              alt="Kadam Morten teaching"
+              className="tradition-img tradition-img-front"
+            />
+          </div>
         </div>
       </section>
 
