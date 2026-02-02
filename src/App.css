@@ -1233,6 +1233,30 @@ body {
   margin-bottom: 1rem;
 }
 
+.about-center-split {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1100px;
+  text-align: left;
+}
+
+.about-center-image {
+  flex: 1;
+  width: 50%;
+  max-width: 50%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.about-center-text {
+  flex: 1;
+}
+
+.about-center-text .about-heading {
+  text-align: left;
+}
+
 .about-quote {
   font-size: 1.3rem;
   font-style: italic;
