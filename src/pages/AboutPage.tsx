@@ -159,15 +159,9 @@ function AboutPage() {
               and their varying schedules and interests.
             </p>
             <p className="volunteer-text">
-              Drop us a line and let us know a bit about you and how you would like to help out. If you're
+              <a href="mailto:info@meditationinwilliamsburg.org" className="volunteer-email-link">Drop us a line</a> and let us know a bit about you and how you would like to help out. If you're
               not sure, that's fine too. We can always find something that needs doing!
             </p>
-            <form className="volunteer-form">
-              <input type="text" placeholder="Your name" className="volunteer-input" />
-              <input type="email" placeholder="Your email" className="volunteer-input" />
-              <textarea placeholder="Your message" className="volunteer-textarea" rows={5}></textarea>
-              <button type="submit" className="volunteer-button">Send</button>
-            </form>
           </div>
           <div className="volunteer-right">
             <img
