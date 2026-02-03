@@ -1602,8 +1602,8 @@ body {
 .volunteer-button {
   align-self: flex-start;
   padding: 12px 36px;
-  background: #FFC845;
-  color: #1a1a1a;
+  background: #1a1a1a;
+  color: #fff;
   border: none;
   font-size: 1rem;
   font-weight: 600;
@@ -1613,7 +1613,7 @@ body {
 }
 
 .volunteer-button:hover {
-  background: #e0b13b;
+  background: #666;
   transform: translateY(-2px);
 }
 
