@@ -201,7 +201,8 @@
 .classTitle {
   font-size: 9px;
   color: #1a1a1a;
-  background: #FFC845;
+  background: transparent;
+  border: 1px solid #1a1a1a;
   padding: 2px 4px;
   border-radius: 3px;
   white-space: nowrap;
@@ -213,7 +214,8 @@
 }
 
 .classTitle:hover {
-  background: #e5b23d;
+  background: #1a1a1a;
+  color: white;
 }
 
 .classTitleWrapper {
