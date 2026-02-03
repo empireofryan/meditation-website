@@ -1636,12 +1636,24 @@ body {
     font-size: 1.5rem;
   }
 
+  .volunteer-split {
+    flex-direction: column;
+  }
+
+  .volunteer-section {
+    text-align: center;
+  }
+
   .volunteer-heading {
     font-size: 1.5rem;
   }
 
   .volunteer-subheading {
     font-size: 1.25rem;
+  }
+
+  .volunteer-button {
+    align-self: center;
   }
 
   .about-hero {
