@@ -2100,6 +2100,16 @@ body {
     margin-top: -30px;
     padding: 60px 20px;
   }
+
+  .membership-section-yellow {
+    clip-path: polygon(0 30px, 100% 0, 100% calc(100% - 30px), 0 100%);
+    margin-top: -30px;
+    padding: 70px 20px;
+  }
+
+  .membership-section-yellow + .membership-section {
+    margin-top: -30px;
+  }
 }
 
 /* ==================== Classes Page Styles ==================== */
