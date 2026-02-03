@@ -148,7 +148,6 @@ function AboutPage() {
         <div className="volunteer-split">
           <div className="volunteer-left">
             <h2 className="volunteer-heading">KMC NYC Williamsburg Runs on Volunteers...</h2>
-            <p className="volunteer-subheading">Join us!</p>
             <p className="volunteer-text">
               As a charity organization, we rely on the kindness and enthusiasm of current students to
               help our Center flourish.
