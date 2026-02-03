@@ -1569,6 +1569,17 @@ body {
   margin-bottom: 12px;
 }
 
+.volunteer-email-link {
+  color: #1a1a1a;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+}
+
+.volunteer-email-link:hover {
+  color: #666;
+}
+
 .volunteer-form {
   display: flex;
   flex-direction: column;
