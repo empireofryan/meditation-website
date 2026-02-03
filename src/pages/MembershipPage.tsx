@@ -67,7 +67,7 @@ function MembershipPage() {
       </section>
 
       {/* Members Login Section */}
-      <section className="membership-section membership-section-alt">
+      <section className="membership-section membership-section-yellow">
         <div className="membership-container">
           <h2 className="membership-heading">Members Login</h2>
           <p className="membership-text">
