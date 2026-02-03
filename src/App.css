@@ -1584,12 +1584,14 @@ body {
   border: 1px solid #ddd;
   border-radius: 4px;
   font-family: inherit;
+  background: #fff;
+  color: #1a1a1a;
 }
 
 .volunteer-input:focus,
 .volunteer-textarea:focus {
   outline: none;
-  border-color: #FFC845;
+  border-color: #999;
 }
 
 .volunteer-textarea {
