@@ -1995,7 +1995,7 @@ body {
   display: inline-block;
   padding: 16px 48px;
   background: #1a1a1a;
-  color: #1a1a1a;
+  color: #fff;
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
@@ -2004,7 +2004,7 @@ body {
 }
 
 .membership-cta:hover {
-  background: #e0b13b;
+  background: #666;
   transform: translateY(-2px);
 }
 
