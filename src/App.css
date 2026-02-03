@@ -1994,8 +1994,8 @@ body {
 .membership-cta {
   display: inline-block;
   padding: 16px 48px;
-  background: #1a1a1a;
-  color: #fff;
+  background: #FFC845;
+  color: #1a1a1a;
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
