@@ -2065,6 +2065,16 @@ body {
     padding: 80px 30px;
   }
 
+  .membership-section-yellow {
+    clip-path: polygon(0 50px, 100% 0, 100% calc(100% - 50px), 0 100%);
+    margin-top: -50px;
+    padding: 100px 30px;
+  }
+
+  .membership-section-yellow + .membership-section {
+    margin-top: -50px;
+  }
+
   .membership-heading {
     font-size: 1.75rem;
   }
