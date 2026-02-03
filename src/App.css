@@ -2096,8 +2096,12 @@ body {
 
   .membership-section-yellow + .membership-section {
     margin-top: -50px;
-    clip-path: polygon(0 0, 100% 50px, 100% calc(100% - 50px), 0 100%);
-    padding: 120px 30px;
+    clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 100%);
+    padding: 100px 30px 80px;
+  }
+
+  .membership-section + .footer {
+    clip-path: polygon(0 50px, 100% 0, 100% 100%, 0 100%);
   }
 
   .membership-heading {
