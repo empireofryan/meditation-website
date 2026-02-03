@@ -659,6 +659,7 @@ body {
   color: white;
   letter-spacing: 3px;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .footer-logo-sub {
