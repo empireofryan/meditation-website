@@ -65,6 +65,9 @@ const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
     ? instructor.split(',').map(name => name.trim().split(' ')[0]).join(', ')
     : instructor;
 
+  // Check if there's a valid booking link (URL, not email)
+  const hasBookingLink = registrationLink && registrationLink.startsWith('http');
+
   // Get teacher photos (supports multiple teachers)
   const teacherPhotos = getTeacherPhotos(instructor);
 
