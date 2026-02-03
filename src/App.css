@@ -1145,6 +1145,20 @@ body {
     max-width: none;
   }
 
+  .footer-logo-main {
+    font-size: 15px;
+    letter-spacing: 2px;
+  }
+
+  .footer-logo-sub {
+    font-size: 15px;
+  }
+
+  .footer-address {
+    font-size: 14px;
+    word-break: break-word;
+  }
+
   .newsletter-content h2 {
     font-size: 26px;
   }
