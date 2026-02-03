@@ -1540,12 +1540,10 @@ body {
 }
 
 .volunteer-heading {
-  font-size: 1.8rem;
-  font-weight: 700;
+  font-size: 48px;
+  font-weight: 400;
   color: #1a1a1a;
-  margin-bottom: 4px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  margin-bottom: 16px;
 }
 
 .volunteer-subheading {
