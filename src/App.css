@@ -1433,7 +1433,7 @@ body {
 /* Donate Section */
 .donate-section {
   padding: 120px 60px 80px;
-  clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 60px, 100% 0, 100% 100%, 0 100%);
   margin-top: -60px;
   background: white;
 }
