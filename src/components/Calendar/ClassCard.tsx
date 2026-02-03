@@ -156,7 +156,7 @@ const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
               {isExpanded ? 'Less Info' : 'More Info'}
             </BookButton>
           )}
-          <BookButton onClick={handleBook}>
+          <BookButton onClick={handleBook} disabled={!hasBookingLink}>
             Book
           </BookButton>
         </div>
