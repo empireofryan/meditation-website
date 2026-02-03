@@ -1834,6 +1834,8 @@ body {
 
 .membership-section-yellow + .membership-section {
   margin-top: -80px;
+  clip-path: polygon(0 0, 100% 80px, 100% calc(100% - 80px), 0 100%);
+  padding: 160px 60px;
 }
 
 /* Supporting Member Card */
