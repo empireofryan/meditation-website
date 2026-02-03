@@ -1583,14 +1583,14 @@ body {
 }
 
 .volunteer-email-link {
-  color: #1a1a1a;
+  color: #FFC845;
   text-decoration: underline;
   text-underline-offset: 3px;
   font-weight: 600;
 }
 
 .volunteer-email-link:hover {
-  color: #666;
+  color: #FFD666;
 }
 
 .volunteer-form {
