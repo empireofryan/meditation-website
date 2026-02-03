@@ -1810,6 +1810,17 @@ body {
   padding: 120px 60px;
 }
 
+.membership-section-yellow {
+  background: #FFC845;
+  clip-path: polygon(0 80px, 100% 0, 100% calc(100% - 80px), 0 100%);
+  margin-top: -80px;
+  padding: 140px 60px;
+}
+
+.membership-section-yellow + .membership-section {
+  margin-top: -80px;
+}
+
 /* Supporting Member Card */
 .supporting-member-section {
   padding: 80px 40px;
