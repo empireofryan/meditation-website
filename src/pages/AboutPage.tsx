@@ -145,15 +145,10 @@ function AboutPage() {
 
       {/* Volunteer Section */}
       <section id="volunteer" className="about-section about-section-alt volunteer-section">
-        <div className="about-container">
-          <h2 className="volunteer-heading">KMC NYC Williamsburg Runs on Volunteers...</h2>
-          <p className="volunteer-subheading">Join us!</p>
-          <img
-            src="/photos/volunteer-space.jpg"
-            alt="KMC Williamsburg meditation space"
-            className="volunteer-image"
-          />
-          <div className="volunteer-content">
+        <div className="volunteer-split">
+          <div className="volunteer-left">
+            <h2 className="volunteer-heading">KMC NYC Williamsburg Runs on Volunteers...</h2>
+            <p className="volunteer-subheading">Join us!</p>
             <p className="volunteer-text">
               As a charity organization, we rely on the kindness and enthusiasm of current students to
               help our Center flourish.
@@ -173,6 +168,13 @@ function AboutPage() {
               <textarea placeholder="Your message" className="volunteer-textarea" rows={5}></textarea>
               <button type="submit" className="volunteer-button">Send</button>
             </form>
+          </div>
+          <div className="volunteer-right">
+            <img
+              src="/photos/volunteer-space.jpg"
+              alt="KMC Williamsburg meditation space"
+              className="volunteer-image"
+            />
           </div>
         </div>
       </section>
