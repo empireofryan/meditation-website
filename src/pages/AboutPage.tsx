@@ -179,31 +179,6 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="about-section">
-        <div className="about-container">
-          <h2 className="about-heading">Visit Us</h2>
-          <div className="about-contact">
-            <p className="about-address">
-              <strong>119 North 11th Street</strong><br />
-              Williamsburg, NY 11249
-            </p>
-            <p className="about-contact-info">
-              <a href="tel:212-924-6706">212.924.6706</a><br />
-              <a href="mailto:info@meditationinwilliamsburg.org">info@meditationinwilliamsburg.org</a>
-            </p>
-            <a
-              href="https://instagram.com/kadampawilliamsburg"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="about-instagram"
-            >
-              @kadampawilliamsburg
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* Footer */}
       <footer id="contact" className="footer">
         <div className="footer-content">
