@@ -26,21 +26,24 @@
 }
 
 .accordionContent {
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  padding: 0;
-  margin-top: 0;
-  border-top: 1px solid transparent;
-  transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease, margin-top 0.3s ease, border-color 0.3s ease;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.25s ease;
 }
 
 .accordionContentExpanded {
-  max-height: 200px;
-  opacity: 1;
+  grid-template-rows: 1fr;
+}
+
+.accordionContentInner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.accordionContentInner > .description {
   padding: 16px 0 8px 0;
   margin-top: 16px;
-  border-top-color: #e8e4dc;
+  border-top: 1px solid #e8e4dc;
 }
 
 .description {
