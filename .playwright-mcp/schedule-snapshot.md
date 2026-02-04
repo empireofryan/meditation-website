@@ -1,0 +1,1537 @@
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - navigation [ref=e5]:
+      - link "KADAMPA MEDITATION CENTER Williamsburg" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e7]: KADAMPA MEDITATION CENTER
+        - generic [ref=e8]: Williamsburg
+      - generic [ref=e9]:
+        - link "About" [ref=e10] [cursor=pointer]:
+          - /url: /about
+        - link "Membership" [ref=e11] [cursor=pointer]:
+          - /url: /membership
+        - link "Classes" [ref=e12] [cursor=pointer]:
+          - /url: /classes
+        - link "Schedule" [ref=e13] [cursor=pointer]:
+          - /url: "#classes"
+    - generic [ref=e14]:
+      - heading "Get 50% off your first month of membership" [level=1] [ref=e15]:
+        - text: Get 50% off your
+        - link "first month of membership" [ref=e16] [cursor=pointer]:
+          - /url: /membership
+      - paragraph [ref=e17]: Ask a front desk volunteer for more details
+  - generic [ref=e18]:
+    - generic [ref=e19]:
+      - heading "Upcoming Classes" [level=2] [ref=e20]:
+        - text: Upcoming
+        - generic [ref=e21]: Classes
+      - paragraph [ref=e22]: Join us for meditation sessions throughout the week
+    - generic [ref=e24]:
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - button "Schedule" [ref=e28] [cursor=pointer]
+          - button "Calendar" [ref=e29] [cursor=pointer]
+        - paragraph [ref=e30]: February 2026
+      - generic [ref=e31]:
+        - button "Previous dates" [disabled] [ref=e32]: ‹
+        - generic [ref=e34]:
+          - generic [ref=e35] [cursor=pointer]:
+            - generic [ref=e36]: TUE
+            - generic [ref=e37]: "3"
+            - generic [ref=e38]: 2 classes
+          - generic [ref=e39] [cursor=pointer]:
+            - generic [ref=e40]: WED
+            - generic [ref=e41]: "4"
+            - generic [ref=e42]: 2 classes
+          - generic [ref=e43] [cursor=pointer]:
+            - generic [ref=e44]: THU
+            - generic [ref=e45]: "5"
+            - generic [ref=e46]: 2 classes
+          - generic [ref=e47] [cursor=pointer]:
+            - generic [ref=e48]: FRI
+            - generic [ref=e49]: "6"
+            - generic [ref=e50]: 1 class
+          - generic [ref=e51]:
+            - generic [ref=e52]: SAT
+            - generic [ref=e53]: "7"
+            - generic [ref=e54]: No classes
+          - generic [ref=e55] [cursor=pointer]:
+            - generic [ref=e56]: SUN
+            - generic [ref=e57]: "8"
+            - generic [ref=e58]: 1 class
+          - generic [ref=e59] [cursor=pointer]:
+            - generic [ref=e60]: MON
+            - generic [ref=e61]: "9"
+            - generic [ref=e62]: 2 classes
+          - generic [ref=e63] [cursor=pointer]:
+            - generic [ref=e64]: TUE
+            - generic [ref=e65]: "10"
+            - generic [ref=e66]: 2 classes
+          - generic [ref=e67] [cursor=pointer]:
+            - generic [ref=e68]: WED
+            - generic [ref=e69]: "11"
+            - generic [ref=e70]: 2 classes
+          - generic [ref=e71] [cursor=pointer]:
+            - generic [ref=e72]: THU
+            - generic [ref=e73]: "12"
+            - generic [ref=e74]: 2 classes
+          - generic [ref=e75] [cursor=pointer]:
+            - generic [ref=e76]: FRI
+            - generic [ref=e77]: "13"
+            - generic [ref=e78]: 1 class
+          - generic [ref=e79]:
+            - generic [ref=e80]: SAT
+            - generic [ref=e81]: "14"
+            - generic [ref=e82]: No classes
+          - generic [ref=e83] [cursor=pointer]:
+            - generic [ref=e84]: SUN
+            - generic [ref=e85]: "15"
+            - generic [ref=e86]: 1 class
+          - generic [ref=e87] [cursor=pointer]:
+            - generic [ref=e88]: MON
+            - generic [ref=e89]: "16"
+            - generic [ref=e90]: 2 classes
+          - generic [ref=e91] [cursor=pointer]:
+            - generic [ref=e92]: TUE
+            - generic [ref=e93]: "17"
+            - generic [ref=e94]: 2 classes
+          - generic [ref=e95] [cursor=pointer]:
+            - generic [ref=e96]: WED
+            - generic [ref=e97]: "18"
+            - generic [ref=e98]: 2 classes
+          - generic [ref=e99] [cursor=pointer]:
+            - generic [ref=e100]: THU
+            - generic [ref=e101]: "19"
+            - generic [ref=e102]: 2 classes
+          - generic [ref=e103] [cursor=pointer]:
+            - generic [ref=e104]: FRI
+            - generic [ref=e105]: "20"
+            - generic [ref=e106]: 1 class
+          - generic [ref=e107]:
+            - generic [ref=e108]: SAT
+            - generic [ref=e109]: "21"
+            - generic [ref=e110]: No classes
+          - generic [ref=e111] [cursor=pointer]:
+            - generic [ref=e112]: SUN
+            - generic [ref=e113]: "22"
+            - generic [ref=e114]: 1 class
+          - generic [ref=e115] [cursor=pointer]:
+            - generic [ref=e116]: MON
+            - generic [ref=e117]: "23"
+            - generic [ref=e118]: 2 classes
+          - generic [ref=e119] [cursor=pointer]:
+            - generic [ref=e120]: TUE
+            - generic [ref=e121]: "24"
+            - generic [ref=e122]: 2 classes
+          - generic [ref=e123] [cursor=pointer]:
+            - generic [ref=e124]: WED
+            - generic [ref=e125]: "25"
+            - generic [ref=e126]: 2 classes
+          - generic [ref=e127] [cursor=pointer]:
+            - generic [ref=e128]: THU
+            - generic [ref=e129]: "26"
+            - generic [ref=e130]: 2 classes
+          - generic [ref=e131] [cursor=pointer]:
+            - generic [ref=e132]: FRI
+            - generic [ref=e133]: "27"
+            - generic [ref=e134]: 1 class
+          - generic [ref=e135]:
+            - generic [ref=e136]: SAT
+            - generic [ref=e137]: "28"
+            - generic [ref=e138]: No classes
+          - generic [ref=e139] [cursor=pointer]:
+            - generic [ref=e140]: SUN
+            - generic [ref=e141]: "1"
+            - generic [ref=e142]: 1 class
+          - generic [ref=e143] [cursor=pointer]:
+            - generic [ref=e144]: MON
+            - generic [ref=e145]: "2"
+            - generic [ref=e146]: 2 classes
+          - generic [ref=e147] [cursor=pointer]:
+            - generic [ref=e148]: TUE
+            - generic [ref=e149]: "3"
+            - generic [ref=e150]: 2 classes
+          - generic [ref=e151] [cursor=pointer]:
+            - generic [ref=e152]: WED
+            - generic [ref=e153]: "4"
+            - generic [ref=e154]: 2 classes
+          - generic [ref=e155] [cursor=pointer]:
+            - generic [ref=e156]: THU
+            - generic [ref=e157]: "5"
+            - generic [ref=e158]: 2 classes
+          - generic [ref=e159] [cursor=pointer]:
+            - generic [ref=e160]: FRI
+            - generic [ref=e161]: "6"
+            - generic [ref=e162]: 1 class
+          - generic [ref=e163]:
+            - generic [ref=e164]: SAT
+            - generic [ref=e165]: "7"
+            - generic [ref=e166]: No classes
+          - generic [ref=e167] [cursor=pointer]:
+            - generic [ref=e168]: SUN
+            - generic [ref=e169]: "8"
+            - generic [ref=e170]: 1 class
+          - generic [ref=e171] [cursor=pointer]:
+            - generic [ref=e172]: MON
+            - generic [ref=e173]: "9"
+            - generic [ref=e174]: 2 classes
+          - generic [ref=e175] [cursor=pointer]:
+            - generic [ref=e176]: TUE
+            - generic [ref=e177]: "10"
+            - generic [ref=e178]: 2 classes
+          - generic [ref=e179] [cursor=pointer]:
+            - generic [ref=e180]: WED
+            - generic [ref=e181]: "11"
+            - generic [ref=e182]: 2 classes
+          - generic [ref=e183] [cursor=pointer]:
+            - generic [ref=e184]: THU
+            - generic [ref=e185]: "12"
+            - generic [ref=e186]: 2 classes
+          - generic [ref=e187] [cursor=pointer]:
+            - generic [ref=e188]: FRI
+            - generic [ref=e189]: "13"
+            - generic [ref=e190]: 1 class
+          - generic [ref=e191]:
+            - generic [ref=e192]: SAT
+            - generic [ref=e193]: "14"
+            - generic [ref=e194]: No classes
+          - generic [ref=e195] [cursor=pointer]:
+            - generic [ref=e196]: SUN
+            - generic [ref=e197]: "15"
+            - generic [ref=e198]: 1 class
+          - generic [ref=e199] [cursor=pointer]:
+            - generic [ref=e200]: MON
+            - generic [ref=e201]: "16"
+            - generic [ref=e202]: 2 classes
+          - generic [ref=e203] [cursor=pointer]:
+            - generic [ref=e204]: TUE
+            - generic [ref=e205]: "17"
+            - generic [ref=e206]: 2 classes
+          - generic [ref=e207] [cursor=pointer]:
+            - generic [ref=e208]: WED
+            - generic [ref=e209]: "18"
+            - generic [ref=e210]: 2 classes
+          - generic [ref=e211] [cursor=pointer]:
+            - generic [ref=e212]: THU
+            - generic [ref=e213]: "19"
+            - generic [ref=e214]: 2 classes
+          - generic [ref=e215] [cursor=pointer]:
+            - generic [ref=e216]: FRI
+            - generic [ref=e217]: "20"
+            - generic [ref=e218]: 1 class
+          - generic [ref=e219]:
+            - generic [ref=e220]: SAT
+            - generic [ref=e221]: "21"
+            - generic [ref=e222]: No classes
+          - generic [ref=e223] [cursor=pointer]:
+            - generic [ref=e224]: SUN
+            - generic [ref=e225]: "22"
+            - generic [ref=e226]: 1 class
+          - generic [ref=e227] [cursor=pointer]:
+            - generic [ref=e228]: MON
+            - generic [ref=e229]: "23"
+            - generic [ref=e230]: 2 classes
+          - generic [ref=e231] [cursor=pointer]:
+            - generic [ref=e232]: TUE
+            - generic [ref=e233]: "24"
+            - generic [ref=e234]: 2 classes
+          - generic [ref=e235] [cursor=pointer]:
+            - generic [ref=e236]: WED
+            - generic [ref=e237]: "25"
+            - generic [ref=e238]: 2 classes
+          - generic [ref=e239] [cursor=pointer]:
+            - generic [ref=e240]: THU
+            - generic [ref=e241]: "26"
+            - generic [ref=e242]: 2 classes
+          - generic [ref=e243] [cursor=pointer]:
+            - generic [ref=e244]: FRI
+            - generic [ref=e245]: "27"
+            - generic [ref=e246]: 1 class
+          - generic [ref=e247]:
+            - generic [ref=e248]: SAT
+            - generic [ref=e249]: "28"
+            - generic [ref=e250]: No classes
+          - generic [ref=e251] [cursor=pointer]:
+            - generic [ref=e252]: SUN
+            - generic [ref=e253]: "29"
+            - generic [ref=e254]: 1 class
+          - generic [ref=e255] [cursor=pointer]:
+            - generic [ref=e256]: MON
+            - generic [ref=e257]: "30"
+            - generic [ref=e258]: 2 classes
+          - generic [ref=e259] [cursor=pointer]:
+            - generic [ref=e260]: TUE
+            - generic [ref=e261]: "31"
+            - generic [ref=e262]: 2 classes
+          - generic [ref=e263] [cursor=pointer]:
+            - generic [ref=e264]: WED
+            - generic [ref=e265]: "1"
+            - generic [ref=e266]: 2 classes
+          - generic [ref=e267] [cursor=pointer]:
+            - generic [ref=e268]: THU
+            - generic [ref=e269]: "2"
+            - generic [ref=e270]: 2 classes
+        - button "Next dates" [ref=e271] [cursor=pointer]: ›
+      - generic [ref=e272]:
+        - generic [ref=e273]:
+          - generic [ref=e274]: TUESDAY 03 FEB
+          - generic [ref=e275]:
+            - generic [ref=e276]:
+              - generic [ref=e277]:
+                - generic [ref=e278]:
+                  - generic [ref=e279]: 6:00pm
+                  - generic [ref=e280]: 30 mins
+                - generic [ref=e282]: After-Work Meditation
+                - generic [ref=e283]: Various
+                - generic [ref=e284]: $5
+                - generic [ref=e285]:
+                  - button "More Info" [ref=e286] [cursor=pointer]
+                  - button "Book" [ref=e287] [cursor=pointer]
+              - paragraph [ref=e289]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e290]:
+              - generic [ref=e291]:
+                - generic [ref=e292]:
+                  - generic [ref=e293]: 7:00pm
+                  - generic [ref=e294]: 60 mins
+                - generic [ref=e296]: Introduction to Buddhism
+                - generic [ref=e297]: Deanna, Debbie, Ben
+                - generic [ref=e299]: $10
+                - generic [ref=e300]:
+                  - button "More Info" [ref=e301] [cursor=pointer]
+                  - button "Book" [ref=e302] [cursor=pointer]
+              - paragraph [ref=e304]: Curious about Buddhism? This weekly class presents basic teachings from Geshe Kelsang Gyatso's book How To Transform Your Life that you can use to enhance work, relationships, inner peace, and daily enjoyment. Each session includes meditation, teaching, and discussion.
+        - generic [ref=e305]:
+          - generic [ref=e306]: WEDNESDAY 04 FEB
+          - generic [ref=e307]:
+            - generic [ref=e308]:
+              - generic [ref=e309]:
+                - generic [ref=e310]:
+                  - generic [ref=e311]: 6:00pm
+                  - generic [ref=e312]: 30 mins
+                - generic [ref=e314]: After-Work Meditation
+                - generic [ref=e315]: Ben
+                - generic [ref=e317]: $5
+                - generic [ref=e318]:
+                  - button "More Info" [ref=e319] [cursor=pointer]
+                  - button "Book" [ref=e320] [cursor=pointer]
+              - paragraph [ref=e322]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e323]:
+              - generic [ref=e324]:
+                - generic [ref=e325]:
+                  - generic [ref=e326]: 6:45pm
+                  - generic [ref=e327]: 120 mins
+                - generic [ref=e329]: MembersFoundation Program
+                - generic [ref=e330]: Joseph
+                - link "Membership Required" [ref=e332] [cursor=pointer]:
+                  - /url: /membership
+                - generic [ref=e333]:
+                  - button "More Info" [ref=e334] [cursor=pointer]
+                  - button "Book" [disabled] [ref=e335]
+              - paragraph [ref=e337]: A commitment-based study program for those interested in deepening their understanding of Buddha's teachings. Features regular teachings, meditation, systematic study of Buddhist texts, and group discussion.
+        - generic [ref=e338]:
+          - generic [ref=e339]: THURSDAY 05 FEB
+          - generic [ref=e340]:
+            - generic [ref=e341]:
+              - generic [ref=e342]:
+                - generic [ref=e343]:
+                  - generic [ref=e344]: 6:00pm
+                  - generic [ref=e345]: 30 mins
+                - generic [ref=e347]: After-Work Meditation
+                - generic [ref=e348]: Debbie
+                - generic [ref=e350]: $5
+                - generic [ref=e351]:
+                  - button "More Info" [ref=e352] [cursor=pointer]
+                  - button "Book" [ref=e353] [cursor=pointer]
+              - paragraph [ref=e355]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e356]:
+              - generic [ref=e357]:
+                - generic [ref=e358]:
+                  - generic [ref=e359]: 7:00pm
+                  - generic [ref=e360]: 60 mins
+                - generic [ref=e362]: "Patient Acceptance: Beyond Taking Things Personally"
+                - generic [ref=e363]: Joseph
+                - generic [ref=e365]: $10
+                - generic [ref=e366]:
+                  - button "More Info" [ref=e367] [cursor=pointer]
+                  - button "Book" [disabled] [ref=e368]
+              - paragraph [ref=e370]: "So often in our interactions with others we find ourselves experiencing feelings of hurt, rejection, and not being heard that can lead to developing anger and rage towards others. Buddha gave exceedingly practical teachings on patient acceptance – by applying these practical methods as well as Buddha's extraordinary insight into 'no self' we free ourselves from taking things so personally. Series Topics: • Jan 8: Why Anger Doesn't Work • Jan 15: The Wisdom of Patient Acceptance • Jan 22: Who is the Me who takes Things Personally? • Jan 29: The Joy of No Self • Feb 5: Patient Acceptance Through Understanding Karma • Feb 12: The Wisdom Path to Liberation • Feb 19: Wisdom, Love and Compassion • Feb 26: The Wisdom Dance of Patient Acceptance • Mar 5: Saying Yes to Life and Enlightenment"
+        - generic [ref=e371]:
+          - generic [ref=e372]: FRIDAY 06 FEB
+          - generic [ref=e374]:
+            - generic [ref=e375]:
+              - generic [ref=e376]:
+                - generic [ref=e377]: 6:00pm
+                - generic [ref=e378]: 30 mins
+              - generic [ref=e380]: After-Work Meditation
+              - generic [ref=e381]: Giselle
+              - generic [ref=e383]: $5
+              - generic [ref=e384]:
+                - button "More Info" [ref=e385] [cursor=pointer]
+                - button "Book" [ref=e386] [cursor=pointer]
+            - paragraph [ref=e388]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+        - generic [ref=e389]:
+          - generic [ref=e390]: SUNDAY 08 FEB
+          - generic [ref=e392]:
+            - generic [ref=e393]:
+              - generic [ref=e394]:
+                - generic [ref=e395]: 11:00am
+                - generic [ref=e396]: 90 mins
+              - generic [ref=e398]: "Sunday Morning Meditation followed by Coffee, Tea & Chat: Practical Advice for a Happy Life"
+              - generic [ref=e399]: Joseph
+              - generic [ref=e401]: $15
+              - generic [ref=e402]:
+                - button "More Info" [ref=e403] [cursor=pointer]
+                - button "Book" [ref=e404] [cursor=pointer]
+            - paragraph [ref=e406]: This series explores teachings from Atisha, the Indian Buddhist master who founded the Kadampa tradition. The program focuses on "Advice from Atisha's Heart," presented as practical guidance for cultivating inner peace, compassion, and wisdom. Each week examines specific instructions designed to transform daily challenges into spiritual growth opportunities.
+        - generic [ref=e407]:
+          - generic [ref=e408]: MONDAY 09 FEB
+          - generic [ref=e409]:
+            - generic [ref=e410]:
+              - generic [ref=e411]:
+                - generic [ref=e412]:
+                  - generic [ref=e413]: 6:00pm
+                  - generic [ref=e414]: 30 mins
+                - generic [ref=e416]: After-Work Meditation
+                - generic [ref=e417]: Deanna
+                - generic [ref=e419]: $5
+                - generic [ref=e420]:
+                  - button "More Info" [ref=e421] [cursor=pointer]
+                  - button "Book" [ref=e422] [cursor=pointer]
+              - paragraph [ref=e424]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e425]:
+              - generic [ref=e426]:
+                - generic [ref=e427]:
+                  - generic [ref=e428]: 7:00pm
+                  - generic [ref=e429]: 60 mins
+                - generic [ref=e431]: Monday General Program
+                - generic [ref=e432]: Teri
+                - generic [ref=e434]: $10
+                - generic [ref=e435]:
+                  - button "More Info" [ref=e436] [cursor=pointer]
+                  - button "Book" [disabled] [ref=e437]
+              - paragraph [ref=e439]: "The program explores how meditation extends far beyond temporary relaxation. When properly applied, it enables practitioners to release old emotional wounds, overcome anxiety, and develop a constructive self-perception. The series focuses on Preparatory Practices—traditional mental exercises designed to enhance meditation's effectiveness. Series Topics: • Jan 5: The Deeper Purpose of Meditation • Jan 12: The Transformative Power of Blessings • Jan 19: Igniting Your Potential Blessings • Jan 26: Creating Inner Power • Feb 2: Creating Joy • Feb 9: Purification – The Freedom to Let Go • Feb 16: Conversing with the Buddhas • Feb 23: How to Deeply Enjoy Meditation"
+        - generic [ref=e440]:
+          - generic [ref=e441]: TUESDAY 10 FEB
+          - generic [ref=e442]:
+            - generic [ref=e443]:
+              - generic [ref=e444]:
+                - generic [ref=e445]:
+                  - generic [ref=e446]: 6:00pm
+                  - generic [ref=e447]: 30 mins
+                - generic [ref=e449]: After-Work Meditation
+                - generic [ref=e450]: Various
+                - generic [ref=e451]: $5
+                - generic [ref=e452]:
+                  - button "More Info" [ref=e453] [cursor=pointer]
+                  - button "Book" [ref=e454] [cursor=pointer]
+              - paragraph [ref=e456]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e457]:
+              - generic [ref=e458]:
+                - generic [ref=e459]:
+                  - generic [ref=e460]: 7:00pm
+                  - generic [ref=e461]: 60 mins
+                - generic [ref=e463]: Introduction to Buddhism
+                - generic [ref=e464]: Deanna, Debbie, Ben
+                - generic [ref=e466]: $10
+                - generic [ref=e467]:
+                  - button "More Info" [ref=e468] [cursor=pointer]
+                  - button "Book" [ref=e469] [cursor=pointer]
+              - paragraph [ref=e471]: Curious about Buddhism? This weekly class presents basic teachings from Geshe Kelsang Gyatso's book How To Transform Your Life that you can use to enhance work, relationships, inner peace, and daily enjoyment. Each session includes meditation, teaching, and discussion.
+        - generic [ref=e472]:
+          - generic [ref=e473]: WEDNESDAY 11 FEB
+          - generic [ref=e474]:
+            - generic [ref=e475]:
+              - generic [ref=e476]:
+                - generic [ref=e477]:
+                  - generic [ref=e478]: 6:00pm
+                  - generic [ref=e479]: 30 mins
+                - generic [ref=e481]: After-Work Meditation
+                - generic [ref=e482]: Ben
+                - generic [ref=e484]: $5
+                - generic [ref=e485]:
+                  - button "More Info" [ref=e486] [cursor=pointer]
+                  - button "Book" [ref=e487] [cursor=pointer]
+              - paragraph [ref=e489]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e490]:
+              - generic [ref=e491]:
+                - generic [ref=e492]:
+                  - generic [ref=e493]: 6:45pm
+                  - generic [ref=e494]: 120 mins
+                - generic [ref=e496]: MembersFoundation Program
+                - generic [ref=e497]: Joseph
+                - link "Membership Required" [ref=e499] [cursor=pointer]:
+                  - /url: /membership
+                - generic [ref=e500]:
+                  - button "More Info" [ref=e501] [cursor=pointer]
+                  - button "Book" [disabled] [ref=e502]
+              - paragraph [ref=e504]: A commitment-based study program for those interested in deepening their understanding of Buddha's teachings. Features regular teachings, meditation, systematic study of Buddhist texts, and group discussion.
+        - generic [ref=e505]:
+          - generic [ref=e506]: THURSDAY 12 FEB
+          - generic [ref=e507]:
+            - generic [ref=e508]:
+              - generic [ref=e509]:
+                - generic [ref=e510]:
+                  - generic [ref=e511]: 6:00pm
+                  - generic [ref=e512]: 30 mins
+                - generic [ref=e514]: After-Work Meditation
+                - generic [ref=e515]: Debbie
+                - generic [ref=e517]: $5
+                - generic [ref=e518]:
+                  - button "More Info" [ref=e519] [cursor=pointer]
+                  - button "Book" [ref=e520] [cursor=pointer]
+              - paragraph [ref=e522]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e523]:
+              - generic [ref=e524]:
+                - generic [ref=e525]:
+                  - generic [ref=e526]: 7:00pm
+                  - generic [ref=e527]: 60 mins
+                - generic [ref=e529]: "Patient Acceptance: Beyond Taking Things Personally"
+                - generic [ref=e530]: Joseph
+                - generic [ref=e532]: $10
+                - generic [ref=e533]:
+                  - button "More Info" [ref=e534] [cursor=pointer]
+                  - button "Book" [disabled] [ref=e535]
+              - paragraph [ref=e537]: "So often in our interactions with others we find ourselves experiencing feelings of hurt, rejection, and not being heard that can lead to developing anger and rage towards others. Buddha gave exceedingly practical teachings on patient acceptance – by applying these practical methods as well as Buddha's extraordinary insight into 'no self' we free ourselves from taking things so personally. Series Topics: • Jan 8: Why Anger Doesn't Work • Jan 15: The Wisdom of Patient Acceptance • Jan 22: Who is the Me who takes Things Personally? • Jan 29: The Joy of No Self • Feb 5: Patient Acceptance Through Understanding Karma • Feb 12: The Wisdom Path to Liberation • Feb 19: Wisdom, Love and Compassion • Feb 26: The Wisdom Dance of Patient Acceptance • Mar 5: Saying Yes to Life and Enlightenment"
+        - generic [ref=e538]:
+          - generic [ref=e539]: FRIDAY 13 FEB
+          - generic [ref=e541]:
+            - generic [ref=e542]:
+              - generic [ref=e543]:
+                - generic [ref=e544]: 6:00pm
+                - generic [ref=e545]: 30 mins
+              - generic [ref=e547]: After-Work Meditation
+              - generic [ref=e548]: Giselle
+              - generic [ref=e550]: $5
+              - generic [ref=e551]:
+                - button "More Info" [ref=e552] [cursor=pointer]
+                - button "Book" [ref=e553] [cursor=pointer]
+            - paragraph [ref=e555]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+        - generic [ref=e556]:
+          - generic [ref=e557]: SUNDAY 15 FEB
+          - generic [ref=e559]:
+            - generic [ref=e560]:
+              - generic [ref=e561]:
+                - generic [ref=e562]: 11:00am
+                - generic [ref=e563]: 90 mins
+              - generic [ref=e565]: "Sunday Morning Meditation followed by Coffee, Tea & Chat: Practical Advice for a Happy Life"
+              - generic [ref=e566]: Joseph
+              - generic [ref=e568]: $15
+              - generic [ref=e569]:
+                - button "More Info" [ref=e570] [cursor=pointer]
+                - button "Book" [ref=e571] [cursor=pointer]
+            - paragraph [ref=e573]: This series explores teachings from Atisha, the Indian Buddhist master who founded the Kadampa tradition. The program focuses on "Advice from Atisha's Heart," presented as practical guidance for cultivating inner peace, compassion, and wisdom. Each week examines specific instructions designed to transform daily challenges into spiritual growth opportunities.
+        - generic [ref=e574]:
+          - generic [ref=e575]: MONDAY 16 FEB
+          - generic [ref=e576]:
+            - generic [ref=e577]:
+              - generic [ref=e578]:
+                - generic [ref=e579]:
+                  - generic [ref=e580]: 6:00pm
+                  - generic [ref=e581]: 30 mins
+                - generic [ref=e583]: After-Work Meditation
+                - generic [ref=e584]: Deanna
+                - generic [ref=e586]: $5
+                - generic [ref=e587]:
+                  - button "More Info" [ref=e588] [cursor=pointer]
+                  - button "Book" [ref=e589] [cursor=pointer]
+              - paragraph [ref=e591]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e592]:
+              - generic [ref=e593]:
+                - generic [ref=e594]:
+                  - generic [ref=e595]: 7:00pm
+                  - generic [ref=e596]: 60 mins
+                - generic [ref=e598]: Monday General Program
+                - generic [ref=e599]: Teri
+                - generic [ref=e601]: $10
+                - generic [ref=e602]:
+                  - button "More Info" [ref=e603] [cursor=pointer]
+                  - button "Book" [disabled] [ref=e604]
+              - paragraph [ref=e606]: "The program explores how meditation extends far beyond temporary relaxation. When properly applied, it enables practitioners to release old emotional wounds, overcome anxiety, and develop a constructive self-perception. The series focuses on Preparatory Practices—traditional mental exercises designed to enhance meditation's effectiveness. Series Topics: • Jan 5: The Deeper Purpose of Meditation • Jan 12: The Transformative Power of Blessings • Jan 19: Igniting Your Potential Blessings • Jan 26: Creating Inner Power • Feb 2: Creating Joy • Feb 9: Purification – The Freedom to Let Go • Feb 16: Conversing with the Buddhas • Feb 23: How to Deeply Enjoy Meditation"
+        - generic [ref=e607]:
+          - generic [ref=e608]: TUESDAY 17 FEB
+          - generic [ref=e609]:
+            - generic [ref=e610]:
+              - generic [ref=e611]:
+                - generic [ref=e612]:
+                  - generic [ref=e613]: 6:00pm
+                  - generic [ref=e614]: 30 mins
+                - generic [ref=e616]: After-Work Meditation
+                - generic [ref=e617]: Various
+                - generic [ref=e618]: $5
+                - generic [ref=e619]:
+                  - button "More Info" [ref=e620] [cursor=pointer]
+                  - button "Book" [ref=e621] [cursor=pointer]
+              - paragraph [ref=e623]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e624]:
+              - generic [ref=e625]:
+                - generic [ref=e626]:
+                  - generic [ref=e627]: 7:00pm
+                  - generic [ref=e628]: 60 mins
+                - generic [ref=e630]: Introduction to Buddhism
+                - generic [ref=e631]: Deanna, Debbie, Ben
+                - generic [ref=e633]: $10
+                - generic [ref=e634]:
+                  - button "More Info" [ref=e635] [cursor=pointer]
+                  - button "Book" [ref=e636] [cursor=pointer]
+              - paragraph [ref=e638]: Curious about Buddhism? This weekly class presents basic teachings from Geshe Kelsang Gyatso's book How To Transform Your Life that you can use to enhance work, relationships, inner peace, and daily enjoyment. Each session includes meditation, teaching, and discussion.
+        - generic [ref=e639]:
+          - generic [ref=e640]: WEDNESDAY 18 FEB
+          - generic [ref=e641]:
+            - generic [ref=e642]:
+              - generic [ref=e643]:
+                - generic [ref=e644]:
+                  - generic [ref=e645]: 6:00pm
+                  - generic [ref=e646]: 30 mins
+                - generic [ref=e648]: After-Work Meditation
+                - generic [ref=e649]: Ben
+                - generic [ref=e651]: $5
+                - generic [ref=e652]:
+                  - button "More Info" [ref=e653] [cursor=pointer]
+                  - button "Book" [ref=e654] [cursor=pointer]
+              - paragraph [ref=e656]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e657]:
+              - generic [ref=e658]:
+                - generic [ref=e659]:
+                  - generic [ref=e660]: 6:45pm
+                  - generic [ref=e661]: 120 mins
+                - generic [ref=e663]: MembersFoundation Program
+                - generic [ref=e664]: Joseph
+                - link "Membership Required" [ref=e666] [cursor=pointer]:
+                  - /url: /membership
+                - generic [ref=e667]:
+                  - button "More Info" [ref=e668] [cursor=pointer]
+                  - button "Book" [disabled] [ref=e669]
+              - paragraph [ref=e671]: A commitment-based study program for those interested in deepening their understanding of Buddha's teachings. Features regular teachings, meditation, systematic study of Buddhist texts, and group discussion.
+        - generic [ref=e672]:
+          - generic [ref=e673]: THURSDAY 19 FEB
+          - generic [ref=e674]:
+            - generic [ref=e675]:
+              - generic [ref=e676]:
+                - generic [ref=e677]:
+                  - generic [ref=e678]: 6:00pm
+                  - generic [ref=e679]: 30 mins
+                - generic [ref=e681]: After-Work Meditation
+                - generic [ref=e682]: Debbie
+                - generic [ref=e684]: $5
+                - generic [ref=e685]:
+                  - button "More Info" [ref=e686] [cursor=pointer]
+                  - button "Book" [ref=e687] [cursor=pointer]
+              - paragraph [ref=e689]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e690]:
+              - generic [ref=e691]:
+                - generic [ref=e692]:
+                  - generic [ref=e693]: 7:00pm
+                  - generic [ref=e694]: 60 mins
+                - generic [ref=e696]: "Patient Acceptance: Beyond Taking Things Personally"
+                - generic [ref=e697]: Joseph
+                - generic [ref=e699]: $10
+                - generic [ref=e700]:
+                  - button "More Info" [ref=e701] [cursor=pointer]
+                  - button "Book" [disabled] [ref=e702]
+              - paragraph [ref=e704]: "So often in our interactions with others we find ourselves experiencing feelings of hurt, rejection, and not being heard that can lead to developing anger and rage towards others. Buddha gave exceedingly practical teachings on patient acceptance – by applying these practical methods as well as Buddha's extraordinary insight into 'no self' we free ourselves from taking things so personally. Series Topics: • Jan 8: Why Anger Doesn't Work • Jan 15: The Wisdom of Patient Acceptance • Jan 22: Who is the Me who takes Things Personally? • Jan 29: The Joy of No Self • Feb 5: Patient Acceptance Through Understanding Karma • Feb 12: The Wisdom Path to Liberation • Feb 19: Wisdom, Love and Compassion • Feb 26: The Wisdom Dance of Patient Acceptance • Mar 5: Saying Yes to Life and Enlightenment"
+        - generic [ref=e705]:
+          - generic [ref=e706]: FRIDAY 20 FEB
+          - generic [ref=e708]:
+            - generic [ref=e709]:
+              - generic [ref=e710]:
+                - generic [ref=e711]: 6:00pm
+                - generic [ref=e712]: 30 mins
+              - generic [ref=e714]: After-Work Meditation
+              - generic [ref=e715]: Giselle
+              - generic [ref=e717]: $5
+              - generic [ref=e718]:
+                - button "More Info" [ref=e719] [cursor=pointer]
+                - button "Book" [ref=e720] [cursor=pointer]
+            - paragraph [ref=e722]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+        - generic [ref=e723]:
+          - generic [ref=e724]: SUNDAY 22 FEB
+          - generic [ref=e726]:
+            - generic [ref=e727]:
+              - generic [ref=e728]:
+                - generic [ref=e729]: 11:00am
+                - generic [ref=e730]: 90 mins
+              - generic [ref=e732]: "Sunday Morning Meditation followed by Coffee, Tea & Chat: Practical Advice for a Happy Life"
+              - generic [ref=e733]: Joseph
+              - generic [ref=e735]: $15
+              - generic [ref=e736]:
+                - button "More Info" [ref=e737] [cursor=pointer]
+                - button "Book" [ref=e738] [cursor=pointer]
+            - paragraph [ref=e740]: This series explores teachings from Atisha, the Indian Buddhist master who founded the Kadampa tradition. The program focuses on "Advice from Atisha's Heart," presented as practical guidance for cultivating inner peace, compassion, and wisdom. Each week examines specific instructions designed to transform daily challenges into spiritual growth opportunities.
+        - generic [ref=e741]:
+          - generic [ref=e742]: MONDAY 23 FEB
+          - generic [ref=e743]:
+            - generic [ref=e744]:
+              - generic [ref=e745]:
+                - generic [ref=e746]:
+                  - generic [ref=e747]: 6:00pm
+                  - generic [ref=e748]: 30 mins
+                - generic [ref=e750]: After-Work Meditation
+                - generic [ref=e751]: Deanna
+                - generic [ref=e753]: $5
+                - generic [ref=e754]:
+                  - button "More Info" [ref=e755] [cursor=pointer]
+                  - button "Book" [ref=e756] [cursor=pointer]
+              - paragraph [ref=e758]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e759]:
+              - generic [ref=e760]:
+                - generic [ref=e761]:
+                  - generic [ref=e762]: 7:00pm
+                  - generic [ref=e763]: 60 mins
+                - generic [ref=e765]: Monday General Program
+                - generic [ref=e766]: Teri
+                - generic [ref=e768]: $10
+                - generic [ref=e769]:
+                  - button "More Info" [ref=e770] [cursor=pointer]
+                  - button "Book" [disabled] [ref=e771]
+              - paragraph [ref=e773]: "The program explores how meditation extends far beyond temporary relaxation. When properly applied, it enables practitioners to release old emotional wounds, overcome anxiety, and develop a constructive self-perception. The series focuses on Preparatory Practices—traditional mental exercises designed to enhance meditation's effectiveness. Series Topics: • Jan 5: The Deeper Purpose of Meditation • Jan 12: The Transformative Power of Blessings • Jan 19: Igniting Your Potential Blessings • Jan 26: Creating Inner Power • Feb 2: Creating Joy • Feb 9: Purification – The Freedom to Let Go • Feb 16: Conversing with the Buddhas • Feb 23: How to Deeply Enjoy Meditation"
+        - generic [ref=e774]:
+          - generic [ref=e775]: TUESDAY 24 FEB
+          - generic [ref=e776]:
+            - generic [ref=e777]:
+              - generic [ref=e778]:
+                - generic [ref=e779]:
+                  - generic [ref=e780]: 6:00pm
+                  - generic [ref=e781]: 30 mins
+                - generic [ref=e783]: After-Work Meditation
+                - generic [ref=e784]: Various
+                - generic [ref=e785]: $5
+                - generic [ref=e786]:
+                  - button "More Info" [ref=e787] [cursor=pointer]
+                  - button "Book" [ref=e788] [cursor=pointer]
+              - paragraph [ref=e790]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e791]:
+              - generic [ref=e792]:
+                - generic [ref=e793]:
+                  - generic [ref=e794]: 7:00pm
+                  - generic [ref=e795]: 60 mins
+                - generic [ref=e797]: Introduction to Buddhism
+                - generic [ref=e798]: Deanna, Debbie, Ben
+                - generic [ref=e800]: $10
+                - generic [ref=e801]:
+                  - button "More Info" [ref=e802] [cursor=pointer]
+                  - button "Book" [ref=e803] [cursor=pointer]
+              - paragraph [ref=e805]: Curious about Buddhism? This weekly class presents basic teachings from Geshe Kelsang Gyatso's book How To Transform Your Life that you can use to enhance work, relationships, inner peace, and daily enjoyment. Each session includes meditation, teaching, and discussion.
+        - generic [ref=e806]:
+          - generic [ref=e807]: WEDNESDAY 25 FEB
+          - generic [ref=e808]:
+            - generic [ref=e809]:
+              - generic [ref=e810]:
+                - generic [ref=e811]:
+                  - generic [ref=e812]: 6:00pm
+                  - generic [ref=e813]: 30 mins
+                - generic [ref=e815]: After-Work Meditation
+                - generic [ref=e816]: Ben
+                - generic [ref=e818]: $5
+                - generic [ref=e819]:
+                  - button "More Info" [ref=e820] [cursor=pointer]
+                  - button "Book" [ref=e821] [cursor=pointer]
+              - paragraph [ref=e823]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e824]:
+              - generic [ref=e825]:
+                - generic [ref=e826]:
+                  - generic [ref=e827]: 6:45pm
+                  - generic [ref=e828]: 120 mins
+                - generic [ref=e830]: MembersFoundation Program
+                - generic [ref=e831]: Joseph
+                - link "Membership Required" [ref=e833] [cursor=pointer]:
+                  - /url: /membership
+                - generic [ref=e834]:
+                  - button "More Info" [ref=e835] [cursor=pointer]
+                  - button "Book" [disabled] [ref=e836]
+              - paragraph [ref=e838]: A commitment-based study program for those interested in deepening their understanding of Buddha's teachings. Features regular teachings, meditation, systematic study of Buddhist texts, and group discussion.
+        - generic [ref=e839]:
+          - generic [ref=e840]: THURSDAY 26 FEB
+          - generic [ref=e841]:
+            - generic [ref=e842]:
+              - generic [ref=e843]:
+                - generic [ref=e844]:
+                  - generic [ref=e845]: 6:00pm
+                  - generic [ref=e846]: 30 mins
+                - generic [ref=e848]: After-Work Meditation
+                - generic [ref=e849]: Debbie
+                - generic [ref=e851]: $5
+                - generic [ref=e852]:
+                  - button "More Info" [ref=e853] [cursor=pointer]
+                  - button "Book" [ref=e854] [cursor=pointer]
+              - paragraph [ref=e856]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e857]:
+              - generic [ref=e858]:
+                - generic [ref=e859]:
+                  - generic [ref=e860]: 7:00pm
+                  - generic [ref=e861]: 60 mins
+                - generic [ref=e863]: "Patient Acceptance: Beyond Taking Things Personally"
+                - generic [ref=e864]: Joseph
+                - generic [ref=e866]: $10
+                - generic [ref=e867]:
+                  - button "More Info" [ref=e868] [cursor=pointer]
+                  - button "Book" [disabled] [ref=e869]
+              - paragraph [ref=e871]: "So often in our interactions with others we find ourselves experiencing feelings of hurt, rejection, and not being heard that can lead to developing anger and rage towards others. Buddha gave exceedingly practical teachings on patient acceptance – by applying these practical methods as well as Buddha's extraordinary insight into 'no self' we free ourselves from taking things so personally. Series Topics: • Jan 8: Why Anger Doesn't Work • Jan 15: The Wisdom of Patient Acceptance • Jan 22: Who is the Me who takes Things Personally? • Jan 29: The Joy of No Self • Feb 5: Patient Acceptance Through Understanding Karma • Feb 12: The Wisdom Path to Liberation • Feb 19: Wisdom, Love and Compassion • Feb 26: The Wisdom Dance of Patient Acceptance • Mar 5: Saying Yes to Life and Enlightenment"
+        - generic [ref=e872]:
+          - generic [ref=e873]: FRIDAY 27 FEB
+          - generic [ref=e875]:
+            - generic [ref=e876]:
+              - generic [ref=e877]:
+                - generic [ref=e878]: 6:00pm
+                - generic [ref=e879]: 30 mins
+              - generic [ref=e881]: After-Work Meditation
+              - generic [ref=e882]: Giselle
+              - generic [ref=e884]: $5
+              - generic [ref=e885]:
+                - button "More Info" [ref=e886] [cursor=pointer]
+                - button "Book" [ref=e887] [cursor=pointer]
+            - paragraph [ref=e889]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+        - generic [ref=e890]:
+          - generic [ref=e891]: SUNDAY 01 MAR
+          - generic [ref=e893]:
+            - generic [ref=e894]:
+              - generic [ref=e895]:
+                - generic [ref=e896]: 11:00am
+                - generic [ref=e897]: 90 mins
+              - generic [ref=e899]: "Sunday Morning Meditation followed by Coffee, Tea & Chat: Practical Advice for a Happy Life"
+              - generic [ref=e900]: Joseph
+              - generic [ref=e902]: $15
+              - generic [ref=e903]:
+                - button "More Info" [ref=e904] [cursor=pointer]
+                - button "Book" [ref=e905] [cursor=pointer]
+            - paragraph [ref=e907]: This series explores teachings from Atisha, the Indian Buddhist master who founded the Kadampa tradition. The program focuses on "Advice from Atisha's Heart," presented as practical guidance for cultivating inner peace, compassion, and wisdom. Each week examines specific instructions designed to transform daily challenges into spiritual growth opportunities.
+        - generic [ref=e908]:
+          - generic [ref=e909]: MONDAY 02 MAR
+          - generic [ref=e910]:
+            - generic [ref=e911]:
+              - generic [ref=e912]:
+                - generic [ref=e913]:
+                  - generic [ref=e914]: 6:00pm
+                  - generic [ref=e915]: 30 mins
+                - generic [ref=e917]: After-Work Meditation
+                - generic [ref=e918]: Deanna
+                - generic [ref=e920]: $5
+                - generic [ref=e921]:
+                  - button "More Info" [ref=e922] [cursor=pointer]
+                  - button "Book" [ref=e923] [cursor=pointer]
+              - paragraph [ref=e925]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e926]:
+              - generic [ref=e927]:
+                - generic [ref=e928]:
+                  - generic [ref=e929]: 7:00pm
+                  - generic [ref=e930]: 60 mins
+                - generic [ref=e932]: Monday General Program
+                - generic [ref=e933]: Teri
+                - generic [ref=e935]: $10
+                - generic [ref=e936]:
+                  - button "More Info" [ref=e937] [cursor=pointer]
+                  - button "Book" [disabled] [ref=e938]
+              - paragraph [ref=e940]: "The program explores how meditation extends far beyond temporary relaxation. When properly applied, it enables practitioners to release old emotional wounds, overcome anxiety, and develop a constructive self-perception. The series focuses on Preparatory Practices—traditional mental exercises designed to enhance meditation's effectiveness. Series Topics: • Jan 5: The Deeper Purpose of Meditation • Jan 12: The Transformative Power of Blessings • Jan 19: Igniting Your Potential Blessings • Jan 26: Creating Inner Power • Feb 2: Creating Joy • Feb 9: Purification – The Freedom to Let Go • Feb 16: Conversing with the Buddhas • Feb 23: How to Deeply Enjoy Meditation"
+        - generic [ref=e941]:
+          - generic [ref=e942]: TUESDAY 03 MAR
+          - generic [ref=e943]:
+            - generic [ref=e944]:
+              - generic [ref=e945]:
+                - generic [ref=e946]:
+                  - generic [ref=e947]: 6:00pm
+                  - generic [ref=e948]: 30 mins
+                - generic [ref=e950]: After-Work Meditation
+                - generic [ref=e951]: Various
+                - generic [ref=e952]: $5
+                - generic [ref=e953]:
+                  - button "More Info" [ref=e954] [cursor=pointer]
+                  - button "Book" [ref=e955] [cursor=pointer]
+              - paragraph [ref=e957]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e958]:
+              - generic [ref=e959]:
+                - generic [ref=e960]:
+                  - generic [ref=e961]: 7:00pm
+                  - generic [ref=e962]: 60 mins
+                - generic [ref=e964]: Introduction to Buddhism
+                - generic [ref=e965]: Deanna, Debbie, Ben
+                - generic [ref=e967]: $10
+                - generic [ref=e968]:
+                  - button "More Info" [ref=e969] [cursor=pointer]
+                  - button "Book" [ref=e970] [cursor=pointer]
+              - paragraph [ref=e972]: Curious about Buddhism? This weekly class presents basic teachings from Geshe Kelsang Gyatso's book How To Transform Your Life that you can use to enhance work, relationships, inner peace, and daily enjoyment. Each session includes meditation, teaching, and discussion.
+        - generic [ref=e973]:
+          - generic [ref=e974]: WEDNESDAY 04 MAR
+          - generic [ref=e975]:
+            - generic [ref=e976]:
+              - generic [ref=e977]:
+                - generic [ref=e978]:
+                  - generic [ref=e979]: 6:00pm
+                  - generic [ref=e980]: 30 mins
+                - generic [ref=e982]: After-Work Meditation
+                - generic [ref=e983]: Ben
+                - generic [ref=e985]: $5
+                - generic [ref=e986]:
+                  - button "More Info" [ref=e987] [cursor=pointer]
+                  - button "Book" [ref=e988] [cursor=pointer]
+              - paragraph [ref=e990]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e991]:
+              - generic [ref=e992]:
+                - generic [ref=e993]:
+                  - generic [ref=e994]: 6:45pm
+                  - generic [ref=e995]: 120 mins
+                - generic [ref=e997]: MembersFoundation Program
+                - generic [ref=e998]: Joseph
+                - link "Membership Required" [ref=e1000] [cursor=pointer]:
+                  - /url: /membership
+                - generic [ref=e1001]:
+                  - button "More Info" [ref=e1002] [cursor=pointer]
+                  - button "Book" [disabled] [ref=e1003]
+              - paragraph [ref=e1005]: A commitment-based study program for those interested in deepening their understanding of Buddha's teachings. Features regular teachings, meditation, systematic study of Buddhist texts, and group discussion.
+        - generic [ref=e1006]:
+          - generic [ref=e1007]: THURSDAY 05 MAR
+          - generic [ref=e1008]:
+            - generic [ref=e1009]:
+              - generic [ref=e1010]:
+                - generic [ref=e1011]:
+                  - generic [ref=e1012]: 6:00pm
+                  - generic [ref=e1013]: 30 mins
+                - generic [ref=e1015]: After-Work Meditation
+                - generic [ref=e1016]: Debbie
+                - generic [ref=e1018]: $5
+                - generic [ref=e1019]:
+                  - button "More Info" [ref=e1020] [cursor=pointer]
+                  - button "Book" [ref=e1021] [cursor=pointer]
+              - paragraph [ref=e1023]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e1024]:
+              - generic [ref=e1025]:
+                - generic [ref=e1026]:
+                  - generic [ref=e1027]: 7:00pm
+                  - generic [ref=e1028]: 60 mins
+                - generic [ref=e1030]: "Patient Acceptance: Beyond Taking Things Personally"
+                - generic [ref=e1031]: Joseph
+                - generic [ref=e1033]: $10
+                - generic [ref=e1034]:
+                  - button "More Info" [ref=e1035] [cursor=pointer]
+                  - button "Book" [disabled] [ref=e1036]
+              - paragraph [ref=e1038]: "So often in our interactions with others we find ourselves experiencing feelings of hurt, rejection, and not being heard that can lead to developing anger and rage towards others. Buddha gave exceedingly practical teachings on patient acceptance – by applying these practical methods as well as Buddha's extraordinary insight into 'no self' we free ourselves from taking things so personally. Series Topics: • Jan 8: Why Anger Doesn't Work • Jan 15: The Wisdom of Patient Acceptance • Jan 22: Who is the Me who takes Things Personally? • Jan 29: The Joy of No Self • Feb 5: Patient Acceptance Through Understanding Karma • Feb 12: The Wisdom Path to Liberation • Feb 19: Wisdom, Love and Compassion • Feb 26: The Wisdom Dance of Patient Acceptance • Mar 5: Saying Yes to Life and Enlightenment"
+        - generic [ref=e1039]:
+          - generic [ref=e1040]: FRIDAY 06 MAR
+          - generic [ref=e1042]:
+            - generic [ref=e1043]:
+              - generic [ref=e1044]:
+                - generic [ref=e1045]: 6:00pm
+                - generic [ref=e1046]: 30 mins
+              - generic [ref=e1048]: After-Work Meditation
+              - generic [ref=e1049]: Giselle
+              - generic [ref=e1051]: $5
+              - generic [ref=e1052]:
+                - button "More Info" [ref=e1053] [cursor=pointer]
+                - button "Book" [ref=e1054] [cursor=pointer]
+            - paragraph [ref=e1056]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+        - generic [ref=e1057]:
+          - generic [ref=e1058]: SUNDAY 08 MAR
+          - generic [ref=e1060]:
+            - generic [ref=e1061]:
+              - generic [ref=e1062]:
+                - generic [ref=e1063]: 11:00am
+                - generic [ref=e1064]: 90 mins
+              - generic [ref=e1066]: "Sunday Morning Meditation followed by Coffee, Tea & Chat: Practical Advice for a Happy Life"
+              - generic [ref=e1067]: Joseph
+              - generic [ref=e1069]: $15
+              - generic [ref=e1070]:
+                - button "More Info" [ref=e1071] [cursor=pointer]
+                - button "Book" [ref=e1072] [cursor=pointer]
+            - paragraph [ref=e1074]: This series explores teachings from Atisha, the Indian Buddhist master who founded the Kadampa tradition. The program focuses on "Advice from Atisha's Heart," presented as practical guidance for cultivating inner peace, compassion, and wisdom. Each week examines specific instructions designed to transform daily challenges into spiritual growth opportunities.
+        - generic [ref=e1075]:
+          - generic [ref=e1076]: MONDAY 09 MAR
+          - generic [ref=e1077]:
+            - generic [ref=e1078]:
+              - generic [ref=e1079]:
+                - generic [ref=e1080]:
+                  - generic [ref=e1081]: 6:00pm
+                  - generic [ref=e1082]: 30 mins
+                - generic [ref=e1084]: After-Work Meditation
+                - generic [ref=e1085]: Deanna
+                - generic [ref=e1087]: $5
+                - generic [ref=e1088]:
+                  - button "More Info" [ref=e1089] [cursor=pointer]
+                  - button "Book" [ref=e1090] [cursor=pointer]
+              - paragraph [ref=e1092]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e1093]:
+              - generic [ref=e1094]:
+                - generic [ref=e1095]:
+                  - generic [ref=e1096]: 7:00pm
+                  - generic [ref=e1097]: 60 mins
+                - generic [ref=e1099]: Monday General Program
+                - generic [ref=e1100]: Teri
+                - generic [ref=e1102]: $10
+                - generic [ref=e1103]:
+                  - button "More Info" [ref=e1104] [cursor=pointer]
+                  - button "Book" [disabled] [ref=e1105]
+              - paragraph [ref=e1107]: "The program explores how meditation extends far beyond temporary relaxation. When properly applied, it enables practitioners to release old emotional wounds, overcome anxiety, and develop a constructive self-perception. The series focuses on Preparatory Practices—traditional mental exercises designed to enhance meditation's effectiveness. Series Topics: • Jan 5: The Deeper Purpose of Meditation • Jan 12: The Transformative Power of Blessings • Jan 19: Igniting Your Potential Blessings • Jan 26: Creating Inner Power • Feb 2: Creating Joy • Feb 9: Purification – The Freedom to Let Go • Feb 16: Conversing with the Buddhas • Feb 23: How to Deeply Enjoy Meditation"
+        - generic [ref=e1108]:
+          - generic [ref=e1109]: TUESDAY 10 MAR
+          - generic [ref=e1110]:
+            - generic [ref=e1111]:
+              - generic [ref=e1112]:
+                - generic [ref=e1113]:
+                  - generic [ref=e1114]: 6:00pm
+                  - generic [ref=e1115]: 30 mins
+                - generic [ref=e1117]: After-Work Meditation
+                - generic [ref=e1118]: Various
+                - generic [ref=e1119]: $5
+                - generic [ref=e1120]:
+                  - button "More Info" [ref=e1121] [cursor=pointer]
+                  - button "Book" [ref=e1122] [cursor=pointer]
+              - paragraph [ref=e1124]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e1125]:
+              - generic [ref=e1126]:
+                - generic [ref=e1127]:
+                  - generic [ref=e1128]: 7:00pm
+                  - generic [ref=e1129]: 60 mins
+                - generic [ref=e1131]: Introduction to Buddhism
+                - generic [ref=e1132]: Deanna, Debbie, Ben
+                - generic [ref=e1134]: $10
+                - generic [ref=e1135]:
+                  - button "More Info" [ref=e1136] [cursor=pointer]
+                  - button "Book" [ref=e1137] [cursor=pointer]
+              - paragraph [ref=e1139]: Curious about Buddhism? This weekly class presents basic teachings from Geshe Kelsang Gyatso's book How To Transform Your Life that you can use to enhance work, relationships, inner peace, and daily enjoyment. Each session includes meditation, teaching, and discussion.
+        - generic [ref=e1140]:
+          - generic [ref=e1141]: WEDNESDAY 11 MAR
+          - generic [ref=e1142]:
+            - generic [ref=e1143]:
+              - generic [ref=e1144]:
+                - generic [ref=e1145]:
+                  - generic [ref=e1146]: 6:00pm
+                  - generic [ref=e1147]: 30 mins
+                - generic [ref=e1149]: After-Work Meditation
+                - generic [ref=e1150]: Ben
+                - generic [ref=e1152]: $5
+                - generic [ref=e1153]:
+                  - button "More Info" [ref=e1154] [cursor=pointer]
+                  - button "Book" [ref=e1155] [cursor=pointer]
+              - paragraph [ref=e1157]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e1158]:
+              - generic [ref=e1159]:
+                - generic [ref=e1160]:
+                  - generic [ref=e1161]: 6:45pm
+                  - generic [ref=e1162]: 120 mins
+                - generic [ref=e1164]: MembersFoundation Program
+                - generic [ref=e1165]: Joseph
+                - link "Membership Required" [ref=e1167] [cursor=pointer]:
+                  - /url: /membership
+                - generic [ref=e1168]:
+                  - button "More Info" [ref=e1169] [cursor=pointer]
+                  - button "Book" [disabled] [ref=e1170]
+              - paragraph [ref=e1172]: A commitment-based study program for those interested in deepening their understanding of Buddha's teachings. Features regular teachings, meditation, systematic study of Buddhist texts, and group discussion.
+        - generic [ref=e1173]:
+          - generic [ref=e1174]: THURSDAY 12 MAR
+          - generic [ref=e1175]:
+            - generic [ref=e1176]:
+              - generic [ref=e1177]:
+                - generic [ref=e1178]:
+                  - generic [ref=e1179]: 6:00pm
+                  - generic [ref=e1180]: 30 mins
+                - generic [ref=e1182]: After-Work Meditation
+                - generic [ref=e1183]: Debbie
+                - generic [ref=e1185]: $5
+                - generic [ref=e1186]:
+                  - button "More Info" [ref=e1187] [cursor=pointer]
+                  - button "Book" [ref=e1188] [cursor=pointer]
+              - paragraph [ref=e1190]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e1191]:
+              - generic [ref=e1192]:
+                - generic [ref=e1193]:
+                  - generic [ref=e1194]: 7:00pm
+                  - generic [ref=e1195]: 60 mins
+                - generic [ref=e1197]: "Patient Acceptance: Beyond Taking Things Personally"
+                - generic [ref=e1198]: Joseph
+                - generic [ref=e1200]: $10
+                - generic [ref=e1201]:
+                  - button "More Info" [ref=e1202] [cursor=pointer]
+                  - button "Book" [disabled] [ref=e1203]
+              - paragraph [ref=e1205]: "So often in our interactions with others we find ourselves experiencing feelings of hurt, rejection, and not being heard that can lead to developing anger and rage towards others. Buddha gave exceedingly practical teachings on patient acceptance – by applying these practical methods as well as Buddha's extraordinary insight into 'no self' we free ourselves from taking things so personally. Series Topics: • Jan 8: Why Anger Doesn't Work • Jan 15: The Wisdom of Patient Acceptance • Jan 22: Who is the Me who takes Things Personally? • Jan 29: The Joy of No Self • Feb 5: Patient Acceptance Through Understanding Karma • Feb 12: The Wisdom Path to Liberation • Feb 19: Wisdom, Love and Compassion • Feb 26: The Wisdom Dance of Patient Acceptance • Mar 5: Saying Yes to Life and Enlightenment"
+        - generic [ref=e1206]:
+          - generic [ref=e1207]: FRIDAY 13 MAR
+          - generic [ref=e1209]:
+            - generic [ref=e1210]:
+              - generic [ref=e1211]:
+                - generic [ref=e1212]: 6:00pm
+                - generic [ref=e1213]: 30 mins
+              - generic [ref=e1215]: After-Work Meditation
+              - generic [ref=e1216]: Giselle
+              - generic [ref=e1218]: $5
+              - generic [ref=e1219]:
+                - button "More Info" [ref=e1220] [cursor=pointer]
+                - button "Book" [ref=e1221] [cursor=pointer]
+            - paragraph [ref=e1223]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+        - generic [ref=e1224]:
+          - generic [ref=e1225]: SUNDAY 15 MAR
+          - generic [ref=e1227]:
+            - generic [ref=e1228]:
+              - generic [ref=e1229]:
+                - generic [ref=e1230]: 11:00am
+                - generic [ref=e1231]: 90 mins
+              - generic [ref=e1233]: "Sunday Morning Meditation followed by Coffee, Tea & Chat: Practical Advice for a Happy Life"
+              - generic [ref=e1234]: Joseph
+              - generic [ref=e1236]: $15
+              - generic [ref=e1237]:
+                - button "More Info" [ref=e1238] [cursor=pointer]
+                - button "Book" [ref=e1239] [cursor=pointer]
+            - paragraph [ref=e1241]: This series explores teachings from Atisha, the Indian Buddhist master who founded the Kadampa tradition. The program focuses on "Advice from Atisha's Heart," presented as practical guidance for cultivating inner peace, compassion, and wisdom. Each week examines specific instructions designed to transform daily challenges into spiritual growth opportunities.
+        - generic [ref=e1242]:
+          - generic [ref=e1243]: MONDAY 16 MAR
+          - generic [ref=e1244]:
+            - generic [ref=e1245]:
+              - generic [ref=e1246]:
+                - generic [ref=e1247]:
+                  - generic [ref=e1248]: 6:00pm
+                  - generic [ref=e1249]: 30 mins
+                - generic [ref=e1251]: After-Work Meditation
+                - generic [ref=e1252]: Deanna
+                - generic [ref=e1254]: $5
+                - generic [ref=e1255]:
+                  - button "More Info" [ref=e1256] [cursor=pointer]
+                  - button "Book" [ref=e1257] [cursor=pointer]
+              - paragraph [ref=e1259]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e1260]:
+              - generic [ref=e1261]:
+                - generic [ref=e1262]:
+                  - generic [ref=e1263]: 7:00pm
+                  - generic [ref=e1264]: 60 mins
+                - generic [ref=e1266]: Monday General Program
+                - generic [ref=e1267]: Teri
+                - generic [ref=e1269]: $10
+                - generic [ref=e1270]:
+                  - button "More Info" [ref=e1271] [cursor=pointer]
+                  - button "Book" [disabled] [ref=e1272]
+              - paragraph [ref=e1274]: "The program explores how meditation extends far beyond temporary relaxation. When properly applied, it enables practitioners to release old emotional wounds, overcome anxiety, and develop a constructive self-perception. The series focuses on Preparatory Practices—traditional mental exercises designed to enhance meditation's effectiveness. Series Topics: • Jan 5: The Deeper Purpose of Meditation • Jan 12: The Transformative Power of Blessings • Jan 19: Igniting Your Potential Blessings • Jan 26: Creating Inner Power • Feb 2: Creating Joy • Feb 9: Purification – The Freedom to Let Go • Feb 16: Conversing with the Buddhas • Feb 23: How to Deeply Enjoy Meditation"
+        - generic [ref=e1275]:
+          - generic [ref=e1276]: TUESDAY 17 MAR
+          - generic [ref=e1277]:
+            - generic [ref=e1278]:
+              - generic [ref=e1279]:
+                - generic [ref=e1280]:
+                  - generic [ref=e1281]: 6:00pm
+                  - generic [ref=e1282]: 30 mins
+                - generic [ref=e1284]: After-Work Meditation
+                - generic [ref=e1285]: Various
+                - generic [ref=e1286]: $5
+                - generic [ref=e1287]:
+                  - button "More Info" [ref=e1288] [cursor=pointer]
+                  - button "Book" [ref=e1289] [cursor=pointer]
+              - paragraph [ref=e1291]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e1292]:
+              - generic [ref=e1293]:
+                - generic [ref=e1294]:
+                  - generic [ref=e1295]: 7:00pm
+                  - generic [ref=e1296]: 60 mins
+                - generic [ref=e1298]: Introduction to Buddhism
+                - generic [ref=e1299]: Deanna, Debbie, Ben
+                - generic [ref=e1301]: $10
+                - generic [ref=e1302]:
+                  - button "More Info" [ref=e1303] [cursor=pointer]
+                  - button "Book" [ref=e1304] [cursor=pointer]
+              - paragraph [ref=e1306]: Curious about Buddhism? This weekly class presents basic teachings from Geshe Kelsang Gyatso's book How To Transform Your Life that you can use to enhance work, relationships, inner peace, and daily enjoyment. Each session includes meditation, teaching, and discussion.
+        - generic [ref=e1307]:
+          - generic [ref=e1308]: WEDNESDAY 18 MAR
+          - generic [ref=e1309]:
+            - generic [ref=e1310]:
+              - generic [ref=e1311]:
+                - generic [ref=e1312]:
+                  - generic [ref=e1313]: 6:00pm
+                  - generic [ref=e1314]: 30 mins
+                - generic [ref=e1316]: After-Work Meditation
+                - generic [ref=e1317]: Ben
+                - generic [ref=e1319]: $5
+                - generic [ref=e1320]:
+                  - button "More Info" [ref=e1321] [cursor=pointer]
+                  - button "Book" [ref=e1322] [cursor=pointer]
+              - paragraph [ref=e1324]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e1325]:
+              - generic [ref=e1326]:
+                - generic [ref=e1327]:
+                  - generic [ref=e1328]: 6:45pm
+                  - generic [ref=e1329]: 120 mins
+                - generic [ref=e1331]: MembersFoundation Program
+                - generic [ref=e1332]: Joseph
+                - link "Membership Required" [ref=e1334] [cursor=pointer]:
+                  - /url: /membership
+                - generic [ref=e1335]:
+                  - button "More Info" [ref=e1336] [cursor=pointer]
+                  - button "Book" [disabled] [ref=e1337]
+              - paragraph [ref=e1339]: A commitment-based study program for those interested in deepening their understanding of Buddha's teachings. Features regular teachings, meditation, systematic study of Buddhist texts, and group discussion.
+        - generic [ref=e1340]:
+          - generic [ref=e1341]: THURSDAY 19 MAR
+          - generic [ref=e1342]:
+            - generic [ref=e1343]:
+              - generic [ref=e1344]:
+                - generic [ref=e1345]:
+                  - generic [ref=e1346]: 6:00pm
+                  - generic [ref=e1347]: 30 mins
+                - generic [ref=e1349]: After-Work Meditation
+                - generic [ref=e1350]: Debbie
+                - generic [ref=e1352]: $5
+                - generic [ref=e1353]:
+                  - button "More Info" [ref=e1354] [cursor=pointer]
+                  - button "Book" [ref=e1355] [cursor=pointer]
+              - paragraph [ref=e1357]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e1358]:
+              - generic [ref=e1359]:
+                - generic [ref=e1360]:
+                  - generic [ref=e1361]: 7:00pm
+                  - generic [ref=e1362]: 60 mins
+                - generic [ref=e1364]: "Patient Acceptance: Beyond Taking Things Personally"
+                - generic [ref=e1365]: Joseph
+                - generic [ref=e1367]: $10
+                - generic [ref=e1368]:
+                  - button "More Info" [ref=e1369] [cursor=pointer]
+                  - button "Book" [disabled] [ref=e1370]
+              - paragraph [ref=e1372]: "So often in our interactions with others we find ourselves experiencing feelings of hurt, rejection, and not being heard that can lead to developing anger and rage towards others. Buddha gave exceedingly practical teachings on patient acceptance – by applying these practical methods as well as Buddha's extraordinary insight into 'no self' we free ourselves from taking things so personally. Series Topics: • Jan 8: Why Anger Doesn't Work • Jan 15: The Wisdom of Patient Acceptance • Jan 22: Who is the Me who takes Things Personally? • Jan 29: The Joy of No Self • Feb 5: Patient Acceptance Through Understanding Karma • Feb 12: The Wisdom Path to Liberation • Feb 19: Wisdom, Love and Compassion • Feb 26: The Wisdom Dance of Patient Acceptance • Mar 5: Saying Yes to Life and Enlightenment"
+        - generic [ref=e1373]:
+          - generic [ref=e1374]: FRIDAY 20 MAR
+          - generic [ref=e1376]:
+            - generic [ref=e1377]:
+              - generic [ref=e1378]:
+                - generic [ref=e1379]: 6:00pm
+                - generic [ref=e1380]: 30 mins
+              - generic [ref=e1382]: After-Work Meditation
+              - generic [ref=e1383]: Giselle
+              - generic [ref=e1385]: $5
+              - generic [ref=e1386]:
+                - button "More Info" [ref=e1387] [cursor=pointer]
+                - button "Book" [ref=e1388] [cursor=pointer]
+            - paragraph [ref=e1390]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+        - generic [ref=e1391]:
+          - generic [ref=e1392]: SUNDAY 22 MAR
+          - generic [ref=e1394]:
+            - generic [ref=e1395]:
+              - generic [ref=e1396]:
+                - generic [ref=e1397]: 11:00am
+                - generic [ref=e1398]: 90 mins
+              - generic [ref=e1400]: "Sunday Morning Meditation followed by Coffee, Tea & Chat: Practical Advice for a Happy Life"
+              - generic [ref=e1401]: Joseph
+              - generic [ref=e1403]: $15
+              - generic [ref=e1404]:
+                - button "More Info" [ref=e1405] [cursor=pointer]
+                - button "Book" [ref=e1406] [cursor=pointer]
+            - paragraph [ref=e1408]: This series explores teachings from Atisha, the Indian Buddhist master who founded the Kadampa tradition. The program focuses on "Advice from Atisha's Heart," presented as practical guidance for cultivating inner peace, compassion, and wisdom. Each week examines specific instructions designed to transform daily challenges into spiritual growth opportunities.
+        - generic [ref=e1409]:
+          - generic [ref=e1410]: MONDAY 23 MAR
+          - generic [ref=e1411]:
+            - generic [ref=e1412]:
+              - generic [ref=e1413]:
+                - generic [ref=e1414]:
+                  - generic [ref=e1415]: 6:00pm
+                  - generic [ref=e1416]: 30 mins
+                - generic [ref=e1418]: After-Work Meditation
+                - generic [ref=e1419]: Deanna
+                - generic [ref=e1421]: $5
+                - generic [ref=e1422]:
+                  - button "More Info" [ref=e1423] [cursor=pointer]
+                  - button "Book" [ref=e1424] [cursor=pointer]
+              - paragraph [ref=e1426]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e1427]:
+              - generic [ref=e1428]:
+                - generic [ref=e1429]:
+                  - generic [ref=e1430]: 7:00pm
+                  - generic [ref=e1431]: 60 mins
+                - generic [ref=e1433]: Monday General Program
+                - generic [ref=e1434]: Teri
+                - generic [ref=e1436]: $10
+                - generic [ref=e1437]:
+                  - button "More Info" [ref=e1438] [cursor=pointer]
+                  - button "Book" [disabled] [ref=e1439]
+              - paragraph [ref=e1441]: "The program explores how meditation extends far beyond temporary relaxation. When properly applied, it enables practitioners to release old emotional wounds, overcome anxiety, and develop a constructive self-perception. The series focuses on Preparatory Practices—traditional mental exercises designed to enhance meditation's effectiveness. Series Topics: • Jan 5: The Deeper Purpose of Meditation • Jan 12: The Transformative Power of Blessings • Jan 19: Igniting Your Potential Blessings • Jan 26: Creating Inner Power • Feb 2: Creating Joy • Feb 9: Purification – The Freedom to Let Go • Feb 16: Conversing with the Buddhas • Feb 23: How to Deeply Enjoy Meditation"
+        - generic [ref=e1442]:
+          - generic [ref=e1443]: TUESDAY 24 MAR
+          - generic [ref=e1444]:
+            - generic [ref=e1445]:
+              - generic [ref=e1446]:
+                - generic [ref=e1447]:
+                  - generic [ref=e1448]: 6:00pm
+                  - generic [ref=e1449]: 30 mins
+                - generic [ref=e1451]: After-Work Meditation
+                - generic [ref=e1452]: Various
+                - generic [ref=e1453]: $5
+                - generic [ref=e1454]:
+                  - button "More Info" [ref=e1455] [cursor=pointer]
+                  - button "Book" [ref=e1456] [cursor=pointer]
+              - paragraph [ref=e1458]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e1459]:
+              - generic [ref=e1460]:
+                - generic [ref=e1461]:
+                  - generic [ref=e1462]: 7:00pm
+                  - generic [ref=e1463]: 60 mins
+                - generic [ref=e1465]: Introduction to Buddhism
+                - generic [ref=e1466]: Deanna, Debbie, Ben
+                - generic [ref=e1468]: $10
+                - generic [ref=e1469]:
+                  - button "More Info" [ref=e1470] [cursor=pointer]
+                  - button "Book" [ref=e1471] [cursor=pointer]
+              - paragraph [ref=e1473]: Curious about Buddhism? This weekly class presents basic teachings from Geshe Kelsang Gyatso's book How To Transform Your Life that you can use to enhance work, relationships, inner peace, and daily enjoyment. Each session includes meditation, teaching, and discussion.
+        - generic [ref=e1474]:
+          - generic [ref=e1475]: WEDNESDAY 25 MAR
+          - generic [ref=e1476]:
+            - generic [ref=e1477]:
+              - generic [ref=e1478]:
+                - generic [ref=e1479]:
+                  - generic [ref=e1480]: 6:00pm
+                  - generic [ref=e1481]: 30 mins
+                - generic [ref=e1483]: After-Work Meditation
+                - generic [ref=e1484]: Ben
+                - generic [ref=e1486]: $5
+                - generic [ref=e1487]:
+                  - button "More Info" [ref=e1488] [cursor=pointer]
+                  - button "Book" [ref=e1489] [cursor=pointer]
+              - paragraph [ref=e1491]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e1492]:
+              - generic [ref=e1493]:
+                - generic [ref=e1494]:
+                  - generic [ref=e1495]: 6:45pm
+                  - generic [ref=e1496]: 120 mins
+                - generic [ref=e1498]: MembersFoundation Program
+                - generic [ref=e1499]: Joseph
+                - link "Membership Required" [ref=e1501] [cursor=pointer]:
+                  - /url: /membership
+                - generic [ref=e1502]:
+                  - button "More Info" [ref=e1503] [cursor=pointer]
+                  - button "Book" [disabled] [ref=e1504]
+              - paragraph [ref=e1506]: A commitment-based study program for those interested in deepening their understanding of Buddha's teachings. Features regular teachings, meditation, systematic study of Buddhist texts, and group discussion.
+        - generic [ref=e1507]:
+          - generic [ref=e1508]: THURSDAY 26 MAR
+          - generic [ref=e1509]:
+            - generic [ref=e1510]:
+              - generic [ref=e1511]:
+                - generic [ref=e1512]:
+                  - generic [ref=e1513]: 6:00pm
+                  - generic [ref=e1514]: 30 mins
+                - generic [ref=e1516]: After-Work Meditation
+                - generic [ref=e1517]: Debbie
+                - generic [ref=e1519]: $5
+                - generic [ref=e1520]:
+                  - button "More Info" [ref=e1521] [cursor=pointer]
+                  - button "Book" [ref=e1522] [cursor=pointer]
+              - paragraph [ref=e1524]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e1525]:
+              - generic [ref=e1526]:
+                - generic [ref=e1527]:
+                  - generic [ref=e1528]: 7:00pm
+                  - generic [ref=e1529]: 60 mins
+                - generic [ref=e1531]: "Patient Acceptance: Beyond Taking Things Personally"
+                - generic [ref=e1532]: Joseph
+                - generic [ref=e1534]: $10
+                - generic [ref=e1535]:
+                  - button "More Info" [ref=e1536] [cursor=pointer]
+                  - button "Book" [disabled] [ref=e1537]
+              - paragraph [ref=e1539]: "So often in our interactions with others we find ourselves experiencing feelings of hurt, rejection, and not being heard that can lead to developing anger and rage towards others. Buddha gave exceedingly practical teachings on patient acceptance – by applying these practical methods as well as Buddha's extraordinary insight into 'no self' we free ourselves from taking things so personally. Series Topics: • Jan 8: Why Anger Doesn't Work • Jan 15: The Wisdom of Patient Acceptance • Jan 22: Who is the Me who takes Things Personally? • Jan 29: The Joy of No Self • Feb 5: Patient Acceptance Through Understanding Karma • Feb 12: The Wisdom Path to Liberation • Feb 19: Wisdom, Love and Compassion • Feb 26: The Wisdom Dance of Patient Acceptance • Mar 5: Saying Yes to Life and Enlightenment"
+        - generic [ref=e1540]:
+          - generic [ref=e1541]: FRIDAY 27 MAR
+          - generic [ref=e1543]:
+            - generic [ref=e1544]:
+              - generic [ref=e1545]:
+                - generic [ref=e1546]: 6:00pm
+                - generic [ref=e1547]: 30 mins
+              - generic [ref=e1549]: After-Work Meditation
+              - generic [ref=e1550]: Giselle
+              - generic [ref=e1552]: $5
+              - generic [ref=e1553]:
+                - button "More Info" [ref=e1554] [cursor=pointer]
+                - button "Book" [ref=e1555] [cursor=pointer]
+            - paragraph [ref=e1557]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+        - generic [ref=e1558]:
+          - generic [ref=e1559]: SUNDAY 29 MAR
+          - generic [ref=e1561]:
+            - generic [ref=e1562]:
+              - generic [ref=e1563]:
+                - generic [ref=e1564]: 11:00am
+                - generic [ref=e1565]: 90 mins
+              - generic [ref=e1567]: "Sunday Morning Meditation followed by Coffee, Tea & Chat: Practical Advice for a Happy Life"
+              - generic [ref=e1568]: Joseph
+              - generic [ref=e1570]: $15
+              - generic [ref=e1571]:
+                - button "More Info" [ref=e1572] [cursor=pointer]
+                - button "Book" [ref=e1573] [cursor=pointer]
+            - paragraph [ref=e1575]: This series explores teachings from Atisha, the Indian Buddhist master who founded the Kadampa tradition. The program focuses on "Advice from Atisha's Heart," presented as practical guidance for cultivating inner peace, compassion, and wisdom. Each week examines specific instructions designed to transform daily challenges into spiritual growth opportunities.
+        - generic [ref=e1576]:
+          - generic [ref=e1577]: MONDAY 30 MAR
+          - generic [ref=e1578]:
+            - generic [ref=e1579]:
+              - generic [ref=e1580]:
+                - generic [ref=e1581]:
+                  - generic [ref=e1582]: 6:00pm
+                  - generic [ref=e1583]: 30 mins
+                - generic [ref=e1585]: After-Work Meditation
+                - generic [ref=e1586]: Deanna
+                - generic [ref=e1588]: $5
+                - generic [ref=e1589]:
+                  - button "More Info" [ref=e1590] [cursor=pointer]
+                  - button "Book" [ref=e1591] [cursor=pointer]
+              - paragraph [ref=e1593]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e1594]:
+              - generic [ref=e1595]:
+                - generic [ref=e1596]:
+                  - generic [ref=e1597]: 7:00pm
+                  - generic [ref=e1598]: 60 mins
+                - generic [ref=e1600]: Monday General Program
+                - generic [ref=e1601]: Teri
+                - generic [ref=e1603]: $10
+                - generic [ref=e1604]:
+                  - button "More Info" [ref=e1605] [cursor=pointer]
+                  - button "Book" [disabled] [ref=e1606]
+              - paragraph [ref=e1608]: "The program explores how meditation extends far beyond temporary relaxation. When properly applied, it enables practitioners to release old emotional wounds, overcome anxiety, and develop a constructive self-perception. The series focuses on Preparatory Practices—traditional mental exercises designed to enhance meditation's effectiveness. Series Topics: • Jan 5: The Deeper Purpose of Meditation • Jan 12: The Transformative Power of Blessings • Jan 19: Igniting Your Potential Blessings • Jan 26: Creating Inner Power • Feb 2: Creating Joy • Feb 9: Purification – The Freedom to Let Go • Feb 16: Conversing with the Buddhas • Feb 23: How to Deeply Enjoy Meditation"
+        - generic [ref=e1609]:
+          - generic [ref=e1610]: TUESDAY 31 MAR
+          - generic [ref=e1611]:
+            - generic [ref=e1612]:
+              - generic [ref=e1613]:
+                - generic [ref=e1614]:
+                  - generic [ref=e1615]: 6:00pm
+                  - generic [ref=e1616]: 30 mins
+                - generic [ref=e1618]: After-Work Meditation
+                - generic [ref=e1619]: Various
+                - generic [ref=e1620]: $5
+                - generic [ref=e1621]:
+                  - button "More Info" [ref=e1622] [cursor=pointer]
+                  - button "Book" [ref=e1623] [cursor=pointer]
+              - paragraph [ref=e1625]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e1626]:
+              - generic [ref=e1627]:
+                - generic [ref=e1628]:
+                  - generic [ref=e1629]: 7:00pm
+                  - generic [ref=e1630]: 60 mins
+                - generic [ref=e1632]: Introduction to Buddhism
+                - generic [ref=e1633]: Deanna, Debbie, Ben
+                - generic [ref=e1635]: $10
+                - generic [ref=e1636]:
+                  - button "More Info" [ref=e1637] [cursor=pointer]
+                  - button "Book" [ref=e1638] [cursor=pointer]
+              - paragraph [ref=e1640]: Curious about Buddhism? This weekly class presents basic teachings from Geshe Kelsang Gyatso's book How To Transform Your Life that you can use to enhance work, relationships, inner peace, and daily enjoyment. Each session includes meditation, teaching, and discussion.
+        - generic [ref=e1641]:
+          - generic [ref=e1642]: WEDNESDAY 01 APR
+          - generic [ref=e1643]:
+            - generic [ref=e1644]:
+              - generic [ref=e1645]:
+                - generic [ref=e1646]:
+                  - generic [ref=e1647]: 6:00pm
+                  - generic [ref=e1648]: 30 mins
+                - generic [ref=e1650]: After-Work Meditation
+                - generic [ref=e1651]: Ben
+                - generic [ref=e1653]: $5
+                - generic [ref=e1654]:
+                  - button "More Info" [ref=e1655] [cursor=pointer]
+                  - button "Book" [ref=e1656] [cursor=pointer]
+              - paragraph [ref=e1658]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e1659]:
+              - generic [ref=e1660]:
+                - generic [ref=e1661]:
+                  - generic [ref=e1662]: 6:45pm
+                  - generic [ref=e1663]: 120 mins
+                - generic [ref=e1665]: MembersFoundation Program
+                - generic [ref=e1666]: Joseph
+                - link "Membership Required" [ref=e1668] [cursor=pointer]:
+                  - /url: /membership
+                - generic [ref=e1669]:
+                  - button "More Info" [ref=e1670] [cursor=pointer]
+                  - button "Book" [disabled] [ref=e1671]
+              - paragraph [ref=e1673]: A commitment-based study program for those interested in deepening their understanding of Buddha's teachings. Features regular teachings, meditation, systematic study of Buddhist texts, and group discussion.
+        - generic [ref=e1674]:
+          - generic [ref=e1675]: THURSDAY 02 APR
+          - generic [ref=e1676]:
+            - generic [ref=e1677]:
+              - generic [ref=e1678]:
+                - generic [ref=e1679]:
+                  - generic [ref=e1680]: 6:00pm
+                  - generic [ref=e1681]: 30 mins
+                - generic [ref=e1683]: After-Work Meditation
+                - generic [ref=e1684]: Debbie
+                - generic [ref=e1686]: $5
+                - generic [ref=e1687]:
+                  - button "More Info" [ref=e1688] [cursor=pointer]
+                  - button "Book" [ref=e1689] [cursor=pointer]
+              - paragraph [ref=e1691]: Simple. Profound. Transformative. These brief meditation sessions help you get in touch with your infinite potential by connecting to the heart and cultivating inner peace. In just 30 minutes your whole day can change.
+            - generic [ref=e1692]:
+              - generic [ref=e1693]:
+                - generic [ref=e1694]:
+                  - generic [ref=e1695]: 7:00pm
+                  - generic [ref=e1696]: 60 mins
+                - generic [ref=e1698]: "Patient Acceptance: Beyond Taking Things Personally"
+                - generic [ref=e1699]: Joseph
+                - generic [ref=e1701]: $10
+                - generic [ref=e1702]:
+                  - button "More Info" [ref=e1703] [cursor=pointer]
+                  - button "Book" [disabled] [ref=e1704]
+              - paragraph [ref=e1706]: "So often in our interactions with others we find ourselves experiencing feelings of hurt, rejection, and not being heard that can lead to developing anger and rage towards others. Buddha gave exceedingly practical teachings on patient acceptance – by applying these practical methods as well as Buddha's extraordinary insight into 'no self' we free ourselves from taking things so personally. Series Topics: • Jan 8: Why Anger Doesn't Work • Jan 15: The Wisdom of Patient Acceptance • Jan 22: Who is the Me who takes Things Personally? • Jan 29: The Joy of No Self • Feb 5: Patient Acceptance Through Understanding Karma • Feb 12: The Wisdom Path to Liberation • Feb 19: Wisdom, Love and Compassion • Feb 26: The Wisdom Dance of Patient Acceptance • Mar 5: Saying Yes to Life and Enlightenment"
+  - generic [ref=e1708]:
+    - generic [ref=e1709]:
+      - heading "Discover inner peace through meditation" [level=2] [ref=e1710]:
+        - text: Discover
+        - generic [ref=e1711]: inner peace
+        - text: through meditation
+      - paragraph [ref=e1712]: We practice Modern Buddhism - a contemporary presentation of Buddha's ancient teachings that emphasizes integrating meditation learning with daily life, making every moment of our lives meaningful and joyous.
+      - link "About Us" [ref=e1713] [cursor=pointer]:
+        - /url: /about
+    - img "KMC Williamsburg students" [ref=e1714]
+  - generic [ref=e1716]:
+    - generic [ref=e1717]:
+      - heading "Weekly drop-in meditation classes" [level=2] [ref=e1718]:
+        - text: Weekly drop-in
+        - generic [ref=e1719]: meditation classes
+      - paragraph [ref=e1720]: We offer 10+ weekly meditation classes suitable for beginners to experienced meditators. Join our after-work sessions or General Program classes. Sunday's 11am class includes Coffee, Tea and Chat for social connection.
+      - link "Class Info" [ref=e1721] [cursor=pointer]:
+        - /url: /classes
+    - img "Joseph teaching at KMC Williamsburg" [ref=e1722]
+  - generic [ref=e1723]:
+    - heading "Connect With Us" [level=2] [ref=e1724]
+    - generic [ref=e1725]:
+      - link "@kadampawilliamsburg" [ref=e1726] [cursor=pointer]:
+        - /url: https://instagram.com/kadampawilliamsburg
+        - img [ref=e1727]
+        - text: "@kadampawilliamsburg"
+      - link "WhatsApp group" [ref=e1729] [cursor=pointer]:
+        - /url: https://wa.me/12129246706
+        - img [ref=e1730]
+        - text: WhatsApp group
+    - generic [ref=e1732]:
+      - link "Meditation" [ref=e1733] [cursor=pointer]:
+        - /url: https://instagram.com/kadampawilliamsburg
+        - img "Meditation" [ref=e1734]
+      - link "Peaceful practice" [ref=e1735] [cursor=pointer]:
+        - /url: https://instagram.com/kadampawilliamsburg
+        - img "Peaceful practice" [ref=e1736]
+      - link "Group meditation" [ref=e1737] [cursor=pointer]:
+        - /url: https://instagram.com/kadampawilliamsburg
+        - img "Group meditation" [ref=e1738]
+      - link "Mindfulness" [ref=e1739] [cursor=pointer]:
+        - /url: https://instagram.com/kadampawilliamsburg
+        - img "Mindfulness" [ref=e1740]
+  - generic [ref=e1742]:
+    - heading "Newsletter Sign-up" [level=2] [ref=e1743]
+    - paragraph [ref=e1744]: Stay updated on upcoming classes and special events.
+    - generic [ref=e1745]:
+      - textbox "First Name" [ref=e1746]
+      - textbox "Last Name" [ref=e1747]
+      - textbox "Email Address" [ref=e1748]
+      - button "Sign Up" [ref=e1749] [cursor=pointer]
+    - paragraph [ref=e1750]: We respect your privacy.
+  - contentinfo [ref=e1751]:
+    - generic [ref=e1752]:
+      - link "KMC Williamsburg Location" [ref=e1754] [cursor=pointer]:
+        - /url: https://maps.google.com/?q=Kadampa+Meditation+Center,+Williamsburg,+119+N+11th+St,+Brooklyn,+NY+11249
+        - iframe [ref=e1755]:
+          
+      - generic [ref=e1756]:
+        - heading "KADAMPA MEDITATION CENTER Williamsburg" [level=4] [ref=e1757]:
+          - generic [ref=e1758]: KADAMPA MEDITATION CENTER
+          - generic [ref=e1759]: Williamsburg
+        - paragraph [ref=e1760]:
+          - text: 119 North 11th Street
+          - text: Williamsburg, NY 11249
+          - text: info@meditationinwilliamsburg.org
+      - generic [ref=e1761]:
+        - navigation [ref=e1762]:
+          - link "About" [ref=e1763] [cursor=pointer]:
+            - /url: /about
+          - link "Classes" [ref=e1764] [cursor=pointer]:
+            - /url: "#classes"
+          - link "Donate" [ref=e1765] [cursor=pointer]:
+            - /url: https://checkout.meditationinnewyork.org/make-a-donation-kmcw/
+          - link "Volunteer" [ref=e1766] [cursor=pointer]:
+            - /url: /about#volunteer
+        - generic [ref=e1767]:
+          - link "Instagram" [ref=e1768] [cursor=pointer]:
+            - /url: https://instagram.com/kadampawilliamsburg
+            - img [ref=e1769]
+          - link "WhatsApp" [ref=e1771] [cursor=pointer]:
+            - /url: https://wa.me/12129246706
+            - img [ref=e1772]
+        - paragraph [ref=e1774]: We are a 100% volunteer run, non-profit.

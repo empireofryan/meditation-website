@@ -48,7 +48,7 @@
   cursor: pointer;
   transition: all 0.2s ease;
   text-transform: uppercase;
-  min-width: 120px;
+  width: 132px;
   white-space: nowrap;
 }
 
