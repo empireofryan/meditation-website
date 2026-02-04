@@ -163,7 +163,9 @@ const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
       </div>
       {description && (
         <div className={`${styles.accordionContent} ${isExpanded ? styles.accordionContentExpanded : ''}`}>
-          <p className={styles.description}>{description}</p>
+          <div className={styles.accordionContentInner}>
+            <p className={styles.description}>{description}</p>
+          </div>
         </div>
       )}
     </div>
