@@ -34,7 +34,7 @@ interface ClassCardProps {
 }
 
 const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
-  const { id, name, instructor, time, cost, isCancelled, isSpecialEvent, date, description, duration, registrationLink } = classData;
+  const { id, name, instructor, time, cost, isCancelled, isSpecialEvent, description, duration, registrationLink } = classData;
   const [isExpanded, setIsExpanded] = useState(false);
 
   const handleBook = () => {
