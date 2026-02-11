@@ -34,7 +34,7 @@ interface ClassCardProps {
 }
 
 const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
-  const { id, name, instructor, time, cost, isCancelled, cancellationReason, isSpecialEvent, date, description, duration, registrationLink } = classData;
+  const { id, name, instructor, time, cost, isCancelled, isSpecialEvent, date, description, duration, registrationLink } = classData;
   const [isExpanded, setIsExpanded] = useState(false);
 
   const handleBook = () => {
@@ -42,7 +42,6 @@ const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
   };
 
   // Check if this is a members-only class
-  const dayOfWeek = date.toLocaleDateString('en-US', { weekday: 'long' });
   const isMembersOnly =
     name.toLowerCase().includes('foundation program') ||
     cost === '$85/month';
