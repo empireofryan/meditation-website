@@ -20,7 +20,8 @@ const BACKGROUND_IMAGES = [
 ];
 
 function HomePage() {
-  const location = useLocation();
+  const _location = useLocation();
+  void _location;
 
   // Use useLayoutEffect to restore scroll position synchronously before paint
   useLayoutEffect(() => {
