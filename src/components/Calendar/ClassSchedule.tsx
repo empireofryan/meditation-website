@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback, useEffect } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import type { Class } from '../../types';
 import { generateDateRange } from '../../utils/dateUtils';
 import { fetchAllClasses } from '../../utils/sheetsApi';
