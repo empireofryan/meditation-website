@@ -49,10 +49,11 @@ const ClassSchedule: React.FC = () => {
   }, []);
 
   // Calculate the max date (2 months from today)
-  const maxDate = useMemo(() => {
+  const _maxDate = useMemo(() => {
     const today = new Date();
     return new Date(today.getFullYear(), today.getMonth() + 2, today.getDate());
   }, []);
+  void _maxDate;
 
   // Fetch classes from Google Sheets
   useEffect(() => {
