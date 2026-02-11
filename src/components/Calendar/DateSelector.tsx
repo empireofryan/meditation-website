@@ -92,15 +92,17 @@ const DateSelector: React.FC<DateSelectorProps> = ({
     );
   };
 
-  const getMonthName = (date: Date): string => {
+  const _getMonthName = (date: Date): string => {
     return date.toLocaleDateString('en-US', { month: 'short' });
   };
+  void _getMonthName;
 
-  const shouldShowMonth = (date: Date, index: number): boolean => {
+  const _shouldShowMonth = (date: Date, index: number): boolean => {
     if (index === 0) return true;
     const prevDate = dates[index - 1];
     return date.getMonth() !== prevDate.getMonth();
   };
+  void _shouldShowMonth;
 
   const scrollLeft = () => {
     if (containerRef.current) {
