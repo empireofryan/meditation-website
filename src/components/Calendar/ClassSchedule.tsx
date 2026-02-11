@@ -8,8 +8,8 @@ import styles from './ClassSchedule.module.css';
 
 type ViewMode = 'schedule' | 'calendar';
 
-// Helper to get short class name
-const getShortClassName = (name: string): string => {
+// Helper to get short class name (used in calendar tooltips)
+const _getShortClassName = (name: string): string => {
   // Abbreviate common class names
   if (name.toLowerCase().includes('30-minute')) return '30min Med';
   if (name.toLowerCase().includes('introduction to buddhism')) return 'Intro Buddhism';
@@ -22,6 +22,7 @@ const getShortClassName = (name: string): string => {
   if (name.length > 15) return name.substring(0, 12) + '...';
   return name;
 };
+void _getShortClassName;
 
 const ClassSchedule: React.FC = () => {
   const startDate = useMemo(() => {
