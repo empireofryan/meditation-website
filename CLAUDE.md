@@ -27,51 +27,29 @@ Do NOT forget to start this server. Run it in the background.
 
 ## Deployment (CRITICAL)
 
-**ALWAYS deploy after ANY code changes** - no exceptions. Run this after every edit:
+**ALWAYS deploy to Netlify after ANY code changes** - no exceptions. Run this after every edit:
 
 ```bash
-npm run deploy
+npm run build && netlify deploy --prod --dir=dist
 ```
 
-### Auto-Deploy Hook
+### Live Site
 
-A Claude hook (`.claude/auto-deploy.sh`) automatically deploys after file edits:
-- Prevents concurrent deploys with a lock file
-- Verifies GitHub Pages deployment status after push
-- Reports success/failure
+- **Live site:** https://kmcwb.netlify.app
+- **Netlify project:** kmcwb
+- **Netlify account:** rjohnson2001@gmail.com (personal)
 
-### How Deployment Works
+### Deployment Process
 
-- **Live site:** https://empireofryan.github.io/
-- **Source repo:** `empireofryan/meditation-website` (this repo)
-- **Deploy target:** `empireofryan/empireofryan.github.io` repo, `master` branch
-
-The deploy script:
-1. Builds the app with Vite (`vite build`)
-2. Uses `gh-pages` to push the `dist/` folder to the `master` branch of `empireofryan.github.io`
-3. GitHub Pages serves that repo at the root URL
-
-### Verifying Deployment
-
-After deploying, **ALWAYS verify** the GitHub Pages workflow succeeded:
-
-```bash
-gh api repos/empireofryan/empireofryan.github.io/actions/runs --jq '.workflow_runs[0] | {status: .status, conclusion: .conclusion}'
-```
-
-Expected output: `{"status":"completed","conclusion":"success"}`
-
-If `conclusion` is "cancelled" or "failure", redeploy and check again.
-
-### Troubleshooting
-
-If deploys aren't showing up:
-1. Verify the deploy pushes to `master` branch (not `main`) - check package.json
-2. Wait 1-2 minutes for GitHub Pages CDN to update
-3. Hard refresh the browser (Cmd+Shift+R)
-4. Check https://github.com/empireofryan/empireofryan.github.io to verify the commit landed
+1. Build the app with `npm run build`
+2. Deploy to Netlify with `netlify deploy --prod --dir=dist`
+3. Verify deployment succeeded in the CLI output
 
 Do NOT wait for user to ask - deploy immediately after changes are made.
+
+### Legacy (GitHub Pages - NO LONGER USED)
+
+The old GitHub Pages deployment (`npm run deploy` to empireofryan.github.io) is deprecated. Use Netlify instead.
 
 ## Routes
 
