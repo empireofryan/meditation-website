@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import '../App.css'
+import Nav from '../components/Nav'
 import PageLoader from '../components/PageLoader'
 import { fetchUpcomingEvents, type ScheduledClass } from '../utils/sheetsApi'
 
