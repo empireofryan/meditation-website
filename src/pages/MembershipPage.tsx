@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
 import '../App.css'
+import Nav from '../components/Nav'
 import PageLoader from '../components/PageLoader'
 
 const PRELOAD_IMAGES = [
