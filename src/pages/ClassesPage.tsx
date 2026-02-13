@@ -30,19 +30,7 @@ function ClassesPage() {
   return (
     <PageLoader images={PRELOAD_IMAGES}>
     <div className="app">
-      {/* Navigation */}
-      <nav className="nav about-nav">
-        <Link to="/" className="logo">
-          <span className="logo-main">KADAMPA MEDITATION CENTER</span>
-          <span className="logo-sub">Williamsburg</span>
-        </Link>
-        <div className="nav-links">
-          <a href="/about" className="nav-link">About</a>
-          <a href="/membership" className="nav-link">Membership</a>
-          <a href="/classes" className="nav-link">Classes</a>
-          <a href="/#classes" className="cta-button-white">Schedule</a>
-        </div>
-      </nav>
+      <Nav variant="about" />
 
       {/* Hero Section */}
       <section className="classes-hero">
