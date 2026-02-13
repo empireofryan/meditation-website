@@ -1,6 +1,7 @@
 import { useLayoutEffect, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import '../App.css'
+import Nav from '../components/Nav'
 import ClassSchedule from '../components/Calendar/ClassSchedule'
 import PageLoader from '../components/PageLoader'
 import heroBg from '../assets/hero-bg.png'
