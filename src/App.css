@@ -186,7 +186,7 @@ body {
 
 /* Schedule Section */
 .schedule-section {
-  background: #FFC845;
+  background: #e8e4dc;
   padding: 140px 60px 160px;
   position: relative;
   clip-path: polygon(0 80px, 100% 0, 100% 100%, 0 100%);
