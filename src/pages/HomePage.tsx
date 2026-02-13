@@ -73,20 +73,10 @@ function HomePage() {
   return (
     <PageLoader images={PRELOAD_IMAGES} backgroundImages={BACKGROUND_IMAGES}>
     <div className="app">
+      <Nav />
+
       {/* Hero Section */}
       <section className="hero">
-        <nav className="nav">
-          <a href="/" className="logo">
-            <span className="logo-main">KADAMPA MEDITATION CENTER</span>
-            <span className="logo-sub">Williamsburg</span>
-          </a>
-          <div className="nav-links">
-            <a href="/about" className="nav-link">About</a>
-            <a href="/membership" className="nav-link">Membership</a>
-            <a href="/classes" className="nav-link">Classes</a>
-            <a href="#classes" className="cta-button-white">Schedule</a>
-          </div>
-        </nav>
         <div className="hero-content">
           <h1 className="hero-title">
             Get 50% off your <a href="/membership" style={{ color: '#FFC845', textDecoration: 'underline', textUnderlineOffset: '6px' }}>first month of membership</a>
