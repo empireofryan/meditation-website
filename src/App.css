@@ -2500,10 +2500,191 @@ body {
   }
 }
 
+/* Mini Class Cards for Classes Page */
+.upcoming-class-section {
+  margin-top: 32px;
+  border-top: 1px solid #e5e5e5;
+  padding-top: 24px;
+}
+
+.upcoming-class-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 16px 0;
+}
+
+.mini-class-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 280px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.mini-class-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.mini-class-list::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 3px;
+}
+
+.mini-class-list::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+.mini-class-list::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+.mini-class-card {
+  display: grid;
+  grid-template-columns: 70px 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  background: #f9f7f3;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.mini-class-card:hover {
+  background: #f0ede8;
+  border-color: #1a1a1a;
+  transform: translateX(4px);
+}
+
+.mini-class-no-link {
+  cursor: default;
+}
+
+.mini-class-no-link:hover {
+  transform: none;
+  border-color: transparent;
+}
+
+.mini-class-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.mini-class-day {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mini-class-monthday {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.mini-class-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.mini-class-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mini-class-time {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.mini-class-cost {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  background: #e8e4dc;
+  padding: 4px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+/* Cancelled state */
+.mini-class-cancelled {
+  opacity: 0.7;
+  background: #f5f5f5;
+}
+
+.mini-class-cancelled:hover {
+  transform: none;
+  border-color: transparent;
+  background: #f5f5f5;
+}
+
+.cancelled-text {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.mini-class-cancelled-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #b91c1c;
+  background: #fee2e2;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mini-class-loading,
+.mini-class-empty {
+  font-size: 0.95rem;
+  color: #666;
+  font-style: italic;
+  padding: 16px 0;
+}
+
 /* Classes Page Mobile Responsive */
 @media (max-width: 768px) {
   .classes-hero {
     padding: 120px 30px 80px;
+  }
+
+  .mini-class-card {
+    grid-template-columns: 60px 1fr;
+    gap: 12px;
+    padding: 10px 12px;
+  }
+
+  .mini-class-cost {
+    grid-column: 2;
+    justify-self: start;
+    margin-top: 4px;
+  }
+
+  .mini-class-name {
+    font-size: 0.9rem;
+  }
+
+  .mini-class-time {
+    font-size: 0.8rem;
+  }
+
+  .mini-class-list {
+    max-height: 320px;
   }
 
   .classes-hero-content h1 {
