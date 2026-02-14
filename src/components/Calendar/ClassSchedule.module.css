@@ -39,7 +39,7 @@
 .viewToggle {
   display: inline-flex;
   position: relative;
-  background: rgba(255, 255, 255, 0.15);
+  background: #e8e4dc;
   border-radius: 25px;
   padding: 4px;
 }
@@ -53,7 +53,7 @@
   background: white;
   border-radius: 21px;
   transition: transform 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .sliderRight {
@@ -68,13 +68,13 @@
   background: transparent;
   font-size: 14px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.5);
+  color: #888;
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
 .toggleOption:hover {
-  color: rgba(255, 255, 255, 0.8);
+  color: #555;
 }
 
 .toggleActive {
