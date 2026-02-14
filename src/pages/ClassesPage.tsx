@@ -3,22 +3,125 @@ import { Link } from 'react-router-dom'
 import '../App.css'
 import Nav from '../components/Nav'
 import PageLoader from '../components/PageLoader'
-import { fetchUpcomingEvents, type ScheduledClass } from '../utils/sheetsApi'
+import { fetchAllClasses, fetchUpcomingEvents, type ScheduledClass } from '../utils/sheetsApi'
 
 const PRELOAD_IMAGES = [
   '/BusyStreetTimelapse.png',
 ];
 
+// Mini class card for the filtered lists
+interface MiniClassCardProps {
+  classData: ScheduledClass;
+}
+
+function MiniClassCard({ classData }: MiniClassCardProps) {
+  const { name, instructor, time, date, cost, registrationLink, isCancelled } = classData;
+
+  const dayName = date.toLocaleDateString('en-US', { weekday: 'short' });
+  const monthDay = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+
+  // Get first name of instructor
+  const displayInstructor = instructor ? instructor.split(/[\s,]/)[0] : '';
+
+  // Format display name (remove "30-Minute" prefix)
+  const displayName = name.replace(/^\d+-minute\s+/i, '');
+
+  const hasBookingLink = registrationLink && registrationLink.startsWith('http');
+
+  if (isCancelled) {
+    return (
+      <div className="mini-class-card mini-class-cancelled">
+        <div className="mini-class-date">
+          <span className="mini-class-day">{dayName}</span>
+          <span className="mini-class-monthday">{monthDay}</span>
+        </div>
+        <div className="mini-class-info">
+          <span className="mini-class-name cancelled-text">{displayName}</span>
+          <span className="mini-class-time">{time} • {displayInstructor}</span>
+        </div>
+        <span className="mini-class-cancelled-badge">Cancelled</span>
+      </div>
+    );
+  }
+
+  return (
+    <a
+      href={hasBookingLink ? registrationLink : undefined}
+      target={hasBookingLink ? '_blank' : undefined}
+      rel={hasBookingLink ? 'noopener noreferrer' : undefined}
+      className={`mini-class-card ${!hasBookingLink ? 'mini-class-no-link' : ''}`}
+    >
+      <div className="mini-class-date">
+        <span className="mini-class-day">{dayName}</span>
+        <span className="mini-class-monthday">{monthDay}</span>
+      </div>
+      <div className="mini-class-info">
+        <span className="mini-class-name">{displayName}</span>
+        <span className="mini-class-time">{time} • {displayInstructor}</span>
+      </div>
+      <span className="mini-class-cost">{cost}</span>
+    </a>
+  );
+}
+
+// Scrollable class list component
+interface ClassListProps {
+  classes: ScheduledClass[];
+  emptyMessage?: string;
+}
+
+function ClassList({ classes, emptyMessage = "No upcoming classes" }: ClassListProps) {
+  if (classes.length === 0) {
+    return <p className="mini-class-empty">{emptyMessage}</p>;
+  }
+
+  return (
+    <div className="mini-class-list">
+      {classes.map((c) => (
+        <MiniClassCard key={c.id} classData={c} />
+      ))}
+    </div>
+  );
+}
+
 function ClassesPage() {
+  const [allClasses, setAllClasses] = useState<ScheduledClass[]>([]);
   const [events, setEvents] = useState<ScheduledClass[]>([]);
+  const [loading, setLoading] = useState(true);
   const [eventsLoading, setEventsLoading] = useState(true);
 
   useEffect(() => {
+    // Fetch 2 weeks of classes
+    fetchAllClasses(14)
+      .then(setAllClasses)
+      .catch(console.error)
+      .finally(() => setLoading(false));
+
     fetchUpcomingEvents()
       .then(setEvents)
       .catch(console.error)
       .finally(() => setEventsLoading(false));
   }, []);
+
+  // Filter functions for each section
+  const afterWorkClasses = allClasses.filter(c =>
+    c.name.toLowerCase().includes('after-work') ||
+    c.name.toLowerCase().includes('30-minute')
+  );
+
+  const generalProgramClasses = allClasses.filter(c => {
+    const name = c.name.toLowerCase();
+    return (
+      name.includes('introduction to buddhism') ||
+      name.includes('patient acceptance') ||
+      name.includes('sunday morning') ||
+      (name.includes('general program') && !name.includes('foundation'))
+    ) && !name.includes('after-work') && !name.includes('30-minute');
+  });
+
+  const foundationClasses = allClasses.filter(c =>
+    c.name.toLowerCase().includes('foundation program')
+  );
 
   const formatEventDate = (date: Date) => {
     return date.toLocaleDateString('en-US', {
@@ -70,6 +173,16 @@ function ClassesPage() {
                 Perfect for beginners or anyone looking for a quick reset after work. Each session
                 includes guided meditation with light instruction.
               </p>
+
+              {/* Upcoming After-Work Classes */}
+              <div className="upcoming-class-section">
+                <h3 className="upcoming-class-title">Upcoming Sessions</h3>
+                {loading ? (
+                  <p className="mini-class-loading">Loading classes...</p>
+                ) : (
+                  <ClassList classes={afterWorkClasses} emptyMessage="No after-work sessions scheduled" />
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -111,6 +224,16 @@ function ClassesPage() {
                   <p>Start your week with meditation, teaching, and Coffee, Tea & Chat afterward.</p>
                 </div>
               </div>
+
+              {/* Upcoming General Program Classes */}
+              <div className="upcoming-class-section">
+                <h3 className="upcoming-class-title">Upcoming Classes</h3>
+                {loading ? (
+                  <p className="mini-class-loading">Loading classes...</p>
+                ) : (
+                  <ClassList classes={generalProgramClasses} emptyMessage="No general program classes scheduled" />
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -135,6 +258,16 @@ function ClassesPage() {
                 opportunities for discussion and community practice. Requires Kadampa Meditation Center Williamsburg membership.
               </p>
               <Link to="/membership" className="class-type-cta">Learn About Membership</Link>
+
+              {/* Upcoming Foundation Classes */}
+              <div className="upcoming-class-section">
+                <h3 className="upcoming-class-title">Upcoming Sessions</h3>
+                {loading ? (
+                  <p className="mini-class-loading">Loading classes...</p>
+                ) : (
+                  <ClassList classes={foundationClasses} emptyMessage="No foundation program sessions scheduled" />
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -216,7 +349,7 @@ function ClassesPage() {
         <div className="classes-container">
           <h2>Ready to Begin?</h2>
           <p>Check our schedule and join us for a class this week.</p>
-          <a href="/#classes" className="classes-cta-button">View Schedule</a>
+          <a href="/#classes" className="classes-cta-button">View Full Schedule</a>
         </div>
       </section>
 
