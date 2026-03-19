@@ -1,12 +1,13 @@
+import { useNavigate } from 'react-router-dom'
 import '../App.css'
 import Nav from '../components/Nav'
 import PageLoader from '../components/PageLoader'
 
-const PRELOAD_IMAGES = [
-  '/DiamondRainbow2.png',
-];
+const PRELOAD_IMAGES: string[] = [];
 
 function MembershipPage() {
+  const navigate = useNavigate();
+
   return (
     <PageLoader images={PRELOAD_IMAGES}>
     <div className="app">
@@ -15,7 +16,7 @@ function MembershipPage() {
       {/* Hero Section */}
       <section className="membership-hero">
         <div className="membership-hero-content">
-          <h1>Full Access Membership</h1>
+          <h1>Become a Member</h1>
           <p className="membership-price">$85<span>/month</span></p>
           <p className="membership-tagline">Unlimited classes. Infinite growth.</p>
         </div>
@@ -51,6 +52,7 @@ function MembershipPage() {
           >
             Become a Member
           </a>
+          <p className="membership-note">Please select <strong>"Main Center: Williamsburg"</strong> on the checkout page.</p>
         </div>
       </section>
 
@@ -61,14 +63,12 @@ function MembershipPage() {
           <p className="membership-text">
             Already a member? Access your account to stream classes, view recordings, and manage your membership.
           </p>
-          <a
-            href="https://meditationinnewyork.org/member-login/"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
             className="membership-login-btn"
+            onClick={() => navigate('/fp-resources')}
           >
             Login to Member Portal
-          </a>
+          </button>
         </div>
       </section>
 

@@ -13,6 +13,7 @@ export interface WeeklyClass {
   format: string;
   featuredImage: string;
   teacherImage: string;
+  classInfo: string;
 }
 
 export interface SpecialEvent {
@@ -59,6 +60,7 @@ export interface ScheduledClass {
   format: string;
   featuredImage: string;
   teacherImage: string;
+  classInfo: string;
   isSpecialEvent: boolean;
   isCancelled: boolean;
   cancellationReason?: string;
@@ -159,6 +161,24 @@ function parseDate(dateStr: string): Date | null {
   return null;
 }
 
+function calculateDuration(startTime: string, endTime: string): number | undefined {
+  const parseTime = (t: string) => {
+    const m = t.match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
+    if (!m) return null;
+    let h = parseInt(m[1]);
+    const min = parseInt(m[2]);
+    const p = m[3].toUpperCase();
+    if (p === 'PM' && h !== 12) h += 12;
+    if (p === 'AM' && h === 12) h = 0;
+    return h * 60 + min;
+  };
+  const s = parseTime(startTime);
+  const e = parseTime(endTime);
+  if (s == null || e == null) return undefined;
+  const diff = e - s;
+  return diff > 0 ? diff : undefined;
+}
+
 function calculateEndTime(startTime: string, durationMinutes: number): string {
   // Parse start time (e.g., "6:00 PM")
   const match = startTime.match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
@@ -215,15 +235,25 @@ export async function fetchSchedule(): Promise<{
       registrationLink: row[7] || '',
       format: row[8] || 'In-Person',
       featuredImage: row[9] || '',
-      teacherImage: getTeacherImageUrl(teacher)
+      teacherImage: getTeacherImageUrl(teacher),
+      classInfo: row[11] || ''
     });
   }
 
-  // Parse Special Events (skip rows 0-2)
+  // Parse Special Events - find header row dynamically, then start after it
   const specialEvents: SpecialEvent[] = [];
-  for (let i = 3; i < specialRows.length; i++) {
+  let specialStartIdx = 0;
+  for (let i = 0; i < specialRows.length; i++) {
+    if (specialRows[i][0]?.toLowerCase().trim() === 'title') {
+      specialStartIdx = i + 1;
+      break;
+    }
+  }
+  // Fallback: if no header found, skip first row (instruction/example)
+  if (specialStartIdx === 0) specialStartIdx = 1;
+  for (let i = specialStartIdx; i < specialRows.length; i++) {
     const row = specialRows[i];
-    if (!row[0] || row[0].toLowerCase().startsWith('example')) continue;
+    if (!row[0] || row[0].toLowerCase().startsWith('example') || row[0].toLowerCase().startsWith('special event')) continue;
 
     const eventTeacher = row[5] || '';
     specialEvents.push({
@@ -270,7 +300,7 @@ export async function fetchSchedule(): Promise<{
   return { weeklyClasses, specialEvents, cancellations };
 }
 
-export async function fetchAllClasses(daysAhead: number = 60): Promise<ScheduledClass[]> {
+export async function fetchAllClasses(daysAhead: number = 60, daysBefore: number = 0): Promise<ScheduledClass[]> {
   const { weeklyClasses, specialEvents, cancellations } = await fetchSchedule();
   const classes: ScheduledClass[] = [];
   const today = new Date();
@@ -288,8 +318,8 @@ export async function fetchAllClasses(daysAhead: number = 60): Promise<Scheduled
     }
   });
 
-  // Generate weekly class instances for the next N days
-  for (let dayOffset = 0; dayOffset < daysAhead; dayOffset++) {
+  // Generate weekly class instances from daysBefore ago through daysAhead
+  for (let dayOffset = -daysBefore; dayOffset < daysAhead; dayOffset++) {
     const currentDate = new Date(today);
     currentDate.setDate(today.getDate() + dayOffset);
     const dayName = currentDate.toLocaleDateString('en-US', { weekday: 'long' });
@@ -316,6 +346,7 @@ export async function fetchAllClasses(daysAhead: number = 60): Promise<Scheduled
           format: wc.format,
           featuredImage: wc.featuredImage,
           teacherImage: wc.teacherImage,
+          classInfo: wc.classInfo,
           isSpecialEvent: false,
           isCancelled: !!cancellation,
           cancellationReason: cancellation?.reason
@@ -335,12 +366,14 @@ export async function fetchAllClasses(daysAhead: number = 60): Promise<Scheduled
         time: event.startTime,
         date: eventDate,
         endTime: event.endTime,
+        duration: calculateDuration(event.startTime, event.endTime),
         cost: event.cost,
         description: event.description,
         registrationLink: event.registrationLink,
         format: event.format,
         featuredImage: event.featuredImage,
         teacherImage: event.teacherImage,
+        classInfo: '',
         isSpecialEvent: true,
         isCancelled: false
       });
@@ -408,6 +441,7 @@ export async function fetchUpcomingEvents(): Promise<ScheduledClass[]> {
         format: event.format,
         featuredImage: event.featuredImage,
         teacherImage: event.teacherImage,
+        classInfo: '',
         isSpecialEvent: true,
         isCancelled: false
       });

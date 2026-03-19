@@ -17,17 +17,18 @@ SPREADSHEET_ID = '1LJj6skGlhjfrQpUh3OZeIi-nBTGBbAhzsNniuF9gsDs'
 # ============================================================
 
 # Monday General Program - Row 5
-MONDAY_GP_DESC = """The program explores how meditation extends far beyond temporary relaxation. When properly applied, it enables practitioners to release old emotional wounds, overcome anxiety, and develop a constructive self-perception. The series focuses on Preparatory Practices—traditional mental exercises designed to enhance meditation's effectiveness.
+MONDAY_GP_DESC = """Meditation is about much more than just achieving temporary relaxation or calm. When applied correctly, meditation enables us to let go of old angers and hurts, find freedom from anxiety, and cultivate a positive and meaningful view of ourselves and our lives. It can help heal broken relationships and ultimately support us in actualizing our highest potential. These life-changing results depend on applying meditation correctly. In this series, we will explore the Preparatory Practices — a traditional sequence of mental exercises designed to help us maximize the power of meditation. These practices focus on creating the right motivations and developing special ways of thinking that add strong positive energy to our meditation. In doing so, we create an internal environment that allows our meditation to go deeper and become more effective in bringing about real change.
 
 Series Topics:
-• Jan 5: The Deeper Purpose of Meditation
-• Jan 12: The Transformative Power of Blessings
-• Jan 19: Igniting Your Potential Blessings
-• Jan 26: Creating Inner Power
-• Feb 2: Creating Joy
-• Feb 9: Purification – The Freedom to Let Go
-• Feb 16: Conversing with the Buddhas
-• Feb 23: How to Deeply Enjoy Meditation"""
+• January 5: The Deeper Purpose of Meditation
+• January 12: The Transformative Power of Blessings
+• January 19: Igniting Your Potential Blessings
+• January 26: Creating Inner Power
+• February 2: Creating Joy
+• February 9: Purification – The Freedom to Let Go
+• February 16: Conversing with the Buddhas
+• February 23: NO CLASS
+• March 2: How to Deeply Enjoy Meditation"""
 
 # Patient Acceptance (Thursday) - Row 11
 PATIENT_ACCEPTANCE_DESC = """So often in our interactions with others we find ourselves experiencing feelings of hurt, rejection, and not being heard that can lead to developing anger and rage towards others. Buddha gave exceedingly practical teachings on patient acceptance – by applying these practical methods as well as Buddha's extraordinary insight into 'no self' we free ourselves from taking things so personally.
@@ -55,10 +56,6 @@ TUESDAY_DESC = """Curious about Buddhism? This weekly class presents basic teach
 
 updates = [
     {"range": "'Weekly Classes'!G5", "values": [[MONDAY_GP_DESC]]},
-    {"range": "'Weekly Classes'!G7", "values": [[TUESDAY_DESC]]},
-    {"range": "'Weekly Classes'!G11", "values": [[PATIENT_ACCEPTANCE_DESC]]},
-    {"range": "'Weekly Classes'!G12", "values": [[SUNDAY_DESC]]},
-    {"range": "'Weekly Classes'!I11", "values": [["In-Person + Streaming"]]},
 ]
 
 print(f"Updating {len(updates)} cells (values only, formatting preserved)...")

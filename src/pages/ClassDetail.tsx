@@ -1,5 +1,5 @@
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { fetchClassBySlug, type ScheduledClass } from '../utils/sheetsApi';
 import styles from './ClassDetail.module.css';
 
@@ -164,10 +164,28 @@ const ClassDetail = () => {
             <section className={styles.content}>
               <h2 className={styles.sectionTitle}>About this class</h2>
               <div className={styles.description}>
-                {classData.description.split('\n\n').map((paragraph: string, index: number) => (
-                  <p key={index}>{paragraph}</p>
+                {classData.description.split('\n\n').map((paragraph: string, pIdx: number) => (
+                  <p key={pIdx}>
+                    {paragraph.split('\n').map((line: string, lIdx: number) => (
+                      <React.Fragment key={lIdx}>
+                        {line}
+                        {lIdx < paragraph.split('\n').length - 1 && <br />}
+                      </React.Fragment>
+                    ))}
+                  </p>
                 ))}
               </div>
+            </section>
+          )}
+
+          {classData.classInfo && (
+            <section className={styles.content}>
+              <h2 className={styles.sectionTitle}>Good to know</h2>
+              <ul className={styles.classInfoList}>
+                {classData.classInfo.split('.').map((item: string) => item.trim()).filter((item: string) => item.length > 0).map((item: string, index: number) => (
+                  <li key={index}>{item}.</li>
+                ))}
+              </ul>
             </section>
           )}
 

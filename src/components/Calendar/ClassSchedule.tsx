@@ -40,12 +40,19 @@ const ClassSchedule: React.FC = () => {
   const [selectedClass, setSelectedClass] = useState<Class | null>(null);
   const [hoveredClass, setHoveredClass] = useState<Class | null>(null);
   const [tooltipPosition, setTooltipPosition] = useState<{ x: number; y: number } | null>(null);
+  const [visibleDays, setVisibleDays] = useState(7);
 
   // Calculate days for 2 months ahead
   const dateCount = useMemo(() => {
     const today = new Date();
     const twoMonthsAhead = new Date(today.getFullYear(), today.getMonth() + 2, today.getDate());
     return Math.ceil((twoMonthsAhead.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
+  }, []);
+
+  // Calculate days before today (back to 1st of current month) for calendar view
+  const daysBefore = useMemo(() => {
+    const today = new Date();
+    return today.getDate() - 1; // e.g., if today is the 18th, go back 17 days to the 1st
   }, []);
 
   // Calculate the max date (2 months from today)
@@ -61,7 +68,7 @@ const ClassSchedule: React.FC = () => {
       try {
         setLoading(true);
         setError(null);
-        const data = await fetchAllClasses(dateCount);
+        const data = await fetchAllClasses(dateCount, daysBefore);
 
         // Convert ScheduledClass to Class type
         const convertedClasses: Class[] = data.map(sc => ({
@@ -93,7 +100,7 @@ const ClassSchedule: React.FC = () => {
     }
 
     loadClasses();
-  }, [dateCount]);
+  }, [dateCount, daysBefore]);
 
   // Generate date range dynamically based on dateCount
   const dates = useMemo(() => {
@@ -125,10 +132,13 @@ const ClassSchedule: React.FC = () => {
     return groups;
   }, [classes]);
 
-  // Get sorted dates that have classes
+  // Get sorted dates that have classes (only today and future for schedule view)
   const datesWithClasses = useMemo(() => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
     return Array.from(groupedClasses.keys())
       .map(dateKey => new Date(dateKey))
+      .filter(date => date >= today)
       .sort((a, b) => a.getTime() - b.getTime());
   }, [groupedClasses]);
 
@@ -311,27 +321,37 @@ const ClassSchedule: React.FC = () => {
 
           <div className={styles.classList}>
             {datesWithClasses.length > 0 ? (
-              datesWithClasses.map((date) => {
-                const dateKey = date.toDateString();
-                const dateClasses = groupedClasses.get(dateKey) || [];
+              <>
+                {datesWithClasses.slice(0, visibleDays).map((date) => {
+                  const dateKey = date.toDateString();
+                  const dateClasses = groupedClasses.get(dateKey) || [];
 
-                return (
-                  <div key={dateKey} id={`date-section-${dateKey}`} className={styles.dateSection}>
-                    <div className={styles.dateSectionHeader}>
-                      {formatDateSectionHeader(date)}
+                  return (
+                    <div key={dateKey} id={`date-section-${dateKey}`} className={styles.dateSection}>
+                      <div className={styles.dateSectionHeader}>
+                        {formatDateSectionHeader(date)}
+                      </div>
+                      <div className={styles.dateClassList}>
+                        {dateClasses.map((classItem) => (
+                          <ClassCard
+                            key={classItem.id}
+                            classData={classItem}
+                            onBook={handleBookClass}
+                          />
+                        ))}
+                      </div>
                     </div>
-                    <div className={styles.dateClassList}>
-                      {dateClasses.map((classItem) => (
-                        <ClassCard
-                          key={classItem.id}
-                          classData={classItem}
-                          onBook={handleBookClass}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                );
-              })
+                  );
+                })}
+                {visibleDays < datesWithClasses.length && (
+                  <button
+                    className={styles.showMoreButton}
+                    onClick={() => setVisibleDays(prev => prev + 7)}
+                  >
+                    Show more days
+                  </button>
+                )}
+              </>
             ) : (
               <div className={styles.emptyState}>
                 <svg
@@ -375,11 +395,14 @@ const ClassSchedule: React.FC = () => {
             <div className={styles.weekdayHeader}>Sat</div>
             {getCalendarDays().map((day, index) => {
               const dayClasses = day ? getClassesForDate(day) : [];
-              const isToday = day && day.toDateString() === new Date().toDateString();
+              const today = new Date();
+              today.setHours(0, 0, 0, 0);
+              const isToday = day && day.toDateString() === today.toDateString();
+              const isPast = day && day < today && !isToday;
               return (
                 <div
                   key={index}
-                  className={`${styles.calendarDay} ${!day ? styles.emptyDay : ''} ${isToday ? styles.today : ''} ${dayClasses.length > 0 ? styles.hasClasses : ''}`}
+                  className={`${styles.calendarDay} ${!day ? styles.emptyDay : ''} ${isToday ? styles.today : ''} ${isPast ? styles.pastDay : ''} ${dayClasses.length > 0 ? styles.hasClasses : ''}`}
                 >
                   {day && (
                     <>
@@ -389,8 +412,9 @@ const ClassSchedule: React.FC = () => {
                           {dayClasses.slice(0, 3).map((classItem) => (
                             <div
                               key={classItem.id}
-                              className={styles.classTitleWrapper}
+                              className={`${styles.classTitleWrapper} ${isPast ? styles.pastClass : ''}`}
                               onClick={(e) => {
+                                if (isPast) return;
                                 e.stopPropagation();
                                 if (window.innerWidth <= 768) {
                                   setSelectedClass(classItem);
@@ -398,10 +422,10 @@ const ClassSchedule: React.FC = () => {
                                   window.open(classItem.registrationLink, '_blank');
                                 }
                               }}
-                              onMouseEnter={(e) => handleClassMouseEnter(classItem, e)}
+                              onMouseEnter={(e) => !isPast && handleClassMouseEnter(classItem, e)}
                               onMouseLeave={handleClassMouseLeave}
                             >
-                              <span className={styles.classTitle}>
+                              <span className={`${styles.classTitle} ${isPast ? styles.pastClassTitle : ''}`}>
                                 {classItem.time} - {classItem.name}
                               </span>
                             </div>
@@ -449,9 +473,19 @@ const ClassSchedule: React.FC = () => {
                 <p><strong>Time:</strong> {selectedClass.time}</p>
                 <p><strong>Instructor:</strong> {selectedClass.instructor}</p>
                 <p><strong>Cost:</strong> {selectedClass.cost}</p>
-                {selectedClass.description && (
-                  <p className={styles.modalDescription}>{selectedClass.description}</p>
-                )}
+                {selectedClass.description && (() => {
+                  const lines = selectedClass.description.split('\n');
+                  return (
+                    <div className={styles.modalDescription}>
+                      {lines.map((line: string, i: number) => (
+                        <React.Fragment key={i}>
+                          {line}
+                          {i < lines.length - 1 && <br />}
+                        </React.Fragment>
+                      ))}
+                    </div>
+                  );
+                })()}
               </div>
               {selectedClass.registrationLink && (
                 <a

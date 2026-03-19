@@ -1,10 +1,16 @@
-import { useLayoutEffect, useEffect } from 'react'
+import { useLayoutEffect, useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import '../App.css'
 import Nav from '../components/Nav'
 import ClassSchedule from '../components/Calendar/ClassSchedule'
 import PageLoader from '../components/PageLoader'
+import DustText from '../components/DustText'
+import ScrollReveal from '../components/ScrollReveal'
 import heroBg from '../assets/hero-bg.png'
+import insta1 from '../assets/KMCWBInsta1.png'
+import insta2 from '../assets/KMCWBInsta2.png'
+import insta3 from '../assets/KMCWBInsta3.png'
+import insta4 from '../assets/KMCWBInsta4.png'
 
 const PRELOAD_IMAGES = [
   heroBg,
@@ -23,6 +29,7 @@ const BACKGROUND_IMAGES = [
 function HomePage() {
   const _location = useLocation();
   void _location;
+  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
   // Use useLayoutEffect to restore scroll position synchronously before paint
   useLayoutEffect(() => {
@@ -78,22 +85,24 @@ function HomePage() {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
-          <h1 className="hero-title">
-            Get 50% off your <a href="/membership" style={{ color: '#FFC845', textDecoration: 'underline', textUnderlineOffset: '6px' }}>first month of membership</a>
+          <span className="hero-dust-label">
+            <DustText text="Meditation in Williamsburg" delay={200} spread={80} />
+          </span>
+          <h1 className="hero-title hero-title-animate">
+            Change your mind, change your world.
           </h1>
-          <p className="hero-cta" style={{ textDecoration: 'none', opacity: 0.85, marginTop: '8px' }}>
-            Ask a front desk volunteer for more details
-          </p>
         </div>
       </section>
 
       {/* Class Schedule Section */}
       <section id="classes" className="schedule-section">
         <div className="schedule-header">
-          <h2>
-            Upcoming <span className="underline">Classes</span>
-          </h2>
-          <p>Join us for meditation sessions throughout the week</p>
+          <ScrollReveal>
+            <h2>
+              Upcoming <span className="underline">Classes</span>
+            </h2>
+            <p>Join us for meditation sessions throughout the week</p>
+          </ScrollReveal>
         </div>
         <div className="schedule-calendar-container">
           <ClassSchedule />
@@ -104,45 +113,55 @@ function HomePage() {
       <section id="about" className="dark-section">
         <div className="dark-section-content">
           <div className="dark-section-text-container">
-            <h2 className="dark-section-title">
-              Discover <span className="underline-light">inner peace</span> through meditation
-            </h2>
-            <p className="dark-section-text">
-              We practice Modern Buddhism - a contemporary presentation of Buddha's ancient teachings that emphasizes integrating meditation learning with daily life, making every moment of our lives meaningful and joyous.
-            </p>
-            <a href="/about" className="cta-button">About Us</a>
+            <ScrollReveal>
+              <h2 className="dark-section-title">
+                Discover <span className="underline-light">inner peace</span> through meditation
+              </h2>
+              <p className="dark-section-text">
+                We practice Modern Buddhism — a contemporary presentation of Buddha's ancient teachings that emphasizes integrating meditation with daily life, making every moment meaningful&nbsp;and&nbsp;joyous.
+              </p>
+              <a href="/about" className="cta-button">About Us</a>
+            </ScrollReveal>
           </div>
-          <img
-            src="/photos/KMCWBStudents.jpg"
-            alt="KMC Williamsburg students"
-            className="dark-section-image"
-          />
+          <ScrollReveal delay={150}>
+            <img
+              src="/photos/KMCWBStudents.jpg"
+              alt="KMC Williamsburg students"
+              className="dark-section-image"
+            />
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Second Yellow Section - Classes */}
       <section className="diagonal-section">
         <div className="section-container reverse">
-          <div className="section-content">
-            <h2>
-              Weekly drop-in <span className="underline">meditation classes</span>
-            </h2>
-            <p>
-              We offer 10+ weekly meditation classes suitable for beginners to experienced meditators. Join our after-work sessions or General Program classes. Sunday's 11am class includes Coffee, Tea and Chat for social connection.
-            </p>
-            <a href="/classes" className="learn-more-button">Class Info</a>
-          </div>
-          <img
-            src="/photos/KMCJosephTeaching.jpg"
-            alt="Joseph teaching at KMC Williamsburg"
-            className="section-image"
-          />
+          <ScrollReveal>
+            <div className="section-content">
+              <h2>
+                Weekly drop-in <span className="underline">meditation classes</span>
+              </h2>
+              <p>
+                We offer 10+ weekly meditation classes suitable for beginners and experienced meditators alike. Join our after-work sessions or General Program classes. Sunday's 11am class includes Coffee, Tea&nbsp;and&nbsp;Chat.
+              </p>
+              <a href="/classes" className="learn-more-button">Class Info</a>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={150}>
+            <img
+              src="/photos/KMCJosephTeaching.jpg"
+              alt="Joseph teaching at KMC Williamsburg"
+              className="section-image"
+            />
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Social Media Section */}
       <section className="instagram-section">
-        <h2 className="instagram-title">Connect With Us</h2>
+        <ScrollReveal>
+          <h2 className="instagram-title">Connect With Us</h2>
+        </ScrollReveal>
         <div className="social-buttons">
           <a href="https://instagram.com/kadampawilliamsburg" target="_blank" rel="noopener noreferrer" className="social-btn instagram-btn">
             <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
@@ -159,16 +178,16 @@ function HomePage() {
         </div>
         <div className="instagram-grid">
           <a href="https://instagram.com/kadampawilliamsburg" target="_blank" rel="noopener noreferrer" className="instagram-item">
-            <img src="https://images.unsplash.com/photo-1545389336-cf090694435e?w=400&h=400&fit=crop" alt="Meditation" />
+            <img src={insta1} alt="Meditation" />
           </a>
           <a href="https://instagram.com/kadampawilliamsburg" target="_blank" rel="noopener noreferrer" className="instagram-item">
-            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&h=400&fit=crop" alt="Peaceful practice" />
+            <img src={insta2} alt="Peaceful practice" />
           </a>
           <a href="https://instagram.com/kadampawilliamsburg" target="_blank" rel="noopener noreferrer" className="instagram-item">
-            <img src="https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=400&h=400&fit=crop" alt="Group meditation" />
+            <img src={insta3} alt="Group meditation" />
           </a>
           <a href="https://instagram.com/kadampawilliamsburg" target="_blank" rel="noopener noreferrer" className="instagram-item">
-            <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=400&h=400&fit=crop" alt="Mindfulness" />
+            <img src={insta4} alt="Mindfulness" />
           </a>
         </div>
       </section>
@@ -176,29 +195,63 @@ function HomePage() {
       {/* Newsletter Section */}
       <section className="newsletter-section">
         <div className="newsletter-content">
-          <h2>Newsletter Sign-up</h2>
-          <p>Stay updated on upcoming classes and special events.</p>
-          <form className="newsletter-form">
+          <ScrollReveal>
+            <h2>Newsletter Sign-up</h2>
+            <p>Stay updated on upcoming classes and special events.</p>
+          </ScrollReveal>
+          <form
+            className="newsletter-form"
+            name="newsletter"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            onSubmit={async (e) => {
+              e.preventDefault();
+              setFormStatus('submitting');
+              const form = e.currentTarget;
+              const formData = new FormData(form);
+              try {
+                await fetch('/', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                  body: new URLSearchParams(formData as unknown as Record<string, string>).toString(),
+                });
+                setFormStatus('success');
+                form.reset();
+              } catch {
+                setFormStatus('error');
+              }
+            }}
+          >
+            <input type="hidden" name="form-name" value="newsletter" />
+            <p hidden><input name="bot-field" /></p>
             <input
               type="text"
+              name="first-name"
               placeholder="First Name"
               className="newsletter-input"
+              required
             />
             <input
               type="text"
+              name="last-name"
               placeholder="Last Name"
               className="newsletter-input"
             />
             <input
               type="email"
+              name="email"
               placeholder="Email Address"
               className="newsletter-input"
+              required
             />
-            <button type="submit" className="sign-up-button">
-              Sign Up
+            <button type="submit" className="sign-up-button" disabled={formStatus === 'submitting'}>
+              {formStatus === 'submitting' ? 'Sending...' : 'Sign Up'}
             </button>
           </form>
-          <p className="privacy-text">We respect your privacy.</p>
+          {formStatus === 'success' && <p className="privacy-text" style={{ color: '#2d6a2d' }}>Thank you! You've been signed up.</p>}
+          {formStatus === 'error' && <p className="privacy-text" style={{ color: '#a33' }}>Something went wrong. Please try again.</p>}
+          {formStatus === 'idle' && <p className="privacy-text">We respect your privacy.</p>}
         </div>
       </section>
 
@@ -221,7 +274,7 @@ function HomePage() {
           </div>
           <div className="footer-info-column">
             <h4 className="footer-location-name">
-              <span className="footer-logo-main">KADAMPA MEDITATION CENTER</span>
+              <span className="footer-logo-main">KADAMPA<br />MEDITATION<br />CENTER</span>
               <span className="footer-logo-sub">Williamsburg</span>
             </h4>
             <p className="footer-address">
@@ -229,6 +282,7 @@ function HomePage() {
               Williamsburg, NY 11249<br />
               info@meditationinwilliamsburg.org
             </p>
+            <p className="footer-nonprofit">We are a 100% volunteer-run, non-profit organization.</p>
           </div>
           <div className="footer-right">
             <nav className="footer-nav">
@@ -249,7 +303,6 @@ function HomePage() {
                 </svg>
               </a>
             </div>
-            <p className="footer-nonprofit">We are a 100% volunteer run, non-profit.</p>
           </div>
         </div>
       </footer>

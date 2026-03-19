@@ -84,14 +84,23 @@ function ClassList({ classes, emptyMessage = "No upcoming classes" }: ClassListP
   );
 }
 
+// Caret SVG component
+function CaretIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
+  );
+}
+
 function ClassesPage() {
   const [allClasses, setAllClasses] = useState<ScheduledClass[]>([]);
   const [events, setEvents] = useState<ScheduledClass[]>([]);
   const [loading, setLoading] = useState(true);
   const [eventsLoading, setEventsLoading] = useState(true);
+  const [expandedOffering, setExpandedOffering] = useState<string | null>(null);
 
   useEffect(() => {
-    // Fetch 2 weeks of classes
     fetchAllClasses(14)
       .then(setAllClasses)
       .catch(console.error)
@@ -131,6 +140,17 @@ function ClassesPage() {
     });
   };
 
+  const toggleOffering = (id: string) => {
+    setExpandedOffering(prev => prev === id ? null : id);
+  };
+
+  const gpOfferings = [
+    { id: 'monday', title: 'Monday Evening', time: 'Mon 7 PM · 60 min · $10', desc: 'Weekly themed teachings exploring different aspects of Buddhist wisdom and how to apply them in daily life.' },
+    { id: 'tuesday', title: 'Introduction to Buddhism', time: 'Tue 7 PM · 60 min · $10', desc: 'Perfect for newcomers. Learn meditation basics and core Buddhist concepts in an accessible, friendly setting.' },
+    { id: 'thursday', title: 'Patient Acceptance Series', time: 'Thu 7 PM · 60 min · $10', desc: 'A multi-week series on transforming difficult situations through the practice of patience and inner strength.' },
+    { id: 'sunday', title: 'Sunday Morning', time: 'Sun 11 AM · 90 min · $15', desc: 'Start your week with meditation, teaching, and Coffee, Tea & Chat afterward. A deeper weekend session.' },
+  ];
+
   return (
     <PageLoader images={PRELOAD_IMAGES}>
     <div className="app">
@@ -139,8 +159,8 @@ function ClassesPage() {
       {/* Hero Section */}
       <section className="classes-hero">
         <div className="classes-hero-content">
-          <h1>Our Classes</h1>
-          <p className="classes-tagline">Meditation and Buddhist teachings for modern life</p>
+          <h1>Everyone Welcome</h1>
+          <p className="classes-tagline">Meditation and Buddhist teachings for&nbsp;modern&nbsp;life</p>
         </div>
       </section>
 
@@ -148,99 +168,131 @@ function ClassesPage() {
       <section className="classes-section">
         <div className="classes-container">
           <p className="classes-intro">
-            We offer a variety of meditation classes throughout the week, from quick 30-minute
+            We offer meditation classes throughout the week, from quick 30-minute
             after-work sessions to in-depth study programs. All classes are suitable for beginners
-            and experienced meditators alike. No booking required for drop-in classes.
+            and experienced meditators alike. Feel free to drop&nbsp;in, no&nbsp;booking&nbsp;required.
           </p>
         </div>
       </section>
 
-      {/* 30-Minute Meditations */}
+      {/* 3-Column Class Types */}
       <section className="classes-section classes-section-alt">
-        <div className="classes-container">
-          <div className="class-type-card">
-            <div className="class-type-header">
-              <h2 className="class-type-title">30-Minute After-Work Meditation</h2>
-              <p className="class-type-meta">Monday-Friday at 6:00 PM | $5</p>
-            </div>
-            <div className="class-type-content">
-              <p>
-                Simple. Profound. Transformative. These brief meditation sessions help you get in touch
-                with your infinite potential by connecting to the heart and cultivating inner peace.
-                In just 30 minutes your whole day can change.
-              </p>
-              <p>
-                Perfect for beginners or anyone looking for a quick reset after work. Each session
-                includes guided meditation with light instruction.
-              </p>
+        <div className="classes-three-col-container">
+          <div className="classes-three-col">
 
-              {/* Upcoming After-Work Classes */}
-              <div className="upcoming-class-section">
-                <h3 className="upcoming-class-title">Upcoming Sessions</h3>
-                {loading ? (
-                  <p className="mini-class-loading">Loading classes...</p>
-                ) : (
-                  <ClassList classes={afterWorkClasses} emptyMessage="No after-work sessions scheduled" />
-                )}
+            {/* Column 1: After-Work Meditation */}
+            <div className="classes-column">
+              <div className="classes-col-header">
+                <h2 className="classes-col-title">After-Work Meditation</h2>
+                <p className="classes-col-meta">Mon–Fri · 6:00 PM · 30&nbsp;min · $5</p>
+              </div>
+              <div className="classes-col-body">
+                <p className="classes-col-desc">
+                  Simple. Profound. Transformative. A quick guided meditation to help you reset after work
+                  and cultivate inner&nbsp;peace.
+                </p>
+                <div className="upcoming-class-section">
+                  <h4 className="upcoming-class-title">Upcoming Sessions</h4>
+                  {loading ? (
+                    <p className="mini-class-loading">Loading...</p>
+                  ) : (
+                    <ClassList classes={afterWorkClasses} emptyMessage="No sessions scheduled" />
+                  )}
+                </div>
               </div>
             </div>
+
+            {/* Column 2: General Program */}
+            <div className="classes-column">
+              <div className="classes-col-header">
+                <h2 className="classes-col-title">General Program</h2>
+                <p className="classes-col-meta">Multiple times weekly · $10–15</p>
+              </div>
+              <div className="classes-col-body">
+                <p className="classes-col-desc">
+                  Each class includes two guided meditations and a teaching based on authentic Buddhist texts,
+                  presented practically for&nbsp;modern&nbsp;life.
+                </p>
+
+                {/* Class offerings with carets */}
+                <div className="classes-offerings-list">
+                  {gpOfferings.map(item => (
+                    <div key={item.id} className={`classes-offering-item ${expandedOffering === item.id ? 'classes-offering-expanded' : ''}`}>
+                      <button
+                        className={`classes-offering-toggle ${expandedOffering === item.id ? 'classes-offering-open' : ''}`}
+                        onClick={() => toggleOffering(item.id)}
+                      >
+                        <div className="classes-offering-info">
+                          <span className="classes-offering-name">{item.title}</span>
+                          <span className="classes-offering-time">{item.time}</span>
+                        </div>
+                        <span className="classes-offering-caret">
+                          <CaretIcon />
+                        </span>
+                      </button>
+                      {expandedOffering === item.id && (
+                        <p className="classes-offering-desc">{item.desc}</p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+
+                <div className="upcoming-class-section">
+                  <h4 className="upcoming-class-title">Upcoming Classes</h4>
+                  {loading ? (
+                    <p className="mini-class-loading">Loading...</p>
+                  ) : (
+                    <ClassList classes={generalProgramClasses} emptyMessage="No classes scheduled" />
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* Column 3: Workshops, Courses & Retreats */}
+            <div className="classes-column">
+              <div className="classes-col-header">
+                <h2 className="classes-col-title">Workshops &amp;&nbsp;Retreats</h2>
+                <p className="classes-col-meta">Saturdays &amp; select dates</p>
+              </div>
+              <div className="classes-col-body">
+                <p className="classes-col-desc">
+                  Deeper exploration of specific topics through special workshops, day courses,
+                  and retreats throughout the&nbsp;year.
+                </p>
+
+                <div className="upcoming-events-list">
+                  <h4 className="upcoming-events-title">Upcoming Events</h4>
+                  {eventsLoading ? (
+                    <p className="events-loading">Loading...</p>
+                  ) : events.length > 0 ? (
+                    <div className="events-compact-list">
+                      {events.slice(0, 5).map((event) => (
+                        <a
+                          key={event.id}
+                          href={event.registrationLink || '/#classes'}
+                          target={event.registrationLink ? '_blank' : undefined}
+                          rel={event.registrationLink ? 'noopener noreferrer' : undefined}
+                          className="event-compact-item"
+                        >
+                          <span className="event-compact-date">{formatEventDate(event.date)}</span>
+                          <span className="event-compact-name">{event.name}</span>
+                          {event.cost && <span className="event-compact-cost">{event.cost}</span>}
+                        </a>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="no-events">No upcoming events. Check back&nbsp;soon!</p>
+                  )}
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* General Program */}
+      {/* Foundation Program - Standalone */}
       <section className="classes-section">
-        <div className="classes-container">
-          <div className="class-type-card">
-            <div className="class-type-header">
-              <h2 className="class-type-title">General Program Classes</h2>
-              <p className="class-type-meta">Multiple times weekly | $10-15</p>
-            </div>
-            <div className="class-type-content">
-              <p>
-                Our General Program classes offer accessible teachings on Buddhist meditation and
-                philosophy. Each class includes two guided meditations and a teaching based on
-                authentic Buddhist texts, presented in a practical way for modern life.
-              </p>
-              <div className="class-offerings">
-                <div className="class-offering">
-                  <h4>Monday Evening</h4>
-                  <p className="offering-time">7:00 PM | 60 min | $10</p>
-                  <p>Weekly themed teachings exploring different aspects of Buddhist wisdom.</p>
-                </div>
-                <div className="class-offering">
-                  <h4>Tuesday Evening - Introduction to Buddhism</h4>
-                  <p className="offering-time">7:00 PM | 60 min | $10</p>
-                  <p>Perfect for newcomers. Learn meditation basics and core Buddhist concepts.</p>
-                </div>
-                <div className="class-offering">
-                  <h4>Thursday Evening - Patient Acceptance</h4>
-                  <p className="offering-time">7:00 PM | 60 min | $10</p>
-                  <p>Learn to transform difficult situations through the practice of patience.</p>
-                </div>
-                <div className="class-offering">
-                  <h4>Sunday Morning</h4>
-                  <p className="offering-time">11:00 AM | 90 min | $15</p>
-                  <p>Start your week with meditation, teaching, and Coffee, Tea & Chat afterward.</p>
-                </div>
-              </div>
-
-              {/* Upcoming General Program Classes */}
-              <div className="upcoming-class-section">
-                <h3 className="upcoming-class-title">Upcoming Classes</h3>
-                {loading ? (
-                  <p className="mini-class-loading">Loading classes...</p>
-                ) : (
-                  <ClassList classes={generalProgramClasses} emptyMessage="No general program classes scheduled" />
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Foundation Program */}
-      <section className="classes-section classes-section-alt">
         <div className="classes-container">
           <div className="class-type-card">
             <div className="class-type-header">
@@ -249,69 +301,17 @@ function ClassesPage() {
             </div>
             <div className="class-type-content">
               <p>
-                A commitment-based study program for those interested in deepening their understanding
-                of Buddha's teachings. Features regular teachings, meditation, and systematic study
-                of Buddhist texts.
-              </p>
-              <p>
-                Foundation Program provides a structured path for spiritual development, with
-                opportunities for discussion and community practice. Requires Kadampa Meditation Center Williamsburg membership.
+                A structured study program for deepening your understanding of Buddha's teachings through
+                systematic study, meditation, and community practice. Requires KMC Williamsburg&nbsp;membership.
               </p>
               <Link to="/membership" className="class-type-cta">Learn About Membership</Link>
 
-              {/* Upcoming Foundation Classes */}
               <div className="upcoming-class-section">
                 <h3 className="upcoming-class-title">Upcoming Sessions</h3>
                 {loading ? (
-                  <p className="mini-class-loading">Loading classes...</p>
+                  <p className="mini-class-loading">Loading...</p>
                 ) : (
-                  <ClassList classes={foundationClasses} emptyMessage="No foundation program sessions scheduled" />
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Special Events */}
-      <section className="classes-section">
-        <div className="classes-container">
-          <div className="class-type-card special-events-card">
-            <div className="class-type-header">
-              <h2 className="class-type-title">Workshops, Courses & Retreats</h2>
-              <p className="class-type-meta">Saturdays & select dates</p>
-            </div>
-            <div className="class-type-content">
-              <p>
-                Throughout the year we offer special workshops, day courses, and retreats that
-                provide deeper exploration of specific topics. These events are perfect for
-                those wanting to deepen their practice or explore particular themes.
-              </p>
-
-              {/* Upcoming Events List */}
-              <div className="upcoming-events-list">
-                <h3 className="upcoming-events-title">Upcoming Events</h3>
-                {eventsLoading ? (
-                  <p className="events-loading">Loading events...</p>
-                ) : events.length > 0 ? (
-                  <div className="events-grid">
-                    {events.slice(0, 6).map((event) => (
-                      <a
-                        key={event.id}
-                        href={event.registrationLink || '/#classes'}
-                        target={event.registrationLink ? '_blank' : undefined}
-                        rel={event.registrationLink ? 'noopener noreferrer' : undefined}
-                        className="event-item"
-                      >
-                        <span className="event-date">{formatEventDate(event.date)}</span>
-                        <span className="event-name">{event.name}</span>
-                        <span className="event-time">{event.time}{event.endTime ? ` - ${event.endTime}` : ''}</span>
-                        {event.cost && <span className="event-cost">{event.cost}</span>}
-                      </a>
-                    ))}
-                  </div>
-                ) : (
-                  <p className="no-events">No upcoming events scheduled. Check back soon!</p>
+                  <ClassList classes={foundationClasses} emptyMessage="No sessions scheduled" />
                 )}
               </div>
             </div>
@@ -326,19 +326,19 @@ function ClassesPage() {
           <div className="expect-grid">
             <div className="expect-item">
               <h4>No Experience Needed</h4>
-              <p>All classes welcome complete beginners, as well as seasoned meditators.</p>
+              <p>All classes welcome complete beginners, as well as seasoned&nbsp;meditators.</p>
             </div>
             <div className="expect-item">
               <h4>Comfortable Setting</h4>
-              <p>Sit on chairs or cushions - whatever's comfortable. Wear casual clothes.</p>
+              <p>Sit on chairs or cushions — whatever's comfortable. Wear casual&nbsp;clothes.</p>
             </div>
             <div className="expect-item">
               <h4>Friendly Community</h4>
-              <p>Meet like-minded people in a warm, welcoming environment.</p>
+              <p>Meet like-minded people in a warm, welcoming&nbsp;environment.</p>
             </div>
             <div className="expect-item">
               <h4>Practical Teachings</h4>
-              <p>Learn techniques you can apply immediately to improve your daily life.</p>
+              <p>Learn techniques you can apply immediately to improve your daily&nbsp;life.</p>
             </div>
           </div>
         </div>
@@ -348,7 +348,7 @@ function ClassesPage() {
       <section className="classes-cta-section">
         <div className="classes-container">
           <h2>Ready to Begin?</h2>
-          <p>Check our schedule and join us for a class this week.</p>
+          <p>Check our schedule and join us for a class this&nbsp;week.</p>
           <a href="/#classes" className="classes-cta-button">View Full Schedule</a>
         </div>
       </section>
@@ -372,7 +372,7 @@ function ClassesPage() {
           </div>
           <div className="footer-info-column">
             <h4 className="footer-location-name">
-              <span className="footer-logo-main">KADAMPA MEDITATION CENTER</span>
+              <span className="footer-logo-main">KADAMPA<br />MEDITATION<br />CENTER</span>
               <span className="footer-logo-sub">Williamsburg</span>
             </h4>
             <p className="footer-address">
@@ -380,6 +380,7 @@ function ClassesPage() {
               Williamsburg, NY 11249<br />
               info@meditationinwilliamsburg.org
             </p>
+            <p className="footer-nonprofit">We are a 100% volunteer-run, non-profit organization.</p>
           </div>
           <div className="footer-right">
             <nav className="footer-nav">
@@ -400,7 +401,6 @@ function ClassesPage() {
                 </svg>
               </a>
             </div>
-            <p className="footer-nonprofit">We are a 100% volunteer run, non-profit.</p>
           </div>
         </div>
       </footer>

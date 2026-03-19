@@ -80,3 +80,27 @@ service.spreadsheets().values().update(
 ```
 
 **Before any sheet update:** Confirm with user that only cell values will change, not formatting.
+
+## Version Control (CRITICAL)
+
+**ALWAYS use git for version control.** Commit changes before and after significant edits. Never make large changes without a commit checkpoint.
+
+## Typography System
+
+- **Headers (h1, h2, section titles):** `'Josefin Sans', sans-serif` — matches the nav logo
+- **Descriptions, body text, paragraphs:** `'Quattrocento', serif` — matches the "Williamsburg" subtitle
+- **UI elements (buttons, labels, nav links):** `'Poppins', sans-serif` — the base body font
+- **Hero title:** `'Quattrocento', serif` (italic/display feel)
+
+## Schedule Component
+
+- Shows **7 days initially** with "Show more days" button (loads 7 more per click)
+- Max-width: **900px** on desktop (narrower than full content width)
+- No internal scroll — flows naturally on page
+
+## Current Status
+
+- Homepage: hero, schedule (7-day limit), about section, classes section, social, newsletter, footer
+- Typography unified: Josefin Sans headers, Quattrocento descriptions
+- Diagonal clip-path transitions between sections (kept, gradient experiment reverted)
+- Interior pages (About, Membership, Classes) still use flat gray heroes — user considering gradient alternatives

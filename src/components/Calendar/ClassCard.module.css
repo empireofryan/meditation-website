@@ -15,10 +15,14 @@
 
 .mainRow {
   display: grid;
-  grid-template-columns: 100px 1fr 180px 140px auto;
+  grid-template-columns: 100px 1fr auto auto auto;
   align-items: center;
   gap: 16px;
   width: 100%;
+}
+
+.clickableRow {
+  cursor: pointer;
 }
 
 .expanded {
@@ -43,6 +47,8 @@
 .accordionContentInner > .description {
   padding: 16px 0 8px 0;
   margin-top: 16px;
+  margin-left: 116px; /* align with class title (100px time + 16px gap) */
+  max-width: 500px;
   border-top: 1px solid #e8e4dc;
 }
 
@@ -51,6 +57,7 @@
   line-height: 1.6;
   color: #444;
   margin: 0;
+  white-space: pre-line;
 }
 
 .timeColumn {
@@ -96,14 +103,41 @@
   font-size: 16px;
   font-weight: 700;
   color: #1a1a1a;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* Caret toggle button */
+.caretToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  color: #888;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.caretToggle:hover {
+  color: #1a1a1a;
+}
+
+.caretToggle svg {
+  transition: transform 0.2s ease;
+}
+
+.caretOpen svg {
+  transform: rotate(180deg);
 }
 
 .instructorName {
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: 600;
   color: #1a1a1a;
   display: flex;
   align-items: center;
@@ -120,8 +154,8 @@
 }
 
 .photoStack .teacherPhoto {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid white;
@@ -134,27 +168,41 @@
 }
 
 .teacherPhoto {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
 }
 
 .cost {
-  font-size: 16px;
-  font-weight: 700;
-  color: #1a1a1a;
+  font-size: 15px;
+  font-weight: 600;
+  color: #666;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  text-align: right;
+}
+
+.costMobile {
+  display: none;
 }
 
 .bookSection {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 8px;
   flex-shrink: 0;
+  min-width: 120px;
+  text-align: right;
+}
+
+.dropInLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: #888;
+  white-space: nowrap;
+  padding: 12px 16px;
 }
 
 /* Cancelled state */
@@ -216,7 +264,6 @@
   font-weight: 600;
   padding: 2px 6px;
   border-radius: 3px;
-  margin-right: 8px;
   text-transform: uppercase;
   flex-shrink: 0;
 }
@@ -237,30 +284,32 @@
   font-weight: 600;
   padding: 2px 6px;
   border-radius: 3px;
-  margin-right: 8px;
   text-transform: uppercase;
   flex-shrink: 0;
 }
 
 .membershipLink {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
-  color: #0891b2;
+  color: white;
+  background-color: #0891b2;
   text-decoration: none;
-  transition: color 0.2s ease;
-  line-height: 1.3;
+  transition: background-color 0.2s ease;
+  padding: 6px 14px;
+  border-radius: 50px;
+  white-space: nowrap;
   text-align: center;
 }
 
 .membershipLink:hover {
-  color: #0e7490;
-  text-decoration: underline;
+  background-color: #0e7490;
+  color: white;
 }
 
 /* Tablet styles */
 @media (max-width: 1024px) {
   .mainRow {
-    grid-template-columns: 80px 1fr 160px 120px auto;
+    grid-template-columns: 80px 1fr auto auto auto;
     gap: 12px;
   }
 
@@ -269,27 +318,34 @@
   }
 
   .instructorName {
-    font-size: 15px;
+    font-size: 14px;
+  }
+
+  .accordionContentInner > .description {
+    margin-left: 92px; /* 80px + 12px gap */
   }
 }
 
 /* Mobile styles */
 @media (max-width: 768px) {
   .classCard {
-    padding: 14px 16px;
+    padding: 12px 16px;
   }
 
   .mainRow {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 4px 12px;
   }
 
   .timeColumn {
-    flex-direction: row;
-    align-items: baseline;
-    gap: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    grid-column: 1;
+    grid-row: 1 / 3;
+    align-self: center;
   }
 
   .time {
@@ -297,52 +353,70 @@
   }
 
   .duration {
-    font-size: 12px;
+    font-size: 11px;
+  }
+
+  .costMobile {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    color: #666;
   }
 
   .classInfo {
-    width: 100%;
-  }
-
-  .headerRow {
-    flex-wrap: wrap;
-    gap: 8px;
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
   }
 
   .className {
-    font-size: 15px;
-    width: 100%;
+    font-size: 14px;
   }
 
   .instructorName {
-    font-size: 14px;
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 13px;
+    font-weight: 500;
+    color: #666;
   }
 
   .cost {
-    font-size: 14px;
+    display: none;
   }
 
   .bookSection {
-    width: 100%;
-    justify-content: flex-start;
+    grid-column: 3;
+    grid-row: 1 / 3;
+    align-self: center;
+    min-width: auto;
   }
 
   .teacherPhoto,
   .photoStack .teacherPhoto {
-    width: 36px;
-    height: 36px;
+    width: 28px;
+    height: 28px;
   }
 
   .cancelledBadge {
     font-size: 11px;
     padding: 8px 12px;
   }
+
+  .accordionContentInner > .description {
+    margin-left: 0;
+    max-width: 100%;
+  }
 }
 
 /* Small mobile styles */
 @media (max-width: 480px) {
   .classCard {
-    padding: 12px;
+    padding: 10px 12px;
+  }
+
+  .mainRow {
+    gap: 3px 10px;
   }
 
   .time {
@@ -350,26 +424,22 @@
   }
 
   .className {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .instructorName {
-    font-size: 13px;
-  }
-
-  .cost {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .teacherPhoto,
   .photoStack .teacherPhoto {
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
   }
 
   .bookSection button,
   .bookSection a {
     font-size: 11px;
-    padding: 8px 16px;
+    padding: 8px 14px;
   }
 }

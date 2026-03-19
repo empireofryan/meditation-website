@@ -1,0 +1,21 @@
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+# SPA routing - send all routes to index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Newsletter form email notifications
+[[plugins]]
+  package = "@netlify/plugin-emails"
+
+[[notifications]]
+  event = "submission-created"
+  email = "ryan@meditationinwilliamsburg.org"
+
+[[notifications]]
+  event = "submission-created"
+  email = "info@meditationinwilliamsburg.org"

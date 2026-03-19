@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import '../App.css'
 import Nav from '../components/Nav'
 import PageLoader from '../components/PageLoader'
@@ -9,9 +10,19 @@ const PRELOAD_IMAGES = [
   '/photos/KMCBooks.jpeg',
   '/photos/KMCKadamMorten.jpg',
   '/photos/volunteer-space.jpg',
+  '/photos/KMCJosephTeaching.jpg',
+  '/photos/KMCWBStudents.jpg',
 ];
 
+type SectionId = 'founder' | 'teachers' | 'center' | 'temples' | null;
+
 function AboutPage() {
+  const [expandedSection, setExpandedSection] = useState<SectionId>(null);
+
+  const toggleSection = (id: SectionId) => {
+    setExpandedSection(prev => prev === id ? null : id);
+  };
+
   return (
     <PageLoader images={PRELOAD_IMAGES}>
     <div className="app">
@@ -34,13 +45,13 @@ function AboutPage() {
             manner that can be easily integrated into busy modern life.
           </p>
           <blockquote className="about-quote">
-            "All experiences are preceded by mind, led by mind, made by mind."
+            "If we want to be truly happy and free from suffering, we must learn how to control our mind."
           </blockquote>
         </div>
       </section>
 
-      {/* About the Center */}
-      <section className="about-section about-section-alt">
+      {/* The Center */}
+      <section className="about-section">
         <div className="about-container about-center-split">
           <img
             src="/photos/KMCWBStatues.jpeg"
@@ -50,27 +61,145 @@ function AboutPage() {
           <div className="about-center-text">
             <h2 className="about-heading">The Center</h2>
             <p className="about-text">
-              Founded in 2005, our Williamsburg branch offers drop-in classes most evenings of the week,
-              combining guided meditation with Dharma teachings. All general program classes welcome beginners—everyone is welcome.
+              Founded in 2004, our Williamsburg branch offers drop-in classes most evenings of the week,
+              combining guided meditation with Dharma teachings. All general program classes welcome beginners—everyone&nbsp;is&nbsp;welcome.
             </p>
             <p className="about-text">
               Through practicing Buddha's teachings, we discover wisdom to solve daily problems and reach
-              our highest potential—a state of permanent happiness, free from all suffering.
+              our highest potential—a state of permanent happiness, free from all&nbsp;suffering.
             </p>
+            <button className="about-learn-more-btn" onClick={() => toggleSection(expandedSection === 'center' ? null : 'center')}>
+              {expandedSection === 'center' ? 'Close' : 'Learn More'}
+            </button>
           </div>
         </div>
+        {expandedSection === 'center' && (
+          <div className="about-expanded-inline">
+            <div className="about-container">
+              <div className="about-expanded-content">
+                <img
+                  src="https://kawilliamsburg.wpengine.com/wp-content/uploads/2022/03/kadampa-meditation-center-williamsburg-buddha-statues.jpeg"
+                  alt="KMC Williamsburg Buddha statues and shrine"
+                  className="about-expanded-image"
+                />
+                <div className="about-expanded-text">
+                  <h4>Serving New York City since 1994, and Williamsburg since 2004</h4>
+                  <p>
+                    In 1994, Kadampa Buddhist teacher Geshe Kelsang Gyatso established Chakrasambara Center in New York City (now Kadampa Meditation Center NYC) and requested senior student Kadam Morten to become the principal teacher. The center started off in a small graffiti-covered dance studio near the Bowery, and by 2001 classes were being held in a rented commercial space in Chelsea. Soon after, a branch class and then a branch center was established in Williamsburg.
+                  </p>
+                  <p>
+                    Today, the Williamsburg Branch offers drop-in meditation classes most evenings of the week, combining guided meditation with Dharma teachings. All general program classes welcome beginners.
+                  </p>
+                </div>
+              </div>
+              <div className="about-photo-gallery">
+                <div className="about-photo-gallery-item">
+                  <img
+                    src="https://meditationinwilliamsburg.org/wp-content/uploads/bb-plugin/cache/modern-buddhism-kadampa-williamsburg-meditation-landscape-4dd25ee50f23e03ef80f0519bf6563f4-c9nhgumq7vap.jpeg"
+                    alt="Modern Buddhism class at Kadampa Williamsburg"
+                  />
+                  <p className="about-photo-caption">A meditation class at KMC Williamsburg</p>
+                </div>
+                <div className="about-photo-gallery-item">
+                  <img
+                    src="https://meditationinwilliamsburg.org/wp-content/uploads/bb-plugin/cache/kadampa-meditation-center-williamsburg-meditation-room-landscape-8f4a08fb318a3298c1e88a57f9901bf1-0jx3ay5t4zng.jpeg"
+                    alt="KMC Williamsburg meditation room"
+                  />
+                  <p className="about-photo-caption">Our meditation room in Williamsburg</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </section>
 
-      {/* Teaching Tradition */}
+      {/* Our Teachers */}
       <section className="about-section about-section-alt">
+        <div className="about-container about-center-split">
+          <div className="about-center-text">
+            <h2 className="about-heading">Our Teachers</h2>
+            <p className="about-text">
+              Our experienced teachers present Buddha's teachings with clarity, warmth, and practical insight for everyday life.
+            </p>
+            <button className="about-learn-more-btn" onClick={() => toggleSection(expandedSection === 'teachers' ? null : 'teachers')}>
+              {expandedSection === 'teachers' ? 'Close' : 'Learn More'}
+            </button>
+          </div>
+          <img
+            src="/photos/KMCKadamMorten.jpg"
+            alt="Kadam Morten teaching"
+            className="about-center-image"
+          />
+        </div>
+        {expandedSection === 'teachers' && (
+          <div className="about-expanded-inline">
+            <div className="about-container">
+              <div className="about-expanded-content">
+                <img src="/photos/KMCKadamMorten.jpg" alt="Kadam Morten Clausen" className="about-expanded-image" />
+                <div className="about-expanded-text">
+                  <h4>Kadam Morten Clausen</h4>
+                  <p className="about-expanded-subtitle">Eastern US National Spiritual Director &amp; Resident Teacher at KMC NYC</p>
+                  <p>
+                    Kadam Morten Clausen is the Eastern US National Spiritual Director of the New Kadampa Tradition and Resident Teacher at Kadampa Meditation Center New York City, of which Williamsburg is a branch.
+                  </p>
+                  <p>
+                    For over 30 years he has been a close disciple of Venerable Geshe Kelsang Gyatso, greatly admired as a meditation teacher and especially known for his clarity, humor, and inspirational presentation of Buddha's teachings.
+                  </p>
+                </div>
+              </div>
+              <h4 className="about-expanded-section-title">Williamsburg Branch Teachers</h4>
+              <div className="about-teachers-grid about-teachers-grid-small">
+                <div className="about-teacher-card">
+                  <img src="/photos/teachers/joseph.jpg" alt="Joseph" className="about-teacher-photo" />
+                  <p className="about-teacher-name">Joseph</p>
+                </div>
+                <div className="about-teacher-card">
+                  <img src="/photos/teachers/teri.jpg" alt="Teri" className="about-teacher-photo" />
+                  <p className="about-teacher-name">Teri</p>
+                </div>
+                <div className="about-teacher-card">
+                  <img src="/photos/teachers/ben.jpg" alt="Ben" className="about-teacher-photo" />
+                  <p className="about-teacher-name">Ben</p>
+                </div>
+                <div className="about-teacher-card">
+                  <img src="/photos/teachers/deanna.jpg" alt="Deanna" className="about-teacher-photo" />
+                  <p className="about-teacher-name">Deanna</p>
+                </div>
+                <div className="about-teacher-card">
+                  <img src="/photos/teachers/debbie.jpg" alt="Debbie" className="about-teacher-photo" />
+                  <p className="about-teacher-name">Debbie</p>
+                </div>
+                <div className="about-teacher-card">
+                  <img src="/photos/teachers/eli.jpg" alt="Eli" className="about-teacher-photo" />
+                  <p className="about-teacher-name">Eli</p>
+                </div>
+                <div className="about-teacher-card">
+                  <img src="/photos/teachers/giselle.jpg" alt="Giselle" className="about-teacher-photo" />
+                  <p className="about-teacher-name">Giselle</p>
+                </div>
+                <div className="about-teacher-card">
+                  <img src="/photos/teachers/tom.jpg" alt="Tom" className="about-teacher-photo" />
+                  <p className="about-teacher-name">Tom</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </section>
+
+      {/* Our Founder / Teaching Tradition */}
+      <section className="about-section">
         <div className="about-container about-tradition-split">
           <div className="about-tradition-text">
             <h2 className="about-heading">Our Teaching Tradition</h2>
             <p className="about-text">
               Our teachings are based on the books of modern Buddhist teacher Venerable Geshe Kelsang Gyatso,
               who founded the New Kadampa Tradition. This tradition presents Buddha's ancient wisdom in a way
-              that is practical and applicable to contemporary life.
+              that is practical and applicable to contemporary&nbsp;life.
             </p>
+            <button className="about-learn-more-btn" onClick={() => toggleSection(expandedSection === 'founder' ? null : 'founder')}>
+              {expandedSection === 'founder' ? 'Close' : 'Learn More'}
+            </button>
           </div>
           <div className="about-tradition-images">
             <img
@@ -90,49 +219,106 @@ function AboutPage() {
             />
           </div>
         </div>
-      </section>
-
-      {/* Donate Section */}
-      <section className="about-section donate-section">
-        <div className="donate-container">
-          <div className="donate-graphic">
-            <div className="donate-card">
-              <p className="donate-card-title">Support a Space for Inner Peace in Williamsburg</p>
-              <p className="donate-card-text">
-                Your generosity helps us offer meditation, spiritual teachings, and
-                community for all who seek refuge in the city.
-              </p>
-              <p className="donate-card-brand">KADAMPA MEDITATION CENTER<br /><span>Williamsburg</span></p>
+        {expandedSection === 'founder' && (
+          <div className="about-expanded-inline">
+            <div className="about-container">
+              <h3 className="about-expanded-title">Venerable Geshe Kelsang Gyatso</h3>
+              <div className="about-expanded-content">
+                <img
+                  src="https://meditationinnewyork.org/wp-content/uploads/2019/04/kadampa-nyc-kadam-dharma-geshe-kelsang-gyatso-scaled.jpeg"
+                  alt="Venerable Geshe Kelsang Gyatso"
+                  className="about-expanded-image"
+                />
+                <div className="about-expanded-text">
+                  <p>
+                    Venerable Geshe Kelsang Gyatso Rinpoche is the founder of the New Kadampa Tradition &ndash; International Kadampa Buddhist Union, an international association of Kadampa Buddhist centers with over 1,400 locations worldwide.
+                  </p>
+                  <p>
+                    Born in Tibet in 1931 and ordained a Buddhist monk at the age of eight, Geshe Kelsang studied extensively in the great monastic universities of Tibet. In 1977, he accepted an invitation to come to Manjushri Centre in England to teach. He has devoted his entire life to the flourishing of Buddhist teachings throughout the world.
+                  </p>
+                  <p>
+                    In 1991, Geshe Kelsang founded the NKT-IKBU, which now has over 1,400 Kadampa centers and branches around the world. He has written 24 authoritative books on Buddhist thought and practice.
+                  </p>
+                  <p>
+                    Geshe Kelsang first visited our New York center in 1997 and later formally opened the Chelsea location in 2001. In his teachings, he emphasizes the importance of meditation in daily life and how to cultivate a good heart to help others.
+                  </p>
+                </div>
+              </div>
+              <div className="about-photo-gallery">
+                <div className="about-photo-gallery-item">
+                  <img
+                    src="https://meditationinnewyork.org/wp-content/uploads/2019/04/geshe-kelsang-gyatso-founder-kmc-chelsea.jpeg"
+                    alt="Geshe Kelsang Gyatso at KMC NYC"
+                  />
+                  <p className="about-photo-caption">Geshe Kelsang Gyatso at KMC New York City</p>
+                </div>
+                <div className="about-photo-gallery-item">
+                  <img
+                    src="https://meditationinnewyork.org/wp-content/uploads/2019/04/geshe-kelsang-gyatso-teacher-trijang-rinpoche.jpeg"
+                    alt="Geshe Kelsang Gyatso with his teacher Trijang Rinpoche"
+                  />
+                  <p className="about-photo-caption">With his Spiritual Guide, Kyabje Trijang Rinpoche</p>
+                </div>
+                <div className="about-photo-gallery-item">
+                  <img
+                    src="https://meditationinnewyork.org/wp-content/uploads/2019/04/books-by-geshe-kelsang-gyatso.jpeg"
+                    alt="Books by Geshe Kelsang Gyatso"
+                  />
+                  <p className="about-photo-caption">Author of 24 books on Buddhist thought and practice</p>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="donate-content">
-            <h2 className="donate-heading">KMC Williamsburg runs on love, memberships, and donations.</h2>
-            <p className="donate-text">
-              Thanks to the generosity of our members, volunteers, and benefactors, KMC Williamsburg continues to
-              flourish after 20 years in existence. Today we serve many people every month who come through our doors
-              in search of real inner peace and happiness.
-            </p>
-            <p className="donate-text">
-              If you'd like to contribute to the continued flourishing of Kadam Dharma teachings, click the button
-              below to make a donation.
-            </p>
-            <p className="donate-text donate-thanks">
-              A donation of any amount is received with gratitude. Thank you.
-            </p>
-            <a
-              href="https://checkout.meditationinnewyork.org/make-a-donation-kmcw/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="donate-button"
-            >
-              Donate
-            </a>
-          </div>
+        )}
+      </section>
+
+      {/* Temples */}
+      <section className="about-section about-section-alt">
+        <div className="about-container">
+          <h2 className="about-heading">International Temples Project</h2>
+          <p className="about-text" style={{ maxWidth: 700 }}>
+            The New Kadampa Tradition has built Buddhist temples in cities around the world, dedicated to world peace and the flourishing of Buddha's&nbsp;teachings.
+          </p>
+          <button className="about-learn-more-btn" onClick={() => toggleSection(expandedSection === 'temples' ? null : 'temples')}>
+            {expandedSection === 'temples' ? 'Close' : 'Learn More'}
+          </button>
         </div>
+        {expandedSection === 'temples' && (
+          <div className="about-expanded-inline">
+            <div className="about-container">
+              <div className="about-temples-gallery">
+                <div className="about-temple-item">
+                  <img src="https://kadampa.org/wp-content/uploads/2020/08/traditioncover-temple-1024x614.jpg" alt="Manjushri KMC, England" />
+                  <p className="about-temple-caption">Manjushri KMC, Ulverston, England. Opened in 1997.</p>
+                </div>
+                <div className="about-temple-item">
+                  <img src="https://kadampa.org/wp-content/uploads/2022/03/5-US-Temple-children-1-1024x614.jpeg" alt="KMC New York" />
+                  <p className="about-temple-caption">KMC New York, Glen Spey, New York. Opened in 2006.</p>
+                </div>
+                <div className="about-temple-item">
+                  <img src="https://kadampa.org/wp-content/uploads/2019/10/1-Brazil-Temple-at-Dusk-2013--1024x614.jpg" alt="KMC Brazil" />
+                  <p className="about-temple-caption">KMC Brazil, Cabreuva, Brazil. Opened in 2013.</p>
+                </div>
+                <div className="about-temple-item">
+                  <img src="https://kadampa.org/wp-content/uploads/2021/09/unnamed-file-1024x614.jpg" alt="KMC Portugal" />
+                  <p className="about-temple-caption">KMC Portugal, Sintra, Portugal.</p>
+                </div>
+                <div className="about-temple-item">
+                  <img src="https://kadampa.org/wp-content/uploads/2021/09/167133359_864333117448918_1864838710688061291_n-1024x614.jpeg" alt="IKRC Grand Canyon" />
+                  <p className="about-temple-caption">IKRC Grand Canyon, Williams, Arizona.</p>
+                </div>
+                <div className="about-temple-item">
+                  <img src="https://kadampa.org/wp-content/uploads/2019/04/Proyecto-sin-titulo-1024x614.jpg" alt="KMC Spain" />
+                  <p className="about-temple-caption">KMC Spain, Malaga, Spain.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </section>
 
       {/* Volunteer Section */}
-      <section id="volunteer" className="about-section about-section-alt volunteer-section">
+      <section id="volunteer" className="about-section volunteer-section">
         <div className="volunteer-split">
           <div className="volunteer-left">
             <h2 className="volunteer-heading">KMC NYC Williamsburg Runs on Volunteers...</h2>
@@ -160,6 +346,45 @@ function AboutPage() {
         </div>
       </section>
 
+      {/* Donate Section */}
+      <section className="about-section donate-section">
+        <div className="donate-container">
+          <div className="donate-graphic">
+            <div className="donate-card">
+              <p className="donate-card-title">Support a Space for Inner Peace in Williamsburg</p>
+              <p className="donate-card-text">
+                Your generosity helps us offer meditation, spiritual teachings, and
+                community for all who seek refuge in the city.
+              </p>
+              <p className="donate-card-brand">KADAMPA MEDITATION CENTER<br /><span>Williamsburg</span></p>
+            </div>
+          </div>
+          <div className="donate-content">
+            <h2 className="donate-heading">KMC Williamsburg runs on love, memberships, and donations.</h2>
+            <p className="donate-text">
+              Thanks to the generosity of our members, volunteers, and benefactors, KMC Williamsburg continues to
+              flourish after 20 years in existence. Today we serve many people every month who come through our doors
+              in search of real inner peace and&nbsp;happiness.
+            </p>
+            <p className="donate-text">
+              If you'd like to contribute to the continued flourishing of Kadam Dharma teachings, click the button
+              below to make a&nbsp;donation.
+            </p>
+            <p className="donate-text donate-thanks">
+              A donation of any amount is received with gratitude. Thank&nbsp;you.
+            </p>
+            <a
+              href="https://checkout.meditationinnewyork.org/make-a-donation-kmcw/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="donate-button"
+            >
+              Donate
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer id="contact" className="footer">
         <div className="footer-content">
@@ -179,7 +404,7 @@ function AboutPage() {
           </div>
           <div className="footer-info-column">
             <h4 className="footer-location-name">
-              <span className="footer-logo-main">KADAMPA MEDITATION CENTER</span>
+              <span className="footer-logo-main">KADAMPA<br />MEDITATION<br />CENTER</span>
               <span className="footer-logo-sub">Williamsburg</span>
             </h4>
             <p className="footer-address">
@@ -187,6 +412,7 @@ function AboutPage() {
               Williamsburg, NY 11249<br />
               info@meditationinwilliamsburg.org
             </p>
+            <p className="footer-nonprofit">We are a 100% volunteer-run, non-profit organization.</p>
           </div>
           <div className="footer-right">
             <nav className="footer-nav">
@@ -207,7 +433,6 @@ function AboutPage() {
                 </svg>
               </a>
             </div>
-            <p className="footer-nonprofit">We are a 100% volunteer run, non-profit.</p>
           </div>
         </div>
       </footer>

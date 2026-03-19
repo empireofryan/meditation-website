@@ -9,6 +9,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600&family=Quattrocento:wght@400;700&family=Poppins:wght@300;400;500;600&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700&family=Playfair+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <title>Kadampa Meditation Center Williamsburg</title>
 
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CFR04WZ3NT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CFR04WZ3NT');
+    </script>
+
     <!-- Single Page Apps for GitHub Pages -->
     <script>
       (function(l) {
@@ -24,6 +33,12 @@
     </script>
   </head>
   <body>
+    <!-- Hidden form for Netlify form detection (SPA) -->
+    <form name="newsletter" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="first-name" />
+      <input type="text" name="last-name" />
+      <input type="email" name="email" />
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

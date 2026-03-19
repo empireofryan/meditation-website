@@ -28,6 +28,20 @@ function getTeacherPhotos(instructorName: string): string[] {
   return photos;
 }
 
+// Format description: preserve line breaks for series topics
+function formatDescription(desc: string): React.ReactNode {
+  if (!desc) return null;
+  // Split on newlines and render with line breaks
+  const lines = desc.split('\n');
+  if (lines.length <= 1) return desc;
+  return lines.map((line, i) => (
+    <React.Fragment key={i}>
+      {line}
+      {i < lines.length - 1 && <br />}
+    </React.Fragment>
+  ));
+}
+
 interface ClassCardProps {
   classData: Class;
   onBook: (classId: string) => void;
@@ -111,18 +125,36 @@ const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
     );
   }
 
+  const handleRowClick = (e: React.MouseEvent) => {
+    if (!description) return;
+    // Don't toggle if clicking a link or button (book button, membership link)
+    const target = e.target as HTMLElement;
+    if (target.closest('a') || target.closest('button:not(.' + styles.caretToggle + ')')) return;
+    setIsExpanded(!isExpanded);
+  };
+
   return (
     <div className={`${styles.classCard} ${isSpecialEvent ? styles.specialEvent : ''} ${isMembersOnly ? styles.membersClass : ''} ${isExpanded ? styles.expanded : ''}`}>
-      <div className={styles.mainRow}>
+      <div className={`${styles.mainRow} ${description ? styles.clickableRow : ''}`} onClick={handleRowClick}>
         <div className={styles.timeColumn}>
           <span className={styles.time}>{timeNumber}<span className={styles.period}>{timePeriod}</span></span>
           {durationText && <span className={styles.duration}>{durationText}</span>}
+          {!isMembersOnly && displayCost && <span className={styles.costMobile}>{displayCost}</span>}
         </div>
         <div className={styles.classInfo}>
           <span className={styles.className}>
             {isSpecialEvent && <span className={styles.eventBadge}>Event</span>}
-            {isMembersOnly && <span className={styles.membersBadge}>Members</span>}
             {displayName}
+            {description && (
+              <span
+                className={`${styles.caretToggle} ${isExpanded ? styles.caretOpen : ''}`}
+                aria-label={isExpanded ? 'Collapse details' : 'Expand details'}
+              >
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </span>
+            )}
           </span>
         </div>
         <span className={styles.instructorName}>
@@ -142,28 +174,26 @@ const ClassCard: React.FC<ClassCardProps> = ({ classData, onBook }) => {
           {displayInstructor}
         </span>
         {isMembersOnly ? (
-          <Link to="/membership" className={styles.membershipLink}>Membership Required</Link>
+          <span></span>
         ) : (
           <span className={styles.cost}>{displayCost || ''}</span>
         )}
         <div className={styles.bookSection}>
-          {description && (
-            <BookButton
-              onClick={() => setIsExpanded(!isExpanded)}
-              variant="secondary"
-            >
-              {isExpanded ? 'Less Info' : 'More Info'}
+          {isMembersOnly ? (
+            <Link to="/membership" className={styles.membershipLink}>Membership Required</Link>
+          ) : hasBookingLink ? (
+            <BookButton onClick={handleBook}>
+              Book
             </BookButton>
+          ) : (
+            <span className={styles.dropInLabel}>Drop Ins Welcome</span>
           )}
-          <BookButton onClick={handleBook} disabled={!hasBookingLink}>
-            Book
-          </BookButton>
         </div>
       </div>
       {description && (
         <div className={`${styles.accordionContent} ${isExpanded ? styles.accordionContentExpanded : ''}`}>
           <div className={styles.accordionContentInner}>
-            <p className={styles.description}>{description}</p>
+            <p className={styles.description}>{formatDescription(description)}</p>
           </div>
         </div>
       )}

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchAnnouncements } from '../utils/sheetsApi';
 import type { Announcement } from '../utils/sheetsApi';
@@ -11,7 +11,6 @@ const bannerStyles: React.CSSProperties = {
   fontSize: '15px',
   fontWeight: 500,
   position: 'relative',
-  zIndex: 1000,
 };
 
 const textStyles: React.CSSProperties = {
@@ -20,7 +19,7 @@ const textStyles: React.CSSProperties = {
 };
 
 const linkStyles: React.CSSProperties = {
-  color: '#FFC845',
+  color: '#ccc',
   textDecoration: 'underline',
   textUnderlineOffset: '3px',
 };
@@ -97,10 +96,21 @@ function parseAnnouncementText(text: string): React.ReactNode[] {
   return parts;
 }
 
+function updateBannerOffset(height: number) {
+  document.documentElement.style.setProperty('--announcement-height', `${height}px`);
+}
+
 function AnnouncementBanner() {
   const [announcements, setAnnouncements] = useState<Announcement[]>([]);
   const [dismissed, setDismissed] = useState<Set<string>>(new Set());
   const [loading, setLoading] = useState(true);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const measureHeight = useCallback(() => {
+    if (containerRef.current) {
+      updateBannerOffset(containerRef.current.offsetHeight);
+    }
+  }, []);
 
   useEffect(() => {
     // Load dismissed announcements from sessionStorage
@@ -113,6 +123,24 @@ function AnnouncementBanner() {
       .then(setAnnouncements)
       .catch(console.error)
       .finally(() => setLoading(false));
+  }, []);
+
+  // Measure banner height whenever active announcements change
+  useEffect(() => {
+    const activeCount = announcements.filter(a => !dismissed.has(a.id)).length;
+    if (activeCount === 0) {
+      updateBannerOffset(0);
+      return;
+    }
+    // Measure after render
+    requestAnimationFrame(measureHeight);
+    window.addEventListener('resize', measureHeight);
+    return () => window.removeEventListener('resize', measureHeight);
+  }, [announcements, dismissed, measureHeight]);
+
+  // Reset offset on unmount
+  useEffect(() => {
+    return () => updateBannerOffset(0);
   }, []);
 
   const handleDismiss = (id: string) => {
@@ -130,7 +158,7 @@ function AnnouncementBanner() {
   if (activeAnnouncements.length === 0) return null;
 
   return (
-    <>
+    <div ref={containerRef} style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1001 }}>
       {activeAnnouncements.map(announcement => (
         <div key={announcement.id} style={bannerStyles}>
           <p style={textStyles}>{parseAnnouncementText(announcement.text)}</p>
@@ -143,7 +171,7 @@ function AnnouncementBanner() {
           </button>
         </div>
       ))}
-    </>
+    </div>
   );
 }
 

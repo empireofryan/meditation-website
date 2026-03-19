@@ -1,0 +1,190 @@
+/* Text Gradients Showcase Page */
+.tg-page {
+  min-height: 100vh;
+  background: #1a1a1a;
+  padding: 60px 40px;
+}
+
+.tg-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.tg-header h1 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #e8e2d8;
+  margin-bottom: 12px;
+}
+
+.tg-header p {
+  font-family: 'Quattrocento', serif;
+  font-size: 16px;
+  color: #888;
+}
+
+.tg-section {
+  max-width: 1400px;
+  margin: 0 auto 80px;
+}
+
+.tg-section-title {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 28px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #333;
+}
+
+/* Logo Text Cards */
+.tg-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.tg-logo-card {
+  background: #2a2a2a;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #333;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.tg-logo-card:hover {
+  border-color: #555;
+  transform: translateY(-2px);
+}
+
+/* Nav-style preview */
+.tg-logo-preview {
+  background-color: #3a3530;
+  background-image:
+    radial-gradient(at 20% 35%, #4a4038 0px, transparent 55%),
+    radial-gradient(at 80% 25%, #403830 0px, transparent 50%);
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.tg-logo-main {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tg-logo-sub {
+  font-family: 'Quattrocento', serif;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-align: center;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section heading preview */
+.tg-logo-section-preview {
+  background: #232323;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+
+.tg-section-heading {
+  font-family: 'Quattrocento', serif;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tg-card-info {
+  padding: 14px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.tg-card-info strong {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #c8c0b0;
+}
+
+.tg-card-info span {
+  font-family: 'Quattrocento', serif;
+  font-size: 13px;
+  color: #666;
+}
+
+/* Section Background Cards */
+.tg-bg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.tg-bg-card {
+  border-radius: 10px;
+  padding: 48px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 180px;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: transform 0.2s;
+}
+
+.tg-bg-card:hover {
+  transform: translateY(-2px);
+}
+
+.tg-bg-label {
+  font-family: 'Quattrocento', serif;
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.tg-bg-desc {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tg-page {
+    padding: 40px 20px;
+  }
+
+  .tg-logo-grid,
+  .tg-bg-grid {
+    grid-template-columns: 1fr;
+  }
+}

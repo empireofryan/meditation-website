@@ -1,0 +1,123 @@
+/* Homepage Palette Showcase */
+.hp-page {
+  min-height: 100vh;
+  background: #f5f3ef;
+  padding: 60px 40px;
+}
+
+.hp-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.hp-header h1 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.hp-header p {
+  font-family: 'Quattrocento', serif;
+  font-size: 16px;
+  color: #666;
+}
+
+.hp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.hp-card {
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hp-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.hp-label {
+  padding: 16px 20px 12px;
+}
+
+.hp-label h3 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  margin: 0 0 4px 0;
+}
+
+.hp-label p {
+  font-family: 'Quattrocento', serif;
+  font-size: 13px;
+  color: #888;
+  margin: 0;
+}
+
+.hp-mockup {
+  display: flex;
+  flex-direction: column;
+  margin: 0 16px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.hp-section {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+}
+
+.hp-hero-mock {
+  min-height: 56px;
+}
+
+.hp-swatches {
+  display: flex;
+  gap: 6px;
+  padding: 14px 16px 16px;
+  justify-content: center;
+}
+
+.hp-swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hp-page {
+    padding: 40px 20px;
+  }
+
+  .hp-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hp-grid {
+    grid-template-columns: 1fr;
+  }
+}

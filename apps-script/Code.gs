@@ -128,3 +128,79 @@ function triggerGitHubBuild() {
 function testGitHubTrigger() {
   triggerGitHubBuild();
 }
+
+/**
+ * Archive past Special Events to the Past Events tab.
+ * Moves rows where the date is before today, preserving data.
+ * Run setupArchiveTrigger() once to schedule this daily.
+ */
+function archivePastEvents() {
+  const ss = SpreadsheetApp.getActive();
+  const seSheet = ss.getSheetByName('Special Events');
+  const peSheet = ss.getSheetByName('Past Events');
+  if (!seSheet || !peSheet) return;
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  // Read all data rows (skip rows 1-3: instruction, example, header)
+  const lastRow = seSheet.getLastRow();
+  if (lastRow < 4) return;
+
+  const dataRange = seSheet.getRange(4, 1, lastRow - 3, seSheet.getLastColumn());
+  const data = dataRange.getValues();
+
+  const rowsToArchive = [];
+
+  for (let i = data.length - 1; i >= 0; i--) {
+    const title = data[i][0];
+    const dateStr = data[i][1];
+    if (!title || !dateStr) continue;
+
+    const eventDate = new Date(dateStr);
+    if (isNaN(eventDate.getTime())) continue;
+
+    if (eventDate < today) {
+      rowsToArchive.push({ rowIndex: i + 4, data: data[i] }); // i+4 = actual row
+    }
+  }
+
+  if (rowsToArchive.length === 0) {
+    Logger.log('No past events to archive.');
+    return;
+  }
+
+  // Append to Past Events
+  for (const row of rowsToArchive) {
+    peSheet.appendRow(row.data);
+    Logger.log('Archived: ' + row.data[0] + ' (' + row.data[1] + ')');
+  }
+
+  // Clear archived rows from Special Events (bottom-up to avoid index shift)
+  rowsToArchive.sort((a, b) => b.rowIndex - a.rowIndex);
+  for (const row of rowsToArchive) {
+    seSheet.getRange(row.rowIndex, 1, 1, seSheet.getLastColumn()).clearContent();
+  }
+
+  Logger.log('Archived ' + rowsToArchive.length + ' past event(s).');
+}
+
+/**
+ * Run once to schedule daily auto-archive at 1am ET
+ */
+function setupArchiveTrigger() {
+  // Remove existing archive triggers
+  ScriptApp.getProjectTriggers().forEach(trigger => {
+    if (trigger.getHandlerFunction() === 'archivePastEvents') {
+      ScriptApp.deleteTrigger(trigger);
+    }
+  });
+
+  ScriptApp.newTrigger('archivePastEvents')
+    .timeBased()
+    .everyDays(1)
+    .atHour(1)
+    .create();
+
+  Logger.log('Daily archive trigger created (runs at ~1am).');
+}
